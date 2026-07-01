@@ -1,39 +1,34 @@
-redirectsOrigin = "config"
-plugins = []
-headers = []
-
-[functions]
-
-  [functions."*"]
+# Netlify configuration for sai-agency.
+# The production build output is committed at the repo root (index.html,
+# assets/), so we publish the root directly — portable across any CI host
+# (the previous config pinned an absolute Windows path that only existed on one
+# machine and would fail Netlify's Linux build).
 
 [build]
-publish = "C:\\Users\\nzengou\\Documents\\programming\\test_programming\\DeepTechX_Commercialization_Masterclass\\DeepTechX_Comm_Masterclass_modules\\deeptechx_launchpad_modules_completed\\chris_kerner_ai_agency\\sai-agency\\dist"
-publishOrigin = "config"
-command = "npm run build"
-commandOrigin = "config"
+publish = "."
 
-  [build.environment]
-
-  [build.processing]
-
-    [build.processing.css]
-
-    [build.processing.html]
-
-    [build.processing.images]
-
-    [build.processing.js]
-
-  [build.services]
-
+# SPA fallback: serve index.html for client-side routes.
 [[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200
 force = false
 
-  [redirects.query]
+# --- Security response headers (production hardening) ---
+# Cheap, high-value hardening for a static site. Surfaced by the VulnRedTeam
+# agent; applied here so the live site ships them on the next deploy.
+[[headers]]
+for = "/*"
+  [headers.values]
+  Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+  X-Content-Type-Options = "nosniff"
+  X-Frame-Options = "DENY"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+  Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
 
-  [redirects.conditions]
-
-  [redirects.headers]
+# Long-cache fingerprinted build assets.
+[[headers]]
+for = "/assets/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
