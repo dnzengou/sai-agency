@@ -1,0 +1,39 @@
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[functions]
+
+  [functions."*"]
+
+[build]
+publish = "C:\\Users\\nzengou\\Documents\\programming\\test_programming\\DeepTechX_Commercialization_Masterclass\\DeepTechX_Comm_Masterclass_modules\\deeptechx_launchpad_modules_completed\\chris_kerner_ai_agency\\sai-agency\\dist"
+publishOrigin = "config"
+command = "npm run build"
+commandOrigin = "config"
+
+  [build.environment]
+
+  [build.processing]
+
+    [build.processing.css]
+
+    [build.processing.html]
+
+    [build.processing.images]
+
+    [build.processing.js]
+
+  [build.services]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
+
+  [redirects.query]
+
+  [redirects.conditions]
+
+  [redirects.headers]
