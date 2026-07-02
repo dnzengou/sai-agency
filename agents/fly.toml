@@ -1,0 +1,34 @@
+# Sample Fly.io config for the SAI Agents container.
+# Rename/adjust `app`, then: `fly deploy --remote-only`
+# Set secrets first, e.g.:
+#   fly secrets set KAFKA_BOOTSTRAP_SERVERS=... KAFKA_ENABLED=true
+
+app = "sai-agents"
+primary_region = "arn"
+
+[build]
+dockerfile = "Dockerfile"
+
+[env]
+SAI_ENV = "production"
+SAI_LOG_JSON = "true"
+SAI_TARGET_URL = "https://sai-agency.netlify.app"
+SAI_METRICS_ENABLED = "true"
+SAI_METRICS_PORT = "9464"
+KAFKA_TOPIC = "claw-evolution-events"
+
+# The agents run as a scheduled/one-shot team by default. For a long-running
+# service, expose an HTTP API and uncomment the [http_service] block below.
+[processes]
+team = "python -m sai_agents.run_team"
+
+# [http_service]
+# internal_port = 8080
+# force_https = true
+# auto_stop_machines = true
+# auto_start_machines = true
+# min_machines_running = 0
+
+[[metrics]]
+port = 9464
+path = "/metrics"
