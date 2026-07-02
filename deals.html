@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Deal Radar — real AI/ML/data opportunities (grants, tenders, accelerators, funding rounds) across Southern Europe and the Nordics, ARM-classified by SAI Agency." />
+    <title>Deal Radar · SAI Agency</title>
+    <link rel="stylesheet" href="/assets/deals.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <div class="masthead">
+          <h1><span class="kicker">SAI Agency</span> · Deal Radar</h1>
+        </div>
+        <p class="tagline">
+          Real, publicly-sourced AI / ML / data opportunities across
+          <strong>Southern Europe</strong> and the <strong>Nordics</strong> —
+          grants, public tenders, accelerators, funding rounds and partnerships.
+        </p>
+        <p class="pipeline-note">
+          Sourced via the <code>KafCade</code> RRSS cascade · impact-scored &amp;
+          <code>ARM</code>-classified (account / relationship management) ·
+          published as <code>DEAL_SIGNAL</code> events feeding
+          <code>evo-metaclaw</code>. <a href="/">← Back to site</a>
+        </p>
+      </header>
+
+      <section id="stats" class="stats" aria-label="Summary"></section>
+
+      <section class="charts">
+        <div class="card">
+          <h2>Deals by country</h2>
+          <div id="chart-country" role="img" aria-label="Number of deals per country"></div>
+        </div>
+        <div class="card">
+          <h2>Known pipeline value by deal type</h2>
+          <div id="chart-type" role="img" aria-label="Total known value per deal type"></div>
+        </div>
+      </section>
+
+      <section aria-label="Filters">
+        <div class="filters">
+          <label class="sr-only" for="search">Search deals</label>
+          <input id="search" type="search" placeholder="Search org, sector, keyword…" />
+          <label class="sr-only" for="type-select">Filter by type</label>
+          <select id="type-select"><option value="All">All types</option></select>
+          <label class="sr-only" for="country-select">Filter by country</label>
+          <select id="country-select"><option value="All">All countries</option></select>
+          <label class="sr-only" for="sort">Sort</label>
+          <select id="sort">
+            <option value="impact">Sort: Impact</option>
+            <option value="value">Sort: Deal value</option>
+            <option value="deadline">Sort: Deadline</option>
+          </select>
+        </div>
+        <div class="filters">
+          <div id="region-chips" class="chips" role="group" aria-label="Filter by region"></div>
+          <span id="count" class="count"></span>
+        </div>
+      </section>
+
+      <section id="deals" class="deals" aria-live="polite">
+        <div class="empty">Loading deals…</div>
+      </section>
+
+      <footer>
+        <p id="generated"></p>
+        <p>
+          Data is curated from public sources (each deal links to its origin) and
+          refreshed with <code>python -m sai_agents.deals.generate</code>. Deal
+          sizes shown where publicly disclosed. Illustrative of the agent suite's
+          sourcing capability — verify details at the source before acting.
+        </p>
+      </footer>
+    </main>
+    <script src="/assets/deals.js"></script>
+  </body>
+</html>

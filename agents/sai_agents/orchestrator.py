@@ -17,6 +17,7 @@ from sai_agents.agents.marketing_agent import MarketingAgent
 from sai_agents.agents.sales_gtm_agent import SalesGTMAgent
 from sai_agents.agents.vuln_redteam_agent import VulnRedTeamAgent
 from sai_agents.config import Settings, get_settings
+from sai_agents.deals.deal_sourcing_agent import DealSourcingAgent
 from sai_agents.kafca.impact import aggregate_impact
 from sai_agents.kafca.publisher import KafkaEventPublisher
 from sai_agents.logging_setup import get_logger
@@ -43,6 +44,7 @@ class OrchestratorTeam:
         self.marketing = MarketingAgent(service=self.settings.service_name)
         self.sales = SalesGTMAgent(service=self.settings.service_name)
         self.security = VulnRedTeamAgent(service=self.settings.service_name)
+        self.deals = DealSourcingAgent(service=self.settings.service_name)
 
     async def run(self, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         context = dict(context or {})
@@ -67,12 +69,14 @@ class OrchestratorTeam:
                 self.marketing.execute(downstream_ctx),
                 self.sales.execute(downstream_ctx),
                 self.security.execute(downstream_ctx),
+                self.deals.execute(downstream_ctx),
             ]
 
             # 3. Publish each as an evolution event.
             events: List[EvolutionEvent] = []
             for agent, result in zip(
-                [self.tester, self.marketing, self.sales, self.security], results
+                [self.tester, self.marketing, self.sales, self.security, self.deals],
+                results,
             ):
                 events.append(agent.to_event(result))
             published = await self.publisher.publish_many(events)

@@ -40,6 +40,7 @@ class EventType(str, Enum):
     EVOLUTION_SIGNAL = "evolution_signal"
     SECURITY_FINDING = "security_finding"
     AGENT_RUN = "agent_run"
+    DEAL_SIGNAL = "deal_signal"
 
 
 class Insight(BaseModel):
@@ -113,6 +114,58 @@ class EvolutionEvent(BaseModel):
 
     def to_json(self) -> str:
         return self.model_dump_json()
+
+
+class DealType(str, Enum):
+    GRANT = "grant"
+    PUBLIC_TENDER = "public_tender"
+    ACCELERATOR = "accelerator"
+    FUNDING_ROUND = "funding_round"
+    PARTNERSHIP = "partnership"
+    RFP = "rfp"
+
+
+class ARMStage(str, Enum):
+    """Account & Relationship Management pipeline stage."""
+
+    PROSPECT = "prospect"
+    QUALIFIED = "qualified"
+    ENGAGED = "engaged"
+    PROPOSAL = "proposal"
+    WON = "won"
+    LOST = "lost"
+
+
+class Deal(BaseModel):
+    """A sourced real-world opportunity, ARM-classified for the pipeline view."""
+
+    id: str = Field(default_factory=_new_id)
+    title: str
+    org: str = ""
+    country: str = ""
+    region: str = ""  # "Southern Europe" | "Nordics"
+    city: Optional[str] = None
+    sector: str = ""
+    type: DealType = DealType.GRANT
+    value_eur: Optional[float] = None
+    stage: str = "open"  # open | upcoming | closed | announced
+    deadline: Optional[str] = None
+    date: Optional[str] = None
+    source_url: str = ""
+    source_name: str = ""
+    description: str = ""
+    confidence: float = Field(default=0.6, ge=0.0, le=1.0)
+
+    # --- ARM (Account & Relationship Management) enrichment ---
+    account: str = ""
+    arm_stage: ARMStage = ARMStage.PROSPECT
+    owner: str = "unassigned"
+    next_action: str = ""
+    priority: Severity = Severity.MEDIUM
+    impact_score: float = Field(default=0.5, ge=0.0, le=1.0)
+
+    def dedupe_key(self) -> str:
+        return f"{self.title.strip().lower()}|{self.org.strip().lower()}|{self.country.strip().lower()}"
 
 
 class HealthResult(BaseModel):

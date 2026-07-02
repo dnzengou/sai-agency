@@ -7,6 +7,13 @@
 [build]
 publish = "."
 
+# Deal Radar page (must precede the SPA catch-all).
+[[redirects]]
+from = "/deals"
+to = "/deals.html"
+status = 200
+force = false
+
 # SPA fallback: serve index.html for client-side routes.
 [[redirects]]
 from = "/*"
