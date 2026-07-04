@@ -98,6 +98,15 @@ async def test_run_publishes_and_exports(tmp_path):
     assert out.exists()
     assert result["published"] == result["deals"]
     assert result["deals"] > 0
+    # RRSS feed emitted alongside the JSON and is well-formed XML.
+    rss = out.with_suffix(".xml")
+    assert rss.exists()
+    import xml.etree.ElementTree as ET
+
+    root = ET.fromstring(rss.read_text(encoding="utf-8"))
+    items = root.findall("./channel/item")
+    assert len(items) == result["deals"]
+    assert root.find("./channel/title").text.startswith("SAI Agency")
 
 
 async def test_deal_sourcing_agent_emits_insights():

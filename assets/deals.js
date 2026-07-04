@@ -1,5 +1,6 @@
 /* SAI Agency — Deal Radar. Fetches /deals.json and renders a filterable,
- * ARM-classified deal dashboard. No inline handlers (CSP script-src 'self'). */
+ * ARM-classified deal dashboard with lead capture. No inline handlers
+ * (CSP script-src 'self'). */
 (function () {
   "use strict";
 
@@ -30,16 +31,27 @@
     if (n >= 1e3) return "€" + Math.round(n / 1e3) + "k";
     return "€" + n;
   }
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
-      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-    });
-  }
   function el(tag, cls, text) {
     var e = document.createElement(tag);
     if (cls) e.className = cls;
     if (text != null) e.textContent = text;
     return e;
+  }
+
+  // --- URL <-> state sync (shareable deep-links) ---
+  var URL_KEYS = ["region", "type", "country", "q", "sort"];
+  function readURL() {
+    var p = new URLSearchParams(location.search);
+    URL_KEYS.forEach(function (k) { if (p.has(k)) state[k] = p.get(k); });
+  }
+  function writeURL() {
+    var p = new URLSearchParams();
+    URL_KEYS.forEach(function (k) {
+      var def = k === "sort" ? "impact" : k === "q" ? "" : "All";
+      if (state[k] && state[k] !== def) p.set(k, state[k]);
+    });
+    var qs = p.toString();
+    history.replaceState(null, "", qs ? "?" + qs : location.pathname);
   }
 
   function filtered() {
@@ -129,8 +141,7 @@
       var card = el("article", "deal prio-" + (d.priority || "medium"));
 
       var top = el("div", "top");
-      var h = el("h3", null, d.title);
-      top.appendChild(h);
+      top.appendChild(el("h3", null, d.title));
       top.appendChild(badge("type", TYPE_LABEL[d.type] || d.type, { color: TYPE_COLOR[d.type] }));
       top.appendChild(badge("stage-" + (d.stage || "open"), d.stage || "open", { dot: true }));
       card.appendChild(top);
@@ -152,7 +163,7 @@
       m("ARM:", (d.arm_stage || "prospect") + " · " + (d.owner || "unassigned"));
       var imp = el("span", "impact");
       imp.appendChild(el("b", null, "Impact "));
-      imp.appendChild(document.createTextNode((d.impact_score != null ? d.impact_score.toFixed(2) : "—")));
+      imp.appendChild(document.createTextNode(d.impact_score != null ? d.impact_score.toFixed(2) : "—"));
       meta.appendChild(imp);
       card.appendChild(meta);
 
@@ -162,21 +173,93 @@
         next.appendChild(document.createTextNode(d.next_action));
         card.appendChild(next);
       }
+
+      var actions = el("div", "actions");
+      var pursue = el("button", "pursue", "Pursue this deal →");
+      pursue.type = "button";
+      pursue.addEventListener("click", function () { openModal(d); });
+      actions.appendChild(pursue);
       if (d.source_url) {
-        var src = el("div", "next");
         var a = el("a", null, "Source: " + (d.source_name || "link"));
         a.href = d.source_url;
         a.target = "_blank";
         a.rel = "noopener noreferrer";
-        src.appendChild(a);
-        card.appendChild(src);
+        actions.appendChild(a);
       }
+      card.appendChild(actions);
       list.appendChild(card);
     });
   }
 
+  // --- Pursue-deal modal ---
+  var lastFocus = null;
+  function openModal(deal) {
+    lastFocus = document.activeElement;
+    $("#modal-deal").textContent = deal.title + " — " + (deal.org || "") + " (" + deal.country + ")";
+    $("#modal-deal-field").value = deal.title + " · " + (deal.org || "");
+    $("#modal-deal-url").value = deal.source_url || "";
+    $("#interest-msg").textContent = "";
+    $("#modal").hidden = false;
+    $("#pi-name").focus();
+  }
+  function closeModal() {
+    $("#modal").hidden = true;
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  // --- Netlify Forms: progressive enhancement (native POST still works) ---
+  function enhanceForm(form, msgEl, onOk) {
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var data = new URLSearchParams(new FormData(form));
+      msgEl.className = "form-msg";
+      msgEl.textContent = "Sending…";
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString(),
+      })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          msgEl.className = "form-msg ok";
+          msgEl.textContent = "Thanks — you're on the list. We'll be in touch.";
+          form.reset();
+          if (onOk) onOk();
+        })
+        .catch(function () {
+          // Fallback: let the browser submit natively to Netlify.
+          msgEl.className = "form-msg";
+          msgEl.textContent = "";
+          form.submit();
+        });
+    });
+  }
+
+  // --- CSV export (lead magnet, client-side) ---
+  function exportCSV() {
+    var rows = filtered();
+    var cols = ["title", "org", "country", "region", "sector", "type", "value_eur",
+      "stage", "deadline", "impact_score", "arm_stage", "owner", "source_url"];
+    var lines = [cols.join(",")];
+    rows.forEach(function (d) {
+      lines.push(cols.map(function (c) {
+        var v = d[c] == null ? "" : String(d[c]);
+        return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+      }).join(","));
+    });
+    var blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = el("a");
+    a.href = url;
+    a.download = "sai-agency-deals.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 0);
+  }
+
   function buildFilters() {
-    // Region chips
     var regions = ["All"].concat(unique(state.deals.map(function (d) { return d.region; })));
     var rc = $("#region-chips");
     regions.forEach(function (r) {
@@ -186,11 +269,12 @@
       c.addEventListener("click", function () {
         state.region = r;
         [].forEach.call(rc.children, function (ch) { ch.setAttribute("aria-pressed", String(ch.textContent === r)); });
+        writeURL();
         renderDeals();
       });
       rc.appendChild(c);
     });
-    // Type select
+
     var types = unique(state.deals.map(function (d) { return d.type; }));
     var tsel = $("#type-select");
     types.forEach(function (t) {
@@ -198,8 +282,9 @@
       o.value = t;
       tsel.appendChild(o);
     });
-    tsel.addEventListener("change", function () { state.type = tsel.value; renderDeals(); });
-    // Country select
+    tsel.value = state.type;
+    tsel.addEventListener("change", function () { state.type = tsel.value; writeURL(); renderDeals(); });
+
     var countries = unique(state.deals.map(function (d) { return d.country; })).sort();
     var csel = $("#country-select");
     countries.forEach(function (c) {
@@ -207,10 +292,18 @@
       o.value = c;
       csel.appendChild(o);
     });
-    csel.addEventListener("change", function () { state.country = csel.value; renderDeals(); });
-    // Search + sort
-    $("#search").addEventListener("input", function (e) { state.q = e.target.value; renderDeals(); });
-    $("#sort").addEventListener("change", function (e) { state.sort = e.target.value; renderDeals(); });
+    csel.value = state.country;
+    csel.addEventListener("change", function () { state.country = csel.value; writeURL(); renderDeals(); });
+
+    var search = $("#search");
+    search.value = state.q;
+    search.addEventListener("input", function (e) { state.q = e.target.value; writeURL(); renderDeals(); });
+
+    var sort = $("#sort");
+    sort.value = state.sort;
+    sort.addEventListener("change", function (e) { state.sort = e.target.value; writeURL(); renderDeals(); });
+
+    $("#export-csv").addEventListener("click", exportCSV);
   }
 
   function unique(arr) {
@@ -223,6 +316,24 @@
     $("#deals").innerHTML = "";
     $("#deals").appendChild(el("div", "empty", msg));
   }
+
+  function wireModalAndForms() {
+    $("#modal-close").addEventListener("click", closeModal);
+    $("#modal").addEventListener("click", function (e) { if (e.target === $("#modal")) closeModal(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !$("#modal").hidden) closeModal(); });
+    enhanceForm($(".alerts"), $("#alerts-msg"), null);
+    enhanceForm($("#modal form"), $("#interest-msg"), function () { setTimeout(closeModal, 1400); });
+
+    // Show confirmation if a native (no-JS) submission redirected back.
+    var p = new URLSearchParams(location.search);
+    if (p.has("subscribed")) {
+      $("#alerts-msg").className = "form-msg ok";
+      $("#alerts-msg").textContent = "Thanks — you're subscribed to deal alerts.";
+    }
+  }
+
+  readURL();
+  wireModalAndForms();
 
   fetch("/deals.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })

@@ -42,6 +42,7 @@ def main() -> None:
                 "published": result["published"],
                 "high_impact": result["high_impact"],
                 "output": str(output),
+                "rss": result.get("rss_path"),
                 "summary": result["dataset"]["summary"],
             },
             indent=2,

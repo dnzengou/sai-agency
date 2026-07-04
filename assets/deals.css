@@ -133,5 +133,52 @@ a:hover { text-decoration: underline; }
 
 .impact { font-variant-numeric: tabular-nums; }
 .empty { text-align: center; color: var(--muted); padding: 48px 0; }
+
+/* Buttons */
+.btn { font: inherit; font-weight: 600; cursor: pointer; border-radius: 8px; padding: 9px 16px;
+  border: 1px solid transparent; background: var(--c1); color: #fff; }
+.btn:hover { filter: brightness(1.06); }
+.btn.ghost { background: var(--surface-1); color: var(--text-primary); border-color: var(--border); }
+.btn.small { padding: 6px 12px; font-size: 0.85rem; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-msg { font-size: 0.85rem; }
+.form-msg.ok { color: var(--good); }
+.form-msg.err { color: var(--critical); }
+
+/* Deal-alerts capture bar */
+.alerts {
+  display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 16px; box-shadow: var(--shadow); margin: 0 0 22px;
+}
+.alerts .lead { font-weight: 600; margin-right: 4px; }
+.alerts .lead small { display: block; font-weight: 400; color: var(--text-secondary); font-size: 0.8rem; }
+.alerts input[type="email"], .alerts select {
+  font: inherit; color: var(--text-primary); background: var(--page);
+  border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px;
+}
+.alerts input[type="email"] { flex: 1 1 220px; min-width: 180px; }
+
+/* Pursue CTA on cards */
+.deal .actions { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+.pursue { font: inherit; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+  border: 1px solid transparent; background: var(--c1); color: #fff; border-radius: 8px; padding: 7px 14px; }
+.pursue:hover { filter: brightness(1.06); }
+
+/* Modal */
+.modal { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55); display: flex;
+  align-items: flex-start; justify-content: center; padding: 6vh 16px; z-index: 1000; overflow-y: auto; }
+.modal[hidden] { display: none; }
+.modal-card { background: var(--surface-1); color: var(--text-primary); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; max-width: 480px; padding: 22px 24px; position: relative; }
+.modal-card h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.modal-deal { color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 14px; }
+.modal-close { position: absolute; top: 10px; right: 12px; background: none; border: none; cursor: pointer;
+  font-size: 1.5rem; line-height: 1; color: var(--muted); }
+.modal form { display: grid; gap: 10px; }
+.modal input, .modal textarea { font: inherit; color: var(--text-primary); background: var(--page);
+  border: 1px solid var(--border); border-radius: 8px; padding: 9px 11px; width: 100%; }
+.modal textarea { min-height: 84px; resize: vertical; }
+.modal label { font-size: 0.85rem; color: var(--text-secondary); }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }

@@ -5,10 +5,25 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sai-agency</title>
+    <meta name="description" content="SAI Agency — custom AI agents, ML and data automation. Explore the Deal Radar: real AI/ML opportunities across Southern Europe and the Nordics." />
+    <style>
+      .deal-radar-fab {
+        position: fixed; top: 14px; right: 14px; z-index: 2147483000;
+        display: inline-flex; align-items: center; gap: 7px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 14px; font-weight: 600; text-decoration: none;
+        color: #fff; background: #2a78d6; padding: 9px 15px; border-radius: 999px;
+        box-shadow: 0 4px 16px rgba(11, 11, 11, 0.18);
+      }
+      .deal-radar-fab:hover { filter: brightness(1.07); }
+    </style>
     <script type="module" crossorigin src="/assets/index-BxAsMF1J.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D52S1Ojs.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
+    <!-- Entry point to the Deal Radar feature (sibling to #root; React renders
+         into #root only, so this persists). -->
+    <a class="deal-radar-fab" href="/deals" aria-label="Open Deal Radar">🛰 Deal Radar</a>
   </body>
 </html>

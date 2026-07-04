@@ -29,12 +29,14 @@ The suite ships a working **deal-sourcing** feature that powers the site's
 
 ```bash
 # Run the cascade: publish DEAL_SIGNAL events + write the site dataset
-python -m sai_agents.deals.generate            # writes <repo-root>/deals.json
-python -m sai_agents.deals.generate out.json   # or a chosen path
+python -m sai_agents.deals.generate            # writes <repo-root>/deals.json + deals.xml
+python -m sai_agents.deals.generate out.json   # or a chosen path (RSS -> out.xml)
 ```
 
 The web app fetches `/deals.json` and renders a filterable, ARM-classified
-dashboard (`deals.html` + `/assets/deals.{js,css}`).
+dashboard (`deals.html` + `/assets/deals.{js,css}`) with a lead-gen funnel
+(deal-alert + pursue-deal Netlify Forms, CSV export, shareable URL filters) and
+an RRSS feed at `/deals.xml`.
 
 ## KafCa
 

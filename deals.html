@@ -4,11 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Deal Radar — real AI/ML/data opportunities (grants, tenders, accelerators, funding rounds) across Southern Europe and the Nordics, ARM-classified by SAI Agency." />
-    <title>Deal Radar · SAI Agency</title>
+    <title>Deal Radar · SAI Agency — AI/ML deals across Southern Europe & the Nordics</title>
+    <meta name="description" content="Deal Radar: real, sourced AI/ML/data opportunities — grants, public tenders, accelerators, funding rounds — across Southern Europe and the Nordics. Get weekly deal alerts from SAI Agency." />
+    <link rel="canonical" href="https://sai-agency.netlify.app/deals" />
+    <link rel="alternate" type="application/rss+xml" title="SAI Agency Deal Radar" href="/deals.xml" />
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAI Agency" />
+    <meta property="og:title" content="Deal Radar — AI/ML deals across Southern Europe & the Nordics" />
+    <meta property="og:description" content="Real, sourced AI/ML/data opportunities: grants, tenders, accelerators, funding rounds. Filter, export, and get weekly deal alerts." />
+    <meta property="og:url" content="https://sai-agency.netlify.app/deals" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Deal Radar · SAI Agency" />
+    <meta name="twitter:description" content="Real AI/ML/data deals across Southern Europe & the Nordics — filter, export, subscribe." />
     <link rel="stylesheet" href="/assets/deals.css" />
   </head>
   <body>
+    <!-- Netlify Forms build-time detection (static, hidden). The visible forms
+         below are progressively enhanced; these ensure Netlify registers them. -->
+    <form name="deal-alerts" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="region" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="deal-interest" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="deal" />
+      <input type="text" name="deal_url" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <main class="wrap">
       <header>
         <div class="masthead">
@@ -23,9 +51,34 @@
           Sourced via the <code>KafCade</code> RRSS cascade · impact-scored &amp;
           <code>ARM</code>-classified (account / relationship management) ·
           published as <code>DEAL_SIGNAL</code> events feeding
-          <code>evo-metaclaw</code>. <a href="/">← Back to site</a>
+          <code>evo-metaclaw</code>. <a href="/">← Back to site</a> ·
+          <a href="/deals.xml">RSS</a>
         </p>
       </header>
+
+      <!-- Lead capture: deal alerts -->
+      <form
+        class="alerts"
+        name="deal-alerts"
+        method="POST"
+        action="/deals?subscribed=1"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="deal-alerts" />
+        <p class="hp"><label>Leave this empty <input name="bot-field" /></label></p>
+        <span class="lead">Get weekly deal alerts<small>New AI/ML deals, straight to your inbox — free.</small></span>
+        <label class="sr-only" for="alert-email">Work email</label>
+        <input id="alert-email" type="email" name="email" required placeholder="you@company.com" />
+        <label class="sr-only" for="alert-region">Region</label>
+        <select id="alert-region" name="region">
+          <option value="All">All regions</option>
+          <option value="Southern Europe">Southern Europe</option>
+          <option value="Nordics">Nordics</option>
+        </select>
+        <button class="btn" type="submit">Subscribe</button>
+        <span class="form-msg" id="alerts-msg" role="status"></span>
+      </form>
 
       <section id="stats" class="stats" aria-label="Summary"></section>
 
@@ -54,6 +107,7 @@
             <option value="value">Sort: Deal value</option>
             <option value="deadline">Sort: Deadline</option>
           </select>
+          <button id="export-csv" class="btn ghost small" type="button">⬇ Export CSV</button>
         </div>
         <div class="filters">
           <div id="region-chips" class="chips" role="group" aria-label="Filter by region"></div>
@@ -70,11 +124,43 @@
         <p>
           Data is curated from public sources (each deal links to its origin) and
           refreshed with <code>python -m sai_agents.deals.generate</code>. Deal
-          sizes shown where publicly disclosed. Illustrative of the agent suite's
-          sourcing capability — verify details at the source before acting.
+          sizes shown where publicly disclosed. Verify details at the source
+          before acting. <a href="/deals.xml">Subscribe via RSS</a>.
         </p>
       </footer>
     </main>
+
+    <!-- Pursue-deal contact modal -->
+    <div id="modal" class="modal" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button id="modal-close" class="modal-close" type="button" aria-label="Close">×</button>
+        <h2 id="modal-title">Pursue this deal</h2>
+        <p id="modal-deal" class="modal-deal"></p>
+        <form
+          name="deal-interest"
+          method="POST"
+          action="/deals?interest=1"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="deal-interest" />
+          <input type="hidden" name="deal" id="modal-deal-field" />
+          <input type="hidden" name="deal_url" id="modal-deal-url" />
+          <p class="hp"><label>Leave this empty <input name="bot-field" /></label></p>
+          <label for="pi-name">Name</label>
+          <input id="pi-name" name="name" required autocomplete="name" />
+          <label for="pi-email">Work email</label>
+          <input id="pi-email" name="email" type="email" required autocomplete="email" />
+          <label for="pi-company">Company (optional)</label>
+          <input id="pi-company" name="company" autocomplete="organization" />
+          <label for="pi-message">How can SAI Agency help you win this?</label>
+          <textarea id="pi-message" name="message"></textarea>
+          <button class="btn" type="submit">Request support</button>
+          <span class="form-msg" id="interest-msg" role="status"></span>
+        </form>
+      </div>
+    </div>
+
     <script src="/assets/deals.js"></script>
   </body>
 </html>

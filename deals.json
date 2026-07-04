@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T18:59:46.377445+00:00",
+  "generated_at": "2026-07-04T18:25:54.554280+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -46,7 +46,7 @@
   },
   "deals": [
     {
-      "id": "3176bbcaf9804e15995f72159bd0cd91",
+      "id": "c783f629019d4544bb3424fdd28b88c7",
       "title": "Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)",
       "org": "Government of Portugal / EuroHPC",
       "country": "Portugal",
@@ -70,7 +70,7 @@
       "impact_score": 0.88
     },
     {
-      "id": "7612a2b4650941989b9f6bd3f1bca0b6",
+      "id": "ae0b9334f0a94949a51a0cad92fa7998",
       "title": "Multiverse Computing raises USD 215M Series B (CompactifAI LLM-compression)",
       "org": "Multiverse Computing",
       "country": "Spain",
@@ -94,7 +94,7 @@
       "impact_score": 0.86
     },
     {
-      "id": "98726657c54b46ae8b68af47a63ff088",
+      "id": "e86552ee60f24402b8b7b6f704e78ef8",
       "title": "CDP Venture Capital and OpenAI partnership for AI development in Italy",
       "org": "CDP Venture Capital / OpenAI",
       "country": "Italy",
@@ -118,7 +118,7 @@
       "impact_score": 0.86
     },
     {
-      "id": "b05ccf3a8a1341368de37c7d47cf7dc7",
+      "id": "3120e3d30d474b819577830c29b9044e",
       "title": "Lovable raises USD 200M Series A at USD 1.8B valuation",
       "org": "Lovable",
       "country": "Sweden",
@@ -142,7 +142,7 @@
       "impact_score": 0.86
     },
     {
-      "id": "b53c274bdf1c495ba97536a239e2fd89",
+      "id": "bc6c3c619d06441781615d76089c7c02",
       "title": "Verda raises EUR 100M for renewable AI cloud infrastructure",
       "org": "Verda (formerly DataCrunch)",
       "country": "Finland",
@@ -166,7 +166,7 @@
       "impact_score": 0.85
     },
     {
-      "id": "3306167f37eb47b5962aead1d2cf86ab",
+      "id": "a8f0a2bddc43408c9b4486b5246c26bf",
       "title": "Lexroom raises EUR 42.9M Series B for AI legaltech",
       "org": "Lexroom",
       "country": "Italy",
@@ -190,7 +190,7 @@
       "impact_score": 0.8124
     },
     {
-      "id": "3c03b3f49ca24c8cafd676206fb77195",
+      "id": "4da38b5435ac4099a0f576126ef85319",
       "title": "Tucuvi raises EUR 17M Series A to scale clinical voice AI (LOLA)",
       "org": "Tucuvi",
       "country": "Spain",
@@ -214,7 +214,7 @@
       "impact_score": 0.7923
     },
     {
-      "id": "972e40e91ca14b0691c3b26c97938db0",
+      "id": "077ab7b3625a42d6af8adf7b4f099cd7",
       "title": "Tana raises EUR 13.6M Series A for AI-native workspace",
       "org": "Tana",
       "country": "Norway",
@@ -238,7 +238,7 @@
       "impact_score": 0.785
     },
     {
-      "id": "835bff9d741f4751b428b6396b90c32f",
+      "id": "d72448dd220c4f74a0110c208fa10898",
       "title": "GetWhy extends Series A with EUR 17M for AI research platform",
       "org": "GetWhy",
       "country": "Denmark",
@@ -262,7 +262,7 @@
       "impact_score": 0.7823
     },
     {
-      "id": "67b90376efd44bc28b60225937ba7d8e",
+      "id": "0469431c21174dc5a2409540c8a0d89d",
       "title": "Contents secures EUR 5.9M for AI workflow/agent orchestration platform",
       "org": "Contents",
       "country": "Italy",
@@ -286,7 +286,7 @@
       "impact_score": 0.7378
     },
     {
-      "id": "2a4c9f1584fa49b4a710a6c4b4d436ad",
+      "id": "8520f3783965416094812078614363e1",
       "title": "PRR call 'IA nas PME' - AI adoption grants for SMEs",
       "org": "Recuperar Portugal (PRR)",
       "country": "Portugal",
@@ -310,7 +310,7 @@
       "impact_score": 0.71
     },
     {
-      "id": "fbc5717a48994fa8b398f0ec255b7597",
+      "id": "176b1abdad1a4dcb97e34d26d0db3080",
       "title": "Pallma AI closes EUR 1.36M pre-seed for AI-agent security",
       "org": "Pallma AI",
       "country": "Greece",
@@ -334,7 +334,7 @@
       "impact_score": 0.7
     },
     {
-      "id": "b8c14487e47948f8a9b3c44bfd40db51",
+      "id": "dbc6f8cbf110482891e9a97cca762d7d",
       "title": "2025 Call for Science and Innovation Missions (Responsible AI mission-challenge)",
       "org": "CDTI (Centro para el Desarrollo Tecnológico y la Innovación)",
       "country": "Spain",
@@ -358,7 +358,7 @@
       "impact_score": 0.6834
     },
     {
-      "id": "cdd68371bdea4fb9a8156c4e832a977a",
+      "id": "352290e130a447068f73383c3a72e599",
       "title": "Tender: data office & AI governance model consultancy 2026-2027",
       "org": "Diputación Foral de Bizkaia",
       "country": "Spain",
@@ -382,7 +382,7 @@
       "impact_score": 0.67
     },
     {
-      "id": "7bb8b023837b46359e344d17fd5da818",
+      "id": "61c0582ac19d4f1bb92cae9bb1cd8aa5",
       "title": "New Nordics AI initiative",
       "org": "Nordic Innovation",
       "country": "Sweden",
@@ -406,7 +406,7 @@
       "impact_score": 0.65
     },
     {
-      "id": "4a8c0ba33c804924b1847b9067de68aa",
+      "id": "7d2a6c9ecca048cfa8d2396ea42e890a",
       "title": "Sweden public-sector AI / digital transformation tenders",
       "org": "Swedish public agencies, regions and municipalities",
       "country": "Sweden",
@@ -430,7 +430,7 @@
       "impact_score": 0.65
     },
     {
-      "id": "a924cf2259ca480ba904d5109e9e6a87",
+      "id": "5d2df5693d8b45e4a11d50671991580f",
       "title": "Grand Solutions: Artificial Intelligence (AI)",
       "org": "Innovation Fund Denmark (Innovationsfonden)",
       "country": "Denmark",
@@ -454,7 +454,7 @@
       "impact_score": 0.6472
     },
     {
-      "id": "85be958cdcce49e8b9fc2a9ea3bd87c9",
+      "id": "65d5d769747c444ea49771f2fa9ef879",
       "title": "Pharos AI Factory - national AI hub launch",
       "org": "GRNET / Greek State (EuroHPC AI Factory)",
       "country": "Greece",
@@ -478,7 +478,7 @@
       "impact_score": 0.64
     },
     {
-      "id": "1e7762b58cfb46d2a9d490ea8ae66923",
+      "id": "2f0ee60bc8364c9fbdeaca390f6372ce",
       "title": "Denmark public big-data / AI tenders (udbud.dk)",
       "org": "Danish public procurement authorities",
       "country": "Denmark",
@@ -502,7 +502,7 @@
       "impact_score": 0.64
     },
     {
-      "id": "2a67653899a7421895d1ba5df82de5da",
+      "id": "67bfc09d884145f68e662fe32e61c543",
       "title": "Tender: management services for the AI startup acceleration programme at BSC",
       "org": "Barcelona Supercomputing Center (BSC-CNS)",
       "country": "Spain",
@@ -526,7 +526,7 @@
       "impact_score": 0.63
     },
     {
-      "id": "1b3085b1f2a94c05bd4402c1f0d319e5",
+      "id": "b727efadf2474c248850bdb627c9aec1",
       "title": "Shared, sustainable and secure AI infrastructure",
       "org": "Vinnova (Sweden's innovation agency)",
       "country": "Sweden",
@@ -550,7 +550,7 @@
       "impact_score": 0.5691
     },
     {
-      "id": "106429bcd91843cd97f24b04507c7572",
+      "id": "62e999b4234540afbb738985752fc125",
       "title": "Innovation Cluster Funding Call - AI technologies",
       "org": "Business Finland",
       "country": "Finland",
@@ -574,7 +574,7 @@
       "impact_score": 0.5574
     },
     {
-      "id": "359c7c48d9924592afe515541119a8eb",
+      "id": "248e89abd8d6481ba1bb69332f512610",
       "title": "Action 'Research - Innovate 2021-2027' calls (RTDI incl. AI)",
       "org": "General Secretariat for Research and Innovation (GSRI)",
       "country": "Greece",
@@ -598,7 +598,7 @@
       "impact_score": 0.55
     },
     {
-      "id": "1bbdacea2bba487a8b2b7d1de67b821e",
+      "id": "ad2804cb1fbf442584b24d04e80c4ca1",
       "title": "Technology Development Fund (Tækniþróunarsjóður)",
       "org": "Rannís (Icelandic Centre for Research)",
       "country": "Iceland",
@@ -622,7 +622,7 @@
       "impact_score": 0.55
     },
     {
-      "id": "6b187deeddf64a8ab220e6f01ec97938",
+      "id": "838e36cf54c7413fa6b2994f6e3c032b",
       "title": "AI Sweden Startup Program",
       "org": "AI Sweden",
       "country": "Sweden",
@@ -646,7 +646,7 @@
       "impact_score": 0.52
     },
     {
-      "id": "1384e49f99474c52a4b1e975ad176680",
+      "id": "eb4a58109f324df58332a16f50c062f1",
       "title": "Growth and Scaling Through AI (GSAI) accelerator",
       "org": "Movexum, AI Sweden, Yrityssalo & Tehnopol",
       "country": "Sweden",
@@ -670,7 +670,7 @@
       "impact_score": 0.52
     },
     {
-      "id": "bfdfcf431a9f4c9cbda062ada712f147",
+      "id": "f36e8271385e4738b429c914fb70e13c",
       "title": "Lanzadera high-performance accelerator cohort (120 startups, AI focus)",
       "org": "Lanzadera",
       "country": "Spain",
@@ -694,7 +694,7 @@
       "impact_score": 0.51
     },
     {
-      "id": "ffe81cf4b68d4f8bbc0ea821b4020adf",
+      "id": "17cd3a53552744a4b15bd68868399d32",
       "title": "Industrial Applied AI by Advanced Digitalization 2026",
       "org": "Vinnova (Sweden's innovation agency)",
       "country": "Sweden",
@@ -718,7 +718,7 @@
       "impact_score": 0.51
     },
     {
-      "id": "0e2b446a4f854c66b1cba15c145e9334",
+      "id": "2f167d57475746198313ab013b505172",
       "title": "Funding call for high-growth companies to leverage cutting-edge AI (2026)",
       "org": "Business Finland",
       "country": "Finland",
@@ -742,7 +742,7 @@
       "impact_score": 0.51
     },
     {
-      "id": "361d635d77dd41d3907bba893067f511",
+      "id": "f3016cf9027f4953a04d244104ca187c",
       "title": "Research Centres for Artificial Intelligence (AI Centres)",
       "org": "Research Council of Norway (Forskningsrådet)",
       "country": "Norway",
@@ -766,7 +766,7 @@
       "impact_score": 0.5
     },
     {
-      "id": "054d7c31ebf0449494ebf84ccd9fc3d9",
+      "id": "75f76f97a6e042cfacef6d793b61b2f4",
       "title": "START Rise Challenge - AI startups programme",
       "org": "Porto Business School (PBS)",
       "country": "Portugal",
@@ -790,7 +790,7 @@
       "impact_score": 0.49
     },
     {
-      "id": "4fd05122a4ef4b18bca850d2dd4011b8",
+      "id": "16d4b281a32447a2b5299685e66a3eb2",
       "title": "IPCEI Artificial Intelligence - Italian participation call",
       "org": "MIMIT (Ministry of Enterprise and Made in Italy)",
       "country": "Italy",

@@ -13,8 +13,10 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
+from email.utils import format_datetime, parsedate_to_datetime
 from pathlib import Path
 from typing import Dict, List, Optional
+from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
 from sai_agents.deals.arm import classify_arm
@@ -121,13 +123,18 @@ class KafCadePipeline:
             await self.publisher.stop()
 
         dataset = self.build_dataset(deals)
+        rss_path: Optional[Path] = None
         if export_path is not None:
             self.export(dataset, export_path)
+            # RRSS: also emit an RSS 2.0 feed next to the JSON.
+            rss_path = Path(export_path).with_suffix(".xml")
+            self.export_rss(dataset, rss_path)
         return {
             "deals": len(deals),
             "published": published,
             "high_impact": len(self.publisher.high_impact_events()),
             "dataset": dataset,
+            "rss_path": str(rss_path) if rss_path else None,
         }
 
     # ------------------------------------------------------------------ #
@@ -168,4 +175,59 @@ class KafCadePipeline:
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(dataset, indent=2, ensure_ascii=False), encoding="utf-8")
         log.info("deals.exported", path=str(out), deals=len(dataset.get("deals", [])))
+        return out
+
+    # ------------------------------------------------------------------ #
+    # RRSS output — an actual RSS 2.0 feed for distribution/subscription.
+    # ------------------------------------------------------------------ #
+    @staticmethod
+    def build_rss(
+        dataset: Dict,
+        site_url: str = "https://sai-agency.netlify.app",
+    ) -> str:
+        deals = dataset.get("deals", [])
+        try:
+            build_dt = parsedate_to_datetime(format_datetime(datetime.fromisoformat(dataset["generated_at"])))
+        except Exception:
+            build_dt = datetime.now(timezone.utc)
+        items = []
+        for d in deals:
+            link = d.get("source_url") or f"{site_url}/deals"
+            parts = [
+                d.get("description", ""),
+                f"Type: {d.get('type', '')}",
+                f"Country: {d.get('country', '')} ({d.get('region', '')})",
+                f"Value: {d.get('value_eur') or 'n/a'}",
+                f"Impact: {d.get('impact_score', '')}",
+            ]
+            desc = " · ".join(p for p in parts if p)
+            items.append(
+                "    <item>\n"
+                f"      <title>{escape(str(d.get('title', '')))}</title>\n"
+                f"      <link>{escape(link)}</link>\n"
+                f"      <guid isPermaLink=\"false\">{escape(str(d.get('id', link)))}</guid>\n"
+                f"      <category>{escape(str(d.get('type', '')))}</category>\n"
+                f"      <description>{escape(desc)}</description>\n"
+                "    </item>"
+            )
+        return (
+            '<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<rss version="2.0">\n  <channel>\n'
+            "    <title>SAI Agency — Deal Radar</title>\n"
+            f"    <link>{site_url}/deals</link>\n"
+            "    <description>Real, sourced AI/ML/data opportunities across "
+            "Southern Europe and the Nordics.</description>\n"
+            "    <language>en</language>\n"
+            f"    <lastBuildDate>{format_datetime(build_dt)}</lastBuildDate>\n"
+            f"    <atom:link xmlns:atom=\"http://www.w3.org/2005/Atom\" href=\"{site_url}/deals.xml\" rel=\"self\" type=\"application/rss+xml\" />\n"
+            + "\n".join(items)
+            + "\n  </channel>\n</rss>\n"
+        )
+
+    @staticmethod
+    def export_rss(dataset: Dict, path: Path | str, site_url: str = "https://sai-agency.netlify.app") -> Path:
+        out = Path(path)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(KafCadePipeline.build_rss(dataset, site_url), encoding="utf-8")
+        log.info("deals.rss_exported", path=str(out), deals=len(dataset.get("deals", [])))
         return out
