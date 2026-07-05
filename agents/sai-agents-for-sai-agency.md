@@ -53,6 +53,32 @@ commercial use cases:
 Netlify Forms: submissions appear in the Netlify dashboard (Forms tab) with no
 server code. Two forms are registered: `deal-alerts` and `deal-interest`.
 
+### Lead bridge → KafCa (Netlify Function)
+
+`netlify/functions/submission-created.mjs` is triggered automatically by Netlify
+on every form submission and bridges the lead into the KafCa stream:
+
+- **Bl** — screens the submission against the blacklist; jailbreak/injection
+  junk (and honeypot hits) are dropped.
+- **Im** — computes an `impact_score` (a deal-specific "Pursue this deal" lead
+  scores higher than a newsletter opt-in).
+- **ARM** — classifies the lead (`deal-interest` → `engaged` / `sales_gtm`;
+  `deal-alerts` → `prospect` / `marketing`) with a `next_action`.
+- Emits a `LEAD_SIGNAL` EvolutionEvent (same envelope as the rest of the suite,
+  consumable by evo-metaclaw).
+
+Delivery is configurable via environment variables (set in Netlify → Site
+settings → Environment):
+
+| Variable | Effect |
+|---|---|
+| `KAFCA_WEBHOOK_URL` | If set, the `LEAD_SIGNAL` event is POSTed here (a Kafka REST proxy, the agents service, or any HTTP sink). |
+| `KAFCA_WEBHOOK_TOKEN` | Optional bearer token sent as `Authorization` with the POST. |
+
+With no webhook configured, the event is emitted to the function logs as
+structured JSON — a lossless fallback (nothing is dropped; leads are replayable
+from logs). Logic is unit-tested: `node --test netlify/functions/lib/*.test.mjs`.
+
 ## Layout
 
 ```

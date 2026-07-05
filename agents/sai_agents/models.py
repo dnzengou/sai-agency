@@ -41,6 +41,7 @@ class EventType(str, Enum):
     SECURITY_FINDING = "security_finding"
     AGENT_RUN = "agent_run"
     DEAL_SIGNAL = "deal_signal"
+    LEAD_SIGNAL = "lead_signal"  # emitted by the Netlify lead-bridge function
 
 
 class Insight(BaseModel):
