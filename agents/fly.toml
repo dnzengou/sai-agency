@@ -17,17 +17,28 @@ SAI_METRICS_ENABLED = "true"
 SAI_METRICS_PORT = "9464"
 KAFKA_TOPIC = "claw-evolution-events"
 
-# The agents run as a scheduled/one-shot team by default. For a long-running
-# service, expose an HTTP API and uncomment the [http_service] block below.
+# Two process groups:
+#  - ingest: long-running HTTP endpoint (target for Netlify KAFCA_WEBHOOK_URL)
+#  - team:   the full agent team as a one-shot/scheduled batch job
 [processes]
+ingest = "python -m sai_agents.ingest.server"
 team = "python -m sai_agents.run_team"
 
-# [http_service]
-# internal_port = 8080
-# force_https = true
-# auto_stop_machines = true
-# auto_start_machines = true
-# min_machines_running = 0
+# Expose the ingest endpoint over HTTPS. Point the Netlify function's
+# KAFCA_WEBHOOK_URL at https://<app>.fly.dev/ingest.
+[http_service]
+internal_port = 8080
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ["ingest"]
+
+[[http_service.checks]]
+method = "GET"
+path = "/health"
+interval = "30s"
+timeout = "5s"
 
 [[metrics]]
 port = 9464

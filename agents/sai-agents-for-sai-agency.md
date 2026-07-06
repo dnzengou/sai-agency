@@ -79,6 +79,37 @@ With no webhook configured, the event is emitted to the function logs as
 structured JSON — a lossless fallback (nothing is dropped; leads are replayable
 from logs). Logic is unit-tested: `node --test netlify/functions/lib/*.test.mjs`.
 
+### Ingest endpoint (the webhook target)
+
+The agents package ships a lightweight, dependency-free HTTP endpoint that
+receives those events and publishes them to Kafka — the concrete target for
+`KAFCA_WEBHOOK_URL`:
+
+```bash
+# from agents/
+pip install -e .
+python -m sai_agents.ingest.server     # or the `sai-ingest` console script
+# GET  /health  -> liveness + stats
+# POST /ingest  -> validate -> Bl/breaker -> publish LEAD_SIGNAL to KafCa
+```
+
+Config via env: `SAI_INGEST_HOST` (default `0.0.0.0`), `SAI_INGEST_PORT`
+(default `8080`), `SAI_INGEST_TOKEN` (optional bearer token — must match the
+`KAFCA_WEBHOOK_TOKEN` on the Netlify side), plus the usual `KAFKA_*` settings.
+
+Deploy it on Fly.io (`fly.toml` defines an `ingest` process + `/health`-checked
+`http_service`) or via `docker compose up` (the `ingest` service, wired to
+Kafka). Then set the Netlify env var:
+
+```
+KAFCA_WEBHOOK_URL = https://<your-app>.fly.dev/ingest
+KAFCA_WEBHOOK_TOKEN = <same as SAI_INGEST_TOKEN>   # optional
+```
+
+Full chain: visitor → deal form → Netlify `submission-created` (Bl + impact +
+ARM) → `POST /ingest` → `KafkaEventPublisher` → topic `claw-evolution-events` →
+evo-metaclaw.
+
 ## Layout
 
 ```

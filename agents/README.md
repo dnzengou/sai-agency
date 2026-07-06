@@ -75,9 +75,13 @@ python -m sai_agents.run_team
 
 # ServiceTester feedback loop only (publishes an evolution signal):
 python -m sai_agents.service_testers.service_tester_agent
+
+# Lead ingest endpoint (target for the Netlify lead-bridge KAFCA_WEBHOOK_URL):
+python -m sai_agents.ingest.server          # GET /health, POST /ingest -> KafCa
 ```
 
-Console scripts are also installed: `sai-run-team`, `sai-service-tester`.
+Console scripts are also installed: `sai-run-team`, `sai-service-tester`,
+`sai-generate-deals`, `sai-ingest`.
 
 ### With a live Kafka broker
 

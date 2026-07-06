@@ -55,3 +55,23 @@ services:
     # Run the full orchestrated team against the live site.
     command: ["python", "-m", "sai_agents.run_team"]
     restart: "no"
+
+  # Long-running HTTP ingest endpoint — the target for the Netlify lead-bridge's
+  # KAFCA_WEBHOOK_URL. Publishes incoming LEAD_SIGNAL events to Kafka.
+  ingest:
+    build: .
+    depends_on:
+      kafka:
+        condition: service_healthy
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_TOPIC: claw-evolution-events
+      KAFKA_ENABLED: "true"
+      SAI_INGEST_HOST: 0.0.0.0
+      SAI_INGEST_PORT: "8080"
+      SAI_LOG_JSON: "true"
+      # SAI_INGEST_TOKEN: change-me   # uncomment to require a bearer token
+    command: ["python", "-m", "sai_agents.ingest.server"]
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
