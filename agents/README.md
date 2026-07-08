@@ -10,8 +10,36 @@ Production-ready, reusable agent suite for **SAI Agency**:
 - **VulnRedTeam** — passive security-header posture + input red-teaming
 - **ServiceTester** — continuous feedback loop; probes the live site and emits
   **evolution-grade signals** (insights, recommendations, fitness scores)
+- **DealSourcing** — the **KafCade** cascade: sources real opportunities from
+  **RRSS** sources, ARM-classifies them, and emits `DEAL_SIGNAL` events
 - **Orchestrator** — runs the whole team, threads live findings downstream, and
   publishes every result to the KafCa event stream
+
+## Deal Radar (KafCade · RRSS · ARM)
+
+The suite ships a working **deal-sourcing** feature that powers the site's
+`/deals` page.
+
+- **KafCade** — a cascade of KafCa stages: `RRSS fetch → normalize → Bl screen →
+  dedupe → ARM classify (+impact) → publish → export`.
+- **RRSS** (Redes/RSS Sources) — a pluggable source registry. The bundled source
+  reads a curated dataset of **real, publicly-sourced** grants, tenders,
+  accelerators, and funding rounds across Southern Europe and the Nordics (each
+  deal carries a real `source_url`). Add RSS/social/procurement feeds by
+  implementing `DealSource.fetch()`.
+- **ARM** (Account & Relationship Management) — each deal is enriched with an ARM
+  pipeline stage, owner queue, next action, priority, and impact score.
+
+```bash
+# Run the cascade: publish DEAL_SIGNAL events + write the site dataset
+python -m sai_agents.deals.generate            # writes <repo-root>/deals.json + deals.xml
+python -m sai_agents.deals.generate out.json   # or a chosen path (RSS -> out.xml)
+```
+
+The web app fetches `/deals.json` and renders a filterable, ARM-classified
+dashboard (`deals.html` + `/assets/deals.{js,css}`) with a lead-gen funnel
+(deal-alert + pursue-deal Netlify Forms, CSV export, shareable URL filters) and
+an RRSS feed at `/deals.xml`.
 
 ## KafCa
 
@@ -50,9 +78,13 @@ python -m sai_agents.run_team
 
 # ServiceTester feedback loop only (publishes an evolution signal):
 python -m sai_agents.service_testers.service_tester_agent
+
+# Lead ingest endpoint (target for the Netlify lead-bridge KAFCA_WEBHOOK_URL):
+python -m sai_agents.ingest.server          # GET /health, POST /ingest -> KafCa
 ```
 
-Console scripts are also installed: `sai-run-team`, `sai-service-tester`.
+Console scripts are also installed: `sai-run-team`, `sai-service-tester`,
+`sai-generate-deals`, `sai-ingest`.
 
 ### With a live Kafka broker
 

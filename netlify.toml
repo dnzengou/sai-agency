@@ -7,6 +7,20 @@
 [build]
 publish = "."
 
+# Serverless functions. `submission-created` is triggered automatically by
+# Netlify Forms on every form submission — it bridges leads into the KafCa
+# stream (see netlify/functions/submission-created.mjs).
+[functions]
+directory = "netlify/functions"
+node_bundler = "esbuild"
+
+# Deal Radar page (must precede the SPA catch-all).
+[[redirects]]
+from = "/deals"
+to = "/deals.html"
+status = 200
+force = false
+
 # SPA fallback: serve index.html for client-side routes.
 [[redirects]]
 from = "/*"

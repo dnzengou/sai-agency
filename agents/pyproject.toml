@@ -25,6 +25,8 @@ all = ["aiokafka>=0.10", "prometheus-client>=0.19", "pytest>=7.4", "pytest-async
 [project.scripts]
 sai-run-team = "sai_agents.run_team:main"
 sai-service-tester = "sai_agents.service_testers.service_tester_agent:main"
+sai-generate-deals = "sai_agents.deals.generate:main"
+sai-ingest = "sai_agents.ingest.server:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

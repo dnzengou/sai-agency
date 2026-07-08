@@ -12,6 +12,7 @@ WORKDIR /app
 # Install dependencies first for better layer caching.
 COPY pyproject.toml README.md ./
 COPY sai_agents ./sai_agents
+COPY data ./data
 
 # Install with the kafka + metrics extras so production has the real transports.
 RUN pip install ".[kafka,metrics]"
