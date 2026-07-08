@@ -115,7 +115,7 @@ evo-metaclaw.
 ```
 agents/
 ├── sai_agents/                # the Python package (importable, testable)
-│   ├── agents/                # Marketing, Sales+GTM, VulnRedTeam
+│   ├── agents/                # Marketing, Sales+GTM, Outreach, VulnRedTeam
 │   ├── service_testers/       # ServiceTester feedback loop
 │   ├── kafca/                 # Blacklist, CircuitBreaker, Impact, Publisher
 │   ├── orchestrator.py        # full-team runner
@@ -186,6 +186,9 @@ events) a `fitness` block — ready for population-based skill evolution.
 ## Why this fits SAI Agency
 
 - **Marketing & Sales+GTM** — acquire clients for custom agents, automation, ML.
+- **Outreach** — activates the GTM motion: multi-touch cold email + LinkedIn
+  cadence with persona-specific templates, deliverability guardrails, and
+  reply-routing back to the site's discovery-call CTA.
 - **VulnRedTeam** — hardens the agency site and any AI deliverables.
 - **ServiceTester** — closed feedback loop from the live site → rapid iteration.
 - **Reusable** — drop the `sai_agents/` package into any future client repo.
