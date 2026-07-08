@@ -14,6 +14,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from sai_agents.agents.marketing_agent import MarketingAgent
+from sai_agents.agents.outreach_agent import OutreachAgent
 from sai_agents.agents.sales_gtm_agent import SalesGTMAgent
 from sai_agents.agents.vuln_redteam_agent import VulnRedTeamAgent
 from sai_agents.config import Settings, get_settings
@@ -42,6 +43,7 @@ class OrchestratorTeam:
         self.tester = ServiceTesterAgent(self.settings)
         self.marketing = MarketingAgent(service=self.settings.service_name)
         self.sales = SalesGTMAgent(service=self.settings.service_name)
+        self.outreach = OutreachAgent(service=self.settings.service_name)
         self.security = VulnRedTeamAgent(service=self.settings.service_name)
 
     async def run(self, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
@@ -66,13 +68,21 @@ class OrchestratorTeam:
                 tester_result,
                 self.marketing.execute(downstream_ctx),
                 self.sales.execute(downstream_ctx),
+                self.outreach.execute(downstream_ctx),
                 self.security.execute(downstream_ctx),
             ]
 
             # 3. Publish each as an evolution event.
             events: List[EvolutionEvent] = []
             for agent, result in zip(
-                [self.tester, self.marketing, self.sales, self.security], results
+                [
+                    self.tester,
+                    self.marketing,
+                    self.sales,
+                    self.outreach,
+                    self.security,
+                ],
+                results,
             ):
                 events.append(agent.to_event(result))
             published = await self.publisher.publish_many(events)

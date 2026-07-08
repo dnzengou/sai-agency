@@ -4,6 +4,9 @@ Production-ready, reusable agent suite for **SAI Agency**:
 
 - **Marketing** — positioning, content, acquisition insights
 - **Sales + GTM** — pipeline, CTA, productised-offer recommendations
+- **Outreach** — outbound comms cadence (email + LinkedIn) + persona-specific
+  templates for the SAI Agency ICP; Bl-screens every ICP input against
+  jailbreak/injection signatures before any copy is generated
 - **VulnRedTeam** — passive security-header posture + input red-teaming
 - **ServiceTester** — continuous feedback loop; probes the live site and emits
   **evolution-grade signals** (insights, recommendations, fitness scores)
