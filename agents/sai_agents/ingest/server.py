@@ -28,6 +28,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Optional
 
 from sai_agents.config import Settings, get_settings
+from sai_agents.ingest.crm import CRMSink
 from sai_agents.kafca.publisher import KafkaEventPublisher
 from sai_agents.logging_setup import configure_logging, get_logger
 from sai_agents.models import EventType, EvolutionEvent
@@ -66,11 +67,17 @@ class LeadIngestServer:
         settings: Optional[Settings] = None,
         publisher: Optional[KafkaEventPublisher] = None,
         token: Optional[str] = None,
+        crm: Optional[CRMSink] = None,
     ) -> None:
         self.settings = settings or get_settings()
         self.publisher = publisher or KafkaEventPublisher(self.settings)
         self.token = token if token is not None else os.getenv("SAI_INGEST_TOKEN", "")
-        self.stats = {"received": 0, "accepted": 0, "rejected": 0}
+        self.crm = crm if crm is not None else CRMSink(
+            store_path=os.getenv("SAI_LEAD_STORE"),
+            webhook_url=os.getenv("CRM_WEBHOOK_URL"),
+            webhook_token=os.getenv("CRM_WEBHOOK_TOKEN"),
+        )
+        self.stats = {"received": 0, "accepted": 0, "rejected": 0, "crm_stored": 0, "crm_forwarded": 0}
         self._loop = asyncio.new_event_loop()
         self._loop_thread = threading.Thread(target=self._run_loop, name="ingest-loop", daemon=True)
         self._httpd: Optional[ThreadingHTTPServer] = None
@@ -116,7 +123,18 @@ class LeadIngestServer:
             self.stats["accepted"] += 1
         else:
             self.stats["rejected"] += 1  # blacklist or circuit breaker
-        return 200, {"accepted": accepted, "event_id": event.event_id}
+        resp = {"accepted": accepted, "event_id": event.event_id}
+
+        # CRM sink: durable store + optional webhook forward for real leads.
+        if accepted and event.event_type == EventType.LEAD_SIGNAL and self.crm.enabled:
+            try:
+                crm_result = self.crm.record(event)
+                self.stats["crm_stored"] += int(crm_result["stored"])
+                self.stats["crm_forwarded"] += int(crm_result["forwarded"])
+                resp["crm"] = crm_result
+            except Exception as exc:  # never fail the request on a CRM hiccup
+                log.error("ingest.crm_error", error=str(exc))
+        return 200, resp
 
     def make_handler(self):
         server = self

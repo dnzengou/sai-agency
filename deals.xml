@@ -5,229 +5,341 @@
     <link>https://sai-agency.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jul 2026 18:25:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Jul 2026 07:04:19 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)</title>
       <link>https://portugal.gov.pt/en/gc25/communication/news/ai-gigafactories-boost-technological-sovereignty-with-a-200-million-investment</link>
-      <guid isPermaLink="false">c783f629019d4544bb3424fdd28b88c7</guid>
+      <guid isPermaLink="false">d7f4f7867627c656</guid>
       <category>partnership</category>
       <description>Portugal approved investment of up to EUR 200M to install and operate an AI Gigafactory under the European EuroHPC programme, with matching EU funding, to boost technological sovereignty. · Type: partnership · Country: Portugal (Southern Europe) · Value: 200000000.0 · Impact: 0.88</description>
     </item>
     <item>
+      <title>Legora raises USD 550M Series D at USD 5.55B valuation</title>
+      <link>https://techcrunch.com/2026/03/10/legora-reaches-5-55-billion-valuation-as-ai-legaltech-boom-endures/</link>
+      <guid isPermaLink="false">dcde6bceffce1599</guid>
+      <category>funding_round</category>
+      <description>Stockholm-based legal AI startup Legora raised ~USD 550M (EUR 505M) Series D led by Accel (March 2026) at a USD 5.55B valuation; backers incl. Benchmark, Bessemer, General Catalyst, Iconiq, Redpoint, YC, Bain, Menlo, Salesforce Ventures. · Type: funding_round · Country: Sweden (Nordics) · Value: 505000000.0 · Impact: 0.864</description>
+    </item>
+    <item>
       <title>Multiverse Computing raises USD 215M Series B (CompactifAI LLM-compression)</title>
       <link>https://techcrunch.com/2025/06/12/multiverse-computing-raises-215m-for-tech-that-could-radically-slim-ai-costs/</link>
-      <guid isPermaLink="false">ae0b9334f0a94949a51a0cad92fa7998</guid>
+      <guid isPermaLink="false">dceceb08b09d6552</guid>
       <category>funding_round</category>
       <description>Spanish quantum-inspired AI firm Multiverse Computing raised EUR 189M (USD 215M) in a Series B led by Bullhound Capital to scale its CompactifAI technology that compresses LLMs by up to 95%. · Type: funding_round · Country: Spain (Southern Europe) · Value: 189000000.0 · Impact: 0.86</description>
     </item>
     <item>
       <title>CDP Venture Capital and OpenAI partnership for AI development in Italy</title>
       <link>https://www.cdpventurecapital.it/cdp-venture-capital/it/dettaglio_comunicato.page?contentId=COM3621</link>
-      <guid isPermaLink="false">e86552ee60f24402b8b7b6f704e78ef8</guid>
+      <guid isPermaLink="false">acc0abad362c9bd6</guid>
       <category>partnership</category>
       <description>Italian state-backed CDP Venture Capital and OpenAI announced an alliance to support AI development in Italy, complementing CDP's EUR 500M Fondo Artificial Intelligence for AI, cybersecurity and quantum startups. · Type: partnership · Country: Italy (Southern Europe) · Value: 500000000.0 · Impact: 0.86</description>
     </item>
     <item>
       <title>Lovable raises USD 200M Series A at USD 1.8B valuation</title>
       <link>https://www.finsmes.com/2025/07/lovable-closes-200m-series-a-funding.html</link>
-      <guid isPermaLink="false">3120e3d30d474b819577830c29b9044e</guid>
+      <guid isPermaLink="false">4ec9a5fcb43db52e</guid>
       <category>funding_round</category>
       <description>Swedish AI 'vibe coding' startup Lovable closed a USD 200M Series A led by Accel at a USD 1.8B valuation, backers incl. 20VC, ByFounders, Creandum, Hummingbird and Visionaries Club. · Type: funding_round · Country: Sweden (Nordics) · Value: 184000000.0 · Impact: 0.86</description>
     </item>
     <item>
       <title>Verda raises EUR 100M for renewable AI cloud infrastructure</title>
       <link>https://www.eu-startups.com/2026/04/helsinki-based-ai-infrastructure-company-verda-raises-e100-million-plans-to-hire-100-people-by-year-end/</link>
-      <guid isPermaLink="false">bc6c3c619d06441781615d76089c7c02</guid>
+      <guid isPermaLink="false">a65125182d7e9218</guid>
       <category>funding_round</category>
       <description>Helsinki-based GPU cloud provider Verda raised EUR 100M (equity led by Lifeline Ventures with byFounders, Tesi and Varma, plus Nordic debt) to expand its renewable-powered AI cloud and hire 100+ staff. · Type: funding_round · Country: Finland (Nordics) · Value: 100000000.0 · Impact: 0.85</description>
     </item>
     <item>
+      <title>NORAI: Balearic Islands AI-in-administration tender</title>
+      <link>https://forbes.es/baleares/actualidad-baleares/969399/el-govern-destina-54-millones-de-euros-a-incorporar-la-ia-a-toda-la-administracion-balear/</link>
+      <guid isPermaLink="false">bd11b8e8b539f2b2</guid>
+      <category>public_tender</category>
+      <description>The Balearic regional government launched the NORAI tender (EUR 5.45M) to introduce AI across all departments of the regional administration; 24-month execution, tendered July 2026. · Type: public_tender · Country: Spain (Southern Europe) · Value: 5450000.0 · Impact: 0.8352</description>
+    </item>
+    <item>
+      <title>EIC Accelerator Open 2026</title>
+      <link>https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator/eic-accelerator-open_en</link>
+      <guid isPermaLink="false">f734d91483274143</guid>
+      <category>grant</category>
+      <description>The 2026 EIC Accelerator Open call has an indicative budget of EUR 414M and funds single deep-tech SMEs (incl. AI) with up to EUR 2.5M grants + up to EUR 15M equity; 2026 cut-offs 11 Feb, 6 May, 9 Sep, 25 Nov. Open to all EU + associated countries. · Type: grant · Country: EU (EU) · Value: 414000000.0 · Impact: 0.82</description>
+    </item>
+    <item>
       <title>Lexroom raises EUR 42.9M Series B for AI legaltech</title>
       <link>https://www.eu-startups.com/2026/05/italian-ai-legaltech-startup-lexroom-raises-e42-9-million-series-b-eight-months-after-e16-2-million-series-a/</link>
-      <guid isPermaLink="false">a8f0a2bddc43408c9b4486b5246c26bf</guid>
+      <guid isPermaLink="false">ca6a307e85f78a38</guid>
       <category>funding_round</category>
       <description>Italian AI legaltech startup Lexroom raised a EUR 42.9M Series B just eight months after its EUR 16.2M Series A, signalling strong demand for AI in the legal sector. · Type: funding_round · Country: Italy (Southern Europe) · Value: 42900000.0 · Impact: 0.8124</description>
     </item>
     <item>
       <title>Tucuvi raises EUR 17M Series A to scale clinical voice AI (LOLA)</title>
       <link>https://www.eu-startups.com/2026/01/spains-healthtech-startup-tucuvi-raises-e17-million-to-scale-lola-voice-ai-reporting-up-to-80-automation-in-nursing-follow-up/</link>
-      <guid isPermaLink="false">4da38b5435ac4099a0f576126ef85319</guid>
+      <guid isPermaLink="false">06aa718c073d5f0e</guid>
       <category>funding_round</category>
       <description>Madrid healthtech Tucuvi raised EUR 17M (USD 20M) Series A led by Cathay Innovation and Kfund/Leadwind to scale its clinically-certified voice AI agent for automated patient follow-up. · Type: funding_round · Country: Spain (Southern Europe) · Value: 17000000.0 · Impact: 0.7923</description>
     </item>
     <item>
       <title>Tana raises EUR 13.6M Series A for AI-native workspace</title>
       <link>https://www.eu-startups.com/2025/02/ai-native-workspace-startup-tana-raises-e13-6-million-to-develop-voice-powered-workflow/</link>
-      <guid isPermaLink="false">077ab7b3625a42d6af8adf7b4f099cd7</guid>
+      <guid isPermaLink="false">21f662d4a6f39fc8</guid>
       <category>funding_round</category>
       <description>Oslo-based AI-native workspace startup Tana raised a USD 14M (EUR 13.6M) Series A led by Tola Capital with Lightspeed, Northzone, Alliance VC and firstminute. · Type: funding_round · Country: Norway (Nordics) · Value: 13600000.0 · Impact: 0.785</description>
     </item>
     <item>
       <title>GetWhy extends Series A with EUR 17M for AI research platform</title>
       <link>https://bebeez.eu/2025/07/11/danish-ai-startup-getwhy-extends-series-a-round-to-support-u-s-expansion-and-product-growth/</link>
-      <guid isPermaLink="false">d72448dd220c4f74a0110c208fa10898</guid>
+      <guid isPermaLink="false">59997566db54eb2d</guid>
       <category>funding_round</category>
       <description>Copenhagen-based GetWhy raised an additional EUR 17M extending its Series A, led by PeakSpan Capital, for its AI qualitative-research platform used by brands such as Heineken, Nestlé and eBay. · Type: funding_round · Country: Denmark (Nordics) · Value: 17000000.0 · Impact: 0.7823</description>
     </item>
     <item>
+      <title>Sunrise Robotics emerges from stealth with USD 8.5M seed</title>
+      <link>https://www.eu-startups.com/2025/06/slovenian-startup-sunrise-robotics-emerges-from-stealth-with-e7-3-million-for-their-simulation-trained-robots/</link>
+      <guid isPermaLink="false">b058db8a4be252c9</guid>
+      <category>funding_round</category>
+      <description>Ljubljana-based Sunrise Robotics emerged from stealth (June 2025) with USD 8.5M (EUR 7.3M) seed to build modular, simulation-trained industrial robotic cells; round led by Plural with Tapestry, Seedcamp, Tiny.vc, Prototype Capital. · Type: funding_round · Country: Slovenia (Southern Europe) · Value: 7300000.0 · Impact: 0.7787</description>
+    </item>
+    <item>
+      <title>SplxAI raises USD 7M seed round</title>
+      <link>https://therecursive.com/spxai-seed-funding-launchhub-ai-agents-ai-chatbot-security/</link>
+      <guid isPermaLink="false">fe61fbb6366b93c0</guid>
+      <category>funding_round</category>
+      <description>Croatian-founded SplxAI (AI/LLM application security) raised ~USD 7M (EUR 6.5M) seed led by LAUNCHub Ventures with Rain Capital, Inovo, Runtime, DNV and South Central Ventures; later acquired by Zscaler. · Type: funding_round · Country: Croatia (Southern Europe) · Value: 6500000.0 · Impact: 0.771</description>
+    </item>
+    <item>
+      <title>Cernel raises EUR 4M seed round</title>
+      <link>https://www.eu-startups.com/2026/02/exclusive-danish-ai-startup-cernel-raises-e4-million-in-four-weeks-to-build-foundational-infrastructure-for-agentic-commerce/</link>
+      <guid isPermaLink="false">78d2acb5a27eb367</guid>
+      <category>funding_round</category>
+      <description>Aarhus-based Danish startup Cernel (AI-driven e-commerce data platform / infrastructure for agentic commerce) raised a EUR 4M seed led by Seed Capital (February 2026). · Type: funding_round · Country: Denmark (Nordics) · Value: 4000000.0 · Impact: 0.7512</description>
+    </item>
+    <item>
+      <title>Codeplain raises EUR 2.6M seed round</title>
+      <link>https://gapminder.vc/gapminder-leads-3-million-seed-round-in-slovenian-ai-software-startup-codeplain-alongside-silicon-gardens/</link>
+      <guid isPermaLink="false">67c9d1e73099ba75</guid>
+      <category>funding_round</category>
+      <description>Slovenian AI startup Codeplain (generates/tests/updates production software from plain-language specs) closed a EUR 2.6M (USD 3M) seed led by GapMinder with Silicon Gardens; operates from Ljubljana, Berlin, San Francisco. · Type: funding_round · Country: Slovenia (Southern Europe) · Value: 2600000.0 · Impact: 0.7451</description>
+    </item>
+    <item>
       <title>Contents secures EUR 5.9M for AI workflow/agent orchestration platform</title>
       <link>https://www.eu-startups.com/2026/02/milan-based-contents-secures-e5-9-million-for-ai-workflow-platform-sets-up-doha-hub-for-middle-east-expansion</link>
-      <guid isPermaLink="false">0469431c21174dc5a2409540c8a0d89d</guid>
+      <guid isPermaLink="false">a463f1f7c7a85a60</guid>
       <category>funding_round</category>
       <description>Milan-based Contents, a platform for orchestrating AI agents, enterprise knowledge and approval workflows, raised a EUR 5.9M Series B extension (total funding around EUR 21M) and opened a Doha hub. · Type: funding_round · Country: Italy (Southern Europe) · Value: 5900000.0 · Impact: 0.7378</description>
     </item>
     <item>
+      <title>Malta Digitalise Your SME scheme - Call 2 (AI top-up)</title>
+      <link>https://neuralai.mt/funding/digitalise-your-sme/</link>
+      <guid isPermaLink="false">694cd6ff7bf41840</guid>
+      <category>grant</category>
+      <description>Malta's Digitalise Your SME Call 2 (May 2026) tripled the budget to EUR 15M; AI projects qualify for an extra EUR 107,000 on top of the base EUR 128,400 grant (up to EUR 235,400). Call 2 opens 1 July 2026, first cut-off 31 July 2026. · Type: grant · Country: Malta (Southern Europe) · Value: 15000000.0 · Impact: 0.7342</description>
+    </item>
+    <item>
+      <title>EIC Pre-Accelerator 2026-2027 (WIDERA)</title>
+      <link>https://eic.ec.europa.eu/eic-funding-opportunities/eic-pre-accelerator_en</link>
+      <guid isPermaLink="false">6ea207f86b6838ca</guid>
+      <category>accelerator</category>
+      <description>EIC Pre-Accelerator supports early-stage deep-tech startups from Horizon Europe widening countries (incl. Greece, Portugal, Croatia, Slovenia, Cyprus, Malta); 2026-2027 WIDERA budget EUR 40M, first cohort of 70 selected April 2026. · Type: accelerator · Country: EU (EU) · Value: 40000000.0 · Impact: 0.7302</description>
+    </item>
+    <item>
+      <title>Horizon Europe Cluster 4 call HORIZON-CL4-2026-04 (Data &amp; Trustworthy AI)</title>
+      <link>https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/cluster-4-digital-industry-and-space_en</link>
+      <guid isPermaLink="false">74ac9c0c1575bbc5</guid>
+      <category>grant</category>
+      <description>Horizon Europe Cluster 4 Digital call, EUR 221.8M across 15 topics on secure single market and infrastructure for data services and trustworthy AI. Deadline 15 April 2026. · Type: grant · Country: EU (EU) · Value: 221800000.0 · Impact: 0.72</description>
+    </item>
+    <item>
       <title>PRR call 'IA nas PME' - AI adoption grants for SMEs</title>
       <link>https://recuperarportugal.gov.pt/wp-content/uploads/2025/09/AAC-SIFIC-3-IA-nas-PME.pdf</link>
-      <guid isPermaLink="false">8520f3783965416094812078614363e1</guid>
+      <guid isPermaLink="false">1d2ed9550bb99def</guid>
       <category>grant</category>
       <description>Portugal's Recovery and Resilience Plan made EUR 100M available for SMEs to adopt AI, as a non-repayable subsidy covering 75% of investment up to EUR 300,000 per company; Phase II closed 28 November 2025. · Type: grant · Country: Portugal (Southern Europe) · Value: 100000000.0 · Impact: 0.71</description>
     </item>
     <item>
       <title>Pallma AI closes EUR 1.36M pre-seed for AI-agent security</title>
       <link>https://tech.eu/2026/01/28/pallma-ai-closes-16m-pre-seed-round-for-ai-agent-security/</link>
-      <guid isPermaLink="false">176b1abdad1a4dcb97e34d26d0db3080</guid>
+      <guid isPermaLink="false">5c1ad372d2d8dab1</guid>
       <category>funding_round</category>
       <description>Greek-founded Pallma AI raised EUR 1.36M pre-seed led by Marathon Venture Capital to build a security layer for autonomous/agentic AI systems, expanding teams in Athens and London. · Type: funding_round · Country: Greece (Southern Europe) · Value: 1360000.0 · Impact: 0.7</description>
     </item>
     <item>
+      <title>MENAC tender for AI module for the RGPC anti-corruption platform</title>
+      <link>https://mec-anticorrupcao.pt/menac-lanca-concurso-publico-para-aquisicao-de-modulo-de-inteligencia-artificial-para-a-plataforma-rgpc/</link>
+      <guid isPermaLink="false">3388559127b0dab2</guid>
+      <category>public_tender</category>
+      <description>Portugal's National Anti-Corruption Mechanism (MENAC) launched a public tender to acquire an AI module for its RGPC platform, part of a broader public-administration AI adoption push. · Type: public_tender · Country: Portugal (Southern Europe) · Value: n/a · Impact: 0.694</description>
+    </item>
+    <item>
+      <title>Consip national framework agreement for AI to public administration</title>
+      <link>https://www.lavoripubblici.it/news/consip-intelligenza-artificiale-appalti-pubblici-riduzione-tempi-gare-38076</link>
+      <guid isPermaLink="false">82d825c67e954bb1</guid>
+      <category>public_tender</category>
+      <description>Italy's central purchasing body Consip plans (Q3 2026) the first national framework agreement dedicated to supplying AI solutions to all public administrations, plus AI-assisted procurement to cut tender times. · Type: public_tender · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.69</description>
+    </item>
+    <item>
       <title>2025 Call for Science and Innovation Missions (Responsible AI mission-challenge)</title>
       <link>https://one.gob.es/en/aid-and-calls/2025-call-science-and-innovation-missions</link>
-      <guid isPermaLink="false">dbc6f8cbf110482891e9a97cca762d7d</guid>
+      <guid isPermaLink="false">4daa1429b5ef053d</guid>
       <category>grant</category>
       <description>CDTI's 2025 Missions call, endowed with EUR 60M, funds collaborative R&amp;D including a mission-challenge on Responsible Artificial Intelligence, with projects running 3-4 years from January 2026. · Type: grant · Country: Spain (Southern Europe) · Value: 60000000.0 · Impact: 0.6834</description>
     </item>
     <item>
+      <title>Women TechEU 2026-2028</title>
+      <link>https://womentecheurope.eu/</link>
+      <guid isPermaLink="false">d7c408d921429843</guid>
+      <category>accelerator</category>
+      <description>Women TechEU provides equity-free grants and acceleration to women-led deep-tech startups across the EU; 2026-2028 edition invests EUR 12M to support 160 companies via a continuous open call. · Type: accelerator · Country: EU (EU) · Value: 12000000.0 · Impact: 0.6809</description>
+    </item>
+    <item>
+      <title>EuroHPC JU Call for Cooperation of AI Factories (COAIF-03)</title>
+      <link>https://www.eurohpc-ju.europa.eu/eurohpc-ju-launches-call-proposals-strengthen-european-ai-ecosystem-2026-04-28_en</link>
+      <guid isPermaLink="false">c64846cd2d784ef1</guid>
+      <category>grant</category>
+      <description>EuroHPC JU call (HORIZON-JU-EUROHPC-2026-COAIF-03), EUR 25M budget, to enhance cooperation between Europe's AI Factories and Antennas; 3-year projects, up to EUR 12.5M EU contribution. · Type: grant · Country: EU (EU) · Value: 25000000.0 · Impact: 0.6748</description>
+    </item>
+    <item>
       <title>Tender: data office &amp; AI governance model consultancy 2026-2027</title>
       <link>https://contratos.gobierto.es/licitaciones/5029730?locale=es</link>
-      <guid isPermaLink="false">352290e130a447068f73383c3a72e599</guid>
+      <guid isPermaLink="false">7b031002f9850dfa</guid>
       <category>public_tender</category>
       <description>Provincial government of Bizkaia tendered consultancy and technical assistance for its data office and AI governance model for 2026-2027. · Type: public_tender · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.67</description>
     </item>
     <item>
+      <title>Cyprus RIF PRE-SEED startup development call 2026</title>
+      <link>https://www.cbn.com.cy/article/129618/research-and-innovation-foundation-announces-1m-call-for-startup-development-proposals</link>
+      <guid isPermaLink="false">9f1c449c12a53377</guid>
+      <category>grant</category>
+      <description>Cyprus' Research and Innovation Foundation opened a EUR 1M PRE-SEED call ('Creation and Initial Development of Startups with International Orientation'), up to EUR 119,999 per project; proposals due 11 September 2026. · Type: grant · Country: Cyprus (Southern Europe) · Value: 1000000.0 · Impact: 0.654</description>
+    </item>
+    <item>
       <title>New Nordics AI initiative</title>
       <link>https://www.nordicinnovation.org/programs/new-nordics-ai-preparation-project</link>
-      <guid isPermaLink="false">61c0582ac19d4f1bb92cae9bb1cd8aa5</guid>
+      <guid isPermaLink="false">60236f42cdf5dc9d</guid>
       <category>partnership</category>
       <description>Cross-Nordic initiative launched in 2025 bringing together AI organisations from Sweden, Finland, Denmark, Norway and Iceland to accelerate regional AI development. · Type: partnership · Country: Sweden (Nordics) · Value: n/a · Impact: 0.65</description>
     </item>
     <item>
       <title>Sweden public-sector AI / digital transformation tenders</title>
       <link>https://alicelabs.ai/reports/public-sector-ai-procurement-sweden-2026</link>
-      <guid isPermaLink="false">7d2a6c9ecca048cfa8d2396ea42e890a</guid>
+      <guid isPermaLink="false">5d601b9a67a2883a</guid>
       <category>public_tender</category>
       <description>Analysis mapping 250+ Swedish public-sector AI procurements (2016-2025, ~SEK 1.3B), forecasting cumulative AI procurement to double by 2028; tenders published via TendSign and e-Avrop. · Type: public_tender · Country: Sweden (Nordics) · Value: n/a · Impact: 0.65</description>
     </item>
     <item>
       <title>Grand Solutions: Artificial Intelligence (AI)</title>
       <link>https://innovationsfonden.dk/en/p/grand-solutions/grand-solutions-artificial-intelligence</link>
-      <guid isPermaLink="false">5d2df5693d8b45e4a11d50671991580f</guid>
+      <guid isPermaLink="false">1b97847cc1b5bcb7</guid>
       <category>grant</category>
       <description>Innovation Fund Denmark's Grand Solutions programme with about DKK 80M earmarked for AI along the value chain, investing DKK 5-40M per project; phase 1 letter-of-interest deadline 3 March 2026. · Type: grant · Country: Denmark (Nordics) · Value: 10700000.0 · Impact: 0.6472</description>
     </item>
     <item>
       <title>Pharos AI Factory - national AI hub launch</title>
       <link>https://moneybuzz.gr/greek-startups-funding-q1-2026-axelera-ai-250m/</link>
-      <guid isPermaLink="false">65d5d769747c444ea49771f2fa9ef879</guid>
+      <guid isPermaLink="false">8d18c96d60f46d97</guid>
       <category>partnership</category>
       <description>Greece launched the Pharos AI Factory in 2025 as a national hub connecting startups, SMEs, research institutions, universities and the public sector across the AI development lifecycle. · Type: partnership · Country: Greece (Southern Europe) · Value: n/a · Impact: 0.64</description>
     </item>
     <item>
       <title>Denmark public big-data / AI tenders (udbud.dk)</title>
       <link>https://www.tendersontime.com/denmark-tenders/big-data-tenders/</link>
-      <guid isPermaLink="false">2f0ee60bc8364c9fbdeaca390f6372ce</guid>
+      <guid isPermaLink="false">28c298751a4afa56</guid>
       <category>public_tender</category>
       <description>Aggregated listing of active Danish government big-data and analytics tenders and RFPs; Denmark publishes procurement via portals such as udbud.dk under EU rules. · Type: public_tender · Country: Denmark (Nordics) · Value: n/a · Impact: 0.64</description>
     </item>
     <item>
       <title>Tender: management services for the AI startup acceleration programme at BSC</title>
       <link>https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-21617</link>
-      <guid isPermaLink="false">67bfc09d884145f68e662fe32e61c543</guid>
+      <guid isPermaLink="false">58772316e73847ab</guid>
       <category>public_tender</category>
       <description>BSC-CNS procured comprehensive management services for its AI-focused startup acceleration programme; the contract was formalised on 22 June 2026. · Type: public_tender · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.63</description>
     </item>
     <item>
+      <title>Digital Europe Programme call DIGITAL-2026-AI-09 (Generative AI / AI Continent)</title>
+      <link>https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=DIGITAL-2026-AI-09</link>
+      <guid isPermaLink="false">1e859f8182832e5e</guid>
+      <category>grant</category>
+      <description>Digital Europe Programme 2026 AI calls opened 21 April 2026 (deadline 1 October 2026), covering AI, generative AI and the AI Continent action plan; grants support real AI deployment in public services and industry. · Type: grant · Country: EU (EU) · Value: n/a · Impact: 0.594</description>
+    </item>
+    <item>
       <title>Shared, sustainable and secure AI infrastructure</title>
       <link>https://www.vinnova.se/en/calls-for-proposals/advanced-digitalization-industrial-2024-04161/shared-sustainable-and-secure-ai-2025-04840/</link>
-      <guid isPermaLink="false">b727efadf2474c248850bdb627c9aec1</guid>
+      <guid isPermaLink="false">903a184cd285b5fb</guid>
       <category>grant</category>
       <description>Vinnova call funding projects that build cost-effective and sustainable AI infrastructure for Swedish industry, offering SEK 2-15M per project (max 50% of eligible costs). · Type: grant · Country: Sweden (Nordics) · Value: 1800000.0 · Impact: 0.5691</description>
     </item>
     <item>
       <title>Innovation Cluster Funding Call - AI technologies</title>
       <link>https://www.businessfinland.fi/en/whats-new/calls/2025/innovation-cluster-funding-call-ai-technologies</link>
-      <guid isPermaLink="false">62e999b4234540afbb738985752fc125</guid>
+      <guid isPermaLink="false">1bb0d90c283f2b5b</guid>
       <category>grant</category>
       <description>Business Finland call to fund one AI-technologies innovation cluster with up to EUR 500,000 (max 50% of eligible costs). · Type: grant · Country: Finland (Nordics) · Value: 500000.0 · Impact: 0.5574</description>
     </item>
     <item>
       <title>Action 'Research - Innovate 2021-2027' calls (RTDI incl. AI)</title>
       <link>https://gsri.gov.gr/en/protovoulies-draseis/action-research-innovate-2021-2027/</link>
-      <guid isPermaLink="false">248e89abd8d6481ba1bb69332f512610</guid>
+      <guid isPermaLink="false">4b57496a432f599a</guid>
       <category>grant</category>
       <description>GSRI's 'Research - Innovate' action under the NSRF 2021-2027 Competitiveness Programme funds RTDI projects, including AI/data, co-funded by the Recovery and Resilience Fund. · Type: grant · Country: Greece (Southern Europe) · Value: n/a · Impact: 0.55</description>
     </item>
     <item>
       <title>Technology Development Fund (Tækniþróunarsjóður)</title>
       <link>https://en.rannis.is/funding/research/technology-development-fund/</link>
-      <guid isPermaLink="false">ad2804cb1fbf442584b24d04e80c4ca1</guid>
+      <guid isPermaLink="false">a641a8a062db6b55</guid>
       <category>grant</category>
       <description>Rannís-administered competitive fund supporting R&amp;D and innovation in Icelandic industry, with software and AI among well-suited areas; issues calls twice a year. · Type: grant · Country: Iceland (Nordics) · Value: n/a · Impact: 0.55</description>
     </item>
     <item>
       <title>AI Sweden Startup Program</title>
       <link>https://www.ai.se/en/ecosystem/startup-program</link>
-      <guid isPermaLink="false">838e36cf54c7413fa6b2994f6e3c032b</guid>
+      <guid isPermaLink="false">8a87f82b5835d393</guid>
       <category>accelerator</category>
       <description>AI Sweden's national program supporting AI startups with training, testing environments and goal-driven projects to accelerate their development and adoption of AI. · Type: accelerator · Country: Sweden (Nordics) · Value: n/a · Impact: 0.52</description>
     </item>
     <item>
       <title>Growth and Scaling Through AI (GSAI) accelerator</title>
       <link>https://www.ai.se/en/news/15-startups-sweden-finland-and-estonia-gather-stockholm-further-sharpen-ai-skills</link>
-      <guid isPermaLink="false">eb4a58109f324df58332a16f50c062f1</guid>
+      <guid isPermaLink="false">24187173ca504dce</guid>
       <category>accelerator</category>
       <description>Cross-border AI accelerator run by Movexum (SE), AI Sweden, Yrityssalo (FI) and Tehnopol (EE) supporting 45 companies over three years; a second 2026 cohort is planned. · Type: accelerator · Country: Sweden (Nordics) · Value: n/a · Impact: 0.52</description>
     </item>
     <item>
       <title>Lanzadera high-performance accelerator cohort (120 startups, AI focus)</title>
       <link>https://capital-riesgo.es/en/articles/120-startups-join-the-lanzadera-high-performance-accelerator/</link>
-      <guid isPermaLink="false">f36e8271385e4738b429c914fb70e13c</guid>
+      <guid isPermaLink="false">7a7f53229c51348b</guid>
       <category>accelerator</category>
       <description>Valencia-based accelerator Lanzadera admitted a new cohort of 120 startups, with AI increasingly central; offers mentoring, corporate access and zero-equity loans. · Type: accelerator · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.51</description>
     </item>
     <item>
       <title>Industrial Applied AI by Advanced Digitalization 2026</title>
       <link>https://www.vinnova.se/en/calls-for-proposals/advanced-digitalization-industrial-2024-04161/industrial-applied-ai-by-advanced-digitalization/</link>
-      <guid isPermaLink="false">17cd3a53552744a4b15bd68868399d32</guid>
+      <guid isPermaLink="false">2bb582478a827cf4</guid>
       <category>grant</category>
       <description>Vinnova call under its Advanced Digitalization program funding applied AI projects in Swedish industry, offering SEK 2-10M per project at up to 50% of eligible costs. · Type: grant · Country: Sweden (Nordics) · Value: n/a · Impact: 0.51</description>
     </item>
     <item>
       <title>Funding call for high-growth companies to leverage cutting-edge AI (2026)</title>
       <link>https://www.businessfinland.fi/en/services/funding/calls/2026/funding-call-ai/</link>
-      <guid isPermaLink="false">2f167d57475746198313ab013b505172</guid>
+      <guid isPermaLink="false">d41ecae10170dfc8</guid>
       <category>grant</category>
       <description>Business Finland call for strongly growth-oriented companies (min EUR 2M revenue, 10+ staff, 20%+ growth) to launch forward-looking AI projects; open 2 February to 15 April 2026. · Type: grant · Country: Finland (Nordics) · Value: n/a · Impact: 0.51</description>
     </item>
     <item>
       <title>Research Centres for Artificial Intelligence (AI Centres)</title>
       <link>https://www.forskningsradet.no/en/call-for-proposals/2025/research-centres-for-artificial-intelligence-ai-centres/</link>
-      <guid isPermaLink="false">f3016cf9027f4953a04d244104ca187c</guid>
+      <guid isPermaLink="false">c3c069e444ae0156</guid>
       <category>grant</category>
       <description>Research Council of Norway call establishing six national AI research centres starting in 2025, part of a plan to raise AI/digital research funding by at least NOK 1 billion over five years. · Type: grant · Country: Norway (Nordics) · Value: n/a · Impact: 0.5</description>
     </item>
     <item>
       <title>START Rise Challenge - AI startups programme</title>
       <link>https://www.pbs.up.pt/en/artigos-e-eventos/eventos/start-rise-challenge/</link>
-      <guid isPermaLink="false">75f76f97a6e042cfacef6d793b61b2f4</guid>
+      <guid isPermaLink="false">caca983eb4ca4fc8</guid>
       <category>accelerator</category>
       <description>Porto Business School runs the START Rise Challenge, a programme focused on AI startups in Portugal. · Type: accelerator · Country: Portugal (Southern Europe) · Value: n/a · Impact: 0.49</description>
     </item>
     <item>
       <title>IPCEI Artificial Intelligence - Italian participation call</title>
       <link>https://www.mimit.gov.it/it/incentivi/ipcei-intelligenza-artificiale-ia</link>
-      <guid isPermaLink="false">16d4b281a32447a2b5299685e66a3eb2</guid>
+      <guid isPermaLink="false">28d8e6b8f667ea86</guid>
       <category>grant</category>
       <description>MIMIT launched the IPCEI AI (Important Project of Common European Interest) to build a sovereign European AI ecosystem across the value chain; application deadline was 30 January 2026. · Type: grant · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.49</description>
     </item>

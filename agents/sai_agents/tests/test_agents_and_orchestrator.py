@@ -81,14 +81,11 @@ async def test_orchestrator_runs_full_team_and_publishes():
     team.tester = tester
 
     summary = await team.run({"headers": {}})
-    # 5 agent events (tester, marketing, sales, security, deals) + 1 team event.
-    assert summary["events_published"] == 6
+    # 6 agent events (tester, marketing, sales_gtm, outreach, vuln_redteam,
+    # deal_sourcing) + 1 team event.
+    assert summary["events_published"] == 7
     assert summary["team_fitness"]["score"] > 0.5
-    assert len(summary["results"]) == 5
-    assert "deal_sourcing" in [r["agent"] for r in summary["results"]]
-    # 5 agent events (tester, marketing, sales_gtm, outreach, vuln_redteam) + 1 team event.
-    assert summary["events_published"] == 6
-    assert summary["team_fitness"]["score"] > 0.5
-    assert len(summary["results"]) == 5
-    assert {r["agent"] for r in summary["results"]} >= {"outreach"}
+    assert len(summary["results"]) == 6
+    agents = {r["agent"] for r in summary["results"]}
+    assert {"deal_sourcing", "outreach"} <= agents
     assert not summary["kafka_active"]

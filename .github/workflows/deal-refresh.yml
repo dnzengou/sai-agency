@@ -1,0 +1,61 @@
+name: deal-refresh
+
+# Regenerates the Deal Radar dataset (deals.json + deals.xml) on a schedule and
+# commits any real changes to the default branch, so Netlify auto-redeploys a
+# fresh feed. Runs the KafCade cascade; set the repo variable SAI_RSS_FEEDS
+# (comma-separated RSS/Atom URLs) to pull in live sources beyond the bundled
+# curated dataset.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # weekly, Monday 06:17 UTC (off-peak minute)
+  workflow_dispatch:
+    inputs:
+      rss_feeds:
+        description: "Optional comma-separated RSS/Atom feed URLs (overrides the SAI_RSS_FEEDS variable)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deal-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install agents package
+        working-directory: agents
+        run: pip install -e .
+
+      - name: Regenerate deal feed (KafCade cascade)
+        env:
+          SAI_RSS_FEEDS: ${{ github.event.inputs.rss_feeds || vars.SAI_RSS_FEEDS }}
+          SAI_LOG_JSON: "true"
+        run: python -m sai_agents.deals.generate "$GITHUB_WORKSPACE/deals.json"
+
+      - name: Commit if the feed meaningfully changed
+        run: |
+          # Ignore diffs that are only the regenerated timestamps.
+          changed=$(git diff -U0 -- deals.json deals.xml \
+            | grep -E '^[+-]' \
+            | grep -vE '^(\+\+\+|---)' \
+            | grep -vE 'generated_at|lastBuildDate' || true)
+          if [ -z "$changed" ]; then
+            echo "No meaningful deal changes — skipping commit."
+            git checkout -- deals.json deals.xml || true
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add deals.json deals.xml
+          git commit -m "chore(deals): scheduled Deal Radar refresh [skip ci]"
+          git push

@@ -110,6 +110,43 @@ Full chain: visitor → deal form → Netlify `submission-created` (Bl + impact 
 ARM) → `POST /ingest` → `KafkaEventPublisher` → topic `claw-evolution-events` →
 evo-metaclaw.
 
+## Growth: fresh deals, more sources, CRM sink
+
+### Automated deal-refresh (GitHub Actions)
+
+`.github/workflows/deal-refresh.yml` regenerates `deals.json` + `deals.xml`
+weekly (and on demand via *Run workflow*) and commits **only real changes** —
+deal IDs are content-derived, so identical data produces an identical file and
+timestamp-only diffs are skipped. Netlify auto-redeploys the fresh feed. No
+infra required.
+
+### More sources — live RSS (RRSS)
+
+Beyond the curated bundled dataset, the pipeline can ingest **live RSS/Atom
+feeds**. Set the repo variable (or workflow input) `SAI_RSS_FEEDS` to a
+comma-separated list of feed URLs; a keyword classifier infers each item's
+type / sector / country, and only Southern-Europe/Nordics items are kept. RSS
+items carry a lower `confidence` and still pass Bl + dedupe + ARM.
+
+```bash
+export SAI_RSS_FEEDS="https://www.eu-startups.com/feed/,https://tech.eu/feed/"
+python -m sai_agents.deals.generate     # bundled + live RSS, deduped
+```
+
+### CRM lead sink
+
+The ingest endpoint can persist and forward every real lead (vendor-neutral):
+
+| Env var | Effect |
+|---|---|
+| `SAI_LEAD_STORE` | Append each lead to a durable NDJSON file (importable into any CRM/spreadsheet). |
+| `CRM_WEBHOOK_URL` | POST a flat lead record (name/email/company/deal/ARM/impact) to a CRM webhook — HubSpot/Pipedrive workflow, Zapier/Make, or a Google-Sheets webhook. |
+| `CRM_WEBHOOK_TOKEN` | Optional bearer token on that POST. |
+
+Both are optional and independent; failures never drop the lead (it is already
+in the KafCa stream). Stats are exposed on `GET /health`
+(`crm_stored`, `crm_forwarded`).
+
 ## Layout
 
 ```

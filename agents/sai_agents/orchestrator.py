@@ -75,16 +75,17 @@ class OrchestratorTeam:
                 self.deals.execute(downstream_ctx),
             ]
 
-            # 3. Publish each as an evolution event.
+            # 3. Publish each as an evolution event. Agent order must match the
+            # order results were appended above.
             events: List[EvolutionEvent] = []
             for agent, result in zip(
-                [self.tester, self.marketing, self.sales, self.security, self.deals],
                 [
                     self.tester,
                     self.marketing,
                     self.sales,
                     self.outreach,
                     self.security,
+                    self.deals,
                 ],
                 results,
             ):
