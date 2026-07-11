@@ -16,12 +16,36 @@
         box-shadow: 0 4px 16px rgba(11, 11, 11, 0.18);
       }
       .deal-radar-fab:hover { filter: brightness(1.07); }
+      /* First-paint fallback shown until React hydrates (and forever if JS is
+         off or the bundle fails). Removes a hard dependency on the SPA bundle
+         for the value prop, headline, and Deal Radar entry. */
+      .fp-fallback {
+        max-width: 720px; margin: 8vh auto 0; padding: 0 20px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #1a1a1a; line-height: 1.55;
+      }
+      .fp-fallback h1 { font-size: 32px; line-height: 1.2; margin: 0 0 10px; }
+      .fp-fallback p { margin: 0 0 14px; color: #333; }
+      .fp-fallback .cta {
+        display: inline-block; margin-top: 6px; padding: 10px 18px;
+        background: #2a78d6; color: #fff; text-decoration: none;
+        border-radius: 8px; font-weight: 600;
+      }
+      #root:not(:empty) + .fp-fallback { display: none; }
     </style>
     <script type="module" crossorigin src="/assets/index-BxAsMF1J.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-D52S1Ojs.css">
   </head>
   <body>
     <div id="root"></div>
+    <!-- First-paint / no-JS fallback: the value prop + Deal Radar CTA render
+         immediately even before (or without) the SPA bundle. -->
+    <div class="fp-fallback">
+      <h1>SAI Agency</h1>
+      <p><strong>Custom AI agents, ML and data automation</strong> for teams shipping in Southern Europe and the Nordics. We deliver production-grade agents that <em>self-evolve</em> from every run — powered by the KafCa event stream and the EvoMetaClaw trajectory flywheel.</p>
+      <p>Explore live opportunities on the Deal Radar — real grants, tenders, accelerators, and funding rounds we've sourced, scored, and pipeline-classified.</p>
+      <p><a class="cta" href="/deals">Open the Deal Radar →</a></p>
+    </div>
     <!-- Entry point to the Deal Radar feature (sibling to #root; React renders
          into #root only, so this persists). -->
     <a class="deal-radar-fab" href="/deals" aria-label="Open Deal Radar">🛰 Deal Radar</a>

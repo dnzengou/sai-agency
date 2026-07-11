@@ -22,6 +22,7 @@ import asyncio
 from typing import List, Optional
 
 from sai_agents.config import Settings, get_settings
+from sai_agents.evometaclaw.trajectory import TrajectoryStore
 from sai_agents.kafca.blacklist import Blacklist
 from sai_agents.kafca.circuit_breaker import CircuitBreaker, CircuitOpenError
 from sai_agents.logging_setup import get_logger
@@ -44,6 +45,7 @@ class KafkaEventPublisher:
         settings: Optional[Settings] = None,
         blacklist: Optional[Blacklist] = None,
         breaker: Optional[CircuitBreaker] = None,
+        trajectory: Optional[TrajectoryStore] = None,
     ) -> None:
         self.settings = settings or get_settings()
         self.blacklist = blacklist or Blacklist(
@@ -53,6 +55,10 @@ class KafkaEventPublisher:
             failure_threshold=self.settings.breaker_failure_threshold,
             reset_seconds=self.settings.breaker_reset_seconds,
         )
+        # EvoMetaClaw flywheel: durable per-genome trajectory persistence.
+        # Every accepted event is appended — this is the accumulated data a
+        # copycat registry cannot replicate.
+        self.trajectory = trajectory or TrajectoryStore()
         self._producer: Optional["AIOKafkaProducer"] = None
         self._started = False
         # In-process mirror of the event log — used for fallback + evo-metaclaw
@@ -160,6 +166,9 @@ class KafkaEventPublisher:
 
         self.breaker.record_success()
         self._local_log.append(event)
+        # EvoMetaClaw flywheel: append to the durable trajectory store.
+        # A disk failure here is logged and swallowed — never sinks the loop.
+        self.trajectory.append(event)
         log.info(
             "kafca.publish.ok",
             event_id=event.event_id,
