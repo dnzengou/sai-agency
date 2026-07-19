@@ -90,6 +90,18 @@ class OrchestratorTeam:
                 results,
             ):
                 events.append(agent.to_event(result))
+            # 3. Publish each as an evolution event.
+            emitters = [
+                self.tester,
+                self.marketing,
+                self.sales,
+                self.outreach,
+                self.security,
+                self.deals,
+            ]
+            events: List[EvolutionEvent] = [
+                agent.to_event(result) for agent, result in zip(emitters, results)
+            ]
             published = await self.publisher.publish_many(events)
 
             # 4. Team-level fitness for evo-metaclaw.

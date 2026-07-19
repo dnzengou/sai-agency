@@ -13,9 +13,13 @@ from dataclasses import dataclass, field
 from typing import Iterable, List, Optional, Pattern
 
 # Default jailbreak / injection / exfiltration signatures. Case-insensitive.
+# The "ignore/disregard" patterns permit a short filler run between the head
+# and tail token — matches "ignore all previous instructions" (very common) as
+# well as "ignore all instructions". Mirrors the netlify JS bridge patterns so
+# both sides of the wire enforce the same shape.
 _DEFAULT_PATTERNS: tuple[str, ...] = (
-    r"ignore (all|any|previous|prior|above) (instructions|prompts|rules)",
-    r"disregard (all|any|the) (above|previous|prior|system)",
+    r"ignore\s+(all|any|previous|prior|the|above)\b[\w\s]{0,40}?(instructions|prompts|rules)",
+    r"disregard\s+(all|any|the)\b[\w\s]{0,40}?(above|previous|prior|system|instructions)",
     r"you are (now )?(dan|do anything now|jailbroken|unrestricted)",
     r"developer mode",
     r"reveal (your )?(system prompt|hidden|secret)",

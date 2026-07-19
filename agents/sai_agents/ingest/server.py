@@ -150,6 +150,12 @@ class LeadIngestServer:
                 self.send_response(code)
                 self.send_header("Content-Type", "application/json")
                 self.send_header("Content-Length", str(len(payload)))
+                # HTTP/1.1 keep-alive is unsafe for error paths where clients
+                # may abandon the socket; force-close so the peer doesn't hit
+                # a half-open connection on the next request.
+                if code >= 400:
+                    self.send_header("Connection", "close")
+                    self.close_connection = True
                 self.end_headers()
                 self.wfile.write(payload)
 

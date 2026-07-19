@@ -57,6 +57,28 @@ an RRSS feed at `/deals.xml`.
   clean, structured `EvolutionEvent`s (with `FitnessScore`s) that `evo-metaclaw`
   / `evolved-skill-opt` can consume directly for population-based evolution.
 
+## EvoMetaClaw — the strategic moat (trajectory flywheel)
+
+Every accepted `EvolutionEvent` is **appended to a durable, per-genome JSONL
+trajectory** (`sai_agents.evometaclaw.TrajectoryStore`). Wired directly into the
+KafCa publisher — no extra config; the flywheel is ON by default.
+
+**Why this is the moat**: OpenClaw can copy a skill registry. They cannot copy
+SkillOpt-powered self-evolving bots without rebuilding the entire training
+paradigm *and* accumulating the trajectory data. Every run leaves durable
+ground-truth signal that population-based evolution consumes — the moat
+compounds with usage.
+
+| Variable | Default | Purpose |
+|---|---|---|
+| `SAI_TRAJECTORY_ROOT` | `~/.sai/trajectories` | Where JSONL trajectories persist |
+| `SAI_TRAJECTORY_ENABLED` | `true` | Set to `false` to disable persistence |
+
+Fail-safe: disk errors are logged and swallowed; a broken FS never sinks the
+live agents. Genomes are auto-partitioned (`{genome}.jsonl` per fitness
+lineage), and a companion `{genome}._generations.jsonl` records fitness bumps
+so evo-metaclaw can slice by generation in O(1).
+
 ## Install
 
 ```bash
