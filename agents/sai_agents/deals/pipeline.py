@@ -26,11 +26,37 @@ from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
 from sai_agents.kafca.blacklist import Blacklist
 from sai_agents.kafca.publisher import KafkaEventPublisher
 from sai_agents.logging_setup import get_logger
-from sai_agents.models import Deal, DealType, EventType, EvolutionEvent
+from sai_agents.models import Deal, DealCategory, DealType, EventType, EvolutionEvent
 
 log = get_logger("deals.pipeline")
 
 _VALID_TYPES = {t.value for t in DealType}
+_VALID_CATEGORIES = {c.value for c in DealCategory}
+
+# Map source-provided type synonyms onto canonical DealTypes.
+_TYPE_SYNONYMS = {
+    "incentive": "grant",
+    "relocation": "property_scheme",
+    "one_euro_house": "property_scheme",
+    "house_scheme": "property_scheme",
+    "marketplace": "business_succession",
+    "business_for_sale": "business_succession",
+    "succession": "business_succession",
+    "venture": "partnership",
+}
+
+# Types that imply a category when the source didn't state one.
+_CATEGORY_BY_TYPE = {
+    "property_scheme": "repopulation",
+    "business_succession": "succession",
+}
+
+
+def _infer_category(data: Dict, dtype: str) -> str:
+    cat = str(data.get("category", "")).strip().lower()
+    if cat in _VALID_CATEGORIES:
+        return cat
+    return _CATEGORY_BY_TYPE.get(dtype, "ai_ml")
 
 
 def _normalize(raw: Dict) -> Optional[Deal]:
@@ -38,11 +64,13 @@ def _normalize(raw: Dict) -> Optional[Deal]:
     if not raw or not raw.get("title"):
         return None
     data = dict(raw)
-    # Map unknown/missing type to a safe default.
+    # Normalise type: apply synonyms, then fall back to a safe default.
     dtype = str(data.get("type", "grant")).strip().lower()
+    dtype = _TYPE_SYNONYMS.get(dtype, dtype)
     if dtype not in _VALID_TYPES:
         dtype = "partnership"
     data["type"] = dtype
+    data["category"] = _infer_category(data, dtype)
     # Drop source-only keys the model doesn't accept.
     data.pop("source", None)
     try:
@@ -162,11 +190,13 @@ class KafCadePipeline:
         by_country: Dict[str, int] = {}
         by_type: Dict[str, float] = {}
         by_region: Dict[str, int] = {}
+        by_category: Dict[str, int] = {}
         total_value = 0.0
         open_count = 0
         for d in deals:
             by_country[d.country] = by_country.get(d.country, 0) + 1
             by_region[d.region] = by_region.get(d.region, 0) + 1
+            by_category[d.category.value] = by_category.get(d.category.value, 0) + 1
             by_type[d.type.value] = by_type.get(d.type.value, 0.0) + (d.value_eur or 0.0)
             total_value += d.value_eur or 0.0
             if d.stage in ("open", "upcoming"):
@@ -181,8 +211,10 @@ class KafCadePipeline:
                 "total_pipeline_value_eur": round(total_value, 2),
                 "countries": sorted(k for k in by_country if k),
                 "regions": sorted(k for k in by_region if k),
+                "categories": sorted(k for k in by_category if k),
                 "by_country": by_country,
                 "by_region": by_region,
+                "by_category": by_category,
                 "pipeline_value_by_type_eur": {k: round(v, 2) for k, v in by_type.items()},
             },
             "deals": [d.model_dump(mode="json") for d in deals],

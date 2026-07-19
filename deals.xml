@@ -5,7 +5,7 @@
     <link>https://sai-agency.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Jul 2026 10:25:07 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 12:38:49 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)</title>
@@ -106,11 +106,32 @@
       <description>Croatian-founded SplxAI (AI/LLM application security) raised ~USD 7M (EUR 6.5M) seed led by LAUNCHub Ventures with Rain Capital, Inovo, Runtime, DNV and South Central Ventures; later acquired by Zscaler. · Type: funding_round · Country: Croatia (Southern Europe) · Value: 6500000.0 · Impact: 0.771</description>
     </item>
     <item>
+      <title>Bpifrance Transmission — 'Je reprends une entreprise'</title>
+      <link>https://reprise-entreprise.bpifrance.fr/</link>
+      <guid isPermaLink="false">dd02e04c5d3e8e80</guid>
+      <category>business_succession</category>
+      <description>State investment bank's business-transfer platform centralising 45,000+ listings of SMEs and mid-caps for sale, with financing and a Pass Repreneur for first-time buyers. A dedicated Plan Transmission boosts successions. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.754</description>
+    </item>
+    <item>
       <title>Cernel raises EUR 4M seed round</title>
       <link>https://www.eu-startups.com/2026/02/exclusive-danish-ai-startup-cernel-raises-e4-million-in-four-weeks-to-build-foundational-infrastructure-for-agentic-commerce/</link>
       <guid isPermaLink="false">78d2acb5a27eb367</guid>
       <category>funding_round</category>
       <description>Aarhus-based Danish startup Cernel (AI-driven e-commerce data platform / infrastructure for agentic commerce) raised a EUR 4M seed led by Seed Capital (February 2026). · Type: funding_round · Country: Denmark (Nordics) · Value: 4000000.0 · Impact: 0.7512</description>
+    </item>
+    <item>
+      <title>CRA — Cédants et Repreneurs d'Affaires</title>
+      <link>https://www.cra.asso.fr/</link>
+      <guid isPermaLink="false">bb918f9cb3eb092b</guid>
+      <category>business_succession</category>
+      <description>National non-profit of 250+ volunteer delegates matching retiring SME/VSE owners (typically €300k–3M turnover) with buyers, offering neutral mentoring through all stages of transmission. 13,500+ companies supported. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
+      <title>Transeo — European SME transfer &amp; succession association</title>
+      <link>https://www.transeo-association.eu/</link>
+      <guid isPermaLink="false">3065432aa5d272ac</guid>
+      <category>business_succession</category>
+      <description>European association for the SME business-transfer industry — family succession, buy-outs and cross-border acquisitions typically €0.5M–25M — with matchmaking (Deal Club), training and annual summits. · Type: business_succession · Country: EU (EU) · Value: n/a · Impact: 0.75</description>
     </item>
     <item>
       <title>Codeplain raises EUR 2.6M seed round</title>
@@ -146,6 +167,20 @@
       <guid isPermaLink="false">74ac9c0c1575bbc5</guid>
       <category>grant</category>
       <description>Horizon Europe Cluster 4 Digital call, EUR 221.8M across 15 topics on secure single market and infrastructure for data services and trustworthy AI. Deadline 15 April 2026. · Type: grant · Country: EU (EU) · Value: 221800000.0 · Impact: 0.72</description>
+    </item>
+    <item>
+      <title>Relevo Generacional — chamber business-transfer exchanges</title>
+      <link>https://www.camarahuesca.com/programa-de-relevo-generacional-bolsa-de-traspasos/</link>
+      <guid isPermaLink="false">bc80b7291df582e6</guid>
+      <category>business_succession</category>
+      <description>Chamber-of-commerce 'relevo generacional' programmes and transfer exchanges (bolsa de traspasos) connecting ageing owners with no successor to buyers, part of a national plan to transfer viable SMEs; recent initiatives target rural businesses. · Type: business_succession · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.72</description>
+    </item>
+    <item>
+      <title>B2scout — Italian business-for-sale marketplace</title>
+      <link>https://www.b2scout.com/</link>
+      <guid isPermaLink="false">c1294841d1e6ecde</guid>
+      <category>business_succession</category>
+      <description>Italian marketplace aggregating listings from entrepreneurs seeking to sell their companies, addressing the widely-cited problem that roughly half of Italian SMEs are sold for lack of generational succession. · Type: business_succession · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.714</description>
     </item>
     <item>
       <title>PRR call 'IA nas PME' - AI adoption grants for SMEs</title>
@@ -253,11 +288,88 @@
       <description>BSC-CNS procured comprehensive management services for its AI-focused startup acceleration programme; the contract was formalised on 22 June 2026. · Type: public_tender · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.63</description>
     </item>
     <item>
+      <title>EU generational renewal — farm succession &amp; access to land</title>
+      <link>https://agriculture.ec.europa.eu/media/news/succession-and-retirement-smoothing-path-between-generations-2026-01-26_en</link>
+      <guid isPermaLink="false">bc7b48a1716f9eda</guid>
+      <category>grant</category>
+      <description>EU strategy for generational renewal in farming — matchmaking platforms connecting retiring farmers (many without heirs) to new entrants, a European Land Observatory, and a planned young-farmer 'starter pack' of up to €300,000 under the next CAP. · Type: grant · Country: EU (EU) · Value: 300000.0 · Impact: 0.6148</description>
+    </item>
+    <item>
+      <title>Petites villes de demain — town-centre revitalisation</title>
+      <link>https://anct.gouv.fr/programmes-dispositifs/petites-villes-de-demain</link>
+      <guid isPermaLink="false">84f3211a825d6633</guid>
+      <category>grant</category>
+      <description>National programme supporting 1,646 communes under 20,000 inhabitants to revitalise town centres and reverse decline (≈€3B over six years via engineering support, targeted funding and a network). Runs to end-2026 with continuation announced. · Type: grant · Country: France (Western Europe) · Value: n/a · Impact: 0.614</description>
+    </item>
+    <item>
+      <title>Case a 1 Euro — Mussomeli</title>
+      <link>https://www.case1euro.it/</link>
+      <guid isPermaLink="false">923541f3bb22a364</guid>
+      <category>property_scheme</category>
+      <description>Non-profit scheme selling abandoned homes in Mussomeli's historic centre for a symbolic €1 to repopulate the town; buyers pay a refundable ~€5,000 deposit and must renovate within a set period. 350–400 houses sold, mostly to foreign buyers. · Type: property_scheme · Country: Italy (Southern Europe) · Value: 1.0 · Impact: 0.61</description>
+    </item>
+    <item>
+      <title>Tulsa Remote — $10,000 remote-worker relocation grant</title>
+      <link>https://www.tulsaremote.com/program-details</link>
+      <guid isPermaLink="false">9e9bf4deeac45bc0</guid>
+      <category>grant</category>
+      <description>One-year programme paying eligible remote workers a $10,000 grant (plus free co-working) to relocate to Tulsa, Oklahoma; ~3,500 grants issued with ~90% first-year retention. A leading US heartland remote-worker incentive. · Type: grant · Country: US (North America) · Value: n/a · Impact: 0.61</description>
+    </item>
+    <item>
+      <title>Work from Ollolai — remote-worker / digital-nomad scheme</title>
+      <link>https://www.workfromollolai.com/</link>
+      <guid isPermaLink="false">37ab3a5995b61230</guid>
+      <category>grant</category>
+      <description>Municipal programme inviting experienced remote professionals and digital nomads to live and work in Ollolai for a symbolic €1 monthly rent (municipality covers it) in exchange for knowledge-sharing; guests leave a concrete piece of work at the end of their stay. · Type: grant · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.606</description>
+    </item>
+    <item>
+      <title>Case a 1 Euro — Ollolai</title>
+      <link>https://www.liveinollolai.com/</link>
+      <guid isPermaLink="false">23fba99e0ba775f9</guid>
+      <category>property_scheme</category>
+      <description>Sardinian village (Nuoro) offers abandoned historic-centre homes for €1 on condition buyers renovate within three years, aiming to reverse depopulation. Strong international interest, notably from the US. · Type: property_scheme · Country: Italy (Southern Europe) · Value: 1.0 · Impact: 0.604</description>
+    </item>
+    <item>
+      <title>Holapueblo — rural repopulation &amp; entrepreneurship programme</title>
+      <link>https://www.redeia.com/en/sala-de-prensa/actualidad/nota-de-prensa/2023/12/100-municipalities-rural-Spain-aim-repopulate-revitalise-Holapueblo</link>
+      <guid isPermaLink="false">c44a0ba28fa90545</guid>
+      <category>grant</category>
+      <description>National programme matching entrepreneurs and remote-working families with ~100 depopulated Spanish municipalities, providing mentoring, business training and relocation support (not direct cash). Aimed at repopulating 'la España vaciada'. · Type: grant · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.6</description>
+    </item>
+    <item>
       <title>Digital Europe Programme call DIGITAL-2026-AI-09 (Generative AI / AI Continent)</title>
       <link>https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals?callIdentifier=DIGITAL-2026-AI-09</link>
       <guid isPermaLink="false">1e859f8182832e5e</guid>
       <category>grant</category>
       <description>Digital Europe Programme 2026 AI calls opened 21 April 2026 (deadline 1 October 2026), covering AI, generative AI and the AI Continent action plan; grants support real AI deployment in public services and industry. · Type: grant · Country: EU (EU) · Value: n/a · Impact: 0.594</description>
+    </item>
+    <item>
+      <title>Case a 3 Euro — Sambuca di Sicilia</title>
+      <link>https://www.comune.sambucadisicilia.ag.it/</link>
+      <guid isPermaLink="false">e854f896b4dcdd70</guid>
+      <category>property_scheme</category>
+      <description>Sicilian town auctions abandoned homes in its Saracen quarter with bids from €3, released in periodic tranches to counter depopulation; a 2024 bando offered 12 properties. Winning bids typically settle at a few thousand euros plus a €5,000 deposit and renovation commitment. · Type: property_scheme · Country: Italy (Southern Europe) · Value: 3.0 · Impact: 0.584</description>
+    </item>
+    <item>
+      <title>Case a 1 Euro — Laurenzana (no deposit)</title>
+      <link>https://1eurohouses.com/</link>
+      <guid isPermaLink="false">b19b1b5acba09e77</guid>
+      <category>property_scheme</category>
+      <description>Basilicata village (Potenza) offering abandoned homes for €1 to revitalise its medieval centre — distinctive for requiring no deposit and no return guarantee. Recorded one of the first completed €1-house sales. · Type: property_scheme · Country: Italy (Southern Europe) · Value: 1.0 · Impact: 0.58</description>
+    </item>
+    <item>
+      <title>Case a 1 Euro — Maenza</title>
+      <link>https://1eurohouses.com/maenza-joins-to-municipalities-with-1-euro-houses/</link>
+      <guid isPermaLink="false">4715c58ac26511e0</guid>
+      <category>property_scheme</category>
+      <description>Village in Lazio (Latina) that joined the €1-houses initiative to redevelop and repopulate its historic centre, selling abandoned properties for a symbolic €1 with renovation obligations. · Type: property_scheme · Country: Italy (Southern Europe) · Value: 1.0 · Impact: 0.58</description>
+    </item>
+    <item>
+      <title>Our Living Islands — Vacant Property Refurbishment Grant</title>
+      <link>https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/policy-information/our-living-islands/</link>
+      <guid isPermaLink="false">1c0b69488f41087e</guid>
+      <category>grant</category>
+      <description>Ireland's 10-year offshore-islands policy (2023) supports repopulation via remote-working infrastructure and Vacant Property Refurbishment Grants up to €60,000 (vacant) or €84,000 (derelict) to renovate and occupy pre-1993 island homes. · Type: grant · Country: Ireland (Western Europe) · Value: 84000.0 · Impact: 0.5793</description>
     </item>
     <item>
       <title>Shared, sustainable and secure AI infrastructure</title>
@@ -288,6 +400,13 @@
       <description>Rannís-administered competitive fund supporting R&amp;D and innovation in Icelandic industry, with software and AI among well-suited areas; issues calls twice a year. · Type: grant · Country: Iceland (Nordics) · Value: n/a · Impact: 0.55</description>
     </item>
     <item>
+      <title>Welcome to Presicce-Acquarica — up to €30,000 relocation grant</title>
+      <link>https://1eurohouses.com/apulia/presicce-acquarica-depopulation/</link>
+      <guid isPermaLink="false">6de32b0b131686bb</guid>
+      <category>grant</category>
+      <description>Puglia town in Salento offers grants up to €30,000 (max 50% of costs) to EU citizens who buy and renovate a pre-1991 home and register residency, committing to stay ≥10 years. Targets depopulation of the historic centre. · Type: grant · Country: Italy (Southern Europe) · Value: 30000.0 · Impact: 0.5458</description>
+    </item>
+    <item>
       <title>AI Sweden Startup Program</title>
       <link>https://www.ai.se/en/ecosystem/startup-program</link>
       <guid isPermaLink="false">8a87f82b5835d393</guid>
@@ -300,6 +419,20 @@
       <guid isPermaLink="false">24187173ca504dce</guid>
       <category>accelerator</category>
       <description>Cross-border AI accelerator run by Movexum (SE), AI Sweden, Yrityssalo (FI) and Tehnopol (EE) supporting 45 companies over three years; a second 2026 cohort is planned. · Type: accelerator · Country: Sweden (Nordics) · Value: n/a · Impact: 0.52</description>
+    </item>
+    <item>
+      <title>Emprego Interior MAIS — relocation support to Portugal's interior</title>
+      <link>https://iefponline.iefp.pt/IEFP/interiorMais.do?action=overview</link>
+      <guid isPermaLink="false">efd64cc2fa306f68</guid>
+      <category>grant</category>
+      <description>Government measure paying workers who move their residence to Portugal's interior for a job or self-employment; base support ~7× the IAS (≈€3,760 in 2026) for permanent contracts, with increases per relocating family member and moving costs. Open to foreigners and remote workers. · Type: grant · Country: Portugal (Southern Europe) · Value: 3760.0 · Impact: 0.52</description>
+    </item>
+    <item>
+      <title>Bono de Activación Rural — Galicia (up to €18,000)</title>
+      <link>https://www.idealista.com/en/news/property-for-sale-in-spain/2025/09/02/89159-abandoned-villages-in-spain-grants-tax-reductions-pay-to-move-and-more</link>
+      <guid isPermaLink="false">103681a37b226d8f</guid>
+      <category>grant</category>
+      <description>Galician grant of up to €18,000 for non-agricultural rural entrepreneurship (CAP Strategic Plan 2023-2027, €12.6M budget); Galicia also offers relocation aid and tax deductions for moving to villages under 5,000 inhabitants. · Type: grant · Country: Spain (Southern Europe) · Value: 18000.0 · Impact: 0.5191</description>
     </item>
     <item>
       <title>Lanzadera high-performance accelerator cohort (120 startups, AI focus)</title>
@@ -321,6 +454,13 @@
       <guid isPermaLink="false">d41ecae10170dfc8</guid>
       <category>grant</category>
       <description>Business Finland call for strongly growth-oriented companies (min EUR 2M revenue, 10+ staff, 20%+ growth) to launch forward-looking AI projects; open 2 February to 15 April 2026. · Type: grant · Country: Finland (Nordics) · Value: n/a · Impact: 0.51</description>
+    </item>
+    <item>
+      <title>Antikythera settler support programme</title>
+      <link>https://greekcitytimes.com/2026/01/10/antikythera-greek-island-free-housing-food-500-euros-2026/</link>
+      <guid isPermaLink="false">ce8c0c9e90bfdbf4</guid>
+      <category>grant</category>
+      <description>Programme to repopulate the tiny Aegean island of Antikythera offering settlers free accommodation (house and plot) plus €500/month per household for three years (~€18,000), targeting young families and skilled workers (bakers, fishermen, builders). · Type: grant · Country: Greece (Southern Europe) · Value: 18000.0 · Impact: 0.5091</description>
     </item>
     <item>
       <title>Research Centres for Artificial Intelligence (AI Centres)</title>

@@ -816,6 +816,227 @@
       "source_name": "MENAC",
       "description": "Portugal's National Anti-Corruption Mechanism (MENAC) launched a public tender to acquire an AI module for its RGPC platform, part of a broader public-administration AI adoption push.",
       "confidence": 0.72
+    },
+
+    {
+      "title": "Case a 1 Euro — Mussomeli",
+      "org": "Comune di Mussomeli",
+      "country": "Italy", "region": "Southern Europe", "city": "Mussomeli",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "property_scheme",
+      "value_eur": 1, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.case1euro.it/",
+      "source_name": "Case 1 Euro (Mussomeli)",
+      "description": "Non-profit scheme selling abandoned homes in Mussomeli's historic centre for a symbolic €1 to repopulate the town; buyers pay a refundable ~€5,000 deposit and must renovate within a set period. 350–400 houses sold, mostly to foreign buyers.",
+      "confidence": 0.95
+    },
+    {
+      "title": "Case a 3 Euro — Sambuca di Sicilia",
+      "org": "Comune di Sambuca di Sicilia",
+      "country": "Italy", "region": "Southern Europe", "city": "Sambuca di Sicilia",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "property_scheme",
+      "value_eur": 3, "stage": "open", "deadline": null, "date": "2024-06-18",
+      "source_url": "https://www.comune.sambucadisicilia.ag.it/",
+      "source_name": "Comune di Sambuca di Sicilia",
+      "description": "Sicilian town auctions abandoned homes in its Saracen quarter with bids from €3, released in periodic tranches to counter depopulation; a 2024 bando offered 12 properties. Winning bids typically settle at a few thousand euros plus a €5,000 deposit and renovation commitment.",
+      "confidence": 0.82
+    },
+    {
+      "title": "Case a 1 Euro — Ollolai",
+      "org": "Comune di Ollolai",
+      "country": "Italy", "region": "Southern Europe", "city": "Ollolai",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "property_scheme",
+      "value_eur": 1, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.liveinollolai.com/",
+      "source_name": "Live in Ollolai",
+      "description": "Sardinian village (Nuoro) offers abandoned historic-centre homes for €1 on condition buyers renovate within three years, aiming to reverse depopulation. Strong international interest, notably from the US.",
+      "confidence": 0.92
+    },
+    {
+      "title": "Work from Ollolai — remote-worker / digital-nomad scheme",
+      "org": "Comune di Ollolai",
+      "country": "Italy", "region": "Southern Europe", "city": "Ollolai",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.workfromollolai.com/",
+      "source_name": "Work from Ollolai",
+      "description": "Municipal programme inviting experienced remote professionals and digital nomads to live and work in Ollolai for a symbolic €1 monthly rent (municipality covers it) in exchange for knowledge-sharing; guests leave a concrete piece of work at the end of their stay.",
+      "confidence": 0.88
+    },
+    {
+      "title": "Welcome to Presicce-Acquarica — up to €30,000 relocation grant",
+      "org": "Comune di Presicce-Acquarica",
+      "country": "Italy", "region": "Southern Europe", "city": "Presicce-Acquarica",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "grant",
+      "value_eur": 30000, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://1eurohouses.com/apulia/presicce-acquarica-depopulation/",
+      "source_name": "1 Euro Houses",
+      "description": "Puglia town in Salento offers grants up to €30,000 (max 50% of costs) to EU citizens who buy and renovate a pre-1991 home and register residency, committing to stay ≥10 years. Targets depopulation of the historic centre.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Case a 1 Euro — Laurenzana (no deposit)",
+      "org": "Comune di Laurenzana",
+      "country": "Italy", "region": "Southern Europe", "city": "Laurenzana",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "property_scheme",
+      "value_eur": 1, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://1eurohouses.com/",
+      "source_name": "1 Euro Houses",
+      "description": "Basilicata village (Potenza) offering abandoned homes for €1 to revitalise its medieval centre — distinctive for requiring no deposit and no return guarantee. Recorded one of the first completed €1-house sales.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Case a 1 Euro — Maenza",
+      "org": "Comune di Maenza",
+      "country": "Italy", "region": "Southern Europe", "city": "Maenza",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "property_scheme",
+      "value_eur": 1, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://1eurohouses.com/maenza-joins-to-municipalities-with-1-euro-houses/",
+      "source_name": "1 Euro Houses",
+      "description": "Village in Lazio (Latina) that joined the €1-houses initiative to redevelop and repopulate its historic centre, selling abandoned properties for a symbolic €1 with renovation obligations.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Holapueblo — rural repopulation & entrepreneurship programme",
+      "org": "Holapueblo (Redeia / AlmaNatura / Correos)",
+      "country": "Spain", "region": "Southern Europe", "city": null,
+      "sector": "Rural repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.redeia.com/en/sala-de-prensa/actualidad/nota-de-prensa/2023/12/100-municipalities-rural-Spain-aim-repopulate-revitalise-Holapueblo",
+      "source_name": "Redeia (Red Eléctrica)",
+      "description": "National programme matching entrepreneurs and remote-working families with ~100 depopulated Spanish municipalities, providing mentoring, business training and relocation support (not direct cash). Aimed at repopulating 'la España vaciada'.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Bono de Activación Rural — Galicia (up to €18,000)",
+      "org": "Xunta de Galicia",
+      "country": "Spain", "region": "Southern Europe", "city": null,
+      "sector": "Rural repopulation", "category": "repopulation", "type": "grant",
+      "value_eur": 18000, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://www.idealista.com/en/news/property-for-sale-in-spain/2025/09/02/89159-abandoned-villages-in-spain-grants-tax-reductions-pay-to-move-and-more",
+      "source_name": "idealista/news",
+      "description": "Galician grant of up to €18,000 for non-agricultural rural entrepreneurship (CAP Strategic Plan 2023-2027, €12.6M budget); Galicia also offers relocation aid and tax deductions for moving to villages under 5,000 inhabitants.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Emprego Interior MAIS — relocation support to Portugal's interior",
+      "org": "IEFP",
+      "country": "Portugal", "region": "Southern Europe", "city": null,
+      "sector": "Rural repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": 3760, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://iefponline.iefp.pt/IEFP/interiorMais.do?action=overview",
+      "source_name": "IEFP",
+      "description": "Government measure paying workers who move their residence to Portugal's interior for a job or self-employment; base support ~7× the IAS (≈€3,760 in 2026) for permanent contracts, with increases per relocating family member and moving costs. Open to foreigners and remote workers.",
+      "confidence": 0.9
+    },
+    {
+      "title": "Antikythera settler support programme",
+      "org": "Municipality of Kythera & local authorities",
+      "country": "Greece", "region": "Southern Europe", "city": "Antikythera",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": 18000, "stage": "open", "deadline": null, "date": "2026-01-10",
+      "source_url": "https://greekcitytimes.com/2026/01/10/antikythera-greek-island-free-housing-food-500-euros-2026/",
+      "source_name": "Greek City Times",
+      "description": "Programme to repopulate the tiny Aegean island of Antikythera offering settlers free accommodation (house and plot) plus €500/month per household for three years (~€18,000), targeting young families and skilled workers (bakers, fishermen, builders).",
+      "confidence": 0.75
+    },
+    {
+      "title": "Petites villes de demain — town-centre revitalisation",
+      "org": "Agence Nationale de la Cohésion des Territoires (ANCT)",
+      "country": "France", "region": "Western Europe", "city": null,
+      "sector": "Rural repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": null, "stage": "open", "deadline": "2026-12-31", "date": "2020-10-01",
+      "source_url": "https://anct.gouv.fr/programmes-dispositifs/petites-villes-de-demain",
+      "source_name": "ANCT (France)",
+      "description": "National programme supporting 1,646 communes under 20,000 inhabitants to revitalise town centres and reverse decline (≈€3B over six years via engineering support, targeted funding and a network). Runs to end-2026 with continuation announced.",
+      "confidence": 0.92
+    },
+    {
+      "title": "Tulsa Remote — $10,000 remote-worker relocation grant",
+      "org": "Tulsa Remote (George Kaiser Family Foundation)",
+      "country": "US", "region": "North America", "city": "Tulsa",
+      "sector": "Rural repopulation", "category": "repopulation", "type": "grant",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.tulsaremote.com/program-details",
+      "source_name": "Tulsa Remote",
+      "description": "One-year programme paying eligible remote workers a $10,000 grant (plus free co-working) to relocate to Tulsa, Oklahoma; ~3,500 grants issued with ~90% first-year retention. A leading US heartland remote-worker incentive.",
+      "confidence": 0.9
+    },
+    {
+      "title": "Our Living Islands — Vacant Property Refurbishment Grant",
+      "org": "Dept. of Rural and Community Development and the Gaeltacht",
+      "country": "Ireland", "region": "Western Europe", "city": null,
+      "sector": "Rural repopulation", "category": "repopulation", "type": "grant",
+      "value_eur": 84000, "stage": "open", "deadline": null, "date": "2023-06-01",
+      "source_url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/policy-information/our-living-islands/",
+      "source_name": "Gov.ie",
+      "description": "Ireland's 10-year offshore-islands policy (2023) supports repopulation via remote-working infrastructure and Vacant Property Refurbishment Grants up to €60,000 (vacant) or €84,000 (derelict) to renovate and occupy pre-1993 island homes.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Bpifrance Transmission — 'Je reprends une entreprise'",
+      "org": "Bpifrance",
+      "country": "France", "region": "Western Europe", "city": null,
+      "sector": "Business succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://reprise-entreprise.bpifrance.fr/",
+      "source_name": "Bpifrance Transmission",
+      "description": "State investment bank's business-transfer platform centralising 45,000+ listings of SMEs and mid-caps for sale, with financing and a Pass Repreneur for first-time buyers. A dedicated Plan Transmission boosts successions.",
+      "confidence": 0.92
+    },
+    {
+      "title": "CRA — Cédants et Repreneurs d'Affaires",
+      "org": "Cédants et Repreneurs d'Affaires (CRA)",
+      "country": "France", "region": "Western Europe", "city": null,
+      "sector": "Business succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.cra.asso.fr/",
+      "source_name": "CRA",
+      "description": "National non-profit of 250+ volunteer delegates matching retiring SME/VSE owners (typically €300k–3M turnover) with buyers, offering neutral mentoring through all stages of transmission. 13,500+ companies supported.",
+      "confidence": 0.9
+    },
+    {
+      "title": "Transeo — European SME transfer & succession association",
+      "org": "Transeo",
+      "country": "EU", "region": "EU", "city": null,
+      "sector": "Business succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.transeo-association.eu/",
+      "source_name": "Transeo",
+      "description": "European association for the SME business-transfer industry — family succession, buy-outs and cross-border acquisitions typically €0.5M–25M — with matchmaking (Deal Club), training and annual summits.",
+      "confidence": 0.9
+    },
+    {
+      "title": "B2scout — Italian business-for-sale marketplace",
+      "org": "B2scout",
+      "country": "Italy", "region": "Southern Europe", "city": null,
+      "sector": "Business succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.b2scout.com/",
+      "source_name": "B2scout",
+      "description": "Italian marketplace aggregating listings from entrepreneurs seeking to sell their companies, addressing the widely-cited problem that roughly half of Italian SMEs are sold for lack of generational succession.",
+      "confidence": 0.72
+    },
+    {
+      "title": "Relevo Generacional — chamber business-transfer exchanges",
+      "org": "Cámaras de Comercio (Spain)",
+      "country": "Spain", "region": "Southern Europe", "city": null,
+      "sector": "Business succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": null,
+      "source_url": "https://www.camarahuesca.com/programa-de-relevo-generacional-bolsa-de-traspasos/",
+      "source_name": "Cámara de Comercio de Huesca",
+      "description": "Chamber-of-commerce 'relevo generacional' programmes and transfer exchanges (bolsa de traspasos) connecting ageing owners with no successor to buyers, part of a national plan to transfer viable SMEs; recent initiatives target rural businesses.",
+      "confidence": 0.75
+    },
+    {
+      "title": "EU generational renewal — farm succession & access to land",
+      "org": "European Commission — DG AGRI",
+      "country": "EU", "region": "EU", "city": null,
+      "sector": "Agriculture", "category": "succession", "type": "grant",
+      "value_eur": 300000, "stage": "upcoming", "deadline": null, "date": "2026-01-26",
+      "source_url": "https://agriculture.ec.europa.eu/media/news/succession-and-retirement-smoothing-path-between-generations-2026-01-26_en",
+      "source_name": "European Commission (DG AGRI)",
+      "description": "EU strategy for generational renewal in farming — matchmaking platforms connecting retiring farmers (many without heirs) to new entrants, a European Land Observatory, and a planned young-farmer 'starter pack' of up to €300,000 under the next CAP.",
+      "confidence": 0.82
     }
   ]
 }

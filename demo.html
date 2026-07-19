@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Who takes over? · Succession & repopulation · SAI Agency Deal Radar</title>
+    <meta name="description" content="A live demo of the SAI Agency Deal Radar answering a real challenge in ageing economies: emptying villages and businesses without heirs. Real €1-house & relocation schemes and businesses seeking a successor across Europe and beyond." />
+    <link rel="canonical" href="https://sai-agency.netlify.app/demo" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAI Agency" />
+    <meta property="og:title" content="Who takes over? — Succession & repopulation Deal Radar" />
+    <meta property="og:description" content="Real €1-house & relocation schemes and businesses seeking a successor, sourced and pipeline-classified in one place." />
+    <meta property="og:url" content="https://sai-agency.netlify.app/demo" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="/assets/deals.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <div class="masthead">
+          <h1><span class="kicker">SAI Agency</span> · Who takes over?</h1>
+        </div>
+        <p class="tagline">
+          Rich economies are ageing. Across Southern Europe and beyond, whole
+          villages empty as young people leave for the cities, and countless
+          small businesses and farms face closure because their owners have
+          <strong>no heir — or no successor willing to take over</strong>.
+          Meanwhile, towns are giving homes away for <strong>€1</strong> and paying
+          people to move in.
+        </p>
+        <p class="pipeline-note">
+          This is the <strong>Deal Radar in action</strong>: real opportunities
+          sourced via the <code>KafCade</code> RRSS cascade, impact-scored and
+          <code>ARM</code>-classified, published as evolution signals to
+          <code>evo-metaclaw</code>. <a href="/deals">Open the full Deal Radar →</a>
+        </p>
+      </header>
+
+      <section id="stats" class="stats" aria-label="Live summary"></section>
+
+      <section class="charts">
+        <a class="card pathway" href="/deals?category=repopulation">
+          <h2>🏡 Take over a home</h2>
+          <p class="tagline">€1 &amp; €3 houses, relocation grants and settler
+          schemes repopulating emptying towns — Italy, Spain, Portugal, Greece,
+          France, Ireland, the US and more.</p>
+          <p class="count" id="repop-count">Loading…</p>
+          <span class="btn">Browse repopulation schemes →</span>
+        </a>
+        <a class="card pathway" href="/deals?category=succession">
+          <h2>🏭 Take over a business</h2>
+          <p class="tagline">Family firms, shops and farms seeking a successor,
+          plus the official transfer registries that match retiring owners with
+          new entrants across Europe.</p>
+          <p class="count" id="succ-count">Loading…</p>
+          <span class="btn">Browse succession opportunities →</span>
+        </a>
+      </section>
+
+      <section aria-label="Featured opportunities">
+        <h2 class="section-h">Featured — sourced &amp; classified</h2>
+        <div id="samples" class="deals"><div class="empty">Loading live opportunities…</div></div>
+      </section>
+
+      <footer>
+        <p id="generated"></p>
+        <p>
+          Every opportunity links to its official source and is classified into
+          an ARM pipeline stage with an impact score — the same machinery that
+          powers the AI/ML Deal Radar, pointed at a human challenge. Verify
+          details at the source before acting. <a href="/deals">See all deals</a>
+          · <a href="/deals.xml">RSS</a>
+        </p>
+      </footer>
+    </main>
+    <script src="/assets/demo.js"></script>
+  </body>
+</html>

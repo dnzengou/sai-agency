@@ -185,6 +185,24 @@ computes the funnel from the NDJSON lead store: subscribers → interests →
 engaged → won, with conversion ratios, top deals by interest, and breakdowns by
 form / ARM stage / owner / region.
 
+## Demo: succession & repopulation (`/demo`)
+
+A live illustration of the platform answering a real challenge in ageing
+economies — emptying villages and businesses without heirs — from a property &
+ventures angle. Same machinery (RRSS → KafCade → Bl → ARM → detail pages / RSS /
+analytics), pointed at a human problem.
+
+- Deals now carry a **`category`** (`ai_ml` | `repopulation` | `succession` |
+  `venture`) plus two new types (`property_scheme`, `business_succession`). The
+  `/deals` view has a **category filter** (URL-synced: `/deals?category=repopulation`).
+- The bundled dataset includes **real, cited** €1/€3-house schemes (Mussomeli,
+  Sambuca, Ollolai, Laurenzana, Maenza, Presicce), relocation grants (Galicia,
+  Portugal's Emprego Interior, Antikythera, Tulsa Remote, Ireland's islands,
+  France's Petites villes de demain) and business-succession registries
+  (Bpifrance, CRA, Transeo, EU farm succession, Spanish/Italian marketplaces).
+- **`/demo`** (`demo.html` + `/assets/demo.js`) renders live counts + featured
+  opportunities from `deals.json` and routes into the filtered Deal Radar.
+
 ## Layout
 
 ```

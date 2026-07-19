@@ -124,6 +124,18 @@ class DealType(str, Enum):
     FUNDING_ROUND = "funding_round"
     PARTNERSHIP = "partnership"
     RFP = "rfp"
+    # Succession & repopulation theme (property + ventures perspective)
+    PROPERTY_SCHEME = "property_scheme"        # €1 houses, relocation/settler schemes
+    BUSINESS_SUCCESSION = "business_succession"  # business/farm seeking a successor
+
+
+class DealCategory(str, Enum):
+    """Top-level opportunity family — powers the demo/thematic views."""
+
+    AI_ML = "ai_ml"                # AI/ML/data grants, tenders, rounds (default)
+    REPOPULATION = "repopulation"  # emptying-village / €1-house / relocation schemes
+    SUCCESSION = "succession"      # ageing owners seeking a successor/buyer
+    VENTURE = "venture"            # rural ventures / mixed opportunities
 
 
 class ARMStage(str, Enum):
@@ -148,6 +160,7 @@ class Deal(BaseModel):
     city: Optional[str] = None
     sector: str = ""
     type: DealType = DealType.GRANT
+    category: DealCategory = DealCategory.AI_ML
     value_eur: Optional[float] = None
     stage: str = "open"  # open | upcoming | closed | announced
     deadline: Optional[str] = None

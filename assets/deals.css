@@ -183,6 +183,14 @@ a:hover { text-decoration: underline; }
 footer { margin-top: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); padding-top: 16px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
 
+/* Demo landing — pathway cards */
+.section-h { font-size: 1.1rem; margin: 8px 0 12px; }
+a.card.pathway { text-decoration: none; color: inherit; display: block; transition: transform 0.08s ease; }
+a.card.pathway:hover { transform: translateY(-2px); text-decoration: none; }
+.card.pathway h2 { font-size: 1.15rem; margin: 0 0 6px; }
+.card.pathway .count { color: var(--c1); font-weight: 600; font-size: 0.9rem; margin: 8px 0 12px; }
+.card.pathway .btn { display: inline-block; }
+
 /* Deal detail page */
 .wrap.detail { max-width: 760px; }
 .wrap.detail .deal h1 { font-size: 1.5rem; margin: 0; letter-spacing: -0.01em; }

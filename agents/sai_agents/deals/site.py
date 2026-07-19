@@ -91,8 +91,10 @@ def render_deal_page(deal: Dict, site_url: str = DEFAULT_SITE) -> str:
             return ""
         return f'<div class="drow"><span class="dk">{_esc(label)}</span><span class="dv">{_esc(value)}</span></div>'
 
+    _CAT_LABEL = {"ai_ml": "AI / ML", "repopulation": "Repopulation", "succession": "Succession", "venture": "Venture"}
     rows = "".join([
         meta_row("Type", tlabel),
+        meta_row("Category", _CAT_LABEL.get(deal.get("category", ""), deal.get("category", ""))),
         meta_row("Region", deal.get("region", "")),
         meta_row("Country", deal.get("country", "")),
         meta_row("Sector", deal.get("sector", "")),
@@ -178,6 +180,7 @@ def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE) -> str:
     urls = [
         (f"{site_url}/", "weekly", "1.0"),
         (f"{site_url}/deals", "daily", "0.9"),
+        (f"{site_url}/demo", "weekly", "0.8"),
     ]
     urls += [(deal_url(d, site_url), "weekly", "0.7") for d in deals]
     body = "\n".join(
