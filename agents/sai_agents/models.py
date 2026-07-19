@@ -127,6 +127,7 @@ class DealType(str, Enum):
     # Succession & repopulation theme (property + ventures perspective)
     PROPERTY_SCHEME = "property_scheme"        # €1 houses, relocation/settler schemes
     BUSINESS_SUCCESSION = "business_succession"  # business/farm seeking a successor
+    VENTURE = "venture"                          # rural venture / co-investment vehicle
 
 
 class DealCategory(str, Enum):

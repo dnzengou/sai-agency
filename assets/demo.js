@@ -7,10 +7,11 @@
   var TYPE_LABEL = {
     property_scheme: "Relocation / €1 house",
     business_succession: "Business succession",
+    venture: "Venture / co-investment",
     grant: "Grant",
     partnership: "Partnership",
   };
-  var CAT_LABEL = { repopulation: "Repopulation", succession: "Succession" };
+  var CAT_LABEL = { repopulation: "Repopulation", succession: "Succession", venture: "Venture" };
   var $ = function (s) { return document.querySelector(s); };
 
   function el(tag, cls, text) {
@@ -54,8 +55,9 @@
       var deals = data.deals || [];
       var repop = deals.filter(function (d) { return d.category === "repopulation"; });
       var succ = deals.filter(function (d) { return d.category === "succession"; });
+      var vent = deals.filter(function (d) { return d.category === "venture"; });
       var countries = {};
-      repop.concat(succ).forEach(function (d) { if (d.country) countries[d.country] = 1; });
+      repop.concat(succ).concat(vent).forEach(function (d) { if (d.country) countries[d.country] = 1; });
 
       // Stat tiles
       var stats = $("#stats");
@@ -76,12 +78,14 @@
       $("#repop-count").textContent = repop.length + " schemes across " +
         new Set(repop.map(function (d) { return d.country; })).size + " countries";
       $("#succ-count").textContent = succ.length + " opportunities & registries";
+      var vc = $("#venture-count");
+      if (vc) vc.textContent = vent.length + " venture & co-investment vehicles";
 
       // Featured: a few from each category, highest impact first.
       function top(arr, n) {
         return arr.slice().sort(function (a, b) { return (b.impact_score || 0) - (a.impact_score || 0); }).slice(0, n);
       }
-      var featured = top(repop, 4).concat(top(succ, 3));
+      var featured = top(repop, 3).concat(top(succ, 2)).concat(top(vent, 2));
       var mount = $("#samples");
       mount.innerHTML = "";
       featured.forEach(function (d) { mount.appendChild(card(d)); });

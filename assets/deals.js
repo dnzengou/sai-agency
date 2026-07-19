@@ -13,6 +13,7 @@
     rfp: "var(--c6)",
     property_scheme: "var(--c2)",
     business_succession: "var(--c6)",
+    venture: "var(--c3)",
   };
   var TYPE_LABEL = {
     grant: "Grant",
@@ -23,6 +24,7 @@
     rfp: "RFP",
     property_scheme: "Relocation / €1 house",
     business_succession: "Business succession",
+    venture: "Venture / co-investment",
   };
 
   var CATEGORY_LABEL = {

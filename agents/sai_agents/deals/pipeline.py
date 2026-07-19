@@ -42,7 +42,13 @@ _TYPE_SYNONYMS = {
     "marketplace": "business_succession",
     "business_for_sale": "business_succession",
     "succession": "business_succession",
-    "venture": "partnership",
+    # Venture family — kept as its own type.
+    "search_fund": "venture",
+    "eta": "venture",
+    "community_ownership": "venture",
+    "co_investment": "venture",
+    "crowdfunding": "venture",
+    "fund": "venture",
 }
 
 # Types that imply a category when the source didn't state one.
@@ -71,6 +77,10 @@ def _normalize(raw: Dict) -> Optional[Deal]:
         dtype = "partnership"
     data["type"] = dtype
     data["category"] = _infer_category(data, dtype)
+    # A venture-category item typed as a succession marketplace is really a
+    # venture vehicle — relabel so the type matches the category.
+    if data["category"] == "venture" and dtype == "business_succession":
+        data["type"] = "venture"
     # Drop source-only keys the model doesn't accept.
     data.pop("source", None)
     try:

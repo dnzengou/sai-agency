@@ -52,11 +52,11 @@ jobs:
             | grep -vE 'generated_at|lastBuildDate' || true)
           if [ -z "$changed" ]; then
             echo "No meaningful deal changes — skipping commit."
-            git checkout -- deals.json deals.xml sitemap.xml deals/ 2>/dev/null || true
+            git checkout -- deals.json deals.xml sitemap.xml deals/ country/ countries.html 2>/dev/null || true
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add deals.json deals.xml sitemap.xml deals/
+          git add deals.json deals.xml sitemap.xml deals/ country/ countries.html
           git commit -m "chore(deals): scheduled Deal Radar refresh [skip ci]"
           git push

@@ -23,6 +23,7 @@ _OWNER_BY_TYPE = {
     DealType.ACCELERATOR: "marketing",
     DealType.BUSINESS_SUCCESSION: "sales_gtm",  # a live buyer/seller match
     DealType.PROPERTY_SCHEME: "marketing",       # inbound relocation interest
+    DealType.VENTURE: "sales_gtm",               # co-investment / venture vehicle
 }
 
 # Type weight — how directly actionable/valuable the type is for an agency.
@@ -32,6 +33,7 @@ _TYPE_WEIGHT = {
     DealType.PUBLIC_TENDER: 0.9,
     DealType.PARTNERSHIP: 0.85,
     DealType.PROPERTY_SCHEME: 0.8,       # a concrete relocation/property offer
+    DealType.VENTURE: 0.75,              # co-investment / venture vehicle
     DealType.FUNDING_ROUND: 0.7,  # market signal / warm outreach
     DealType.GRANT: 0.6,
     DealType.ACCELERATOR: 0.5,
@@ -86,6 +88,8 @@ def _next_action(deal: Deal) -> str:
         return f"Register interest & check residency/renovation conditions ({deal.org})"
     if deal.type == DealType.BUSINESS_SUCCESSION:
         return f"Request the seller memorandum & arrange a viewing ({deal.org})"
+    if deal.type == DealType.VENTURE:
+        return f"Review the vehicle's thesis & ticket size ({deal.org})"
     return f"Open conversation with {deal.org}"
 
 
