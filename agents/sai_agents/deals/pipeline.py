@@ -11,6 +11,7 @@ The output is both a clean ``deals.json`` for the web app and a stream of
 
 from __future__ import annotations
 
+import hashlib
 import json
 from datetime import datetime, timezone
 from email.utils import format_datetime, parsedate_to_datetime
@@ -20,7 +21,8 @@ from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
 from sai_agents.deals.arm import classify_arm
-from sai_agents.deals.sources import RRSSRegistry
+from sai_agents.deals.rss import rss_sources_from_feeds
+from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
 from sai_agents.kafca.blacklist import Blacklist
 from sai_agents.kafca.publisher import KafkaEventPublisher
 from sai_agents.logging_setup import get_logger
@@ -44,10 +46,14 @@ def _normalize(raw: Dict) -> Optional[Deal]:
     # Drop source-only keys the model doesn't accept.
     data.pop("source", None)
     try:
-        return Deal(**{k: v for k, v in data.items() if k in Deal.model_fields})
+        deal = Deal(**{k: v for k, v in data.items() if k in Deal.model_fields})
     except Exception as exc:
         log.warning("deals.normalize.drop", title=data.get("title"), error=str(exc))
         return None
+    # Deterministic, content-derived id so regenerating the same data yields a
+    # stable deals.json (the scheduled refresh only commits real changes).
+    deal.id = hashlib.sha1(deal.dedupe_key().encode("utf-8")).hexdigest()[:16]
+    return deal
 
 
 class KafCadePipeline:
@@ -59,9 +65,22 @@ class KafCadePipeline:
         blacklist: Optional[Blacklist] = None,
     ) -> None:
         self.settings = settings or get_settings()
-        self.registry = registry or RRSSRegistry()
+        self.registry = registry or self._default_registry()
         self.publisher = publisher or KafkaEventPublisher(self.settings)
         self.blacklist = blacklist or Blacklist(extra_patterns=self.settings.blacklist_patterns)
+
+    def _default_registry(self) -> RRSSRegistry:
+        """Bundled curated dataset + any opt-in live RSS feeds (RRSS)."""
+        sources = [BundledJSONSource()]
+        if self.settings.rss_feeds:
+            # Keep only Southern Europe / Nordics items from generic feeds.
+            sources.extend(
+                rss_sources_from_feeds(
+                    self.settings.rss_feeds,
+                    region_filter={"Southern Europe", "Nordics"},
+                )
+            )
+        return RRSSRegistry(sources)
 
     # ------------------------------------------------------------------ #
     def collect(self) -> List[Deal]:
