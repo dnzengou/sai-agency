@@ -10,6 +10,9 @@
     venture: "Venture / co-investment",
     grant: "Grant",
     partnership: "Partnership",
+    funding_round: "Funding round",
+    public_tender: "Public tender",
+    accelerator: "Accelerator",
   };
   var CAT_LABEL = { repopulation: "Repopulation", succession: "Succession", venture: "Venture" };
   var $ = function (s) { return document.querySelector(s); };

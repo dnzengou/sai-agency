@@ -5,7 +5,7 @@
     <link>https://sai-agency.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 19 Jul 2026 15:33:10 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 15:35:49 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)</title>
@@ -78,6 +78,13 @@
       <description>Madrid healthtech Tucuvi raised EUR 17M (USD 20M) Series A led by Cathay Innovation and Kfund/Leadwind to scale its clinically-certified voice AI agent for automated patient follow-up. · Type: funding_round · Country: Spain (Southern Europe) · Value: 17000000.0 · Impact: 0.7923</description>
     </item>
     <item>
+      <title>Greater Colorado Venture Fund II (Howdy Partners) — rural VC</title>
+      <link>https://oedit.colorado.gov/press-release/promoting-statewide-access-to-venture-funding-state-renews-partnership-with-greater-colorado</link>
+      <guid isPermaLink="false">34c5f3d44029e63c</guid>
+      <category>funding_round</category>
+      <description>A $25M Fund II (with the Colorado Venture Capital Authority) investing in 25–30 rural Colorado startups with ~$500k initial checks; the state renewed the partnership to expand venture access for rural businesses. · Type: funding_round · Country: United States (North America) · Value: 23000000.0 · Impact: 0.7881</description>
+    </item>
+    <item>
       <title>Tana raises EUR 13.6M Series A for AI-native workspace</title>
       <link>https://www.eu-startups.com/2025/02/ai-native-workspace-startup-tana-raises-e13-6-million-to-develop-voice-powered-workflow/</link>
       <guid isPermaLink="false">21f662d4a6f39fc8</guid>
@@ -104,6 +111,20 @@
       <guid isPermaLink="false">fe61fbb6366b93c0</guid>
       <category>funding_round</category>
       <description>Croatian-founded SplxAI (AI/LLM application security) raised ~USD 7M (EUR 6.5M) seed led by LAUNCHub Ventures with Rain Capital, Inovo, Runtime, DNV and South Central Ventures; later acquired by Zscaler. · Type: funding_round · Country: Croatia (Southern Europe) · Value: 6500000.0 · Impact: 0.771</description>
+    </item>
+    <item>
+      <title>Search Fund Squared — fund of funds for SME succession</title>
+      <link>https://moonbasecapital.com/search-funds-for-smes/</link>
+      <guid isPermaLink="false">f8645d5864a855b7</guid>
+      <category>funding_round</category>
+      <description>Backs entrepreneurs who acquire and run European SMEs facing succession gaps (no family heir), targeting €1–5M EBITDA companies; raising a ~€15M 'Search Fund Squared' fund of funds (first close ~€5M) to co-invest across ~40 search funds. · Type: funding_round · Country: Germany (EU) · Value: 15000000.0 · Impact: 0.7622</description>
+    </item>
+    <item>
+      <title>Astanor Ventures — agri-food tech impact fund II</title>
+      <link>https://www.eu-startups.com/2023/09/astanor-ventures-solidifies-its-commitment-to-sustainable-agrifood-tech-by-closing-a-second-venture-fund-at-e360-million/</link>
+      <guid isPermaLink="false">966eacf0e232a932</guid>
+      <category>funding_round</category>
+      <description>European impact VC that closed a €360M second fund to back early- and later-stage agri-food/agritech startups (~€1B AUM); thesis targets sustainable food systems and rural/agricultural innovation. · Type: funding_round · Country: Belgium (Western Europe) · Value: 360000000.0 · Impact: 0.76</description>
     </item>
     <item>
       <title>Bpifrance Transmission — 'Je reprends une entreprise'</title>
@@ -162,6 +183,13 @@
       <description>EIC Pre-Accelerator supports early-stage deep-tech startups from Horizon Europe widening countries (incl. Greece, Portugal, Croatia, Slovenia, Cyprus, Malta); 2026-2027 WIDERA budget EUR 40M, first cohort of 70 selected April 2026. · Type: accelerator · Country: EU (EU) · Value: 40000000.0 · Impact: 0.7302</description>
     </item>
     <item>
+      <title>ITS Lending — crowdfunding for regeneration of Italian villages</title>
+      <link>https://www.crowdfundingbuzz.it/con-its-lending-il-crowdfunding-immobiliare-offre-la-possibilita-di-investire-nella-rinascita-dei-borghi/</link>
+      <guid isPermaLink="false">8608b93e81209174</guid>
+      <category>venture</category>
+      <description>Italian real-estate lending crowdfunding platform dedicated to regenerating small historic villages (borghi), letting investors participate from €100 in property renovation for expected ~6–12%/yr returns. Over €1.6M raised financing 25 buildings across six regions. · Type: venture · Country: Italy (Southern Europe) · Value: 1600000.0 · Impact: 0.7213</description>
+    </item>
+    <item>
       <title>Horizon Europe Cluster 4 call HORIZON-CL4-2026-04 (Data &amp; Trustworthy AI)</title>
       <link>https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-europe/cluster-4-digital-industry-and-space_en</link>
       <guid isPermaLink="false">74ac9c0c1575bbc5</guid>
@@ -211,6 +239,13 @@
       <description>Italy's central purchasing body Consip plans (Q3 2026) the first national framework agreement dedicated to supplying AI solutions to all public administrations, plus AI-assisted procurement to cut tender times. · Type: public_tender · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.69</description>
     </item>
     <item>
+      <title>Community Shares Booster Fund</title>
+      <link>https://www.uk.coop/support-your-co-op/community-shares/support/booster-fund</link>
+      <guid isPermaLink="false">b61e9655a04f4c27</guid>
+      <category>partnership</category>
+      <description>Relaunched in 2025, the Booster Fund provides development grants (£2,000–£15,000) plus equity match investment of £10,000–£100,000 to community businesses running community share offers to save assets such as village pubs and shops, co-investing alongside money raised from local communities. · Type: partnership · Country: United Kingdom (Western Europe) · Value: n/a · Impact: 0.69</description>
+    </item>
+    <item>
       <title>2025 Call for Science and Innovation Missions (Responsible AI mission-challenge)</title>
       <link>https://one.gob.es/en/aid-and-calls/2025-call-science-and-innovation-missions</link>
       <guid isPermaLink="false">4daa1429b5ef053d</guid>
@@ -237,6 +272,13 @@
       <guid isPermaLink="false">7b031002f9850dfa</guid>
       <category>public_tender</category>
       <description>Provincial government of Bizkaia tendered consultancy and technical assistance for its data office and AI governance model for 2026-2027. · Type: public_tender · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.67</description>
+    </item>
+    <item>
+      <title>Novos Povoadores — business relocation to Portugal's interior</title>
+      <link>https://novospovoadores.pt/</link>
+      <guid isPermaLink="false">3cf6a2eb439f1466</guid>
+      <category>partnership</category>
+      <description>Maps business opportunities in Portugal's depopulating interior and supports entrepreneurs and families in relocating and launching or transferring ventures there; reports 165 companies established, 216 jobs created and 160+ families resettled. · Type: partnership · Country: Portugal (Southern Europe) · Value: n/a · Impact: 0.67</description>
     </item>
     <item>
       <title>Cyprus RIF PRE-SEED startup development call 2026</title>
@@ -281,11 +323,39 @@
       <description>Aggregated listing of active Danish government big-data and analytics tenders and RFPs; Denmark publishes procurement via portals such as udbud.dk under EU rules. · Type: public_tender · Country: Denmark (Nordics) · Value: n/a · Impact: 0.64</description>
     </item>
     <item>
+      <title>Crowdfunder Community Shares platform</title>
+      <link>https://www.crowdfunder.co.uk/community-shares</link>
+      <guid isPermaLink="false">3f3c52ebaad686c7</guid>
+      <category>venture</category>
+      <description>A crowd-investment platform where community groups launch community share offers to buy and own local assets — giving small investors a stake in rural pubs, shops and other village assets. Community pub ownership continued to grow in 2025 with new local buyouts. · Type: venture · Country: United Kingdom (Western Europe) · Value: n/a · Impact: 0.64</description>
+    </item>
+    <item>
       <title>Tender: management services for the AI startup acceleration programme at BSC</title>
       <link>https://www.boe.es/diario_boe/txt.php?id=BOE-B-2026-21617</link>
       <guid isPermaLink="false">58772316e73847ab</guid>
       <category>public_tender</category>
       <description>BSC-CNS procured comprehensive management services for its AI-focused startup acceleration programme; the contract was formalised on 22 June 2026. · Type: public_tender · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.63</description>
+    </item>
+    <item>
+      <title>Cooperative di comunità (community cooperatives)</title>
+      <link>https://coopcomunita.aiccon.it/news-e-ricerche/le-cooperative-di-comunita-il-made-in-italy-che-nasce-dai-luoghi/</link>
+      <guid isPermaLink="false">aec6d952df65ba71</guid>
+      <category>venture</category>
+      <description>Citizen-owned enterprises that pool member capital to directly run essential services, businesses and shared assets in depopulating Italian towns; spreading through borgo-regeneration, with regional calls (e.g. Emilia-Romagna 2025) supporting new community cooperatives. · Type: venture · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.63</description>
+    </item>
+    <item>
+      <title>Search Funds in Spain — SME succession acquisition ecosystem</title>
+      <link>https://www.crowe.com/es/insights/search-funds</link>
+      <guid isPermaLink="false">37f1d40feb18233e</guid>
+      <category>venture</category>
+      <description>Spain is Europe's leading search-fund market — 50+ active funds in IESE's 2024 study plus further SME acquisitions in 2025, driven by retiring owners with no successor. Search funds are investor-backed vehicles created to buy and run a single profitable SME long-term. · Type: venture · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.63</description>
+    </item>
+    <item>
+      <title>WAD Capital — institutional search fund for European SMEs</title>
+      <link>https://wadcap.com/</link>
+      <guid isPermaLink="false">4be19ceaa0d27f91</guid>
+      <category>venture</category>
+      <description>Institutional search-fund vehicle partnering with executives to acquire and lead established European SMEs whose founders are retiring without a successor (B2B services, energy transition, healthcare) — entrepreneurship through acquisition for Europe's succession wave. · Type: venture · Country: Belgium (EU) · Value: n/a · Impact: 0.62</description>
     </item>
     <item>
       <title>EU generational renewal — farm succession &amp; access to land</title>

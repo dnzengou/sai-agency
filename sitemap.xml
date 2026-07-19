@@ -21,6 +21,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency.netlify.app/country/belgium</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sai-agency.netlify.app/country/croatia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -47,6 +52,11 @@
   </url>
   <url>
     <loc>https://sai-agency.netlify.app/country/france</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/country/germany</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -97,6 +107,16 @@
   </url>
   <url>
     <loc>https://sai-agency.netlify.app/country/sweden</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/country/united-kingdom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/country/united-states</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,6 +176,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency.netlify.app/deals/34c5f3d44029e63c</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency.netlify.app/deals/21f662d4a6f39fc8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -172,6 +197,16 @@
   </url>
   <url>
     <loc>https://sai-agency.netlify.app/deals/fe61fbb6366b93c0</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/f8645d5864a855b7</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/966eacf0e232a932</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -216,6 +251,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency.netlify.app/deals/8608b93e81209174</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency.netlify.app/deals/74ac9c0c1575bbc5</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -251,6 +291,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency.netlify.app/deals/b61e9655a04f4c27</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency.netlify.app/deals/4daa1429b5ef053d</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -267,6 +312,11 @@
   </url>
   <url>
     <loc>https://sai-agency.netlify.app/deals/7b031002f9850dfa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/3cf6a2eb439f1466</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -301,7 +351,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency.netlify.app/deals/3f3c52ebaad686c7</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency.netlify.app/deals/58772316e73847ab</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/aec6d952df65ba71</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/37f1d40feb18233e</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency.netlify.app/deals/4be19ceaa0d27f91</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

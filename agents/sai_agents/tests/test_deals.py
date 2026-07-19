@@ -146,6 +146,26 @@ def test_category_and_type_synonyms():
     assert deals["Relocation cash"].category.value == "repopulation"
 
 
+def test_venture_type_mapping():
+    raw = [
+        {"title": "Community coop", "org": "AICCON", "country": "Italy",
+         "region": "Southern Europe", "type": "community_ownership", "category": "venture",
+         "stage": "open", "source_url": "https://a.test", "description": "coop"},
+        {"title": "Village crowdfund", "org": "ITS", "country": "Italy",
+         "region": "Southern Europe", "type": "crowdfunding", "category": "venture",
+         "stage": "open", "source_url": "https://b.test", "description": "invest"},
+        # a venture-category item the source typed as a marketplace -> relabel to venture
+        {"title": "Community shares", "org": "Crowdfunder", "country": "United Kingdom",
+         "region": "Western Europe", "type": "marketplace", "category": "venture",
+         "stage": "open", "source_url": "https://c.test", "description": "shares"},
+    ]
+    deals = {d.title: d for d in _pipeline(raw=raw).collect()}
+    assert deals["Community coop"].type == DealType.VENTURE
+    assert deals["Village crowdfund"].type == DealType.VENTURE
+    assert deals["Community shares"].type == DealType.VENTURE
+    assert all(d.category.value == "venture" for d in deals.values())
+
+
 def test_dataset_has_category_breakdown():
     ds = _pipeline().build_dataset(_pipeline().collect())
     assert "by_category" in ds["summary"]
