@@ -21,6 +21,7 @@ from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
 from sai_agents.deals.arm import classify_arm
+from sai_agents.valuation.estimator import estimate_value
 from sai_agents.deals.rss import rss_sources_from_feeds
 from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
 from sai_agents.kafca.blacklist import Blacklist
@@ -143,7 +144,9 @@ class KafCadePipeline:
             if key in seen:
                 continue
             seen.add(key)
-            deduped.append(classify_arm(deal))
+            deal = classify_arm(deal)
+            deal.valuation = estimate_value(deal)
+            deduped.append(deal)
 
         # Highest impact first — evo-metaclaw prioritisation order.
         deduped.sort(key=lambda d: d.impact_score, reverse=True)

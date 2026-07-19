@@ -25,6 +25,23 @@
     return "€" + n;
   }
 
+  function formatVal(v) {
+    if (!v) return null;
+    function e(n) {
+      if (n >= 1e9) return "€" + (n / 1e9).toFixed(1) + "B";
+      if (n >= 1e6) return "€" + (n / 1e6).toFixed(1) + "M";
+      if (n >= 1e3) return "€" + Math.round(n / 1e3) + "k";
+      return "€" + Math.round(n);
+    }
+    var lo = v.low_eur, hi = v.high_eur, pre = v.kind === "benefit" ? "up to " : "", rng;
+    if (lo == null && hi == null) return null;
+    else if (lo == null) rng = pre + e(hi);
+    else if (hi == null) rng = "from " + e(lo);
+    else if (lo === hi) rng = e(lo);
+    else rng = e(lo) + "–" + e(hi);
+    return rng + " · " + (v.disclosed && v.confidence === "high" ? "disclosed" : "indicative");
+  }
+
   function budgetOk(deal, lo, hi) {
     var v = deal.value_eur;
     if (v == null) return null;
@@ -113,7 +130,8 @@
       var meta = el("div", "meta");
       function m2(l, v) { var s = el("span"); s.appendChild(el("b", null, l + " ")); s.appendChild(document.createTextNode(v)); meta.appendChild(s); }
       m2("Type", TYPE_LABEL[d.type] || d.type);
-      m2("Value", euro(d.value_eur));
+      var est = formatVal(d.valuation);
+      m2(est ? "Est. value" : "Value", est || euro(d.value_eur));
       if (m.reasons.length) m2("Why", m.reasons.join(", "));
       card.appendChild(meta);
       var actions = el("div", "actions");

@@ -185,6 +185,23 @@ computes the funnel from the NDJSON lead store: subscribers → interests →
 engaged → won, with conversion ratios, top deals by interest, and breakdowns by
 form / ARM stage / owner / region.
 
+## Valuation (indicative estimates)
+
+Executes the business plan's **Valuation Agent** conservatively. At
+generate-time, `sai_agents.valuation.estimate_value` attaches an indicative EUR
+range to every deal (embedded in `deals.json` as `valuation`), with an explicit
+`basis` and `confidence` — never fabricated precision:
+
+- disclosed figures used directly (`disclosed`, high confidence);
+- €1/€3 house schemes → symbolic acquisition + a typical renovation budget
+  (`€20k–€70k`, medium confidence);
+- undisclosed business succession → a labelled sector-typical transfer band
+  (low confidence); grants → framed as "up to €X" benefit.
+
+Surfaced on the detail pages ("Indicative valuation" row) and the match cards
+("Est. value"). Because it's precomputed and embedded, the frontend just reads
+`deal.valuation` — no valuation logic duplicated client-side.
+
 ## Matchmaking (`/match`) — the end-user application
 
 Executes the business plan's **Matchmaking Agent**: a would-be successor, buyer

@@ -58,6 +58,17 @@ def euro(n) -> str:
     return f"€{n:.0f}"
 
 
+def _valuation_str(v) -> str:
+    """Human string for a valuation dict, including its short note."""
+    if not v:
+        return ""
+    from sai_agents.valuation.estimator import format_estimate
+
+    s = format_estimate(v)
+    note = v.get("note") or ""
+    return f"{s} — {note}" if note else s
+
+
 def deal_path(deal: Dict) -> str:
     return f"deals/{deal['id']}.html"
 
@@ -114,6 +125,7 @@ def render_deal_page(deal: Dict, site_url: str = DEFAULT_SITE) -> str:
         meta_row("Country", deal.get("country", "")),
         meta_row("Sector", deal.get("sector", "")),
         meta_row("Deal value", euro(deal.get("value_eur"))),
+        meta_row("Indicative valuation", _valuation_str(deal.get("valuation"))),
         meta_row("Stage", deal.get("stage", "")),
         meta_row("Deadline", deal.get("deadline") or ""),
         meta_row("Pipeline stage (ARM)", f"{deal.get('arm_stage', '')} · owner {deal.get('owner', '')}"),

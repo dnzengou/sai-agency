@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-19T21:04:42.745134+00:00",
+  "generated_at": "2026-07-19T21:23:58.501247+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -113,7 +113,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with Government of Portugal / EuroHPC",
       "priority": "critical",
-      "impact_score": 0.88
+      "impact_score": 0.88,
+      "valuation": {
+        "low_eur": 200000000.0,
+        "high_eur": 200000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "dcde6bceffce1599",
@@ -138,7 +148,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Legora — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.864
+      "impact_score": 0.864,
+      "valuation": {
+        "low_eur": 505000000.0,
+        "high_eur": 505000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "dceceb08b09d6552",
@@ -163,7 +183,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Multiverse Computing — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.86
+      "impact_score": 0.86,
+      "valuation": {
+        "low_eur": 189000000.0,
+        "high_eur": 189000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "acc0abad362c9bd6",
@@ -188,7 +218,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with CDP Venture Capital / OpenAI",
       "priority": "critical",
-      "impact_score": 0.86
+      "impact_score": 0.86,
+      "valuation": {
+        "low_eur": 500000000.0,
+        "high_eur": 500000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "4ec9a5fcb43db52e",
@@ -213,7 +253,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Lovable — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.86
+      "impact_score": 0.86,
+      "valuation": {
+        "low_eur": 184000000.0,
+        "high_eur": 184000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "a65125182d7e9218",
@@ -238,7 +288,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Verda (formerly DataCrunch) — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.85
+      "impact_score": 0.85,
+      "valuation": {
+        "low_eur": 100000000.0,
+        "high_eur": 100000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "bd11b8e8b539f2b2",
@@ -263,7 +323,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "critical",
-      "impact_score": 0.8352
+      "impact_score": 0.8352,
+      "valuation": {
+        "low_eur": 5450000.0,
+        "high_eur": 5450000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "f734d91483274143",
@@ -288,7 +358,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-09-09)",
       "priority": "critical",
-      "impact_score": 0.82
+      "impact_score": 0.82,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 414000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "ca6a307e85f78a38",
@@ -313,7 +393,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Lexroom — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.8124
+      "impact_score": 0.8124,
+      "valuation": {
+        "low_eur": 42900000.0,
+        "high_eur": 42900000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "06aa718c073d5f0e",
@@ -338,7 +428,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Tucuvi — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7923
+      "impact_score": 0.7923,
+      "valuation": {
+        "low_eur": 17000000.0,
+        "high_eur": 17000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "34c5f3d44029e63c",
@@ -363,7 +463,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Greater Colorado Venture Fund — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7881
+      "impact_score": 0.7881,
+      "valuation": {
+        "low_eur": 23000000.0,
+        "high_eur": 23000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "21f662d4a6f39fc8",
@@ -388,7 +498,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Tana — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.785
+      "impact_score": 0.785,
+      "valuation": {
+        "low_eur": 13600000.0,
+        "high_eur": 13600000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "59997566db54eb2d",
@@ -413,7 +533,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to GetWhy — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7823
+      "impact_score": 0.7823,
+      "valuation": {
+        "low_eur": 17000000.0,
+        "high_eur": 17000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "b058db8a4be252c9",
@@ -438,7 +568,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Sunrise Robotics — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7787
+      "impact_score": 0.7787,
+      "valuation": {
+        "low_eur": 7300000.0,
+        "high_eur": 7300000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "fe61fbb6366b93c0",
@@ -463,7 +603,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to SplxAI — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.771
+      "impact_score": 0.771,
+      "valuation": {
+        "low_eur": 6500000.0,
+        "high_eur": 6500000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "f8645d5864a855b7",
@@ -488,7 +638,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Moonbase Capital — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7622
+      "impact_score": 0.7622,
+      "valuation": {
+        "low_eur": 15000000.0,
+        "high_eur": 15000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "966eacf0e232a932",
@@ -513,7 +673,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Astanor Ventures — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.76
+      "impact_score": 0.76,
+      "valuation": {
+        "low_eur": 360000000.0,
+        "high_eur": 360000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "dd02e04c5d3e8e80",
@@ -538,7 +708,17 @@
       "owner": "sales_gtm",
       "next_action": "Request the seller memorandum & arrange a viewing (Bpifrance)",
       "priority": "critical",
-      "impact_score": 0.754
+      "impact_score": 0.754,
+      "valuation": {
+        "low_eur": 50000,
+        "high_eur": 500000,
+        "currency": "EUR",
+        "basis": "sector-typical transfer band (indicative)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "78d2acb5a27eb367",
@@ -563,7 +743,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Cernel — post-raise AI/ML build needs",
       "priority": "critical",
-      "impact_score": 0.7512
+      "impact_score": 0.7512,
+      "valuation": {
+        "low_eur": 4000000.0,
+        "high_eur": 4000000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "bb918f9cb3eb092b",
@@ -588,7 +778,17 @@
       "owner": "sales_gtm",
       "next_action": "Request the seller memorandum & arrange a viewing (Cédants et Repreneurs d'Affaires (CRA))",
       "priority": "critical",
-      "impact_score": 0.75
+      "impact_score": 0.75,
+      "valuation": {
+        "low_eur": 50000,
+        "high_eur": 500000,
+        "currency": "EUR",
+        "basis": "sector-typical transfer band (indicative)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "3065432aa5d272ac",
@@ -613,7 +813,17 @@
       "owner": "sales_gtm",
       "next_action": "Request the seller memorandum & arrange a viewing (Transeo)",
       "priority": "critical",
-      "impact_score": 0.75
+      "impact_score": 0.75,
+      "valuation": {
+        "low_eur": 50000,
+        "high_eur": 500000,
+        "currency": "EUR",
+        "basis": "sector-typical transfer band (indicative)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "67c9d1e73099ba75",
@@ -638,7 +848,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Codeplain — post-raise AI/ML build needs",
       "priority": "high",
-      "impact_score": 0.7451
+      "impact_score": 0.7451,
+      "valuation": {
+        "low_eur": 2600000.0,
+        "high_eur": 2600000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "a463f1f7c7a85a60",
@@ -663,7 +883,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Contents — post-raise AI/ML build needs",
       "priority": "high",
-      "impact_score": 0.7378
+      "impact_score": 0.7378,
+      "valuation": {
+        "low_eur": 5900000.0,
+        "high_eur": 5900000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "694cd6ff7bf41840",
@@ -688,7 +918,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-07-31)",
       "priority": "high",
-      "impact_score": 0.7342
+      "impact_score": 0.7342,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 15000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "6ea207f86b6838ca",
@@ -713,7 +953,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "high",
-      "impact_score": 0.7302
+      "impact_score": 0.7302,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 40000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "8608b93e81209174",
@@ -738,7 +988,17 @@
       "owner": "sales_gtm",
       "next_action": "Review the vehicle's thesis & ticket size (ITS Lending)",
       "priority": "high",
-      "impact_score": 0.7213
+      "impact_score": 0.7213,
+      "valuation": {
+        "low_eur": 1120000.0,
+        "high_eur": 2080000.0,
+        "currency": "EUR",
+        "basis": "disclosed (indicative ±30%)",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "74ac9c0c1575bbc5",
@@ -763,7 +1023,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-04-15)",
       "priority": "high",
-      "impact_score": 0.72
+      "impact_score": 0.72,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 221800000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "bc80b7291df582e6",
@@ -788,7 +1058,17 @@
       "owner": "sales_gtm",
       "next_action": "Request the seller memorandum & arrange a viewing (Cámaras de Comercio (Spain))",
       "priority": "high",
-      "impact_score": 0.72
+      "impact_score": 0.72,
+      "valuation": {
+        "low_eur": 50000,
+        "high_eur": 500000,
+        "currency": "EUR",
+        "basis": "sector-typical transfer band (indicative)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "c1294841d1e6ecde",
@@ -813,7 +1093,17 @@
       "owner": "sales_gtm",
       "next_action": "Request the seller memorandum & arrange a viewing (B2scout)",
       "priority": "high",
-      "impact_score": 0.714
+      "impact_score": 0.714,
+      "valuation": {
+        "low_eur": 50000,
+        "high_eur": 500000,
+        "currency": "EUR",
+        "basis": "sector-typical transfer band (indicative)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "1d2ed9550bb99def",
@@ -838,7 +1128,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2025-11-28)",
       "priority": "high",
-      "impact_score": 0.71
+      "impact_score": 0.71,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 100000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "5c1ad372d2d8dab1",
@@ -863,7 +1163,17 @@
       "owner": "sales_gtm",
       "next_action": "Warm outreach to Pallma AI — post-raise AI/ML build needs",
       "priority": "high",
-      "impact_score": 0.7
+      "impact_score": 0.7,
+      "valuation": {
+        "low_eur": 1360000.0,
+        "high_eur": 1360000.0,
+        "currency": "EUR",
+        "basis": "disclosed figure",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "3388559127b0dab2",
@@ -888,7 +1198,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.694
+      "impact_score": 0.694,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "82d825c67e954bb1",
@@ -913,7 +1233,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.69
+      "impact_score": 0.69,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "b61e9655a04f4c27",
@@ -938,7 +1268,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with Co-operatives UK",
       "priority": "high",
-      "impact_score": 0.69
+      "impact_score": 0.69,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "4daa1429b5ef053d",
@@ -963,7 +1303,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2025-07-01)",
       "priority": "high",
-      "impact_score": 0.6834
+      "impact_score": 0.6834,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 60000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "d7c408d921429843",
@@ -988,7 +1338,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "high",
-      "impact_score": 0.6809
+      "impact_score": 0.6809,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 12000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "c64846cd2d784ef1",
@@ -1013,7 +1373,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-06-23)",
       "priority": "high",
-      "impact_score": 0.6748
+      "impact_score": 0.6748,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 25000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "7b031002f9850dfa",
@@ -1038,7 +1408,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.67
+      "impact_score": 0.67,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "3cf6a2eb439f1466",
@@ -1063,7 +1443,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with Novos Povoadores",
       "priority": "high",
-      "impact_score": 0.67
+      "impact_score": 0.67,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "9f1c449c12a53377",
@@ -1088,7 +1478,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-09-11)",
       "priority": "high",
-      "impact_score": 0.654
+      "impact_score": 0.654,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 1000000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "60236f42cdf5dc9d",
@@ -1113,7 +1513,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with Nordic Innovation",
       "priority": "high",
-      "impact_score": 0.65
+      "impact_score": 0.65,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "5d601b9a67a2883a",
@@ -1138,7 +1548,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.65
+      "impact_score": 0.65,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "1b97847cc1b5bcb7",
@@ -1163,7 +1583,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-03-03)",
       "priority": "high",
-      "impact_score": 0.6472
+      "impact_score": 0.6472,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 10700000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "8d18c96d60f46d97",
@@ -1188,7 +1618,17 @@
       "owner": "sales_gtm",
       "next_action": "Open conversation with GRNET / Greek State (EuroHPC AI Factory)",
       "priority": "high",
-      "impact_score": 0.64
+      "impact_score": 0.64,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "28c298751a4afa56",
@@ -1213,7 +1653,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.64
+      "impact_score": 0.64,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "3f3c52ebaad686c7",
@@ -1238,7 +1688,17 @@
       "owner": "sales_gtm",
       "next_action": "Review the vehicle's thesis & ticket size (Crowdfunder UK)",
       "priority": "high",
-      "impact_score": 0.64
+      "impact_score": 0.64,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "ticket / fund size — varies",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "investment",
+        "note": ""
+      }
     },
     {
       "id": "58772316e73847ab",
@@ -1263,7 +1723,17 @@
       "owner": "sales_gtm",
       "next_action": "Assess fit & prepare bid before the deadline",
       "priority": "high",
-      "impact_score": 0.63
+      "impact_score": 0.63,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "varies — see source",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "cost",
+        "note": ""
+      }
     },
     {
       "id": "aec6d952df65ba71",
@@ -1288,7 +1758,17 @@
       "owner": "sales_gtm",
       "next_action": "Review the vehicle's thesis & ticket size (AICCON / Cooperative di Comunità network)",
       "priority": "high",
-      "impact_score": 0.63
+      "impact_score": 0.63,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "ticket / fund size — varies",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "investment",
+        "note": ""
+      }
     },
     {
       "id": "37f1d40feb18233e",
@@ -1313,7 +1793,17 @@
       "owner": "sales_gtm",
       "next_action": "Review the vehicle's thesis & ticket size (Crowe Spain (IESE data))",
       "priority": "high",
-      "impact_score": 0.63
+      "impact_score": 0.63,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "ticket / fund size — varies",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "investment",
+        "note": ""
+      }
     },
     {
       "id": "4be19ceaa0d27f91",
@@ -1338,7 +1828,17 @@
       "owner": "sales_gtm",
       "next_action": "Review the vehicle's thesis & ticket size (WAD Capital)",
       "priority": "high",
-      "impact_score": 0.62
+      "impact_score": 0.62,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "ticket / fund size — varies",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "investment",
+        "note": ""
+      }
     },
     {
       "id": "bc7b48a1716f9eda",
@@ -1363,7 +1863,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "high",
-      "impact_score": 0.6148
+      "impact_score": 0.6148,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 300000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "84f3211a825d6633",
@@ -1388,7 +1898,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-12-31)",
       "priority": "high",
-      "impact_score": 0.614
+      "impact_score": 0.614,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "923541f3bb22a364",
@@ -1413,7 +1933,17 @@
       "owner": "marketing",
       "next_action": "Register interest & check residency/renovation conditions (Comune di Mussomeli)",
       "priority": "high",
-      "impact_score": 0.61
+      "impact_score": 0.61,
+      "valuation": {
+        "low_eur": 20001.0,
+        "high_eur": 70001.0,
+        "currency": "EUR",
+        "basis": "symbolic acquisition + typical renovation",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": "Acquisition is symbolic; the real cost is renovation."
+      }
     },
     {
       "id": "9e9bf4deeac45bc0",
@@ -1438,7 +1968,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "high",
-      "impact_score": 0.61
+      "impact_score": 0.61,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "37ab3a5995b61230",
@@ -1463,7 +2003,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "high",
-      "impact_score": 0.606
+      "impact_score": 0.606,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "23fba99e0ba775f9",
@@ -1488,7 +2038,17 @@
       "owner": "marketing",
       "next_action": "Register interest & check residency/renovation conditions (Comune di Ollolai)",
       "priority": "high",
-      "impact_score": 0.604
+      "impact_score": 0.604,
+      "valuation": {
+        "low_eur": 20001.0,
+        "high_eur": 70001.0,
+        "currency": "EUR",
+        "basis": "symbolic acquisition + typical renovation",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": "Acquisition is symbolic; the real cost is renovation."
+      }
     },
     {
       "id": "c44a0ba28fa90545",
@@ -1513,7 +2073,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "high",
-      "impact_score": 0.6
+      "impact_score": 0.6,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "1e859f8182832e5e",
@@ -1538,7 +2108,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-10-01)",
       "priority": "medium",
-      "impact_score": 0.594
+      "impact_score": 0.594,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "e854f896b4dcdd70",
@@ -1563,7 +2143,17 @@
       "owner": "marketing",
       "next_action": "Register interest & check residency/renovation conditions (Comune di Sambuca di Sicilia)",
       "priority": "medium",
-      "impact_score": 0.584
+      "impact_score": 0.584,
+      "valuation": {
+        "low_eur": 20003.0,
+        "high_eur": 70003.0,
+        "currency": "EUR",
+        "basis": "symbolic acquisition + typical renovation",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": "Acquisition is symbolic; the real cost is renovation."
+      }
     },
     {
       "id": "b19b1b5acba09e77",
@@ -1588,7 +2178,17 @@
       "owner": "marketing",
       "next_action": "Register interest & check residency/renovation conditions (Comune di Laurenzana)",
       "priority": "medium",
-      "impact_score": 0.58
+      "impact_score": 0.58,
+      "valuation": {
+        "low_eur": 20001.0,
+        "high_eur": 70001.0,
+        "currency": "EUR",
+        "basis": "symbolic acquisition + typical renovation",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": "Acquisition is symbolic; the real cost is renovation."
+      }
     },
     {
       "id": "4715c58ac26511e0",
@@ -1613,7 +2213,17 @@
       "owner": "marketing",
       "next_action": "Register interest & check residency/renovation conditions (Comune di Maenza)",
       "priority": "medium",
-      "impact_score": 0.58
+      "impact_score": 0.58,
+      "valuation": {
+        "low_eur": 20001.0,
+        "high_eur": 70001.0,
+        "currency": "EUR",
+        "basis": "symbolic acquisition + typical renovation",
+        "confidence": "medium",
+        "disclosed": true,
+        "kind": "cost",
+        "note": "Acquisition is symbolic; the real cost is renovation."
+      }
     },
     {
       "id": "1c0b69488f41087e",
@@ -1638,7 +2248,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.5793
+      "impact_score": 0.5793,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 84000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "903a184cd285b5fb",
@@ -1663,7 +2283,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.5691
+      "impact_score": 0.5691,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 1800000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "1bb0d90c283f2b5b",
@@ -1688,7 +2318,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2025-09-30)",
       "priority": "medium",
-      "impact_score": 0.5574
+      "impact_score": 0.5574,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 500000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "4b57496a432f599a",
@@ -1713,7 +2353,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.55
+      "impact_score": 0.55,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "a641a8a062db6b55",
@@ -1738,7 +2388,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.55
+      "impact_score": 0.55,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "6de32b0b131686bb",
@@ -1763,7 +2423,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.5458
+      "impact_score": 0.5458,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 30000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "8a87f82b5835d393",
@@ -1788,7 +2458,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "medium",
-      "impact_score": 0.52
+      "impact_score": 0.52,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "24187173ca504dce",
@@ -1813,7 +2493,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "medium",
-      "impact_score": 0.52
+      "impact_score": 0.52,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "efd64cc2fa306f68",
@@ -1838,7 +2528,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.52
+      "impact_score": 0.52,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 3760.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "103681a37b226d8f",
@@ -1863,7 +2563,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.5191
+      "impact_score": 0.5191,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 18000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "7a7f53229c51348b",
@@ -1888,7 +2598,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "medium",
-      "impact_score": 0.51
+      "impact_score": 0.51,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "2bb582478a827cf4",
@@ -1913,7 +2633,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-01-16)",
       "priority": "medium",
-      "impact_score": 0.51
+      "impact_score": 0.51,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "d41ecae10170dfc8",
@@ -1938,7 +2668,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-04-15)",
       "priority": "medium",
-      "impact_score": 0.51
+      "impact_score": 0.51,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "ce8c0c9e90bfdbf4",
@@ -1963,7 +2703,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (rolling)",
       "priority": "medium",
-      "impact_score": 0.5091
+      "impact_score": 0.5091,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": 18000.0,
+        "currency": "EUR",
+        "basis": "grant / benefit (up to disclosed)",
+        "confidence": "high",
+        "disclosed": true,
+        "kind": "benefit",
+        "note": "Support available, not a purchase price."
+      }
     },
     {
       "id": "c3c069e444ae0156",
@@ -1988,7 +2738,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2025-01-15)",
       "priority": "medium",
-      "impact_score": 0.5
+      "impact_score": 0.5,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "caca983eb4ca4fc8",
@@ -2013,7 +2773,17 @@
       "owner": "marketing",
       "next_action": "Evaluate cohort fit & submit expression of interest",
       "priority": "medium",
-      "impact_score": 0.49
+      "impact_score": 0.49,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     },
     {
       "id": "28d8e6b8f667ea86",
@@ -2038,7 +2808,17 @@
       "owner": "marketing",
       "next_action": "Check eligibility & draft application (2026-01-30)",
       "priority": "medium",
-      "impact_score": 0.49
+      "impact_score": 0.49,
+      "valuation": {
+        "low_eur": null,
+        "high_eur": null,
+        "currency": "EUR",
+        "basis": "benefit — varies (see source)",
+        "confidence": "low",
+        "disclosed": false,
+        "kind": "benefit",
+        "note": ""
+      }
     }
   ]
 }

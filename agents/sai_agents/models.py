@@ -179,6 +179,8 @@ class Deal(BaseModel):
     next_action: str = ""
     priority: Severity = Severity.MEDIUM
     impact_score: float = Field(default=0.5, ge=0.0, le=1.0)
+    # Indicative valuation (computed at generate-time; see sai_agents.valuation).
+    valuation: Optional[Dict[str, Any]] = None
 
     def dedupe_key(self) -> str:
         return f"{self.title.strip().lower()}|{self.org.strip().lower()}|{self.country.strip().lower()}"
