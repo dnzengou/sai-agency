@@ -147,6 +147,44 @@ Both are optional and independent; failures never drop the lead (it is already
 in the KafCa stream). Stats are exposed on `GET /health`
 (`crm_stored`, `crm_forwarded`).
 
+## Growth II: SEO pages, email digest, lead analytics
+
+### Deal-detail pages + sitemap (SEO / shareability)
+
+`python -m sai_agents.deals.generate` now also writes one indexable HTML page
+per deal under `/deals/<id>.html` (unique title/description, canonical,
+OpenGraph/Twitter, JSON-LD structured data, and an inline pre-filled
+`deal-interest` form that works without JS) plus a full `sitemap.xml` covering
+the home page, `/deals`, and every deal. The weekly `deal-refresh` workflow
+commits these alongside `deals.json`. Reach a deal at
+`https://sai-agency.netlify.app/deals/<id>`.
+
+### Weekly email digest (`deal-digest.yml`)
+
+Turns subscribers into repeat visitors. Builds an HTML+text digest of the top
+open deals and sends it via SMTP; **safe by default** — with no SMTP secret it
+does a dry-run (builds, sends nothing). Subscribers are merged from `DIGEST_TO`,
+the NDJSON lead store, and the Netlify Forms API.
+
+```bash
+python -m sai_agents.digest.send --dry-run   # preview -> digest-preview.html
+python -m sai_agents.digest.send             # send (needs SMTP_* env)
+```
+
+| Variable | Purpose |
+|---|---|
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` / `SMTP_STARTTLS` | SMTP transport |
+| `DIGEST_FROM` | From header |
+| `DIGEST_TO` | Explicit recipient list (testing) |
+| `NETLIFY_API_TOKEN` + `NETLIFY_ALERTS_FORM_ID` | Pull subscribers from Netlify Forms |
+
+### Lead-conversion analytics
+
+`GET /analytics` on the ingest endpoint (and `python -m sai_agents.analytics.report`)
+computes the funnel from the NDJSON lead store: subscribers → interests →
+engaged → won, with conversion ratios, top deals by interest, and breakdowns by
+form / ARM stage / owner / region.
+
 ## Layout
 
 ```

@@ -44,18 +44,19 @@ jobs:
 
       - name: Commit if the feed meaningfully changed
         run: |
-          # Ignore diffs that are only the regenerated timestamps.
+          # Deal pages + sitemap are deterministic; only deals.json/deals.xml
+          # carry timestamps, so decide on those (ignoring timestamp-only diffs).
           changed=$(git diff -U0 -- deals.json deals.xml \
             | grep -E '^[+-]' \
             | grep -vE '^(\+\+\+|---)' \
             | grep -vE 'generated_at|lastBuildDate' || true)
           if [ -z "$changed" ]; then
             echo "No meaningful deal changes — skipping commit."
-            git checkout -- deals.json deals.xml || true
+            git checkout -- deals.json deals.xml sitemap.xml deals/ 2>/dev/null || true
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add deals.json deals.xml
+          git add deals.json deals.xml sitemap.xml deals/
           git commit -m "chore(deals): scheduled Deal Radar refresh [skip ci]"
           git push

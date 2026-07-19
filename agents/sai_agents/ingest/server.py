@@ -111,6 +111,16 @@ class LeadIngestServer:
         self._loop.call_soon_threadsafe(self._loop.stop)
 
     # -- request handling ------------------------------------------------ #
+    def analytics(self) -> Dict[str, Any]:
+        """Lead-conversion funnel computed from the CRM NDJSON lead store."""
+        from sai_agents.analytics.funnel import compute_funnel, load_leads
+
+        store = str(self.crm.store_path) if self.crm.store_path else None
+        funnel = compute_funnel(load_leads(store))
+        funnel["lead_store"] = store
+        funnel["stats"] = self.stats
+        return funnel
+
     def _handle_ingest(self, body: Dict[str, Any]) -> tuple[int, Dict[str, Any]]:
         self.stats["received"] += 1
         try:
@@ -166,14 +176,19 @@ class LeadIngestServer:
                 return header == f"Bearer {server.token}"
 
             def do_GET(self):
-                if self.path.split("?")[0] != "/health":
-                    return self._send(404, {"error": "not found"})
-                self._send(200, {
-                    "ok": True,
-                    "service": server.settings.service_name,
-                    "kafka_active": server.publisher.kafka_active,
-                    "stats": server.stats,
-                })
+                route = self.path.split("?")[0]
+                if route == "/health":
+                    return self._send(200, {
+                        "ok": True,
+                        "service": server.settings.service_name,
+                        "kafka_active": server.publisher.kafka_active,
+                        "stats": server.stats,
+                    })
+                if route == "/analytics":
+                    if not self._authed():
+                        return self._send(401, {"error": "unauthorized"})
+                    return self._send(200, server.analytics())
+                return self._send(404, {"error": "not found"})
 
             def do_POST(self):
                 if self.path.split("?")[0] != "/ingest":

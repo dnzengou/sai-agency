@@ -1,0 +1,4 @@
+# Generated digest preview + local lead store (never commit subscriber data)
+digest-preview.html
+leads.ndjson
+*.ndjson
