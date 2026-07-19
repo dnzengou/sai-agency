@@ -294,6 +294,7 @@ def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE, extra_paths:
         (f"{site_url}/", "weekly", "1.0"),
         (f"{site_url}/deals", "daily", "0.9"),
         (f"{site_url}/demo", "weekly", "0.8"),
+        (f"{site_url}/match", "weekly", "0.8"),
         (f"{site_url}/countries", "weekly", "0.7"),
     ]
     urls += [(f"{site_url}/{p}", "weekly", "0.8") for p in (extra_paths or [])]

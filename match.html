@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find your match · SAI Agency — take over a home, business or venture</title>
+    <meta name="description" content="Tell us what you want to take over — a €1 village home, a small business without a successor, or a rural venture — and get matched to real opportunities across Europe, ranked by fit." />
+    <link rel="canonical" href="https://sai-agency.netlify.app/match" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAI Agency" />
+    <meta property="og:title" content="Find your match — SAI Agency Deal Radar" />
+    <meta property="og:description" content="Get matched to real €1-house, business-succession and rural-venture opportunities, ranked by fit to your profile." />
+    <meta property="og:url" content="https://sai-agency.netlify.app/match" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="stylesheet" href="/assets/deals.css" />
+  </head>
+  <body>
+    <!-- Netlify Forms detection (hidden). -->
+    <form name="match-request" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="email" name="email" />
+      <input type="text" name="looking_for" />
+      <input type="text" name="profile" />
+      <input type="text" name="match_titles" />
+      <input type="text" name="bot-field" />
+    </form>
+
+    <main class="wrap">
+      <header>
+        <div class="masthead"><h1><span class="kicker">SAI Agency</span> · Find your match</h1></div>
+        <p class="tagline">
+          Thousands of homes, businesses and farms across Europe are waiting for
+          someone to take them over. Tell us what you're looking for and we'll
+          rank the real opportunities by how well they fit — ARM-classified,
+          sourced via the <code>KafCade</code> RRSS cascade.
+        </p>
+        <p class="pipeline-note">
+          <a href="/deals">Deal Radar</a> · <a href="/demo">Succession &amp; repopulation</a> ·
+          <a href="/countries">By country</a>
+        </p>
+      </header>
+
+      <section class="card">
+        <h2 class="section-h">What are you looking for?</h2>
+        <form id="match-form" class="filters">
+          <label class="sr-only" for="m-looking">Looking for</label>
+          <select id="m-looking">
+            <option value="">Anything</option>
+            <option value="home">🏡 A home to relocate to (€1 houses, settler schemes)</option>
+            <option value="business">🏭 A business/farm to take over</option>
+            <option value="invest">🌱 A venture to invest in / co-build</option>
+            <option value="ai">🤖 An AI/ML opportunity</option>
+          </select>
+          <label class="sr-only" for="m-region">Region</label>
+          <select id="m-region"><option value="">Any region</option></select>
+          <label class="sr-only" for="m-country">Country</label>
+          <select id="m-country"><option value="">Any country</option></select>
+          <label class="sr-only" for="m-budget">Budget</label>
+          <select id="m-budget">
+            <option value="">Any budget</option>
+            <option value="50000">Under €50k</option>
+            <option value="50000-200000">€50k–€200k</option>
+            <option value="200000-1000000">€200k–€1M</option>
+            <option value="1000000+">Over €1M</option>
+          </select>
+          <label class="sr-only" for="m-keywords">Interests</label>
+          <input id="m-keywords" type="text" placeholder="Interests e.g. bakery, agritech, coastal" />
+          <button class="btn" type="submit">Find my matches →</button>
+        </form>
+      </section>
+
+      <section aria-label="Matches">
+        <div class="filters"><span id="match-count" class="count"></span></div>
+        <div id="matches" class="deals"><div class="empty">Set your preferences above and hit “Find my matches”.</div></div>
+      </section>
+
+      <section class="card interest" id="request" hidden>
+        <h2>Get matched intros in your inbox</h2>
+        <p class="tagline">We'll send warm introductions for your best matches and alert you as new ones are sourced.</p>
+        <form name="match-request" method="POST" action="/match?requested=1" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="match-request" />
+          <input type="hidden" name="profile" id="mr-profile" />
+          <input type="hidden" name="match_titles" id="mr-matches" />
+          <p class="hp"><label>Leave empty <input name="bot-field" /></label></p>
+          <label for="mr-email">Work email</label>
+          <input id="mr-email" name="email" type="email" required autocomplete="email" />
+          <button class="btn" type="submit">Request introductions</button>
+          <span class="form-msg" id="request-msg" role="status"></span>
+        </form>
+      </section>
+
+      <footer>
+        <p>Matches are scored on category, region, country, budget and interests — only the preferences you set count toward the fit %. Every match links to its official source. Verify details before acting.</p>
+      </footer>
+    </main>
+    <script src="/assets/match.js"></script>
+  </body>
+</html>

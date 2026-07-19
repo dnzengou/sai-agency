@@ -185,6 +185,22 @@ computes the funnel from the NDJSON lead store: subscribers → interests →
 engaged → won, with conversion ratios, top deals by interest, and breakdowns by
 form / ARM stage / owner / region.
 
+## Matchmaking (`/match`) — the end-user application
+
+Executes the business plan's **Matchmaking Agent**: a would-be successor, buyer
+or investor sets a profile (what to take over, region, country, budget,
+interests) and gets a **ranked, explained shortlist** of real opportunities.
+
+- Scorer: `sai_agents.matching` (`MatchProfile`, `score_match`, `rank_matches`)
+  — deterministic, ARM-aligned; **only the dimensions the user specified count**
+  toward the fit %. Mirrored 1:1 client-side in `assets/match.js` so it runs on
+  the static site over `deals.json`.
+- Page `/match` (`match.html`): profile form → match cards with a fit-% badge
+  and "why matched" reasons, each linking to the deal detail page. A
+  "Request introductions" form captures the profile as a **high-intent lead**
+  (`match-request`) — classified `engaged` / `sales_gtm` by the lead bridge and
+  published as a `MATCH_SIGNAL`-grade lead through KafCa → CRM → analytics.
+
 ## Demo: succession & repopulation (`/demo`)
 
 A live illustration of the platform answering a real challenge in ageing
