@@ -1148,6 +1148,187 @@
       "source_name": "Colorado OEDIT",
       "description": "A $25M Fund II (with the Colorado Venture Capital Authority) investing in 25–30 rural Colorado startups with ~$500k initial checks; the state renewed the partnership to expand venture access for rural businesses.",
       "confidence": 0.78
+    },
+
+    {
+      "title": "Antler East Africa Founder Residency (Nairobi)",
+      "org": "Antler", "country": "Kenya", "region": "East Africa", "city": "Nairobi",
+      "sector": "Early-stage tech / AI", "category": "venture", "type": "accelerator",
+      "value_eur": 92000, "stage": "open", "deadline": null, "date": "2025-08-01",
+      "source_url": "https://www.antler.co/residency/kenya", "source_name": "Antler",
+      "description": "Antler's Nairobi founder residency invests ~USD 100k for ~10% equity (with up to USD 150k pre-committed follow-on) into new East African startups every ~6 months; applications reopened August 2025.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Norrsken Impact Accelerator & House Kigali",
+      "org": "Norrsken Foundation", "country": "Rwanda", "region": "East Africa", "city": "Kigali",
+      "sector": "Impact tech / AI", "category": "venture", "type": "accelerator",
+      "value_eur": 115000, "stage": "open", "deadline": null, "date": "2025-11-20",
+      "source_url": "https://www.norrsken.org/houses/kigali", "source_name": "Norrsken",
+      "description": "East Africa's largest startup hub; the Impact Accelerator provides ~USD 125k upfront investment plus mentorship to early-stage founders using tech (incl. AI) for societal challenges.",
+      "confidence": 0.7
+    },
+    {
+      "title": "AI4D Innovation Scaling Challenge & Research Grants (Africa)",
+      "org": "IDRC / African Centre for Technology Studies (ACTS)", "country": "Kenya", "region": "East Africa", "city": "Nairobi",
+      "sector": "Responsible AI for development", "category": "ai_ml", "type": "grant",
+      "value_eur": 680000, "stage": "open", "deadline": null, "date": "2025-07-14",
+      "source_url": "https://ai4d.acts-net.org/", "source_name": "AI4D Africa (ACTS)",
+      "description": "AI4D Africa (backed by IDRC, UK FCDO and Sweden's SIDA) funds responsible AI in Africa, including research grants up to CAD 1M and an Innovation Scaling Challenge for deployed high-impact AI.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Google for Startups Accelerator: Africa (AI First)",
+      "org": "Google", "country": "Kenya", "region": "East Africa", "city": "Nairobi",
+      "sector": "AI startups (Seed–Series A)", "category": "ai_ml", "type": "accelerator",
+      "value_eur": 322000, "stage": "closed", "deadline": "2026-03-18", "date": "2025-06-23",
+      "source_url": "https://startup.google.com/programs/accelerator/africa/", "source_name": "Google for Startups",
+      "description": "Equity-free 3-month hybrid accelerator for African AI startups with up to USD 350k in Cloud credits and mentorship; the 2025 cohort included Kenya, Rwanda and Ethiopia founders. Recurs annually.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Farm to Feed — USD 1.5M seed round",
+      "org": "Farm to Feed", "country": "Kenya", "region": "East Africa", "city": "Nairobi",
+      "sector": "Agritech", "category": "venture", "type": "funding_round",
+      "value_eur": 1380000, "stage": "announced", "deadline": null, "date": "2025-11-03",
+      "source_url": "https://techcabal.com/2025/11/03/kenyas-farm-to-feed-raises-1-5-million/", "source_name": "TechCabal",
+      "description": "Kenyan agritech linking smallholder farmers to businesses needing traceable produce closed a USD 1.5M seed (USD 1.27M equity + USD 230k non-dilutive from DEG's DeveloPPP) to scale regionally.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Shamba Pride — USD 3.7M pre-Series A",
+      "org": "Shamba Pride", "country": "Kenya", "region": "East Africa", "city": "Nairobi",
+      "sector": "Agritech", "category": "venture", "type": "funding_round",
+      "value_eur": 3400000, "stage": "announced", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://techpoint.africa/news/kenyan-agritech-shamba-pride-preseriesa/", "source_name": "Techpoint Africa",
+      "description": "Kenyan agritech raised USD 3.7M debt-equity pre-Series A (USD 1.7M equity) to expand its digitised agro-dealer merchant network across Kenya.",
+      "confidence": 0.8
+    },
+    {
+      "title": "KAYA VC closes €70M fund for CEE founders",
+      "org": "KAYA VC", "country": "Czechia", "region": "Central Europe", "city": "Prague",
+      "sector": "Early-stage tech VC", "category": "venture", "type": "funding_round",
+      "value_eur": 70000000, "stage": "announced", "deadline": null, "date": "2025-06-01",
+      "source_url": "https://www.eu-startups.com/2025/06/with-over-45-startups-already-funded-czech-vc-fund-kaya-secures-e70-million-to-back-more-founders-from-cee/", "source_name": "EU-Startups",
+      "description": "Prague-based KAYA VC secured €70M (June 2025) to back more early-stage founders across Central and Eastern Europe, having already funded 45+ startups.",
+      "confidence": 0.85
+    },
+    {
+      "title": "AI Lab Poland / Vinci invests USD 11M in ElevenLabs",
+      "org": "Vinci (BGK Group) / AI Lab Poland", "country": "Poland", "region": "Central Europe", "city": "Warsaw",
+      "sector": "AI", "category": "ai_ml", "type": "partnership",
+      "value_eur": 10120000, "stage": "announced", "deadline": null, "date": "2026-01-01",
+      "source_url": "https://techfundingnews.com/poland-vinci-fund-11m-elevenlabs-ai-lab-poland/", "source_name": "Tech Funding News",
+      "description": "Vinci, the venture arm of Poland's state bank BGK, invested USD 11M in ElevenLabs and launched AI Lab Poland, giving early-stage Polish AI startups access to capital and global connections.",
+      "confidence": 0.75
+    },
+    {
+      "title": "DRUID AI — USD 31M (€26M) Series C",
+      "org": "DRUID AI", "country": "Romania", "region": "Central Europe", "city": "Bucharest",
+      "sector": "Agentic / conversational AI", "category": "ai_ml", "type": "funding_round",
+      "value_eur": 26000000, "stage": "announced", "deadline": null, "date": "2025-09-17",
+      "source_url": "https://www.eu-startups.com/2025/09/romanian-startup-druid-ai-raises-e26-million-to-accelerate-agentic-ai-platform-growth-under-new-ceo/", "source_name": "EU-Startups",
+      "description": "Romania-founded DRUID AI raised ~€26M Series C led by Cipio Partners to expand its enterprise agentic AI platform.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Nachfolgebörse — Austrian business succession exchange",
+      "org": "WKO Gründerservice", "country": "Austria", "region": "Central Europe", "city": "Vienna",
+      "sector": "SME succession", "category": "succession", "type": "marketplace",
+      "value_eur": null, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://www.wko.at/gruendung/nachfolgeboerse", "source_name": "WKO (Austrian Chamber of Commerce)",
+      "description": "Austria's official free platform matching owners transferring a business with founders seeking to take one over; ~52,500 Austrian businesses (~705k jobs) are due for handover 2025–2034.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Falusi CSOK — village family housing support",
+      "org": "Government of Hungary", "country": "Hungary", "region": "Central Europe", "city": null,
+      "sector": "Rural housing / repopulation", "category": "repopulation", "type": "incentive",
+      "value_eur": 38000, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://idomhazak.hu/en/blog/2025-housing-support-opportunities-worth-taking-advantage-of/", "source_name": "Idom Házak",
+      "description": "Hungary's Falusi CSOK provides up to ~HUF 15M (~€38k) to buy, build, expand or renovate homes in ~2,500 designated small/peripheral villages; combinable with a 3% subsidised loan.",
+      "confidence": 0.7
+    },
+    {
+      "title": "7AI — USD 130M Series A (Boston)",
+      "org": "7AI", "country": "United States", "region": "US East Coast", "city": "Boston",
+      "sector": "Cybersecurity AI", "category": "ai_ml", "type": "funding_round",
+      "value_eur": 120000000, "stage": "announced", "deadline": null, "date": "2025-12-04",
+      "source_url": "https://techcrunch.com/2026/01/19/here-are-the-49-us-ai-startups-that-have-raised-100m-or-more-in-2025/", "source_name": "TechCrunch",
+      "description": "Boston-based 7AI, building cybersecurity AI agents, raised a USD 130M Series A led by Index Ventures with Greylock, Spark Capital and CRV.",
+      "confidence": 0.8
+    },
+    {
+      "title": "Runway — USD 308M Series D (New York)",
+      "org": "Runway", "country": "United States", "region": "US East Coast", "city": "New York",
+      "sector": "Generative AI for media", "category": "ai_ml", "type": "funding_round",
+      "value_eur": 283000000, "stage": "announced", "deadline": null, "date": "2025-04-03",
+      "source_url": "https://variety.com/2025/digital/news/ai-runway-raises-308-million-funding-valuation-1236358677/", "source_name": "Variety",
+      "description": "New York-based Runway, building generative AI models for film and media, raised a USD 308M Series D at a USD 3B valuation.",
+      "confidence": 0.85
+    },
+    {
+      "title": "Teamshares — SMB acquisition & employee ownership",
+      "org": "Teamshares", "country": "United States", "region": "US East Coast", "city": "New York",
+      "sector": "SMB succession / employee ownership", "category": "succession", "type": "business_succession",
+      "value_eur": null, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://www.teamshares.com/resources/silver-tsunami/", "source_name": "Teamshares",
+      "description": "Acquires retiring owners' small businesses, installs new leadership and transitions ownership to employees over time, addressing the US 'silver tsunami' of ~4.5M boomer-owned firms.",
+      "confidence": 0.75
+    },
+    {
+      "title": "Vermont Worker Relocation Incentive (up to $7,500)",
+      "org": "Vermont Agency of Commerce & Community Development", "country": "United States", "region": "US East Coast", "city": "Montpelier",
+      "sector": "Rural revitalization / workforce", "category": "repopulation", "type": "incentive",
+      "value_eur": 6900, "stage": "closed", "deadline": null, "date": "2024-01-01",
+      "source_url": "https://accd.vermont.gov/economic-development/relocation-incentives", "source_name": "Vermont ACCD",
+      "description": "Vermont's Worker Relocation Incentive offered grants up to USD 7,500 to new and remote workers moving to the state; periodically renewed.",
+      "confidence": 0.75
+    },
+    {
+      "title": "CORI Innovation Fund — rural tech venture fund",
+      "org": "Center on Rural Innovation", "country": "United States", "region": "US East Coast", "city": "Hartland",
+      "sector": "Rural tech venture capital", "category": "venture", "type": "venture",
+      "value_eur": null, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://www.corifund.com/", "source_name": "CORI Innovation Fund",
+      "description": "Vermont-based seed/early-stage VC investing in tech-enabled startups located in rural US communities under-served by traditional venture capital.",
+      "confidence": 0.75
+    },
+    {
+      "title": "Supio — USD 60M Series B (Seattle)",
+      "org": "Supio", "country": "United States", "region": "US West Coast", "city": "Seattle",
+      "sector": "Legal AI", "category": "ai_ml", "type": "funding_round",
+      "value_eur": 55000000, "stage": "announced", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://greater-seattle.com/2025/09/18/ai-startups-funding-2025/", "source_name": "Greater Seattle Partners",
+      "description": "Seattle-based Supio topped the region's 2025 AI funding with a USD 60M Series B, part of USD 679M raised by 49 Greater Seattle AI companies.",
+      "confidence": 0.75
+    },
+    {
+      "title": "Oregon AI Accelerator (Portland)",
+      "org": "Oregon AI Accelerator", "country": "United States", "region": "US West Coast", "city": "Portland",
+      "sector": "AI startups", "category": "ai_ml", "type": "accelerator",
+      "value_eur": 46000, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://oregonaiaccelerator.com/", "source_name": "Oregon AI Accelerator",
+      "description": "Three-month hybrid Portland accelerator (Google seed funding, Portland State, OHSU, Oregon State) offering mentorship and up to USD 50k in equity-free grant prizes to AI startups.",
+      "confidence": 0.7
+    },
+    {
+      "title": "Chaos Industries — USD 510M round (Los Angeles)",
+      "org": "Chaos Industries", "country": "United States", "region": "US West Coast", "city": "Los Angeles",
+      "sector": "Defense tech / AI", "category": "venture", "type": "funding_round",
+      "value_eur": 470000000, "stage": "announced", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-tech-anysphere/", "source_name": "Crunchbase News",
+      "description": "Los Angeles-based defense-tech firm building AI-enabled counter-drone radar and comms raised USD 510M at a USD 4.5B valuation.",
+      "confidence": 0.65
+    },
+    {
+      "title": "MakeMyMove — relocation-incentive marketplace",
+      "org": "MakeMyMove", "country": "United States", "region": "US West Coast", "city": null,
+      "sector": "Rural revitalization / relocation", "category": "repopulation", "type": "partnership",
+      "value_eur": null, "stage": "open", "deadline": null, "date": "2025-01-01",
+      "source_url": "https://www.makemymove.com/get-paid", "source_name": "MakeMyMove",
+      "description": "A national marketplace connecting remote and onsite workers with US towns and rural communities offering cash and in-kind relocation incentives; 4,000+ people relocated since 2021.",
+      "confidence": 0.7
     }
   ]
 }

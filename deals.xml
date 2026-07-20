@@ -5,7 +5,7 @@
     <link>https://sai-agency-deals-radar.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 20 Jul 2026 15:01:39 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 15:07:48 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency-deals-radar.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)</title>
@@ -50,6 +50,27 @@
       <description>Helsinki-based GPU cloud provider Verda raised EUR 100M (equity led by Lifeline Ventures with byFounders, Tesi and Varma, plus Nordic debt) to expand its renewable-powered AI cloud and hire 100+ staff. · Type: funding_round · Country: Finland (Nordics) · Value: 100000000.0 · Impact: 0.85</description>
     </item>
     <item>
+      <title>Runway — USD 308M Series D (New York)</title>
+      <link>https://variety.com/2025/digital/news/ai-runway-raises-308-million-funding-valuation-1236358677/</link>
+      <guid isPermaLink="false">09a8fd00aeb9b0b2</guid>
+      <category>funding_round</category>
+      <description>New York-based Runway, building generative AI models for film and media, raised a USD 308M Series D at a USD 3B valuation. · Type: funding_round · Country: United States (US East Coast) · Value: 283000000.0 · Impact: 0.85</description>
+    </item>
+    <item>
+      <title>7AI — USD 130M Series A (Boston)</title>
+      <link>https://techcrunch.com/2026/01/19/here-are-the-49-us-ai-startups-that-have-raised-100m-or-more-in-2025/</link>
+      <guid isPermaLink="false">4b7cb3b11d5b1842</guid>
+      <category>funding_round</category>
+      <description>Boston-based 7AI, building cybersecurity AI agents, raised a USD 130M Series A led by Index Ventures with Greylock, Spark Capital and CRV. · Type: funding_round · Country: United States (US East Coast) · Value: 120000000.0 · Impact: 0.84</description>
+    </item>
+    <item>
+      <title>KAYA VC closes €70M fund for CEE founders</title>
+      <link>https://www.eu-startups.com/2025/06/with-over-45-startups-already-funded-czech-vc-fund-kaya-secures-e70-million-to-back-more-founders-from-cee/</link>
+      <guid isPermaLink="false">71ecc0c56a075220</guid>
+      <category>funding_round</category>
+      <description>Prague-based KAYA VC secured €70M (June 2025) to back more early-stage founders across Central and Eastern Europe, having already funded 45+ startups. · Type: funding_round · Country: Czechia (Central Europe) · Value: 70000000.0 · Impact: 0.8384</description>
+    </item>
+    <item>
       <title>NORAI: Balearic Islands AI-in-administration tender</title>
       <link>https://forbes.es/baleares/actualidad-baleares/969399/el-govern-destina-54-millones-de-euros-a-incorporar-la-ia-a-toda-la-administracion-balear/</link>
       <guid isPermaLink="false">bd11b8e8b539f2b2</guid>
@@ -64,11 +85,39 @@
       <description>The 2026 EIC Accelerator Open call has an indicative budget of EUR 414M and funds single deep-tech SMEs (incl. AI) with up to EUR 2.5M grants + up to EUR 15M equity; 2026 cut-offs 11 Feb, 6 May, 9 Sep, 25 Nov. Open to all EU + associated countries. · Type: grant · Country: EU (EU) · Value: 414000000.0 · Impact: 0.82</description>
     </item>
     <item>
+      <title>AI Lab Poland / Vinci invests USD 11M in ElevenLabs</title>
+      <link>https://techfundingnews.com/poland-vinci-fund-11m-elevenlabs-ai-lab-poland/</link>
+      <guid isPermaLink="false">605e700adee6d2a9</guid>
+      <category>partnership</category>
+      <description>Vinci, the venture arm of Poland's state bank BGK, invested USD 11M in ElevenLabs and launched AI Lab Poland, giving early-stage Polish AI startups access to capital and global connections. · Type: partnership · Country: Poland (Central Europe) · Value: 10120000.0 · Impact: 0.8154</description>
+    </item>
+    <item>
       <title>Lexroom raises EUR 42.9M Series B for AI legaltech</title>
       <link>https://www.eu-startups.com/2026/05/italian-ai-legaltech-startup-lexroom-raises-e42-9-million-series-b-eight-months-after-e16-2-million-series-a/</link>
       <guid isPermaLink="false">ca6a307e85f78a38</guid>
       <category>funding_round</category>
       <description>Italian AI legaltech startup Lexroom raised a EUR 42.9M Series B just eight months after its EUR 16.2M Series A, signalling strong demand for AI in the legal sector. · Type: funding_round · Country: Italy (Southern Europe) · Value: 42900000.0 · Impact: 0.8124</description>
+    </item>
+    <item>
+      <title>Supio — USD 60M Series B (Seattle)</title>
+      <link>https://greater-seattle.com/2025/09/18/ai-startups-funding-2025/</link>
+      <guid isPermaLink="false">b7d455a405cb966a</guid>
+      <category>funding_round</category>
+      <description>Seattle-based Supio topped the region's 2025 AI funding with a USD 60M Series B, part of USD 679M raised by 49 Greater Seattle AI companies. · Type: funding_round · Country: United States (US West Coast) · Value: 55000000.0 · Impact: 0.8105</description>
+    </item>
+    <item>
+      <title>Chaos Industries — USD 510M round (Los Angeles)</title>
+      <link>https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-tech-anysphere/</link>
+      <guid isPermaLink="false">b278105efeddb83e</guid>
+      <category>funding_round</category>
+      <description>Los Angeles-based defense-tech firm building AI-enabled counter-drone radar and comms raised USD 510M at a USD 4.5B valuation. · Type: funding_round · Country: United States (US West Coast) · Value: 470000000.0 · Impact: 0.81</description>
+    </item>
+    <item>
+      <title>DRUID AI — USD 31M (€26M) Series C</title>
+      <link>https://www.eu-startups.com/2025/09/romanian-startup-druid-ai-raises-e26-million-to-accelerate-agentic-ai-platform-growth-under-new-ceo/</link>
+      <guid isPermaLink="false">3a39b02ecfcc3049</guid>
+      <category>funding_round</category>
+      <description>Romania-founded DRUID AI raised ~€26M Series C led by Cipio Partners to expand its enterprise agentic AI platform. · Type: funding_round · Country: Romania (Central Europe) · Value: 26000000.0 · Impact: 0.8061</description>
     </item>
     <item>
       <title>Tucuvi raises EUR 17M Series A to scale clinical voice AI (LOLA)</title>
@@ -162,6 +211,13 @@
       <description>Slovenian AI startup Codeplain (generates/tests/updates production software from plain-language specs) closed a EUR 2.6M (USD 3M) seed led by GapMinder with Silicon Gardens; operates from Ljubljana, Berlin, San Francisco. · Type: funding_round · Country: Slovenia (Southern Europe) · Value: 2600000.0 · Impact: 0.7451</description>
     </item>
     <item>
+      <title>Nachfolgebörse — Austrian business succession exchange</title>
+      <link>https://www.wko.at/gruendung/nachfolgeboerse</link>
+      <guid isPermaLink="false">4284c14444eb23c1</guid>
+      <category>business_succession</category>
+      <description>Austria's official free platform matching owners transferring a business with founders seeking to take one over; ~52,500 Austrian businesses (~705k jobs) are due for handover 2025–2034. · Type: business_succession · Country: Austria (Central Europe) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
       <title>Contents secures EUR 5.9M for AI workflow/agent orchestration platform</title>
       <link>https://www.eu-startups.com/2026/02/milan-based-contents-secures-e5-9-million-for-ai-workflow-platform-sets-up-doha-hub-for-middle-east-expansion</link>
       <guid isPermaLink="false">a463f1f7c7a85a60</guid>
@@ -181,6 +237,13 @@
       <guid isPermaLink="false">6ea207f86b6838ca</guid>
       <category>accelerator</category>
       <description>EIC Pre-Accelerator supports early-stage deep-tech startups from Horizon Europe widening countries (incl. Greece, Portugal, Croatia, Slovenia, Cyprus, Malta); 2026-2027 WIDERA budget EUR 40M, first cohort of 70 selected April 2026. · Type: accelerator · Country: EU (EU) · Value: 40000000.0 · Impact: 0.7302</description>
+    </item>
+    <item>
+      <title>Shamba Pride — USD 3.7M pre-Series A</title>
+      <link>https://techpoint.africa/news/kenyan-agritech-shamba-pride-preseriesa/</link>
+      <guid isPermaLink="false">d1496c8d7f49b3f5</guid>
+      <category>funding_round</category>
+      <description>Kenyan agritech raised USD 3.7M debt-equity pre-Series A (USD 1.7M equity) to expand its digitised agro-dealer merchant network across Kenya. · Type: funding_round · Country: Kenya (East Africa) · Value: 3400000.0 · Impact: 0.7299</description>
     </item>
     <item>
       <title>ITS Lending — crowdfunding for regeneration of Italian villages</title>
@@ -204,11 +267,25 @@
       <description>Chamber-of-commerce 'relevo generacional' programmes and transfer exchanges (bolsa de traspasos) connecting ageing owners with no successor to buyers, part of a national plan to transfer viable SMEs; recent initiatives target rural businesses. · Type: business_succession · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.72</description>
     </item>
     <item>
+      <title>Teamshares — SMB acquisition &amp; employee ownership</title>
+      <link>https://www.teamshares.com/resources/silver-tsunami/</link>
+      <guid isPermaLink="false">55bb9e3d6010c3fd</guid>
+      <category>business_succession</category>
+      <description>Acquires retiring owners' small businesses, installs new leadership and transitions ownership to employees over time, addressing the US 'silver tsunami' of ~4.5M boomer-owned firms. · Type: business_succession · Country: United States (US East Coast) · Value: n/a · Impact: 0.72</description>
+    </item>
+    <item>
       <title>B2scout — Italian business-for-sale marketplace</title>
       <link>https://www.b2scout.com/</link>
       <guid isPermaLink="false">c1294841d1e6ecde</guid>
       <category>business_succession</category>
       <description>Italian marketplace aggregating listings from entrepreneurs seeking to sell their companies, addressing the widely-cited problem that roughly half of Italian SMEs are sold for lack of generational succession. · Type: business_succession · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.714</description>
+    </item>
+    <item>
+      <title>Farm to Feed — USD 1.5M seed round</title>
+      <link>https://techcabal.com/2025/11/03/kenyas-farm-to-feed-raises-1-5-million/</link>
+      <guid isPermaLink="false">470e9b00e2362634</guid>
+      <category>funding_round</category>
+      <description>Kenyan agritech linking smallholder farmers to businesses needing traceable produce closed a USD 1.5M seed (USD 1.27M equity + USD 230k non-dilutive from DEG's DeveloPPP) to scale regionally. · Type: funding_round · Country: Kenya (East Africa) · Value: 1380000.0 · Impact: 0.7105</description>
     </item>
     <item>
       <title>PRR call 'IA nas PME' - AI adoption grants for SMEs</title>
@@ -281,6 +358,13 @@
       <description>Maps business opportunities in Portugal's depopulating interior and supports entrepreneurs and families in relocating and launching or transferring ventures there; reports 165 companies established, 216 jobs created and 160+ families resettled. · Type: partnership · Country: Portugal (Southern Europe) · Value: n/a · Impact: 0.67</description>
     </item>
     <item>
+      <title>MakeMyMove — relocation-incentive marketplace</title>
+      <link>https://www.makemymove.com/get-paid</link>
+      <guid isPermaLink="false">41199a92d0df66b0</guid>
+      <category>partnership</category>
+      <description>A national marketplace connecting remote and onsite workers with US towns and rural communities offering cash and in-kind relocation incentives; 4,000+ people relocated since 2021. · Type: partnership · Country: United States (US West Coast) · Value: n/a · Impact: 0.67</description>
+    </item>
+    <item>
       <title>Cyprus RIF PRE-SEED startup development call 2026</title>
       <link>https://www.cbn.com.cy/article/129618/research-and-innovation-foundation-announces-1m-call-for-startup-development-proposals</link>
       <guid isPermaLink="false">9f1c449c12a53377</guid>
@@ -328,6 +412,20 @@
       <guid isPermaLink="false">3f3c52ebaad686c7</guid>
       <category>venture</category>
       <description>A crowd-investment platform where community groups launch community share offers to buy and own local assets — giving small investors a stake in rural pubs, shops and other village assets. Community pub ownership continued to grow in 2025 with new local buyouts. · Type: venture · Country: United Kingdom (Western Europe) · Value: n/a · Impact: 0.64</description>
+    </item>
+    <item>
+      <title>CORI Innovation Fund — rural tech venture fund</title>
+      <link>https://www.corifund.com/</link>
+      <guid isPermaLink="false">5c66a842672aa011</guid>
+      <category>venture</category>
+      <description>Vermont-based seed/early-stage VC investing in tech-enabled startups located in rural US communities under-served by traditional venture capital. · Type: venture · Country: United States (US East Coast) · Value: n/a · Impact: 0.64</description>
+    </item>
+    <item>
+      <title>AI4D Innovation Scaling Challenge &amp; Research Grants (Africa)</title>
+      <link>https://ai4d.acts-net.org/</link>
+      <guid isPermaLink="false">73f2df0948bd10b1</guid>
+      <category>grant</category>
+      <description>AI4D Africa (backed by IDRC, UK FCDO and Sweden's SIDA) funds responsible AI in Africa, including research grants up to CAD 1M and an Innovation Scaling Challenge for deployed high-impact AI. · Type: grant · Country: Kenya (East Africa) · Value: 680000.0 · Impact: 0.6374</description>
     </item>
     <item>
       <title>Tender: management services for the AI startup acceleration programme at BSC</title>
@@ -477,6 +575,20 @@
       <description>Puglia town in Salento offers grants up to €30,000 (max 50% of costs) to EU citizens who buy and renovate a pre-1991 home and register residency, committing to stay ≥10 years. Targets depopulation of the historic centre. · Type: grant · Country: Italy (Southern Europe) · Value: 30000.0 · Impact: 0.5458</description>
     </item>
     <item>
+      <title>Antler East Africa Founder Residency (Nairobi)</title>
+      <link>https://www.antler.co/residency/kenya</link>
+      <guid isPermaLink="false">20bfe74d6c93a021</guid>
+      <category>accelerator</category>
+      <description>Antler's Nairobi founder residency invests ~USD 100k for ~10% equity (with up to USD 150k pre-committed follow-on) into new East African startups every ~6 months; applications reopened August 2025. · Type: accelerator · Country: Kenya (East Africa) · Value: 92000.0 · Impact: 0.5423</description>
+    </item>
+    <item>
+      <title>Falusi CSOK — village family housing support</title>
+      <link>https://idomhazak.hu/en/blog/2025-housing-support-opportunities-worth-taking-advantage-of/</link>
+      <guid isPermaLink="false">a7b18198868d0063</guid>
+      <category>grant</category>
+      <description>Hungary's Falusi CSOK provides up to ~HUF 15M (~€38k) to buy, build, expand or renovate homes in ~2,500 designated small/peripheral villages; combinable with a 3% subsidised loan. · Type: grant · Country: Hungary (Central Europe) · Value: 38000.0 · Impact: 0.5235</description>
+    </item>
+    <item>
       <title>AI Sweden Startup Program</title>
       <link>https://www.ai.se/en/ecosystem/startup-program</link>
       <guid isPermaLink="false">8a87f82b5835d393</guid>
@@ -496,6 +608,13 @@
       <guid isPermaLink="false">efd64cc2fa306f68</guid>
       <category>grant</category>
       <description>Government measure paying workers who move their residence to Portugal's interior for a job or self-employment; base support ~7× the IAS (≈€3,760 in 2026) for permanent contracts, with increases per relocating family member and moving costs. Open to foreigners and remote workers. · Type: grant · Country: Portugal (Southern Europe) · Value: 3760.0 · Impact: 0.52</description>
+    </item>
+    <item>
+      <title>Norrsken Impact Accelerator &amp; House Kigali</title>
+      <link>https://www.norrsken.org/houses/kigali</link>
+      <guid isPermaLink="false">0184b8a7cbc75d04</guid>
+      <category>accelerator</category>
+      <description>East Africa's largest startup hub; the Impact Accelerator provides ~USD 125k upfront investment plus mentorship to early-stage founders using tech (incl. AI) for societal challenges. · Type: accelerator · Country: Rwanda (East Africa) · Value: 115000.0 · Impact: 0.5196</description>
     </item>
     <item>
       <title>Bono de Activación Rural — Galicia (up to €18,000)</title>
@@ -540,6 +659,13 @@
       <description>Research Council of Norway call establishing six national AI research centres starting in 2025, part of a plan to raise AI/digital research funding by at least NOK 1 billion over five years. · Type: grant · Country: Norway (Nordics) · Value: n/a · Impact: 0.5</description>
     </item>
     <item>
+      <title>Google for Startups Accelerator: Africa (AI First)</title>
+      <link>https://startup.google.com/programs/accelerator/africa/</link>
+      <guid isPermaLink="false">998040fcbeff6cfc</guid>
+      <category>accelerator</category>
+      <description>Equity-free 3-month hybrid accelerator for African AI startups with up to USD 350k in Cloud credits and mentorship; the 2025 cohort included Kenya, Rwanda and Ethiopia founders. Recurs annually. · Type: accelerator · Country: Kenya (East Africa) · Value: 322000.0 · Impact: 0.4931</description>
+    </item>
+    <item>
       <title>START Rise Challenge - AI startups programme</title>
       <link>https://www.pbs.up.pt/en/artigos-e-eventos/eventos/start-rise-challenge/</link>
       <guid isPermaLink="false">caca983eb4ca4fc8</guid>
@@ -552,6 +678,20 @@
       <guid isPermaLink="false">28d8e6b8f667ea86</guid>
       <category>grant</category>
       <description>MIMIT launched the IPCEI AI (Important Project of Common European Interest) to build a sovereign European AI ecosystem across the value chain; application deadline was 30 January 2026. · Type: grant · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.49</description>
+    </item>
+    <item>
+      <title>Oregon AI Accelerator (Portland)</title>
+      <link>https://oregonaiaccelerator.com/</link>
+      <guid isPermaLink="false">572214b84257cfb7</guid>
+      <category>accelerator</category>
+      <description>Three-month hybrid Portland accelerator (Google seed funding, Portland State, OHSU, Oregon State) offering mentorship and up to USD 50k in equity-free grant prizes to AI startups. · Type: accelerator · Country: United States (US West Coast) · Value: 46000.0 · Impact: 0.4897</description>
+    </item>
+    <item>
+      <title>Vermont Worker Relocation Incentive (up to $7,500)</title>
+      <link>https://accd.vermont.gov/economic-development/relocation-incentives</link>
+      <guid isPermaLink="false">637a95c483de9f4e</guid>
+      <category>grant</category>
+      <description>Vermont's Worker Relocation Incentive offered grants up to USD 7,500 to new and remote workers moving to the state; periodically renewed. · Type: grant · Country: United States (US East Coast) · Value: 6900.0 · Impact: 0.41</description>
     </item>
   </channel>
 </rss>

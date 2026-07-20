@@ -26,6 +26,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/austria</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/country/belgium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -37,6 +42,11 @@
   </url>
   <url>
     <loc>https://sai-agency-deals-radar.netlify.app/country/cyprus</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/czechia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,6 +81,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/hungary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/country/iceland</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/kenya</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/country/malta</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -96,7 +116,22 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/poland</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/country/portugal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/romania</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/country/rwanda</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -161,6 +196,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/09a8fd00aeb9b0b2</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/4b7cb3b11d5b1842</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/71ecc0c56a075220</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/bd11b8e8b539f2b2</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -171,7 +221,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/605e700adee6d2a9</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/ca6a307e85f78a38</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/b7d455a405cb966a</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/b278105efeddb83e</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/3a39b02ecfcc3049</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -241,6 +311,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/4284c14444eb23c1</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/a463f1f7c7a85a60</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -252,6 +327,11 @@
   </url>
   <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/6ea207f86b6838ca</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/d1496c8d7f49b3f5</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -271,7 +351,17 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/55bb9e3d6010c3fd</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/c1294841d1e6ecde</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/470e9b00e2362634</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -326,6 +416,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/41199a92d0df66b0</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/9f1c449c12a53377</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -357,6 +452,16 @@
   </url>
   <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/3f3c52ebaad686c7</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/5c66a842672aa011</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/73f2df0948bd10b1</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -466,6 +571,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/20bfe74d6c93a021</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/a7b18198868d0063</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/8a87f82b5835d393</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -477,6 +592,11 @@
   </url>
   <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/efd64cc2fa306f68</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/0184b8a7cbc75d04</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -511,12 +631,27 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/998040fcbeff6cfc</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/caca983eb4ca4fc8</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sai-agency-deals-radar.netlify.app/deals/28d8e6b8f667ea86</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/572214b84257cfb7</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/deals/637a95c483de9f4e</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
