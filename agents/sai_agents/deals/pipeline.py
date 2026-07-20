@@ -112,11 +112,15 @@ class KafCadePipeline:
         """Bundled curated dataset + any opt-in live RSS feeds (RRSS)."""
         sources = [BundledJSONSource()]
         if self.settings.rss_feeds:
-            # Keep only Southern Europe / Nordics items from generic feeds.
+            # Keep only in-coverage regions from generic feeds.
             sources.extend(
                 rss_sources_from_feeds(
                     self.settings.rss_feeds,
-                    region_filter={"Southern Europe", "Nordics"},
+                    region_filter={
+                        "Southern Europe", "Nordics", "Western Europe", "EU",
+                        "Central Europe", "East Africa", "North America",
+                        "US East Coast", "US West Coast",
+                    },
                 )
             )
         return RRSSRegistry(sources)
@@ -247,7 +251,7 @@ class KafCadePipeline:
     @staticmethod
     def build_rss(
         dataset: Dict,
-        site_url: str = "https://sai-agency.netlify.app",
+        site_url: str = "https://sai-agency-deals-radar.netlify.app",
     ) -> str:
         deals = dataset.get("deals", [])
         try:
@@ -289,7 +293,7 @@ class KafCadePipeline:
         )
 
     @staticmethod
-    def export_rss(dataset: Dict, path: Path | str, site_url: str = "https://sai-agency.netlify.app") -> Path:
+    def export_rss(dataset: Dict, path: Path | str, site_url: str = "https://sai-agency-deals-radar.netlify.app") -> Path:
         out = Path(path)
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(KafCadePipeline.build_rss(dataset, site_url), encoding="utf-8")

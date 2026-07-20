@@ -25,7 +25,7 @@ DEAL = {
 def test_render_deal_page_has_seo_and_form():
     html = render_deal_page(DEAL)
     assert "<title>EIC Accelerator Open 2026 · Deal Radar · SAI Agency</title>" in html
-    assert '<link rel="canonical" href="https://sai-agency.netlify.app/deals/abc123"' in html
+    assert '<link rel="canonical" href="https://sai-agency-deals-radar.netlify.app/deals/abc123"' in html
     assert 'property="og:title"' in html
     # JSON-LD present and valid
     start = html.index("application/ld+json\">") + len("application/ld+json\">")
@@ -50,10 +50,10 @@ def test_render_sitemap_lists_all_deals():
     root = ET.fromstring(xml)
     ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     locs = [e.text for e in root.findall(".//s:loc", ns)]
-    assert "https://sai-agency.netlify.app/" in locs
-    assert "https://sai-agency.netlify.app/deals" in locs
-    assert "https://sai-agency.netlify.app/deals/abc123" in locs
-    assert "https://sai-agency.netlify.app/deals/def456" in locs
+    assert "https://sai-agency-deals-radar.netlify.app/" in locs
+    assert "https://sai-agency-deals-radar.netlify.app/deals" in locs
+    assert "https://sai-agency-deals-radar.netlify.app/deals/abc123" in locs
+    assert "https://sai-agency-deals-radar.netlify.app/deals/def456" in locs
 
 
 def test_export_site_writes_pages_and_prunes_stale(tmp_path):
@@ -80,7 +80,7 @@ def test_render_country_page_seo():
     deals = [DEAL, dict(DEAL, id="d2", title="Second deal in EU")]
     html = render_country_page("EU", deals)
     assert "<title>Opportunities in EU · SAI Agency Deal Radar</title>" in html
-    assert 'canonical" href="https://sai-agency.netlify.app/country/eu"' in html
+    assert 'canonical" href="https://sai-agency-deals-radar.netlify.app/country/eu"' in html
     assert 'application/ld+json' in html
     assert "/deals/abc123" in html and "/deals/d2" in html
     assert 'href="/deals?country=EU"' in html

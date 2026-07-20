@@ -1,6 +1,6 @@
 """ServiceTesterAgent — the continuous feedback / improvement loop.
 
-It health-checks the live target (default ``https://sai-agency.netlify.app``),
+It health-checks the live target (default ``https://sai-agency-deals-radar.netlify.app``),
 derives insights, computes a ``FitnessScore`` for the current deployment
 genome, and publishes an ``EvolutionEvent`` so evo-metaclaw / evolved-skill-opt
 can consume it for population-based skill evolution.

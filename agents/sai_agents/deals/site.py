@@ -15,7 +15,7 @@ import re
 from pathlib import Path
 from typing import Dict, List
 
-DEFAULT_SITE = "https://sai-agency.netlify.app"
+DEFAULT_SITE = "https://sai-agency-deals-radar.netlify.app"
 
 _TYPE_LABEL = {
     "grant": "Grant",
@@ -151,7 +151,7 @@ def render_deal_page(deal: Dict, site_url: str = DEFAULT_SITE) -> str:
     <meta name="description" content="{_esc(desc)}" />
     <link rel="canonical" href="{_esc(url)}" />
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="SAI Agency" />
+    <meta property="og:site_name" content="SAI Deal Radar" />
     <meta property="og:title" content="{_esc(title)}" />
     <meta property="og:description" content="{_esc(desc)}" />
     <meta property="og:url" content="{_esc(url)}" />
@@ -248,7 +248,7 @@ def render_country_page(country: str, deals: List[Dict], site_url: str = DEFAULT
     <meta name="description" content="{_esc(desc)}" />
     <link rel="canonical" href="{_esc(url)}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="SAI Agency" />
+    <meta property="og:site_name" content="SAI Deal Radar" />
     <meta property="og:title" content="Opportunities in {_esc(country)} — Deal Radar" />
     <meta property="og:description" content="{_esc(desc)}" />
     <meta property="og:url" content="{_esc(url)}" />

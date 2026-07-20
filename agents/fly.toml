@@ -12,7 +12,7 @@ dockerfile = "Dockerfile"
 [env]
 SAI_ENV = "production"
 SAI_LOG_JSON = "true"
-SAI_TARGET_URL = "https://sai-agency.netlify.app"
+SAI_TARGET_URL = "https://sai-agency-deals-radar.netlify.app"
 SAI_METRICS_ENABLED = "true"
 SAI_METRICS_PORT = "9464"
 KAFKA_TOPIC = "claw-evolution-events"

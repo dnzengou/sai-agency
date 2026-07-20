@@ -41,7 +41,7 @@ def test_build_digest_html_and_text():
     assert "See all deals" in html
     assert "Open Grant" in text and "/deals/a1" in text
     # deal links point to detail pages
-    assert "https://sai-agency.netlify.app/deals/a1" in html
+    assert "https://sai-agency-deals-radar.netlify.app/deals/a1" in html
 
 
 def test_subscribers_from_lead_store_dedup(tmp_path):
