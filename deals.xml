@@ -5,14 +5,28 @@
     <link>https://sai-agency-deals-radar.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Jul 2026 11:07:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 11:13:20 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency-deals-radar.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BNDES &amp; Finep AI fund — public call to select a manager (up to R$400M)</title>
+      <link>https://agenciabrasil.ebc.com.br/economia/noticia/2026-04/finep-e-bndes-lancam-edital-para-selecionar-gestor-de-fundo-de-ia</link>
+      <guid isPermaLink="false">5e00f8e317290b28</guid>
+      <category>public_tender</category>
+      <description>Public call (edital) launched April 2026 to select a manager for a new FIP investment fund (min R$160M, up to R$400M) backing AI-intensive Brazilian startups, aligned with the national AI plan. · Type: public_tender · Country: Brazil (LATAM) · Value: 63000000.0 · Impact: 0.885</description>
+    </item>
     <item>
       <title>Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)</title>
       <link>https://portugal.gov.pt/en/gc25/communication/news/ai-gigafactories-boost-technological-sovereignty-with-a-200-million-investment</link>
       <guid isPermaLink="false">d7f4f7867627c656</guid>
       <category>partnership</category>
       <description>Portugal approved investment of up to EUR 200M to install and operate an AI Gigafactory under the European EuroHPC programme, with matching EU funding, to boost technological sovereignty. · Type: partnership · Country: Portugal (Southern Europe) · Value: 200000000.0 · Impact: 0.88</description>
+    </item>
+    <item>
+      <title>National Multimodal LLM Programme &amp; SEA-LION (S$70M)</title>
+      <link>https://sea-lion.ai/about/</link>
+      <guid isPermaLink="false">08e90a29090facea</guid>
+      <category>partnership</category>
+      <description>Singapore's S$70M national programme building Southeast Asia's first LLM ecosystem; SEA-LION is an open-source model family (v3 70B, moving multimodal) covering 11 SEA languages, led by AI Singapore and IMDA. · Type: partnership · Country: Singapore (Southeast Asia) · Value: 48000000.0 · Impact: 0.8661</description>
     </item>
     <item>
       <title>Legora raises USD 550M Series D at USD 5.55B valuation</title>
@@ -85,6 +99,13 @@
       <description>The 2026 EIC Accelerator Open call has an indicative budget of EUR 414M and funds single deep-tech SMEs (incl. AI) with up to EUR 2.5M grants + up to EUR 15M equity; 2026 cut-offs 11 Feb, 6 May, 9 Sep, 25 Nov. Open to all EU + associated countries. · Type: grant · Country: EU (EU) · Value: 414000000.0 · Impact: 0.82</description>
     </item>
     <item>
+      <title>Falcon Foundation — USD 300M open-source generative-AI fund (UAE)</title>
+      <link>https://www.tii.ae/</link>
+      <guid isPermaLink="false">63e1d4f222c43ef0</guid>
+      <category>venture</category>
+      <description>Non-profit foundation launched by Abu Dhabi's TII with a USD 300M commitment to advance open-source generative-AI (Falcon) models and support builders in the UAE and globally. · Type: venture · Country: United Arab Emirates (MENA) · Value: 278000000.0 · Impact: 0.82</description>
+    </item>
+    <item>
       <title>AI Lab Poland / Vinci invests USD 11M in ElevenLabs</title>
       <link>https://techfundingnews.com/poland-vinci-fund-11m-elevenlabs-ai-lab-poland/</link>
       <guid isPermaLink="false">605e700adee6d2a9</guid>
@@ -125,6 +146,13 @@
       <guid isPermaLink="false">06aa718c073d5f0e</guid>
       <category>funding_round</category>
       <description>Madrid healthtech Tucuvi raised EUR 17M (USD 20M) Series A led by Cathay Innovation and Kfund/Leadwind to scale its clinically-certified voice AI agent for automated patient follow-up. · Type: funding_round · Country: Spain (Southern Europe) · Value: 17000000.0 · Impact: 0.7923</description>
+    </item>
+    <item>
+      <title>AI Compute Access Fund — subsidized compute for Canadian innovators</title>
+      <link>https://ised-isde.canada.ca/site/ised/en/canadian-sovereign-ai-compute-strategy</link>
+      <guid isPermaLink="false">c25add7085c05916</guid>
+      <category>grant</category>
+      <description>Part of Canada's Sovereign AI Compute Strategy; the Access Fund helps Canadian businesses and researchers purchase AI compute, with 44 projects already supported and a top-up bringing it toward CAD 1B. · Type: grant · Country: Canada (Canada) · Value: 200000000.0 · Impact: 0.79</description>
     </item>
     <item>
       <title>Greater Colorado Venture Fund II (Howdy Partners) — rural VC</title>
@@ -218,6 +246,13 @@
       <description>Austria's official free platform matching owners transferring a business with founders seeking to take one over; ~52,500 Austrian businesses (~705k jobs) are due for handover 2025–2034. · Type: business_succession · Country: Austria (Central Europe) · Value: n/a · Impact: 0.74</description>
     </item>
     <item>
+      <title>nexxt-change — Germany's national business succession exchange</title>
+      <link>https://www.nexxt-change.org/</link>
+      <guid isPermaLink="false">0ef84588c0e8a5cf</guid>
+      <category>business_succession</category>
+      <description>Germany's largest official Nachfolgeboerse, run by the Federal Economy Ministry, KfW, DIHK and the crafts chambers; 10,000+ anonymized listings, matching ~1,000 Mittelstand successions per year. · Type: business_succession · Country: Germany (DACH) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
       <title>Contents secures EUR 5.9M for AI workflow/agent orchestration platform</title>
       <link>https://www.eu-startups.com/2026/02/milan-based-contents-secures-e5-9-million-for-ai-workflow-platform-sets-up-doha-hub-for-middle-east-expansion</link>
       <guid isPermaLink="false">a463f1f7c7a85a60</guid>
@@ -237,6 +272,34 @@
       <guid isPermaLink="false">6ea207f86b6838ca</guid>
       <category>accelerator</category>
       <description>EIC Pre-Accelerator supports early-stage deep-tech startups from Horizon Europe widening countries (incl. Greece, Portugal, Croatia, Slovenia, Cyprus, Malta); 2026-2027 WIDERA budget EUR 40M, first cohort of 70 selected April 2026. · Type: accelerator · Country: EU (EU) · Value: 40000000.0 · Impact: 0.7302</description>
+    </item>
+    <item>
+      <title>Rightbiz — UK's largest businesses-for-sale marketplace</title>
+      <link>https://www.rightbiz.co.uk/</link>
+      <guid isPermaLink="false">84f9c26ac2565deb</guid>
+      <category>business_succession</category>
+      <description>UK marketplace listing thousands of SMEs for sale and succession across 5,000+ locations, used by 400+ UK business-transfer agents. Active listings for buyers seeking established businesses. · Type: business_succession · Country: United Kingdom (UK &amp; Ireland) · Value: n/a · Impact: 0.73</description>
+    </item>
+    <item>
+      <title>WKO Nachfolgeboerse — Austria's business succession marketplace</title>
+      <link>https://www.wko.at/gruendung/nachfolgeboerse</link>
+      <guid isPermaLink="false">6ff174090906c10b</guid>
+      <category>business_succession</category>
+      <description>Austria's largest official succession platform (nachfolgeboerse.at), operated by the WKO; 1,000+ active free anonymized listings connecting retiring owners with successors, backed by 2,200 annual succession consultations. · Type: business_succession · Country: Austria (DACH) · Value: n/a · Impact: 0.73</description>
+    </item>
+    <item>
+      <title>Brookz — Netherlands' largest business-acquisition platform</title>
+      <link>https://www.brookz.nl/</link>
+      <guid isPermaLink="false">f9f8e77d49b948e1</guid>
+      <category>business_succession</category>
+      <description>Independent Dutch M&amp;A/succession marketplace with 50,000+ connected entrepreneurs, investors and advisers; over 9,200 businesses acquired via the platform, averaging ~10 deals per week. · Type: business_succession · Country: Netherlands (Benelux) · Value: n/a · Impact: 0.73</description>
+    </item>
+    <item>
+      <title>GAIA Generative AI Accelerator (USD 160M for 120 startups)</title>
+      <link>https://sdaia.gov.sa/en/Investment/Pages/BusinessAccelerators.aspx</link>
+      <guid isPermaLink="false">264090b809534c18</guid>
+      <category>accelerator</category>
+      <description>SDAIA/NTDP generative-AI accelerator with USD 160M allocated to invest in 120 early-stage companies, part of Saudi Arabia's Year of AI 2026 and its broader USD 9.1B AI strategy. · Type: accelerator · Country: Saudi Arabia (MENA) · Value: 148000000.0 · Impact: 0.73</description>
     </item>
     <item>
       <title>Shamba Pride — USD 3.7M pre-Series A</title>
@@ -274,6 +337,13 @@
       <description>Acquires retiring owners' small businesses, installs new leadership and transitions ownership to employees over time, addressing the US 'silver tsunami' of ~4.5M boomer-owned firms. · Type: business_succession · Country: United States (US East Coast) · Value: n/a · Impact: 0.72</description>
     </item>
     <item>
+      <title>Overnamemarkt.be — Belgium (UNIZO) business transfer matching platform</title>
+      <link>https://www.overnamemarkt.be/en</link>
+      <guid isPermaLink="false">2624dcf153e12045</guid>
+      <category>business_succession</category>
+      <description>UNIZO's open matching platform for SME acquisitions and successions across Flanders and Brussels, working with ~50 acquisition advisers and adhering to the EU4BT business-transfer code of conduct. · Type: business_succession · Country: Belgium (Benelux) · Value: n/a · Impact: 0.72</description>
+    </item>
+    <item>
       <title>B2scout — Italian business-for-sale marketplace</title>
       <link>https://www.b2scout.com/</link>
       <guid isPermaLink="false">c1294841d1e6ecde</guid>
@@ -293,6 +363,13 @@
       <guid isPermaLink="false">1d2ed9550bb99def</guid>
       <category>grant</category>
       <description>Portugal's Recovery and Resilience Plan made EUR 100M available for SMEs to adopt AI, as a non-repayable subsidy covering 75% of investment up to EUR 300,000 per company; Phase II closed 28 November 2025. · Type: grant · Country: Portugal (Southern Europe) · Value: 100000000.0 · Impact: 0.71</description>
+    </item>
+    <item>
+      <title>Bsale — Australian businesses-for-sale marketplace (boomer succession wave)</title>
+      <link>https://www.bsale.com.au/</link>
+      <guid isPermaLink="false">9c056f0df883855a</guid>
+      <category>business_succession</category>
+      <description>National Australian marketplace listing SMEs for sale amid a large baby-boomer succession wave (100,000+ owners expected to sell 2023-2026, ~70% of small businesses changing hands within 10-15 years). · Type: business_succession · Country: Australia (Oceania) · Value: n/a · Impact: 0.71</description>
     </item>
     <item>
       <title>Pallma AI closes EUR 1.36M pre-seed for AI-agent security</title>
@@ -372,6 +449,13 @@
       <description>Cyprus' Research and Innovation Foundation opened a EUR 1M PRE-SEED call ('Creation and Initial Development of Startups with International Orientation'), up to EUR 119,999 per project; proposals due 11 September 2026. · Type: grant · Country: Cyprus (Southern Europe) · Value: 1000000.0 · Impact: 0.654</description>
     </item>
     <item>
+      <title>Business Succession Planning support fund (up to CAD 3M)</title>
+      <link>https://ised-isde.canada.ca/site/ised/en/programs-and-initiatives/business-succession-planning</link>
+      <guid isPermaLink="false">98f357d5fdba5305</guid>
+      <category>grant</category>
+      <description>Up to CAD 3M in non-repayable funding (disbursed from 2026-27) to build free succession-planning and business-transfer resources for Canadian SMEs, as ~1 in 5 SMEs prepare to change hands within five years. · Type: grant · Country: Canada (Canada) · Value: 2000000.0 · Impact: 0.6526</description>
+    </item>
+    <item>
       <title>New Nordics AI initiative</title>
       <link>https://www.nordicinnovation.org/programs/new-nordics-ai-preparation-project</link>
       <guid isPermaLink="false">60236f42cdf5dc9d</guid>
@@ -384,6 +468,13 @@
       <guid isPermaLink="false">5d601b9a67a2883a</guid>
       <category>public_tender</category>
       <description>Analysis mapping 250+ Swedish public-sector AI procurements (2016-2025, ~SEK 1.3B), forecasting cumulative AI procurement to double by 2028; tenders published via TendSign and e-Avrop. · Type: public_tender · Country: Sweden (Nordics) · Value: n/a · Impact: 0.65</description>
+    </item>
+    <item>
+      <title>Our Living Islands — offshore island refurbishment &amp; relocation grants (up to EUR 84,000)</title>
+      <link>https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/policy-information/our-living-islands/</link>
+      <guid isPermaLink="false">0031be5e66bd11f3</guid>
+      <category>property_scheme</category>
+      <description>10-year national policy to repopulate 30 offshore islands; refurbishment grants of up to EUR 60,000 (plus EUR 24,000 for derelict homes) for vacant properties, to reverse island depopulation. · Type: property_scheme · Country: Ireland (UK &amp; Ireland) · Value: 84000.0 · Impact: 0.6493</description>
     </item>
     <item>
       <title>Grand Solutions: Artificial Intelligence (AI)</title>
@@ -421,6 +512,20 @@
       <description>Vermont-based seed/early-stage VC investing in tech-enabled startups located in rural US communities under-served by traditional venture capital. · Type: venture · Country: United States (US East Coast) · Value: n/a · Impact: 0.64</description>
     </item>
     <item>
+      <title>Zenkoku Akiya Bank — national vacant-home database (Japan)</title>
+      <link>https://www.homes.co.jp/akiyabank/</link>
+      <guid isPermaLink="false">66d977ccc78bb6f1</guid>
+      <category>property_scheme</category>
+      <description>MLIT-designated national akiya (vacant-house) bank aggregating municipal listings of low-cost/abandoned rural homes for sale or rent, a core channel for Japan's rural repopulation amid ~9M vacant houses. · Type: property_scheme · Country: Japan (East Asia) · Value: n/a · Impact: 0.64</description>
+    </item>
+    <item>
+      <title>AI Institute of South Africa &amp; AI Hubs launch</title>
+      <link>https://oecd.ai/en/dashboards/policy-initiatives/launch-of-the-artificial-intelligence-ai-institute-of-south-africa-and-ai-hubs-university-of-johannesburg-and-tshwane-university-of-technology-9180</link>
+      <guid isPermaLink="false">c5da963194b70655</guid>
+      <category>partnership</category>
+      <description>South African government launch of the AI Institute of South Africa plus AI Hubs at the University of Johannesburg and Tshwane University of Technology, supporting AI skills, research and SME innovation under the draft national AI policy. · Type: partnership · Country: South Africa (Sub-Saharan Africa) · Value: n/a · Impact: 0.64</description>
+    </item>
+    <item>
       <title>AI4D Innovation Scaling Challenge &amp; Research Grants (Africa)</title>
       <link>https://ai4d.acts-net.org/</link>
       <guid isPermaLink="false">73f2df0948bd10b1</guid>
@@ -447,6 +552,13 @@
       <guid isPermaLink="false">37f1d40feb18233e</guid>
       <category>venture</category>
       <description>Spain is Europe's leading search-fund market — 50+ active funds in IESE's 2024 study plus further SME acquisitions in 2025, driven by retiring owners with no successor. Search funds are investor-backed vehicles created to buy and run a single profitable SME long-term. · Type: venture · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.63</description>
+    </item>
+    <item>
+      <title>IndiaAI Innovation Challenge 2026 — govt AI contracts &amp; grants</title>
+      <link>https://indiaai.gov.in/</link>
+      <guid isPermaLink="false">0ba352d8b213402e</guid>
+      <category>grant</category>
+      <description>Government challenge under the INR 10,372 Cr IndiaAI Mission offering AI work contracts and development funding to Indian startups/MSMEs, plus compute credits and startup financing pathways. · Type: grant · Country: India (South Asia) · Value: 550000.0 · Impact: 0.6205</description>
     </item>
     <item>
       <title>WAD Capital — institutional search fund for European SMEs</title>
@@ -512,6 +624,13 @@
       <description>Digital Europe Programme 2026 AI calls opened 21 April 2026 (deadline 1 October 2026), covering AI, generative AI and the AI Continent action plan; grants support real AI deployment in public services and industry. · Type: grant · Country: EU (EU) · Value: n/a · Impact: 0.594</description>
     </item>
     <item>
+      <title>AI Adopt Program — grants for Australian SMEs to pilot AI</title>
+      <link>https://business.gov.au/grants-and-programs/artificial-intelligence-ai-adopt-program</link>
+      <guid isPermaLink="false">8d8ac60e9545c3b7</guid>
+      <category>grant</category>
+      <description>Federal program funding AI Adopt Centres plus direct SME grants (AUD 50k-250k, 50% co-contribution) to help trade-exposed small and medium businesses adopt responsible AI. Centres operational through 2026-27. · Type: grant · Country: Australia (Oceania) · Value: 150000.0 · Impact: 0.5882</description>
+    </item>
+    <item>
       <title>Case a 3 Euro — Sambuca di Sicilia</title>
       <link>https://www.comune.sambucadisicilia.ag.it/</link>
       <guid isPermaLink="false">e854f896b4dcdd70</guid>
@@ -540,11 +659,25 @@
       <description>Ireland's 10-year offshore-islands policy (2023) supports repopulation via remote-working infrastructure and Vacant Property Refurbishment Grants up to €60,000 (vacant) or €84,000 (derelict) to renovate and occupy pre-1993 island homes. · Type: grant · Country: Ireland (Western Europe) · Value: 84000.0 · Impact: 0.5793</description>
     </item>
     <item>
+      <title>Israel Innovation Authority — International R&amp;D &amp; Pilot Collaborations 2026</title>
+      <link>https://innovationisrael.org.il/en/calls_for_proposal/international-rd-and-pilot-collaborations-2026/</link>
+      <guid isPermaLink="false">934b8dc0c9ad2ede</guid>
+      <category>grant</category>
+      <description>Recurring 2026 grant call sharing R&amp;D risk for Israeli companies (incl. AI) partnering with foreign firms, alongside a national push investing NIS 500M in AI R&amp;D infrastructure. · Type: grant · Country: Israel (MENA) · Value: n/a · Impact: 0.57</description>
+    </item>
+    <item>
       <title>Shared, sustainable and secure AI infrastructure</title>
       <link>https://www.vinnova.se/en/calls-for-proposals/advanced-digitalization-industrial-2024-04161/shared-sustainable-and-secure-ai-2025-04840/</link>
       <guid isPermaLink="false">903a184cd285b5fb</guid>
       <category>grant</category>
       <description>Vinnova call funding projects that build cost-effective and sustainable AI infrastructure for Swedish industry, offering SEK 2-15M per project (max 50% of eligible costs). · Type: grant · Country: Sweden (Nordics) · Value: 1800000.0 · Impact: 0.5691</description>
+    </item>
+    <item>
+      <title>K-Startup Grand Challenge 2026 — Korea's global accelerator</title>
+      <link>https://www.k-startup.go.kr/</link>
+      <guid isPermaLink="false">f209e3aeaf229c5d</guid>
+      <category>accelerator</category>
+      <description>Government global accelerator for non-Korean startups (under 7 years, deep-tech under 10) in AI, biotech, fintech and more; up to KRW 950M equity-free support, PoC access to 20+ conglomerates and a COMEUP 2026 demo day. · Type: accelerator · Country: South Korea (East Asia) · Value: 620000.0 · Impact: 0.5644</description>
     </item>
     <item>
       <title>Innovation Cluster Funding Call - AI technologies</title>
@@ -580,6 +713,13 @@
       <guid isPermaLink="false">20bfe74d6c93a021</guid>
       <category>accelerator</category>
       <description>Antler's Nairobi founder residency invests ~USD 100k for ~10% equity (with up to USD 150k pre-committed follow-on) into new East African startups every ~6 months; applications reopened August 2025. · Type: accelerator · Country: Kenya (East Africa) · Value: 92000.0 · Impact: 0.5423</description>
+    </item>
+    <item>
+      <title>Start-Up Chile — government equity-free accelerator</title>
+      <link>https://startupchile.org/en/</link>
+      <guid isPermaLink="false">8a514fe2877f7074</guid>
+      <category>accelerator</category>
+      <description>Chilean government public accelerator offering equity-free grants (USD 15k-100k across Build/Ignite/Growth tracks) plus a 2-year visa; open to founders from any country, with rolling quarterly intakes. · Type: accelerator · Country: Chile (LATAM) · Value: 92000.0 · Impact: 0.5323</description>
     </item>
     <item>
       <title>Falusi CSOK — village family housing support</title>
@@ -624,6 +764,20 @@
       <description>Galician grant of up to €18,000 for non-agricultural rural entrepreneurship (CAP Strategic Plan 2023-2027, €12.6M budget); Galicia also offers relocation aid and tax deductions for moving to villages under 5,000 inhabitants. · Type: grant · Country: Spain (Southern Europe) · Value: 18000.0 · Impact: 0.5191</description>
     </item>
     <item>
+      <title>NCAIR AI Fund (with Google) — grants for 10 Nigerian AI startups</title>
+      <link>https://ncair.nitda.gov.ng/aifund/</link>
+      <guid isPermaLink="false">6f9ccf9b621abada</guid>
+      <category>grant</category>
+      <description>NITDA/NCAIR AI Fund in collaboration with Google, providing grants of up to NGN 10M per startup from a NGN 100M pool to empower 10 Nigerian startups building AI solutions. · Type: grant · Country: Nigeria (Sub-Saharan Africa) · Value: 60000.0 · Impact: 0.5184</description>
+    </item>
+    <item>
+      <title>MEST Africa AI Startup Program — up to USD 100k pre-seed</title>
+      <link>https://meltwater.org/mest-ai-startup-program/</link>
+      <guid isPermaLink="false">a61a9d700b0fb6cf</guid>
+      <category>accelerator</category>
+      <description>Fully-funded pan-African AI accelerator based in Accra: 7-month training plus 4-month incubation, offering up to USD 100k in pre-seed investment to African AI founders; applications open. · Type: accelerator · Country: Ghana (Sub-Saharan Africa) · Value: 92000.0 · Impact: 0.5123</description>
+    </item>
+    <item>
       <title>Lanzadera high-performance accelerator cohort (120 startups, AI focus)</title>
       <link>https://capital-riesgo.es/en/articles/120-startups-join-the-lanzadera-high-performance-accelerator/</link>
       <guid isPermaLink="false">7a7f53229c51348b</guid>
@@ -645,6 +799,13 @@
       <description>Business Finland call for strongly growth-oriented companies (min EUR 2M revenue, 10+ staff, 20%+ growth) to launch forward-looking AI projects; open 2 February to 15 April 2026. · Type: grant · Country: Finland (Nordics) · Value: n/a · Impact: 0.51</description>
     </item>
     <item>
+      <title>NIC VietLeap AI Accelerator (Vietnam)</title>
+      <link>https://nic.gov.vn/</link>
+      <guid isPermaLink="false">cdb241ff54a99d8e</guid>
+      <category>accelerator</category>
+      <description>State-backed acceleration program (with JICA and BCG advisory) calling for 10-15 early-stage Vietnamese AI startups, offering mentorship, technical training, investor connections and platform support. · Type: accelerator · Country: Vietnam (Southeast Asia) · Value: n/a · Impact: 0.51</description>
+    </item>
+    <item>
       <title>Antikythera settler support programme</title>
       <link>https://greekcitytimes.com/2026/01/10/antikythera-greek-island-free-housing-food-500-euros-2026/</link>
       <guid isPermaLink="false">ce8c0c9e90bfdbf4</guid>
@@ -657,6 +818,13 @@
       <guid isPermaLink="false">c3c069e444ae0156</guid>
       <category>grant</category>
       <description>Research Council of Norway call establishing six national AI research centres starting in 2025, part of a plan to raise AI/digital research funding by at least NOK 1 billion over five years. · Type: grant · Country: Norway (Nordics) · Value: n/a · Impact: 0.5</description>
+    </item>
+    <item>
+      <title>Komdigi x Google Cloud AI Startup Accelerator (Indonesia)</title>
+      <link>https://govinsider.asia/intl-en/article/indonesias-komdigi-partners-with-google-cloud-to-develop-ai-startup-ecosystem</link>
+      <guid isPermaLink="false">71a32c03851916c0</guid>
+      <category>accelerator</category>
+      <description>Accelerator launched May 2026 by Indonesia's digital ministry and Google Cloud to grow 100 AI-focused startups over five years, part of Indonesia's push for AI sovereignty and a domestic AI economy. · Type: accelerator · Country: Indonesia (Southeast Asia) · Value: n/a · Impact: 0.5</description>
     </item>
     <item>
       <title>Google for Startups Accelerator: Africa (AI First)</title>
