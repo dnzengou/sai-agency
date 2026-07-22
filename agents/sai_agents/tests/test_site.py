@@ -50,8 +50,10 @@ def test_render_sitemap_lists_all_deals():
     root = ET.fromstring(xml)
     ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
     locs = [e.text for e in root.findall(".//s:loc", ns)]
-    assert "https://sai-agency-deals-radar.netlify.app/" in locs
+    # The homepage serves the Deal Radar; /deals is its canonical URL, so the
+    # sitemap lists /deals (not a bare / duplicate).
     assert "https://sai-agency-deals-radar.netlify.app/deals" in locs
+    assert "https://sai-agency-deals-radar.netlify.app/" not in locs
     assert "https://sai-agency-deals-radar.netlify.app/deals/abc123" in locs
     assert "https://sai-agency-deals-radar.netlify.app/deals/def456" in locs
 

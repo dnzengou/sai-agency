@@ -292,6 +292,17 @@
       rc.appendChild(c);
     });
 
+    // Keep the "Get weekly alerts" region dropdown in sync with the dataset so
+    // it always reflects the actual (worldwide) coverage without hardcoding.
+    var areg = $("#alert-region");
+    if (areg) {
+      regions.filter(function (r) { return r && r !== "All"; }).sort().forEach(function (r) {
+        var o = el("option", null, r);
+        o.value = r;
+        areg.appendChild(o);
+      });
+    }
+
     var types = unique(state.deals.map(function (d) { return d.type; }));
     var tsel = $("#type-select");
     types.forEach(function (t) {

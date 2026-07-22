@@ -163,7 +163,7 @@ def render_deal_page(deal: Dict, site_url: str = DEFAULT_SITE) -> str:
   </head>
   <body>
     <main class="wrap detail">
-      <p class="pipeline-note"><a href="/deals">← Deal Radar</a> · <a href="/">SAI Agency</a></p>
+      <p class="pipeline-note"><a href="/deals">← Deal Radar</a> · <a href="/match">Find your match</a> · <a href="/countries">By country</a></p>
       <article class="deal prio-{_esc(deal.get('priority', 'medium'))}">
         <div class="top">
           <h1>{_esc(title)}</h1>
@@ -302,9 +302,10 @@ def render_countries_index(groups: Dict[str, List[Dict]], site_url: str = DEFAUL
 
 
 def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE, extra_paths: List[str] | None = None) -> str:
+    # The homepage now serves the Deal Radar; `/deals` is its canonical URL, so
+    # list only the canonical (priority 1.0) and skip the bare `/` duplicate.
     urls = [
-        (f"{site_url}/", "weekly", "1.0"),
-        (f"{site_url}/deals", "daily", "0.9"),
+        (f"{site_url}/deals", "daily", "1.0"),
         (f"{site_url}/demo", "weekly", "0.8"),
         (f"{site_url}/match", "weekly", "0.8"),
         (f"{site_url}/countries", "weekly", "0.7"),

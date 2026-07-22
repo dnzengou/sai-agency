@@ -14,7 +14,17 @@ publish = "."
 directory = "netlify/functions"
 node_bundler = "esbuild"
 
-# Deal Radar page (must precede the SPA catch-all).
+# Homepage: the Deal Radar IS the landing page now. The old marketing SPA
+# (index.html) was renamed to agency.html and demoted to /agency, so the site
+# focuses primarily on helping users source deals (businesses, property and
+# ventures). With no index.html present, this rewrite serves `/` directly.
+[[redirects]]
+from = "/"
+to = "/deals.html"
+status = 200
+force = false
+
+# Deal Radar page.
 [[redirects]]
 from = "/deals"
 to = "/deals.html"
@@ -35,10 +45,27 @@ to = "/match.html"
 status = 200
 force = false
 
-# SPA fallback: serve index.html for client-side routes.
+# Full-service marketing page — demoted from the homepage but preserved
+# (renamed index.html -> agency.html) and reachable at /agency.
+[[redirects]]
+from = "/agency"
+to = "/agency.html"
+status = 200
+force = false
+
+[[redirects]]
+from = "/agency/*"
+to = "/agency.html"
+status = 200
+force = false
+
+# Catch-all: any unknown route lands on the Deal Radar (the primary product),
+# not the hidden marketing SPA. Netlify serves existing static files and the
+# implicit /foo -> /foo.html pretty-URLs before this non-forced rewrite fires,
+# so real pages (/countries, /deals/<id>, /country/<slug>, assets) are unaffected.
 [[redirects]]
 from = "/*"
-to = "/index.html"
+to = "/deals.html"
 status = 200
 force = false
 
