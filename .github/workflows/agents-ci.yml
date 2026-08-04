@@ -31,4 +31,9 @@ jobs:
       - name: Smoke-run the team (local fallback, no Kafka)
         env:
           SAI_TARGET_URL: https://example.com
+          SAI_TRAJECTORY_ROOT: ${{ runner.temp }}/sai-trajectories
         run: python -m sai_agents.run_team
+      - name: Turn the evo flywheel (EvoForge + EvoSkillOpt over trajectories)
+        env:
+          SAI_TRAJECTORY_ROOT: ${{ runner.temp }}/sai-trajectories
+        run: python -m sai_agents.evolve

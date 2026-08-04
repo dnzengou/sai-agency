@@ -77,20 +77,6 @@ class OrchestratorTeam:
 
             # 3. Publish each as an evolution event. Agent order must match the
             # order results were appended above.
-            events: List[EvolutionEvent] = []
-            for agent, result in zip(
-                [
-                    self.tester,
-                    self.marketing,
-                    self.sales,
-                    self.outreach,
-                    self.security,
-                    self.deals,
-                ],
-                results,
-            ):
-                events.append(agent.to_event(result))
-            # 3. Publish each as an evolution event.
             emitters = [
                 self.tester,
                 self.marketing,
