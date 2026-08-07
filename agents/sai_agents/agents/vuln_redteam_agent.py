@@ -35,8 +35,14 @@ class VulnRedTeamAgent(BaseAgent):
     name = "vuln_redteam"
     event_type = EventType.SECURITY_FINDING
 
-    def __init__(self, service: str = "sai-agents", blacklist: Optional[Blacklist] = None) -> None:
-        super().__init__(service=service)
+    def __init__(
+        self,
+        service: str = "sai-agents",
+        blacklist: Optional[Blacklist] = None,
+        spec: Optional[Dict[str, float]] = None,
+        loadout: Optional[list] = None,
+    ) -> None:
+        super().__init__(service=service, spec=spec, loadout=loadout)
         self.blacklist = blacklist or Blacklist()
 
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:

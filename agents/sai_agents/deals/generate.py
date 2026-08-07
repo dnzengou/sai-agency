@@ -16,6 +16,7 @@ from pathlib import Path
 
 from sai_agents.config import get_settings
 from sai_agents.deals.pipeline import KafCadePipeline
+from sai_agents.deals.site import export_site
 from sai_agents.logging_setup import configure_logging, get_logger
 
 log = get_logger("deals.generate")
@@ -29,7 +30,10 @@ async def _run(output: Path) -> dict:
     settings = get_settings()
     configure_logging(settings.log_level, settings.log_json)
     pipeline = KafCadePipeline(settings=settings)
-    return await pipeline.run(export_path=output)
+    result = await pipeline.run(export_path=output)
+    # SEO: per-deal detail pages + full sitemap under the site root.
+    result["site"] = export_site(result["dataset"], Path(output).parent)
+    return result
 
 
 def main() -> None:
@@ -43,6 +47,7 @@ def main() -> None:
                 "high_impact": result["high_impact"],
                 "output": str(output),
                 "rss": result.get("rss_path"),
+                "site": result.get("site"),
                 "summary": result["dataset"]["summary"],
             },
             indent=2,

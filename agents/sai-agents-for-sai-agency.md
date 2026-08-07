@@ -147,6 +147,95 @@ Both are optional and independent; failures never drop the lead (it is already
 in the KafCa stream). Stats are exposed on `GET /health`
 (`crm_stored`, `crm_forwarded`).
 
+## Growth II: SEO pages, email digest, lead analytics
+
+### Deal-detail pages + sitemap (SEO / shareability)
+
+`python -m sai_agents.deals.generate` now also writes one indexable HTML page
+per deal under `/deals/<id>.html` (unique title/description, canonical,
+OpenGraph/Twitter, JSON-LD structured data, and an inline pre-filled
+`deal-interest` form that works without JS) plus a full `sitemap.xml` covering
+the home page, `/deals`, and every deal. The weekly `deal-refresh` workflow
+commits these alongside `deals.json`. Reach a deal at
+`https://sai-agency.netlify.app/deals/<id>`.
+
+### Weekly email digest (`deal-digest.yml`)
+
+Turns subscribers into repeat visitors. Builds an HTML+text digest of the top
+open deals and sends it via SMTP; **safe by default** — with no SMTP secret it
+does a dry-run (builds, sends nothing). Subscribers are merged from `DIGEST_TO`,
+the NDJSON lead store, and the Netlify Forms API.
+
+```bash
+python -m sai_agents.digest.send --dry-run   # preview -> digest-preview.html
+python -m sai_agents.digest.send             # send (needs SMTP_* env)
+```
+
+| Variable | Purpose |
+|---|---|
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_USER` / `SMTP_PASSWORD` / `SMTP_STARTTLS` | SMTP transport |
+| `DIGEST_FROM` | From header |
+| `DIGEST_TO` | Explicit recipient list (testing) |
+| `NETLIFY_API_TOKEN` + `NETLIFY_ALERTS_FORM_ID` | Pull subscribers from Netlify Forms |
+
+### Lead-conversion analytics
+
+`GET /analytics` on the ingest endpoint (and `python -m sai_agents.analytics.report`)
+computes the funnel from the NDJSON lead store: subscribers → interests →
+engaged → won, with conversion ratios, top deals by interest, and breakdowns by
+form / ARM stage / owner / region.
+
+## Valuation (indicative estimates)
+
+Executes the business plan's **Valuation Agent** conservatively. At
+generate-time, `sai_agents.valuation.estimate_value` attaches an indicative EUR
+range to every deal (embedded in `deals.json` as `valuation`), with an explicit
+`basis` and `confidence` — never fabricated precision:
+
+- disclosed figures used directly (`disclosed`, high confidence);
+- €1/€3 house schemes → symbolic acquisition + a typical renovation budget
+  (`€20k–€70k`, medium confidence);
+- undisclosed business succession → a labelled sector-typical transfer band
+  (low confidence); grants → framed as "up to €X" benefit.
+
+Surfaced on the detail pages ("Indicative valuation" row) and the match cards
+("Est. value"). Because it's precomputed and embedded, the frontend just reads
+`deal.valuation` — no valuation logic duplicated client-side.
+
+## Matchmaking (`/match`) — the end-user application
+
+Executes the business plan's **Matchmaking Agent**: a would-be successor, buyer
+or investor sets a profile (what to take over, region, country, budget,
+interests) and gets a **ranked, explained shortlist** of real opportunities.
+
+- Scorer: `sai_agents.matching` (`MatchProfile`, `score_match`, `rank_matches`)
+  — deterministic, ARM-aligned; **only the dimensions the user specified count**
+  toward the fit %. Mirrored 1:1 client-side in `assets/match.js` so it runs on
+  the static site over `deals.json`.
+- Page `/match` (`match.html`): profile form → match cards with a fit-% badge
+  and "why matched" reasons, each linking to the deal detail page. A
+  "Request introductions" form captures the profile as a **high-intent lead**
+  (`match-request`) — classified `engaged` / `sales_gtm` by the lead bridge and
+  published as a `MATCH_SIGNAL`-grade lead through KafCa → CRM → analytics.
+
+## Demo: succession & repopulation (`/demo`)
+
+A live illustration of the platform answering a real challenge in ageing
+economies — emptying villages and businesses without heirs — from a property &
+ventures angle. Same machinery (RRSS → KafCade → Bl → ARM → detail pages / RSS /
+analytics), pointed at a human problem.
+
+- Deals now carry a **`category`** (`ai_ml` | `repopulation` | `succession` |
+  `venture`) plus two new types (`property_scheme`, `business_succession`). The
+  `/deals` view has a **category filter** (URL-synced: `/deals?category=repopulation`).
+- The bundled dataset includes **real, cited** €1/€3-house schemes (Mussomeli,
+  Sambuca, Ollolai, Laurenzana, Maenza, Presicce), relocation grants (Galicia,
+  Portugal's Emprego Interior, Antikythera, Tulsa Remote, Ireland's islands,
+  France's Petites villes de demain) and business-succession registries
+  (Bpifrance, CRA, Transeo, EU farm succession, Spanish/Italian marketplaces).
+- **`/demo`** (`demo.html` + `/assets/demo.js`) renders live counts + featured
+  opportunities from `deals.json` and routes into the filtered Deal Radar.
+
 ## Layout
 
 ```

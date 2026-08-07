@@ -11,6 +11,9 @@
     funding_round: "var(--c5)",
     partnership: "var(--c4)",
     rfp: "var(--c6)",
+    property_scheme: "var(--c2)",
+    business_succession: "var(--c6)",
+    venture: "var(--c3)",
   };
   var TYPE_LABEL = {
     grant: "Grant",
@@ -19,9 +22,19 @@
     funding_round: "Funding round",
     partnership: "Partnership",
     rfp: "RFP",
+    property_scheme: "Relocation / €1 house",
+    business_succession: "Business succession",
+    venture: "Venture / co-investment",
   };
 
-  var state = { deals: [], region: "All", type: "All", country: "All", q: "", sort: "impact" };
+  var CATEGORY_LABEL = {
+    ai_ml: "AI / ML",
+    repopulation: "Repopulation",
+    succession: "Succession",
+    venture: "Venture",
+  };
+
+  var state = { deals: [], region: "All", type: "All", country: "All", category: "All", q: "", sort: "impact" };
   var $ = function (sel) { return document.querySelector(sel); };
 
   function euro(n) {
@@ -39,7 +52,7 @@
   }
 
   // --- URL <-> state sync (shareable deep-links) ---
-  var URL_KEYS = ["region", "type", "country", "q", "sort"];
+  var URL_KEYS = ["region", "type", "country", "category", "q", "sort"];
   function readURL() {
     var p = new URLSearchParams(location.search);
     URL_KEYS.forEach(function (k) { if (p.has(k)) state[k] = p.get(k); });
@@ -60,6 +73,7 @@
       if (state.region !== "All" && d.region !== state.region) return false;
       if (state.type !== "All" && d.type !== state.type) return false;
       if (state.country !== "All" && d.country !== state.country) return false;
+      if (state.category !== "All" && d.category !== state.category) return false;
       if (q) {
         var hay = (d.title + " " + d.org + " " + d.sector + " " + d.description + " " + d.country).toLowerCase();
         if (hay.indexOf(q) === -1) return false;
@@ -143,6 +157,9 @@
       var top = el("div", "top");
       top.appendChild(el("h3", null, d.title));
       top.appendChild(badge("type", TYPE_LABEL[d.type] || d.type, { color: TYPE_COLOR[d.type] }));
+      if (d.category && d.category !== "ai_ml") {
+        top.appendChild(badge("region", CATEGORY_LABEL[d.category] || d.category));
+      }
       top.appendChild(badge("stage-" + (d.stage || "open"), d.stage || "open", { dot: true }));
       card.appendChild(top);
 
@@ -275,6 +292,17 @@
       rc.appendChild(c);
     });
 
+    // Keep the "Get weekly alerts" region dropdown in sync with the dataset so
+    // it always reflects the actual (worldwide) coverage without hardcoding.
+    var areg = $("#alert-region");
+    if (areg) {
+      regions.filter(function (r) { return r && r !== "All"; }).sort().forEach(function (r) {
+        var o = el("option", null, r);
+        o.value = r;
+        areg.appendChild(o);
+      });
+    }
+
     var types = unique(state.deals.map(function (d) { return d.type; }));
     var tsel = $("#type-select");
     types.forEach(function (t) {
@@ -294,6 +322,17 @@
     });
     csel.value = state.country;
     csel.addEventListener("change", function () { state.country = csel.value; writeURL(); renderDeals(); });
+
+    var catsel = $("#category-select");
+    if (catsel) {
+      unique(state.deals.map(function (d) { return d.category; })).sort().forEach(function (c) {
+        var o = el("option", null, CATEGORY_LABEL[c] || c);
+        o.value = c;
+        catsel.appendChild(o);
+      });
+      catsel.value = state.category;
+      catsel.addEventListener("change", function () { state.category = catsel.value; writeURL(); renderDeals(); });
+    }
 
     var search = $("#search");
     search.value = state.q;

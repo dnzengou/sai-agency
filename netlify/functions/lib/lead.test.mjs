@@ -28,6 +28,15 @@ test("ARM classification differs by form", () => {
   assert.equal(classifyLeadArm("deal-alerts").owner, "marketing");
 });
 
+test("match-request is treated as high-intent", () => {
+  const arm = classifyLeadArm("match-request");
+  assert.equal(arm.arm_stage, "engaged");
+  assert.equal(arm.owner, "sales_gtm");
+  assert.match(arm.next_action, /matched intros/i);
+  // scores higher than a plain newsletter opt-in
+  assert.ok(scoreLeadImpact("match-request", { email: "a@b.eu" }) > scoreLeadImpact("deal-alerts", { email: "a@b.eu" }));
+});
+
 test("buildLeadEvent produces a valid KafCa envelope and strips honeypot", () => {
   const ev = buildLeadEvent(
     "deal-interest",

@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deal Radar · SAI Agency — AI/ML deals across Southern Europe & the Nordics</title>
-    <meta name="description" content="Deal Radar: real, sourced AI/ML/data opportunities — grants, public tenders, accelerators, funding rounds — across Southern Europe and the Nordics. Get weekly deal alerts from SAI Agency." />
-    <link rel="canonical" href="https://sai-agency.netlify.app/deals" />
-    <link rel="alternate" type="application/rss+xml" title="SAI Agency Deal Radar" href="/deals.xml" />
+    <title>SAI Deal Radar — source vetted businesses, property &amp; ventures worldwide</title>
+    <meta name="description" content="SAI Deal Radar: an extensive, continuously-refreshed list of quality, vetted deals — businesses for sale &amp; succession, property &amp; relocation schemes, venture vehicles and AI/ML funding — sourced worldwide. Every deal links to its official source. Filter, export and get weekly alerts." />
+    <link rel="canonical" href="https://sai-agency-deals-radar.netlify.app/deals" />
+    <link rel="alternate" type="application/rss+xml" title="SAI Deal Radar" href="/deals.xml" />
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="SAI Agency" />
-    <meta property="og:title" content="Deal Radar — AI/ML deals across Southern Europe & the Nordics" />
-    <meta property="og:description" content="Real, sourced AI/ML/data opportunities: grants, tenders, accelerators, funding rounds. Filter, export, and get weekly deal alerts." />
-    <meta property="og:url" content="https://sai-agency.netlify.app/deals" />
+    <meta property="og:site_name" content="SAI Deal Radar" />
+    <meta property="og:title" content="SAI Deal Radar — vetted businesses, property &amp; ventures worldwide" />
+    <meta property="og:description" content="An extensive, vetted list of real deals — businesses &amp; succession, property &amp; relocation schemes, ventures and AI/ML funding — sourced worldwide. Filter, export, subscribe." />
+    <meta property="og:url" content="https://sai-agency-deals-radar.netlify.app/deals" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Deal Radar · SAI Agency" />
-    <meta name="twitter:description" content="Real AI/ML/data deals across Southern Europe & the Nordics — filter, export, subscribe." />
+    <meta name="twitter:title" content="SAI Deal Radar — source vetted deals worldwide" />
+    <meta name="twitter:description" content="Vetted businesses, property &amp; ventures — sourced worldwide. Filter, export, get weekly alerts." />
     <link rel="stylesheet" href="/assets/deals.css" />
   </head>
   <body>
@@ -40,19 +40,22 @@
     <main class="wrap">
       <header>
         <div class="masthead">
-          <h1><span class="kicker">SAI Agency</span> · Deal Radar</h1>
+          <h1><span class="kicker">SAI</span> · Deal Radar</h1>
         </div>
         <p class="tagline">
-          Real, publicly-sourced AI / ML / data opportunities across
-          <strong>Southern Europe</strong>, the <strong>Nordics</strong> and
-          <strong>EU-wide</strong> programmes — grants, public tenders,
-          accelerators, funding rounds and partnerships.
+          Your radar for <strong>quality, vetted assets and ventures</strong> —
+          <strong>businesses for sale &amp; succession</strong>,
+          <strong>property &amp; relocation schemes</strong>, venture vehicles
+          and AI/ML funding — sourced <strong>worldwide</strong>. Every deal
+          links to its <strong>official source</strong>, so what you see is real
+          and verifiable.
         </p>
         <p class="pipeline-note">
-          Sourced via the <code>KafCade</code> RRSS cascade · impact-scored &amp;
-          <code>ARM</code>-classified (account / relationship management) ·
-          published as <code>DEAL_SIGNAL</code> events feeding
-          <code>evo-metaclaw</code>. <a href="/">← Back to site</a> ·
+          Continuously sourced via the <code>KafCade</code> RRSS cascade ·
+          impact-scored &amp; <code>ARM</code>-classified · published as
+          <code>DEAL_SIGNAL</code> events feeding <code>evo-metaclaw</code>.
+          <a href="/match">✨ Find your match</a> ·
+          <a href="/demo">Demo</a> · <a href="/countries">By country</a> ·
           <a href="/deals.xml">RSS</a>
         </p>
       </header>
@@ -73,9 +76,7 @@
         <input id="alert-email" type="email" name="email" required placeholder="you@company.com" />
         <label class="sr-only" for="alert-region">Region</label>
         <select id="alert-region" name="region">
-          <option value="All">All regions</option>
-          <option value="Southern Europe">Southern Europe</option>
-          <option value="Nordics">Nordics</option>
+          <option value="All">Worldwide (all regions)</option>
         </select>
         <button class="btn" type="submit">Subscribe</button>
         <span class="form-msg" id="alerts-msg" role="status"></span>
@@ -102,6 +103,8 @@
           <select id="type-select"><option value="All">All types</option></select>
           <label class="sr-only" for="country-select">Filter by country</label>
           <select id="country-select"><option value="All">All countries</option></select>
+          <label class="sr-only" for="category-select">Filter by category</label>
+          <select id="category-select"><option value="All">All categories</option></select>
           <label class="sr-only" for="sort">Sort</label>
           <select id="sort">
             <option value="impact">Sort: Impact</option>

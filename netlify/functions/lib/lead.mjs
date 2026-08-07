@@ -33,8 +33,9 @@ const clamp01 = (n) => Math.max(0, Math.min(1, n));
 
 // --- Im: impact scoring for a lead ---
 export function scoreLeadImpact(formName, fields) {
-  // A hand-raise on a specific deal is worth more than a newsletter opt-in.
-  const base = formName === "deal-interest" ? 0.7 : 0.45;
+  // A hand-raise on a specific deal (or a match request) is worth more than a
+  // newsletter opt-in.
+  const base = formName === "deal-interest" || formName === "match-request" ? 0.7 : 0.45;
   const hasCompany = fields && fields.company ? 0.1 : 0;
   const msgLen = fields && fields.message ? String(fields.message).length : 0;
   const engagement = clamp01(msgLen / 400) * 0.15; // longer intent -> higher
@@ -44,11 +45,14 @@ export function scoreLeadImpact(formName, fields) {
 
 // --- ARM: pipeline enrichment ---
 export function classifyLeadArm(formName) {
-  if (formName === "deal-interest") {
+  if (formName === "deal-interest" || formName === "match-request") {
     return {
       arm_stage: "engaged",
       owner: "sales_gtm",
-      next_action: "Qualify & respond within 24h (deal-specific interest)",
+      next_action:
+        formName === "match-request"
+          ? "Send matched intros & qualify within 24h"
+          : "Qualify & respond within 24h (deal-specific interest)",
       priority: "high",
     };
   }

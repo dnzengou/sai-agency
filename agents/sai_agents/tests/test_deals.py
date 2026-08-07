@@ -122,6 +122,56 @@ async def test_deal_sourcing_agent_emits_insights():
         assert await pub.publish(event)
 
 
+def test_category_and_type_synonyms():
+    raw = [
+        {"title": "One euro house", "org": "Comune X", "country": "Italy",
+         "region": "Southern Europe", "type": "property_scheme", "stage": "open",
+         "source_url": "https://x.test", "description": "€1 home."},
+        {"title": "Firm for sale", "org": "Registry", "country": "France",
+         "region": "Western Europe", "type": "marketplace", "category": "succession",
+         "stage": "open", "source_url": "https://y.test", "description": "SME."},
+        {"title": "Relocation cash", "org": "Gov", "country": "Portugal",
+         "region": "Southern Europe", "type": "incentive", "category": "repopulation",
+         "stage": "open", "source_url": "https://z.test", "description": "Move here."},
+    ]
+    deals = {d.title: d for d in _pipeline(raw=raw).collect()}
+    # property_scheme implies repopulation category
+    assert deals["One euro house"].type == DealType.PROPERTY_SCHEME
+    assert deals["One euro house"].category.value == "repopulation"
+    # marketplace synonym -> business_succession, explicit category kept
+    assert deals["Firm for sale"].type == DealType.BUSINESS_SUCCESSION
+    assert deals["Firm for sale"].category.value == "succession"
+    # incentive synonym -> grant, explicit category kept
+    assert deals["Relocation cash"].type == DealType.GRANT
+    assert deals["Relocation cash"].category.value == "repopulation"
+
+
+def test_venture_type_mapping():
+    raw = [
+        {"title": "Community coop", "org": "AICCON", "country": "Italy",
+         "region": "Southern Europe", "type": "community_ownership", "category": "venture",
+         "stage": "open", "source_url": "https://a.test", "description": "coop"},
+        {"title": "Village crowdfund", "org": "ITS", "country": "Italy",
+         "region": "Southern Europe", "type": "crowdfunding", "category": "venture",
+         "stage": "open", "source_url": "https://b.test", "description": "invest"},
+        # a venture-category item the source typed as a marketplace -> relabel to venture
+        {"title": "Community shares", "org": "Crowdfunder", "country": "United Kingdom",
+         "region": "Western Europe", "type": "marketplace", "category": "venture",
+         "stage": "open", "source_url": "https://c.test", "description": "shares"},
+    ]
+    deals = {d.title: d for d in _pipeline(raw=raw).collect()}
+    assert deals["Community coop"].type == DealType.VENTURE
+    assert deals["Village crowdfund"].type == DealType.VENTURE
+    assert deals["Community shares"].type == DealType.VENTURE
+    assert all(d.category.value == "venture" for d in deals.values())
+
+
+def test_dataset_has_category_breakdown():
+    ds = _pipeline().build_dataset(_pipeline().collect())
+    assert "by_category" in ds["summary"]
+    assert "categories" in ds["summary"]
+
+
 def test_bundled_seed_dataset_loads_and_is_real():
     """The shipped seed dataset parses and yields real, sourced deals."""
     pipe = KafCadePipeline(settings=Settings(kafka_enabled=False))

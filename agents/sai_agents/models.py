@@ -42,6 +42,7 @@ class EventType(str, Enum):
     AGENT_RUN = "agent_run"
     DEAL_SIGNAL = "deal_signal"
     LEAD_SIGNAL = "lead_signal"  # emitted by the Netlify lead-bridge function
+    MATCH_SIGNAL = "match_signal"  # emitted by the Matchmaking agent
 
 
 class Insight(BaseModel):
@@ -124,6 +125,19 @@ class DealType(str, Enum):
     FUNDING_ROUND = "funding_round"
     PARTNERSHIP = "partnership"
     RFP = "rfp"
+    # Succession & repopulation theme (property + ventures perspective)
+    PROPERTY_SCHEME = "property_scheme"        # €1 houses, relocation/settler schemes
+    BUSINESS_SUCCESSION = "business_succession"  # business/farm seeking a successor
+    VENTURE = "venture"                          # rural venture / co-investment vehicle
+
+
+class DealCategory(str, Enum):
+    """Top-level opportunity family — powers the demo/thematic views."""
+
+    AI_ML = "ai_ml"                # AI/ML/data grants, tenders, rounds (default)
+    REPOPULATION = "repopulation"  # emptying-village / €1-house / relocation schemes
+    SUCCESSION = "succession"      # ageing owners seeking a successor/buyer
+    VENTURE = "venture"            # rural ventures / mixed opportunities
 
 
 class ARMStage(str, Enum):
@@ -148,6 +162,7 @@ class Deal(BaseModel):
     city: Optional[str] = None
     sector: str = ""
     type: DealType = DealType.GRANT
+    category: DealCategory = DealCategory.AI_ML
     value_eur: Optional[float] = None
     stage: str = "open"  # open | upcoming | closed | announced
     deadline: Optional[str] = None
@@ -164,6 +179,8 @@ class Deal(BaseModel):
     next_action: str = ""
     priority: Severity = Severity.MEDIUM
     impact_score: float = Field(default=0.5, ge=0.0, le=1.0)
+    # Indicative valuation (computed at generate-time; see sai_agents.valuation).
+    valuation: Optional[Dict[str, Any]] = None
 
     def dedupe_key(self) -> str:
         return f"{self.title.strip().lower()}|{self.org.strip().lower()}|{self.country.strip().lower()}"

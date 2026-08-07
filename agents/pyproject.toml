@@ -27,6 +27,8 @@ sai-run-team = "sai_agents.run_team:main"
 sai-service-tester = "sai_agents.service_testers.service_tester_agent:main"
 sai-generate-deals = "sai_agents.deals.generate:main"
 sai-ingest = "sai_agents.ingest.server:main"
+sai-send-digest = "sai_agents.digest.send:main"
+sai-analytics = "sai_agents.analytics.report:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

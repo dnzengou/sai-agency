@@ -35,7 +35,7 @@ class Settings(BaseModel):
     environment: str = Field(default="production")
 
     # --- Target under test (ServiceTester) ---
-    target_url: str = Field(default="https://sai-agency.netlify.app")
+    target_url: str = Field(default="https://sai-agency-deals-radar.netlify.app")
     target_timeout_seconds: float = Field(default=10.0)
 
     # --- KafCa: Kafka event sourcing ---
@@ -63,13 +63,16 @@ class Settings(BaseModel):
     # --- RRSS: live RSS/Atom deal feeds (opt-in) ---
     rss_feeds: List[str] = Field(default_factory=list)
 
+    # --- EvoForge/EvoSkillOpt feedback: agents consume evolved specs/loadout ---
+    evo_specs_enabled: bool = Field(default=True)
+
     @classmethod
     def from_env(cls) -> "Settings":
         bootstrap = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "").strip()
         return cls(
             service_name=os.getenv("SAI_SERVICE_NAME", "sai-agents"),
             environment=os.getenv("SAI_ENV", "production"),
-            target_url=os.getenv("SAI_TARGET_URL", "https://sai-agency.netlify.app"),
+            target_url=os.getenv("SAI_TARGET_URL", "https://sai-agency-deals-radar.netlify.app"),
             target_timeout_seconds=float(os.getenv("SAI_TARGET_TIMEOUT", "10")),
             kafka_bootstrap_servers=bootstrap,
             kafka_topic=os.getenv("KAFKA_TOPIC", "claw-evolution-events"),
@@ -86,6 +89,7 @@ class Settings(BaseModel):
             metrics_port=int(os.getenv("SAI_METRICS_PORT", "9464")),
             blacklist_patterns=_env_list("SAI_BLACKLIST_PATTERNS", []),
             rss_feeds=_env_list("SAI_RSS_FEEDS", []),
+            evo_specs_enabled=_env_bool("SAI_EVO_SPECS", True),
         )
 
 
