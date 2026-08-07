@@ -63,6 +63,9 @@ class Settings(BaseModel):
     # --- RRSS: live RSS/Atom deal feeds (opt-in) ---
     rss_feeds: List[str] = Field(default_factory=list)
 
+    # --- EvoForge/EvoSkillOpt feedback: agents consume evolved specs/loadout ---
+    evo_specs_enabled: bool = Field(default=True)
+
     @classmethod
     def from_env(cls) -> "Settings":
         bootstrap = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "").strip()
@@ -86,6 +89,7 @@ class Settings(BaseModel):
             metrics_port=int(os.getenv("SAI_METRICS_PORT", "9464")),
             blacklist_patterns=_env_list("SAI_BLACKLIST_PATTERNS", []),
             rss_feeds=_env_list("SAI_RSS_FEEDS", []),
+            evo_specs_enabled=_env_bool("SAI_EVO_SPECS", True),
         )
 
 

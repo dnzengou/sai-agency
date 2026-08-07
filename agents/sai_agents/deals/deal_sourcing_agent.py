@@ -25,8 +25,14 @@ class DealSourcingAgent(BaseAgent):
     name = "deal_sourcing"
     event_type = EventType.DEAL_SIGNAL
 
-    def __init__(self, service: str = "sai-agents", pipeline: Optional[KafCadePipeline] = None) -> None:
-        super().__init__(service=service)
+    def __init__(
+        self,
+        service: str = "sai-agents",
+        pipeline: Optional[KafCadePipeline] = None,
+        spec: Optional[Dict[str, float]] = None,
+        loadout: Optional[list] = None,
+    ) -> None:
+        super().__init__(service=service, spec=spec, loadout=loadout)
         self.pipeline = pipeline or KafCadePipeline()
 
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:

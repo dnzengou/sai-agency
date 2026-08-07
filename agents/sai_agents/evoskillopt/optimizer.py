@@ -112,6 +112,17 @@ class EvoSkillOpt:
             log.warning("evoskillopt.save.failed", path=str(self.skills_path), error=str(exc))
 
     # ------------------------------------------------------------------ #
+    def current_loadout(self, n: Optional[int] = None) -> List[str]:
+        """Top-n skills by accrued value from the persisted table (no new pass).
+
+        Used by consumers (e.g. the orchestrator) that want the current best
+        skills to exercise without folding in a fresh batch of events.
+        """
+        n = self.loadout_size if n is None else n
+        ranked = sorted(self.stats.values(), key=lambda s: s.value, reverse=True)
+        return [s.skill for s in ranked[:n]]
+
+    # ------------------------------------------------------------------ #
     def optimize(self, events: Iterable[EvolutionEvent]) -> SkillReport:
         """Fold a batch of events into the persistent skill table and rank."""
         batch = skills_from_events(events)

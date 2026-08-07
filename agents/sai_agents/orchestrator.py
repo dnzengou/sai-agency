@@ -19,6 +19,9 @@ from sai_agents.agents.sales_gtm_agent import SalesGTMAgent
 from sai_agents.agents.vuln_redteam_agent import VulnRedTeamAgent
 from sai_agents.config import Settings, get_settings
 from sai_agents.deals.deal_sourcing_agent import DealSourcingAgent
+from sai_agents.evoforge import EvoForge
+from sai_agents.evometaclaw.trajectory import TrajectoryStore
+from sai_agents.evoskillopt import EvoSkillOpt
 from sai_agents.kafca.impact import aggregate_impact
 from sai_agents.kafca.publisher import KafkaEventPublisher
 from sai_agents.logging_setup import get_logger
@@ -38,15 +41,49 @@ class OrchestratorTeam:
         self,
         settings: Optional[Settings] = None,
         publisher: Optional[KafkaEventPublisher] = None,
+        evolved_specs: Optional[Dict[str, Dict[str, float]]] = None,
+        skill_loadout: Optional[List[str]] = None,
     ) -> None:
         self.settings = settings or get_settings()
         self.publisher = publisher or KafkaEventPublisher(self.settings)
+
+        # Close the flywheel: agents consume the evolved champion spec for their
+        # genome + the current skill loadout. Injected values win (tests); else
+        # they are loaded from the accumulated trajectory store.
+        if evolved_specs is None and skill_loadout is None:
+            evolved_specs, skill_loadout = self._load_evolved()
+        self.evolved_specs: Dict[str, Dict[str, float]] = evolved_specs or {}
+        self.skill_loadout: List[str] = skill_loadout or []
+
+        svc = self.settings.service_name
         self.tester = ServiceTesterAgent(self.settings)
-        self.marketing = MarketingAgent(service=self.settings.service_name)
-        self.sales = SalesGTMAgent(service=self.settings.service_name)
-        self.outreach = OutreachAgent(service=self.settings.service_name)
-        self.security = VulnRedTeamAgent(service=self.settings.service_name)
-        self.deals = DealSourcingAgent(service=self.settings.service_name)
+        self.marketing = MarketingAgent(service=svc, spec=self.evolved_specs.get("marketing"), loadout=self.skill_loadout)
+        self.sales = SalesGTMAgent(service=svc, spec=self.evolved_specs.get("sales_gtm"), loadout=self.skill_loadout)
+        self.outreach = OutreachAgent(service=svc, spec=self.evolved_specs.get("outreach"), loadout=self.skill_loadout)
+        self.security = VulnRedTeamAgent(service=svc, spec=self.evolved_specs.get("vuln_redteam"), loadout=self.skill_loadout)
+        self.deals = DealSourcingAgent(service=svc, spec=self.evolved_specs.get("deal_sourcing"), loadout=self.skill_loadout)
+
+    # ------------------------------------------------------------------ #
+    def _load_evolved(self):
+        """Load champion specs + skill loadout from the trajectory store.
+
+        Fail-safe: any error (missing files, bad JSON, disabled) degrades to an
+        unevolved baseline so a broken population never sinks a live run.
+        """
+        if not self.settings.evo_specs_enabled:
+            return {}, []
+        try:
+            root = TrajectoryStore().root
+            pop = root / "_population.json"
+            skl = root / "_skills.json"
+            specs = EvoForge(population_path=pop).champion_specs() if pop.exists() else {}
+            loadout = EvoSkillOpt(skills_path=skl).current_loadout(5) if skl.exists() else []
+            if specs or loadout:
+                log.info("orchestrator.evo_loaded", genomes=len(specs), loadout=loadout)
+            return specs, loadout
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("orchestrator.evo_load.failed", error=str(exc))
+            return {}, []
 
     async def run(self, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         context = dict(context or {})
@@ -101,7 +138,12 @@ class OrchestratorTeam:
                     [rec for r in results for rec in r.recommendations],
                 ),
                 fitness=team_fitness,
-                payload={"agents": [r.agent for r in results], "published": published},
+                payload={
+                    "agents": [r.agent for r in results],
+                    "published": published,
+                    "evolved_genomes": sorted(self.evolved_specs),
+                    "skill_loadout": self.skill_loadout,
+                },
             )
             await self.publisher.publish(team_event)
 
