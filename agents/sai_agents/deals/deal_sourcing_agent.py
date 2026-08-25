@@ -35,15 +35,38 @@ class DealSourcingAgent(BaseAgent):
         super().__init__(service=service, spec=spec, loadout=loadout)
         self.pipeline = pipeline or KafCadePipeline()
 
+    def _arm_rank(self, deals: list) -> list:
+        """Order deals by ARM priority, tilted by the evolved champion spec.
+
+        Unevolved (spec is None) => keep the pipeline's impact ordering. When a
+        champion spec is present, ``recency_weight`` tilts toward immediately
+        actionable (open/upcoming) deals and ``impact_bias`` sharpens the pull
+        toward open opportunities. Deal impact scores are never mutated — only
+        the *order in which* ARM surfaces them — so evolution can reprioritise
+        the pipeline without gaming its own fitness metric.
+        """
+        if self.spec is None:
+            return deals
+        rw = self.spec_val("recency_weight")
+        ib = self.spec_val("impact_bias")
+
+        def key(d):
+            actionable = 1.0 if d.stage in ("open", "upcoming") else 0.4
+            openness = 1.0 if d.stage in ("open", "upcoming") else 0.0
+            return (1 - rw) * d.impact_score + rw * actionable + 0.1 * ib * openness
+
+        return sorted(deals, key=key, reverse=True)
+
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:
         context = context or {}
         top_n = int(context.get("top_n", 5))
         deals = self.pipeline.collect()
         dataset = self.pipeline.build_dataset(deals)
+        ranked = self._arm_rank(deals)
 
         insights: List[Insight] = []
         recommendations: List[Recommendation] = []
-        for deal in deals[:top_n]:
+        for deal in ranked[:top_n]:
             insights.append(
                 Insight(
                     title=f"[{deal.country}] {deal.title}",

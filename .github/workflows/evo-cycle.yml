@@ -1,0 +1,47 @@
+name: evo-cycle
+
+# Self-compounding evolution: run the full team + turn the evolve flywheel on a
+# schedule. The per-genome trajectories and the evolved population/skill state
+# are persisted across runs via actions/cache, so each weekly cycle inherits the
+# previous cycle's champions (EvoForge) and skill values (EvoSkillOpt).
+
+on:
+  schedule:
+    - cron: "17 4 * * 1" # Mondays 04:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evo-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agents
+    env:
+      SAI_TRAJECTORY_ROOT: ${{ github.workspace }}/.sai-trajectories
+      SAI_TARGET_URL: https://sai-agency-deals-radar.netlify.app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ".[dev]"
+      # Restore the accumulated trajectory + evolved-state store so the
+      # population compounds. Unique key per run + prefix restore-keys means we
+      # always restore the newest snapshot and save a fresh one at job end.
+      - name: Restore evolution store
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.sai-trajectories
+          key: sai-evo-store-${{ github.run_id }}
+          restore-keys: |
+            sai-evo-store-
+      - name: Run one compounding cycle (team -> evolve)
+        run: python -m sai_agents.run_cycle
