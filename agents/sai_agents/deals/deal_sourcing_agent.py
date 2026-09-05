@@ -36,26 +36,52 @@ class DealSourcingAgent(BaseAgent):
         self.pipeline = pipeline or KafCadePipeline()
 
     def _arm_rank(self, deals: list) -> list:
-        """Order deals by ARM priority, tilted by the evolved champion spec.
+        """Order deals by ARM priority, tilted by the evolved champion spec and
+        the EvoSkillOpt loadout.
 
-        Unevolved (spec is None) => keep the pipeline's impact ordering. When a
-        champion spec is present, ``recency_weight`` tilts toward immediately
-        actionable (open/upcoming) deals and ``impact_bias`` sharpens the pull
-        toward open opportunities. Deal impact scores are never mutated — only
-        the *order in which* ARM surfaces them — so evolution can reprioritise
-        the pipeline without gaming its own fitness metric.
+        Unevolved (no spec and no loadout) => keep the pipeline's impact
+        ordering. When a champion spec is present, ``recency_weight`` tilts
+        toward immediately actionable (open/upcoming) deals and ``impact_bias``
+        sharpens the pull toward open opportunities. The EvoSkillOpt loadout
+        adds a bonus for deals whose attributes (region/country/type/sector)
+        match the skills that have historically paid off — gated by the evolved
+        ``exploration`` knob, so a genome only chases learned skills as much as
+        it has evolved to explore. Deal impact scores are never mutated — only
+        the *order in which* ARM surfaces them — so evolution reprioritises the
+        pipeline without gaming its own fitness metric.
         """
-        if self.spec is None:
+        if self.spec is None and not self.loadout:
             return deals
         rw = self.spec_val("recency_weight")
         ib = self.spec_val("impact_bias")
+        ex = self.spec_val("exploration")
+        loadout = {s.lower() for s in self.loadout}
 
         def key(d):
             actionable = 1.0 if d.stage in ("open", "upcoming") else 0.4
             openness = 1.0 if d.stage in ("open", "upcoming") else 0.0
-            return (1 - rw) * d.impact_score + rw * actionable + 0.1 * ib * openness
+            skill_match = self._skill_match(d, loadout)
+            return (
+                (1 - rw) * d.impact_score
+                + rw * actionable
+                + 0.1 * ib * openness
+                + 0.15 * ex * skill_match
+            )
 
         return sorted(deals, key=key, reverse=True)
+
+    @staticmethod
+    def _skill_match(deal, loadout: set) -> float:
+        """Fraction of the loadout matched by this deal's ARM attributes."""
+        if not loadout:
+            return 0.0
+        attrs = {
+            str(deal.region).lower(),
+            str(deal.country).lower(),
+            str(deal.type.value).lower(),
+            str(deal.sector).lower(),
+        }
+        return len(attrs & loadout) / len(loadout)
 
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:
         context = context or {}
@@ -63,10 +89,14 @@ class DealSourcingAgent(BaseAgent):
         deals = self.pipeline.collect()
         dataset = self.pipeline.build_dataset(deals)
         ranked = self._arm_rank(deals)
+        loadout = {s.lower() for s in self.loadout}
+
+        surfaced = ranked[:top_n]
+        loadout_matched = sum(1 for d in surfaced if self._skill_match(d, loadout) > 0)
 
         insights: List[Insight] = []
         recommendations: List[Recommendation] = []
-        for deal in ranked[:top_n]:
+        for deal in surfaced:
             insights.append(
                 Insight(
                     title=f"[{deal.country}] {deal.title}",
@@ -96,5 +126,7 @@ class DealSourcingAgent(BaseAgent):
             payload={
                 "summary": dataset["summary"],
                 "sources": self.pipeline.registry.source_names,
+                "loadout": sorted(loadout),
+                "loadout_matched": loadout_matched,
             },
         )
