@@ -233,8 +233,69 @@ class KafCadePipeline:
                 "by_region": by_region,
                 "by_category": by_category,
                 "pipeline_value_by_type_eur": {k: round(v, 2) for k, v in by_type.items()},
+                "arm": self.arm_summary(deals),
             },
             "deals": [d.model_dump(mode="json") for d in deals],
+        }
+
+    # ------------------------------------------------------------------ #
+    # Bi: ARM portfolio intelligence rollup (Business / Property / Deals).
+    # ------------------------------------------------------------------ #
+    # The B/P/D/V portfolio dimensions the web app groups deals under.
+    _PORTFOLIO_DIMENSIONS = {
+        "business": ("succession",),
+        "property": ("repopulation",),
+        "ai_deals": ("ai_ml",),
+        "ventures": ("venture",),
+    }
+
+    @staticmethod
+    def arm_summary(deals: List[Deal]) -> Dict:
+        """Roll ARM-classified deals up into a portfolio-intelligence view.
+
+        Surfaces the pipeline the way an operator works it: how deals distribute
+        across ARM stages, who owns them, the next-action queue, and the value /
+        openness of each Business / Property / AI-deal / Venture dimension.
+        """
+        by_arm_stage: Dict[str, int] = {}
+        by_owner: Dict[str, int] = {}
+        next_actions: Dict[str, int] = {}
+        cat_roll: Dict[str, Dict[str, float]] = {}
+        for d in deals:
+            by_arm_stage[d.arm_stage.value] = by_arm_stage.get(d.arm_stage.value, 0) + 1
+            by_owner[d.owner] = by_owner.get(d.owner, 0) + 1
+            if d.next_action:
+                next_actions[d.next_action] = next_actions.get(d.next_action, 0) + 1
+            c = cat_roll.setdefault(
+                d.category.value, {"count": 0, "value_eur": 0.0, "open": 0, "impact_sum": 0.0}
+            )
+            c["count"] += 1
+            c["value_eur"] += d.value_eur or 0.0
+            c["impact_sum"] += d.impact_score
+            if d.stage in ("open", "upcoming"):
+                c["open"] += 1
+
+        def finalize(cats) -> Dict[str, float]:
+            count = sum(cat_roll.get(c, {}).get("count", 0) for c in cats)
+            value = sum(cat_roll.get(c, {}).get("value_eur", 0.0) for c in cats)
+            openc = sum(cat_roll.get(c, {}).get("open", 0) for c in cats)
+            isum = sum(cat_roll.get(c, {}).get("impact_sum", 0.0) for c in cats)
+            return {
+                "count": count,
+                "value_eur": round(value, 2),
+                "open": openc,
+                "avg_impact": round(isum / count, 4) if count else 0.0,
+            }
+
+        # Highest-impact open deal per owner — the "work this next" shortlist.
+        top_actions = sorted(next_actions.items(), key=lambda kv: kv[1], reverse=True)[:8]
+        return {
+            "by_arm_stage": by_arm_stage,
+            "by_owner": by_owner,
+            "next_action_queue": [{"action": a, "count": n} for a, n in top_actions],
+            "portfolio": {
+                dim: finalize(cats) for dim, cats in KafCadePipeline._PORTFOLIO_DIMENSIONS.items()
+            },
         }
 
     @staticmethod

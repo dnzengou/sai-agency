@@ -90,6 +90,18 @@ def test_build_dataset_summary():
     assert "Spain" in ds["summary"]["by_country"]
     assert ds["summary"]["total_pipeline_value_eur"] > 0
     assert ds["schema_version"] == 1
+    # Bi: ARM portfolio-intelligence rollup is present and coherent.
+    arm = ds["summary"]["arm"]
+    assert set(arm) == {"by_arm_stage", "by_owner", "next_action_queue", "portfolio"}
+    assert sum(arm["by_arm_stage"].values()) == len(deals)
+    assert set(arm["portfolio"]) == {"business", "property", "ai_deals", "ventures"}
+    # every portfolio dimension exposes count/value/open/avg_impact
+    for dim in arm["portfolio"].values():
+        assert {"count", "value_eur", "open", "avg_impact"} <= set(dim)
+    # portfolio dimension counts reconcile with the category totals
+    assert sum(d["count"] for d in arm["portfolio"].values()) == sum(
+        ds["summary"]["by_category"].values()
+    )
 
 
 async def test_run_publishes_and_exports(tmp_path):

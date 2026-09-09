@@ -135,6 +135,69 @@
     bars($("#chart-type"), byType, { fmt: euro });
   }
 
+  // Bi: ARM portfolio-intelligence panel (Business / Property / AI-deals /
+  // Ventures + ARM stage distribution + next-action queue).
+  var PORTFOLIO_LABEL = {
+    business: "Businesses (succession)",
+    property: "Property (relocation)",
+    ai_deals: "AI / ML deals",
+    ventures: "Ventures",
+  };
+  var ARM_STAGE_LABEL = {
+    prospect: "Prospect", qualified: "Qualified", engaged: "Engaged",
+    proposal: "Proposal", won: "Won", lost: "Lost",
+  };
+
+  function renderPortfolio(summary) {
+    var arm = summary.arm;
+    var wrap = $("#portfolio");
+    if (!wrap || !arm) return;
+    wrap.hidden = false;
+    wrap.innerHTML = "";
+
+    // Portfolio dimension cards.
+    var dims = el("div", "card");
+    dims.appendChild(el("h2", null, "Portfolio intelligence"));
+    var grid = el("div", "portfolio-grid");
+    Object.keys(PORTFOLIO_LABEL).forEach(function (k) {
+      var p = (arm.portfolio || {})[k];
+      if (!p) return;
+      var cell = el("div", "portfolio-cell");
+      cell.appendChild(el("div", "label", PORTFOLIO_LABEL[k]));
+      cell.appendChild(el("div", "value", String(p.count)));
+      cell.appendChild(el("div", "sub", p.open + " open · " + euro(p.value_eur)));
+      grid.appendChild(cell);
+    });
+    dims.appendChild(grid);
+    wrap.appendChild(dims);
+
+    // ARM pipeline stage distribution.
+    var stageCard = el("div", "card");
+    stageCard.appendChild(el("h2", null, "ARM pipeline stages"));
+    var stageMount = el("div");
+    stageCard.appendChild(stageMount);
+    var stageRows = Object.keys(arm.by_arm_stage || {})
+      .map(function (k) { return { label: ARM_STAGE_LABEL[k] || k, value: arm.by_arm_stage[k], color: "var(--c2)" }; })
+      .sort(function (a, b) { return b.value - a.value; });
+    bars(stageMount, stageRows, {});
+    wrap.appendChild(stageCard);
+
+    // Next-action queue.
+    var q = arm.next_action_queue || [];
+    if (q.length) {
+      var qCard = el("div", "card");
+      qCard.appendChild(el("h2", null, "Next-action queue"));
+      var ul = el("ul", "action-queue");
+      q.forEach(function (item) {
+        var li = el("li", null, item.action);
+        li.appendChild(el("span", "count", String(item.count)));
+        ul.appendChild(li);
+      });
+      qCard.appendChild(ul);
+      wrap.appendChild(qCard);
+    }
+  }
+
   function badge(cls, text, extra) {
     var b = el("span", "badge " + cls, text);
     if (extra && extra.color) b.style.background = extra.color;
@@ -380,6 +443,7 @@
       state.deals = (data.deals || []).slice();
       renderStats(data.summary);
       renderCharts(data.summary);
+      renderPortfolio(data.summary);
       buildFilters();
       renderDeals();
       if (data.generated_at) {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T11:13:20.499722+00:00",
+  "generated_at": "2026-09-09T08:45:04.482054+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -165,6 +165,77 @@
       "business_succession": 0.0,
       "accelerator": 201379000.0,
       "property_scheme": 84007.0
+    },
+    "arm": {
+      "by_arm_stage": {
+        "qualified": 70,
+        "prospect": 37,
+        "lost": 15
+      },
+      "by_owner": {
+        "sales_gtm": 63,
+        "marketing": 59
+      },
+      "next_action_queue": [
+        {
+          "action": "Check eligibility & draft application (rolling)",
+          "count": 21
+        },
+        {
+          "action": "Evaluate cohort fit & submit expression of interest",
+          "count": 16
+        },
+        {
+          "action": "Assess fit & prepare bid before the deadline",
+          "count": 8
+        },
+        {
+          "action": "Check eligibility & draft application (2026-04-15)",
+          "count": 2
+        },
+        {
+          "action": "Open conversation with Government of Portugal / EuroHPC",
+          "count": 1
+        },
+        {
+          "action": "Open conversation with IMDA / AI Singapore / A*STAR",
+          "count": 1
+        },
+        {
+          "action": "Warm outreach to Legora — post-raise AI/ML build needs",
+          "count": 1
+        },
+        {
+          "action": "Warm outreach to Multiverse Computing — post-raise AI/ML build needs",
+          "count": 1
+        }
+      ],
+      "portfolio": {
+        "business": {
+          "count": 15,
+          "value_eur": 2300000.0,
+          "open": 15,
+          "avg_impact": 0.7184
+        },
+        "property": {
+          "count": 19,
+          "value_eur": 282667.0,
+          "open": 18,
+          "avg_impact": 0.5765
+        },
+        "ai_deals": {
+          "count": 63,
+          "value_eur": 3447338000.0,
+          "open": 24,
+          "avg_impact": 0.6855
+        },
+        "ventures": {
+          "count": 25,
+          "value_eur": 1434391000.0,
+          "open": 18,
+          "avg_impact": 0.6703
+        }
+      }
     }
   },
   "deals": [

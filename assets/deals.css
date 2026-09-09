@@ -209,3 +209,14 @@ a.card.pathway:hover { transform: translateY(-2px); text-decoration: none; }
 }
 .card.interest textarea { min-height: 84px; resize: vertical; }
 .card.interest label { font-size: 0.85rem; color: var(--text-secondary); }
+
+/* Bi: ARM portfolio-intelligence panel */
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.portfolio-cell { background: var(--surface-2, var(--surface-1)); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.portfolio-cell .label { color: var(--text-secondary); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.portfolio-cell .value { font-size: 1.5rem; font-weight: 700; margin-top: 2px; }
+.portfolio-cell .sub { color: var(--muted); font-size: 0.78rem; margin-top: 2px; }
+.action-queue { list-style: none; margin: 0; padding: 0; }
+.action-queue li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; }
+.action-queue li:last-child { border-bottom: 0; }
+.action-queue .count { color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; }
