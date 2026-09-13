@@ -20,7 +20,7 @@ from typing import Dict, List, Optional
 from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
-from sai_agents.deals.arm import classify_arm
+from sai_agents.deals.arm import arm_priority, classify_arm
 from sai_agents.valuation.estimator import estimate_value
 from sai_agents.deals.rss import rss_sources_from_feeds
 from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
@@ -202,8 +202,41 @@ class KafCadePipeline:
         }
 
     # ------------------------------------------------------------------ #
+    def _load_champion(self):
+        """Load the evolved deal_sourcing champion spec + skill loadout so the
+        public dataset is ordered by evolved ARM priority. Fail-safe: any error
+        or an unevolved store yields (None, []) — pure impact order, unchanged.
+        """
+        if not getattr(self.settings, "evo_specs_enabled", True):
+            return None, []
+        try:
+            from sai_agents.evoforge import EvoForge
+            from sai_agents.evometaclaw.trajectory import TrajectoryStore
+            from sai_agents.evoskillopt import EvoSkillOpt
+
+            root = TrajectoryStore().root
+            pop = root / "_population.json"
+            skl = root / "_skills.json"
+            spec = (
+                EvoForge(population_path=pop).champion_specs().get("deal_sourcing")
+                if pop.exists()
+                else None
+            )
+            loadout = EvoSkillOpt(skills_path=skl).current_loadout(5) if skl.exists() else []
+            return spec, loadout
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("deals.champion_load.failed", error=str(exc))
+            return None, []
+
+    # ------------------------------------------------------------------ #
     def build_dataset(self, deals: List[Deal]) -> Dict:
         """Shape deals + rollup summary for the web app to consume."""
+        # Evolved ARM priority: order the public dataset the way evolution has
+        # learned to, and expose the score per deal for the site's sort.
+        champ_spec, champ_loadout = self._load_champion()
+        deals = sorted(
+            deals, key=lambda d: arm_priority(d, champ_spec, champ_loadout), reverse=True
+        )
         by_country: Dict[str, int] = {}
         by_type: Dict[str, float] = {}
         by_region: Dict[str, int] = {}
@@ -234,8 +267,12 @@ class KafCadePipeline:
                 "by_category": by_category,
                 "pipeline_value_by_type_eur": {k: round(v, 2) for k, v in by_type.items()},
                 "arm": self.arm_summary(deals),
+                "evolved_order": bool(champ_spec or champ_loadout),
             },
-            "deals": [d.model_dump(mode="json") for d in deals],
+            "deals": [
+                {**d.model_dump(mode="json"), "arm_priority": arm_priority(d, champ_spec, champ_loadout)}
+                for d in deals
+            ],
         }
 
     # ------------------------------------------------------------------ #

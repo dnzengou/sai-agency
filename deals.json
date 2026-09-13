@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T08:45:04.482054+00:00",
+  "generated_at": "2026-09-13T09:37:37.950310+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -236,7 +236,8 @@
           "avg_impact": 0.6703
         }
       }
-    }
+    },
+    "evolved_order": false
   },
   "deals": [
     {
@@ -272,7 +273,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.885
     },
     {
       "id": "d7f4f7867627c656",
@@ -307,7 +309,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.88
     },
     {
       "id": "08e90a29090facea",
@@ -342,7 +345,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8661
     },
     {
       "id": "dcde6bceffce1599",
@@ -377,7 +381,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.864
     },
     {
       "id": "dceceb08b09d6552",
@@ -412,7 +417,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86
     },
     {
       "id": "acc0abad362c9bd6",
@@ -447,7 +453,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86
     },
     {
       "id": "4ec9a5fcb43db52e",
@@ -482,7 +489,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86
     },
     {
       "id": "a65125182d7e9218",
@@ -517,7 +525,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.85
     },
     {
       "id": "09a8fd00aeb9b0b2",
@@ -552,7 +561,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.85
     },
     {
       "id": "4b7cb3b11d5b1842",
@@ -587,7 +597,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.84
     },
     {
       "id": "71ecc0c56a075220",
@@ -622,7 +633,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8384
     },
     {
       "id": "bd11b8e8b539f2b2",
@@ -657,7 +669,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8352
     },
     {
       "id": "f734d91483274143",
@@ -692,7 +705,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.82
     },
     {
       "id": "63e1d4f222c43ef0",
@@ -727,7 +741,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.82
     },
     {
       "id": "605e700adee6d2a9",
@@ -762,7 +777,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8154
     },
     {
       "id": "ca6a307e85f78a38",
@@ -797,7 +813,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8124
     },
     {
       "id": "b7d455a405cb966a",
@@ -832,7 +849,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8105
     },
     {
       "id": "b278105efeddb83e",
@@ -867,7 +885,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.81
     },
     {
       "id": "3a39b02ecfcc3049",
@@ -902,7 +921,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8061
     },
     {
       "id": "06aa718c073d5f0e",
@@ -937,7 +957,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7923
     },
     {
       "id": "c25add7085c05916",
@@ -972,7 +993,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.79
     },
     {
       "id": "34c5f3d44029e63c",
@@ -1007,7 +1029,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7881
     },
     {
       "id": "21f662d4a6f39fc8",
@@ -1042,7 +1065,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.785
     },
     {
       "id": "59997566db54eb2d",
@@ -1077,7 +1101,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7823
     },
     {
       "id": "b058db8a4be252c9",
@@ -1112,7 +1137,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7787
     },
     {
       "id": "fe61fbb6366b93c0",
@@ -1147,7 +1173,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.771
     },
     {
       "id": "f8645d5864a855b7",
@@ -1182,7 +1209,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7622
     },
     {
       "id": "966eacf0e232a932",
@@ -1217,7 +1245,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.76
     },
     {
       "id": "dd02e04c5d3e8e80",
@@ -1252,7 +1281,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.754
     },
     {
       "id": "78d2acb5a27eb367",
@@ -1287,7 +1317,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7512
     },
     {
       "id": "bb918f9cb3eb092b",
@@ -1322,7 +1353,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.75
     },
     {
       "id": "3065432aa5d272ac",
@@ -1357,7 +1389,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.75
     },
     {
       "id": "67c9d1e73099ba75",
@@ -1392,7 +1425,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7451
     },
     {
       "id": "4284c14444eb23c1",
@@ -1427,7 +1461,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.74
     },
     {
       "id": "0ef84588c0e8a5cf",
@@ -1462,7 +1497,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.74
     },
     {
       "id": "a463f1f7c7a85a60",
@@ -1497,7 +1533,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7378
     },
     {
       "id": "694cd6ff7bf41840",
@@ -1532,7 +1569,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.7342
     },
     {
       "id": "6ea207f86b6838ca",
@@ -1567,7 +1605,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.7302
     },
     {
       "id": "84f9c26ac2565deb",
@@ -1602,7 +1641,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73
     },
     {
       "id": "6ff174090906c10b",
@@ -1637,7 +1677,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73
     },
     {
       "id": "f9f8e77d49b948e1",
@@ -1672,7 +1713,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73
     },
     {
       "id": "264090b809534c18",
@@ -1707,7 +1749,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.73
     },
     {
       "id": "d1496c8d7f49b3f5",
@@ -1742,7 +1785,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7299
     },
     {
       "id": "8608b93e81209174",
@@ -1777,7 +1821,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7213
     },
     {
       "id": "74ac9c0c1575bbc5",
@@ -1812,7 +1857,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.72
     },
     {
       "id": "bc80b7291df582e6",
@@ -1847,7 +1893,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72
     },
     {
       "id": "55bb9e3d6010c3fd",
@@ -1882,7 +1929,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72
     },
     {
       "id": "2624dcf153e12045",
@@ -1917,7 +1965,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72
     },
     {
       "id": "c1294841d1e6ecde",
@@ -1952,7 +2001,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.714
     },
     {
       "id": "470e9b00e2362634",
@@ -1987,7 +2037,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7105
     },
     {
       "id": "1d2ed9550bb99def",
@@ -2022,7 +2073,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.71
     },
     {
       "id": "9c056f0df883855a",
@@ -2057,7 +2109,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.71
     },
     {
       "id": "5c1ad372d2d8dab1",
@@ -2092,7 +2145,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7
     },
     {
       "id": "3388559127b0dab2",
@@ -2127,7 +2181,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.694
     },
     {
       "id": "82d825c67e954bb1",
@@ -2162,7 +2217,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.69
     },
     {
       "id": "b61e9655a04f4c27",
@@ -2197,7 +2253,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.69
     },
     {
       "id": "4daa1429b5ef053d",
@@ -2232,7 +2289,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6834
     },
     {
       "id": "d7c408d921429843",
@@ -2267,7 +2325,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6809
     },
     {
       "id": "c64846cd2d784ef1",
@@ -2302,7 +2361,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6748
     },
     {
       "id": "7b031002f9850dfa",
@@ -2337,7 +2397,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67
     },
     {
       "id": "3cf6a2eb439f1466",
@@ -2372,7 +2433,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67
     },
     {
       "id": "41199a92d0df66b0",
@@ -2407,7 +2469,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67
     },
     {
       "id": "9f1c449c12a53377",
@@ -2442,7 +2505,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.654
     },
     {
       "id": "98f357d5fdba5305",
@@ -2477,7 +2541,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6526
     },
     {
       "id": "60236f42cdf5dc9d",
@@ -2512,7 +2577,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.65
     },
     {
       "id": "5d601b9a67a2883a",
@@ -2547,7 +2613,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.65
     },
     {
       "id": "0031be5e66bd11f3",
@@ -2582,7 +2649,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.6493
     },
     {
       "id": "1b97847cc1b5bcb7",
@@ -2617,7 +2685,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6472
     },
     {
       "id": "8d18c96d60f46d97",
@@ -2652,7 +2721,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "28c298751a4afa56",
@@ -2687,7 +2757,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "3f3c52ebaad686c7",
@@ -2722,7 +2793,8 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "5c66a842672aa011",
@@ -2757,7 +2829,8 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "66d977ccc78bb6f1",
@@ -2792,7 +2865,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "c5da963194b70655",
@@ -2827,7 +2901,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64
     },
     {
       "id": "73f2df0948bd10b1",
@@ -2862,7 +2937,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6374
     },
     {
       "id": "58772316e73847ab",
@@ -2897,7 +2973,8 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63
     },
     {
       "id": "aec6d952df65ba71",
@@ -2932,7 +3009,8 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63
     },
     {
       "id": "37f1d40feb18233e",
@@ -2967,7 +3045,8 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63
     },
     {
       "id": "0ba352d8b213402e",
@@ -3002,7 +3081,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6205
     },
     {
       "id": "4be19ceaa0d27f91",
@@ -3037,7 +3117,8 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.62
     },
     {
       "id": "bc7b48a1716f9eda",
@@ -3072,7 +3153,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6148
     },
     {
       "id": "84f3211a825d6633",
@@ -3107,7 +3189,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.614
     },
     {
       "id": "923541f3bb22a364",
@@ -3142,7 +3225,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.61
     },
     {
       "id": "9e9bf4deeac45bc0",
@@ -3177,7 +3261,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.61
     },
     {
       "id": "37ab3a5995b61230",
@@ -3212,7 +3297,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.606
     },
     {
       "id": "23fba99e0ba775f9",
@@ -3247,7 +3333,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.604
     },
     {
       "id": "c44a0ba28fa90545",
@@ -3282,7 +3369,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.6
     },
     {
       "id": "1e859f8182832e5e",
@@ -3317,7 +3405,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.594
     },
     {
       "id": "8d8ac60e9545c3b7",
@@ -3352,7 +3441,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5882
     },
     {
       "id": "e854f896b4dcdd70",
@@ -3387,7 +3477,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.584
     },
     {
       "id": "b19b1b5acba09e77",
@@ -3422,7 +3513,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.58
     },
     {
       "id": "4715c58ac26511e0",
@@ -3457,7 +3549,8 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.58
     },
     {
       "id": "1c0b69488f41087e",
@@ -3492,7 +3585,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5793
     },
     {
       "id": "934b8dc0c9ad2ede",
@@ -3527,7 +3621,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.57
     },
     {
       "id": "903a184cd285b5fb",
@@ -3562,7 +3657,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5691
     },
     {
       "id": "f209e3aeaf229c5d",
@@ -3597,7 +3693,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5644
     },
     {
       "id": "1bb0d90c283f2b5b",
@@ -3632,7 +3729,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5574
     },
     {
       "id": "4b57496a432f599a",
@@ -3667,7 +3765,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.55
     },
     {
       "id": "a641a8a062db6b55",
@@ -3702,7 +3801,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.55
     },
     {
       "id": "6de32b0b131686bb",
@@ -3737,7 +3837,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5458
     },
     {
       "id": "20bfe74d6c93a021",
@@ -3772,7 +3873,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5423
     },
     {
       "id": "8a514fe2877f7074",
@@ -3807,7 +3909,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5323
     },
     {
       "id": "a7b18198868d0063",
@@ -3842,7 +3945,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5235
     },
     {
       "id": "8a87f82b5835d393",
@@ -3877,7 +3981,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.52
     },
     {
       "id": "24187173ca504dce",
@@ -3912,7 +4017,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.52
     },
     {
       "id": "efd64cc2fa306f68",
@@ -3947,7 +4053,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.52
     },
     {
       "id": "0184b8a7cbc75d04",
@@ -3982,7 +4089,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5196
     },
     {
       "id": "103681a37b226d8f",
@@ -4017,7 +4125,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5191
     },
     {
       "id": "6f9ccf9b621abada",
@@ -4052,7 +4161,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5184
     },
     {
       "id": "a61a9d700b0fb6cf",
@@ -4087,7 +4197,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5123
     },
     {
       "id": "7a7f53229c51348b",
@@ -4122,7 +4233,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51
     },
     {
       "id": "2bb582478a827cf4",
@@ -4157,7 +4269,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51
     },
     {
       "id": "d41ecae10170dfc8",
@@ -4192,7 +4305,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51
     },
     {
       "id": "cdb241ff54a99d8e",
@@ -4227,7 +4341,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51
     },
     {
       "id": "ce8c0c9e90bfdbf4",
@@ -4262,7 +4377,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5091
     },
     {
       "id": "c3c069e444ae0156",
@@ -4297,7 +4413,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.5
     },
     {
       "id": "71a32c03851916c0",
@@ -4332,7 +4449,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.5
     },
     {
       "id": "998040fcbeff6cfc",
@@ -4367,7 +4485,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.4931
     },
     {
       "id": "caca983eb4ca4fc8",
@@ -4402,7 +4521,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.49
     },
     {
       "id": "28d8e6b8f667ea86",
@@ -4437,7 +4557,8 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.49
     },
     {
       "id": "572214b84257cfb7",
@@ -4472,7 +4593,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.4897
     },
     {
       "id": "637a95c483de9f4e",
@@ -4507,7 +4629,8 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.41
     }
   ]
 }

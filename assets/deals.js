@@ -34,7 +34,7 @@
     venture: "Venture",
   };
 
-  var state = { deals: [], region: "All", type: "All", country: "All", category: "All", q: "", sort: "impact" };
+  var state = { deals: [], region: "All", type: "All", country: "All", category: "All", q: "", sort: "priority" };
   var $ = function (sel) { return document.querySelector(sel); };
 
   function euro(n) {
@@ -82,7 +82,12 @@
     }).sort(function (a, b) {
       if (state.sort === "value") return (b.value_eur || 0) - (a.value_eur || 0);
       if (state.sort === "deadline") return String(a.deadline || "9999").localeCompare(String(b.deadline || "9999"));
-      return (b.impact_score || 0) - (a.impact_score || 0);
+      if (state.sort === "impact") return (b.impact_score || 0) - (a.impact_score || 0);
+      // Default "priority": the evolved ARM order (falls back to impact when
+      // the dataset predates evolution).
+      var pa = (a.arm_priority != null ? a.arm_priority : a.impact_score) || 0;
+      var pb = (b.arm_priority != null ? b.arm_priority : b.impact_score) || 0;
+      return pb - pa;
     });
   }
 

@@ -102,6 +102,27 @@ def test_build_dataset_summary():
     assert sum(d["count"] for d in arm["portfolio"].values()) == sum(
         ds["summary"]["by_category"].values()
     )
+    # Every deal carries an evolved ARM priority; unevolved store => equals
+    # impact and the dataset is ordered by it.
+    assert ds["summary"]["evolved_order"] is False
+    prios = [d["arm_priority"] for d in ds["deals"]]
+    assert all(d["arm_priority"] == d["impact_score"] for d in ds["deals"])
+    assert prios == sorted(prios, reverse=True)
+
+
+def test_build_dataset_applies_evolved_champion(monkeypatch):
+    pipe = _pipeline()
+    deals = pipe.collect()
+    # Inject a champion that heavily favours actionable (open/upcoming) deals.
+    monkeypatch.setattr(
+        pipe, "_load_champion", lambda: ({"recency_weight": 0.95, "exploration": 0.0}, [])
+    )
+    ds = pipe.build_dataset(deals)
+    assert ds["summary"]["evolved_order"] is True
+    top = ds["deals"][0]
+    assert top["stage"] in ("open", "upcoming")  # recency tilt surfaces an actionable deal
+    # arm_priority now diverges from raw impact for at least some deals.
+    assert any(d["arm_priority"] != d["impact_score"] for d in ds["deals"])
 
 
 async def test_run_publishes_and_exports(tmp_path):

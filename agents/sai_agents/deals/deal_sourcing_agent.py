@@ -11,6 +11,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from sai_agents.agents.base import BaseAgent
+from sai_agents.deals.arm import arm_priority, skill_match
 from sai_agents.deals.pipeline import KafCadePipeline
 from sai_agents.models import (
     AgentResult,
@@ -52,36 +53,16 @@ class DealSourcingAgent(BaseAgent):
         """
         if self.spec is None and not self.loadout:
             return deals
-        rw = self.spec_val("recency_weight")
-        ib = self.spec_val("impact_bias")
-        ex = self.spec_val("exploration")
-        loadout = {s.lower() for s in self.loadout}
-
-        def key(d):
-            actionable = 1.0 if d.stage in ("open", "upcoming") else 0.4
-            openness = 1.0 if d.stage in ("open", "upcoming") else 0.0
-            skill_match = self._skill_match(d, loadout)
-            return (
-                (1 - rw) * d.impact_score
-                + rw * actionable
-                + 0.1 * ib * openness
-                + 0.15 * ex * skill_match
-            )
-
-        return sorted(deals, key=key, reverse=True)
+        return sorted(
+            deals,
+            key=lambda d: arm_priority(d, self.spec, self.loadout),
+            reverse=True,
+        )
 
     @staticmethod
     def _skill_match(deal, loadout: set) -> float:
         """Fraction of the loadout matched by this deal's ARM attributes."""
-        if not loadout:
-            return 0.0
-        attrs = {
-            str(deal.region).lower(),
-            str(deal.country).lower(),
-            str(deal.type.value).lower(),
-            str(deal.sector).lower(),
-        }
-        return len(attrs & loadout) / len(loadout)
+        return skill_match(deal, loadout)
 
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:
         context = context or {}

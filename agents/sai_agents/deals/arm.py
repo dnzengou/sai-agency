@@ -102,3 +102,55 @@ def classify_arm(deal: Deal) -> Deal:
     deal.account = deal.org or deal.title
     deal.next_action = _next_action(deal)
     return deal
+
+
+# --------------------------------------------------------------------------- #
+# Evolved ARM prioritisation — shared by the DealSourcingAgent (KafCa view) and
+# the site generator (public deals.json order) so both rank deals identically.
+# --------------------------------------------------------------------------- #
+_NEUTRAL_SPEC = {
+    "impact_bias": 0.5,
+    "exploration": 0.5,
+    "risk_tolerance": 0.5,
+    "recency_weight": 0.5,
+}
+
+
+def skill_match(deal: Deal, loadout: set) -> float:
+    """Fraction of the EvoSkillOpt loadout matched by the deal's attributes."""
+    if not loadout:
+        return 0.0
+    attrs = {
+        str(deal.region).lower(),
+        str(deal.country).lower(),
+        str(deal.type.value).lower(),
+        str(deal.sector).lower(),
+    }
+    return len(attrs & loadout) / len(loadout)
+
+
+def arm_priority(deal: Deal, spec: Optional[dict] = None, loadout=None) -> float:
+    """Evolved ARM priority score for a deal (higher = surface sooner).
+
+    With no evolution present (spec is None and no loadout) this is exactly the
+    deal's impact score, so the pipeline's default order is unchanged and
+    regeneration stays deterministic. When a champion spec / loadout is present,
+    ``recency_weight`` tilts toward immediately actionable deals, ``impact_bias``
+    toward open opportunities, and the loadout adds a skill-match bonus gated by
+    ``exploration``. Deal impact scores themselves are never mutated — this is a
+    separate ordering signal — so evolution reprioritises without gaming fitness.
+    """
+    loadout_set = {str(s).lower() for s in (loadout or [])}
+    if spec is None and not loadout_set:
+        return round(deal.impact_score, 4)
+    s = spec or _NEUTRAL_SPEC
+    rw = s.get("recency_weight", 0.5)
+    ib = s.get("impact_bias", 0.5)
+    ex = s.get("exploration", 0.5)
+    actionable = 1.0 if deal.stage in ("open", "upcoming") else 0.4
+    openness = 1.0 if deal.stage in ("open", "upcoming") else 0.0
+    sm = skill_match(deal, loadout_set)
+    return round(
+        (1 - rw) * deal.impact_score + rw * actionable + 0.1 * ib * openness + 0.15 * ex * sm,
+        4,
+    )
