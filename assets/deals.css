@@ -220,3 +220,9 @@ a.card.pathway:hover { transform: translateY(-2px); text-decoration: none; }
 .action-queue li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.86rem; }
 .action-queue li:last-child { border-bottom: 0; }
 .action-queue .count { color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* Why-ranked rationale chips on each deal card */
+.why { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 2px; }
+.why-lead { color: var(--text-secondary); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.why-chip { font-size: 0.74rem; padding: 2px 8px; border-radius: 999px; background: var(--surface-2, var(--surface-1)); border: 1px solid var(--border); color: var(--text-secondary); }
+.why-chip.focus { background: color-mix(in srgb, var(--c2) 16%, transparent); border-color: var(--c2); color: var(--text-primary, inherit); font-weight: 600; }

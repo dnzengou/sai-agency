@@ -129,6 +129,42 @@ def skill_match(deal: Deal, loadout: set) -> float:
     return len(attrs & loadout) / len(loadout)
 
 
+def arm_rationale(deal: Deal, spec: Optional[dict] = None, loadout=None) -> list:
+    """Short, human-legible reasons this deal ranks where it does.
+
+    Explains the ARM priority to an end user in the deal card: which signals
+    lifted it (actionable now, high impact, qualified, large ticket) and — when
+    evolution is active — which learned focus skill it matches. Ordered by the
+    same drivers ``arm_priority`` weights; capped to the top three.
+    """
+    loadout_set = {str(s).lower() for s in (loadout or [])}
+    focus = ""
+    if loadout_set:
+        attrs = {
+            str(deal.region).lower(),
+            str(deal.country).lower(),
+            str(deal.type.value).lower(),
+            str(deal.sector).lower(),
+        }
+        matched = sorted(attrs & loadout_set)
+        if matched:
+            focus = "Focus: " + matched[0]
+    # Ordered by how strongly each signal drives ARM priority; capped to three,
+    # so the evolution "Focus" signal and a large ticket outrank the stage label.
+    reasons: list = []
+    if deal.stage in ("open", "upcoming"):
+        reasons.append("Actionable now")
+    if deal.impact_score >= 0.75:
+        reasons.append("High impact")
+    if focus:
+        reasons.append(focus)
+    if (deal.value_eur or 0) >= 1_000_000:
+        reasons.append("Large ticket")
+    if deal.arm_stage == ARMStage.QUALIFIED:
+        reasons.append("Qualified")
+    return reasons[:3]
+
+
 def arm_priority(deal: Deal, spec: Optional[dict] = None, loadout=None) -> float:
     """Evolved ARM priority score for a deal (higher = surface sooner).
 

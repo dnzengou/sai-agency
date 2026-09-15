@@ -252,6 +252,16 @@
       meta.appendChild(imp);
       card.appendChild(meta);
 
+      // Why-ranked rationale — makes the (evolved) ARM priority legible.
+      if (d.arm_rationale && d.arm_rationale.length) {
+        var why = el("div", "why");
+        why.appendChild(el("b", "why-lead", "Why here:"));
+        d.arm_rationale.forEach(function (r) {
+          why.appendChild(el("span", "why-chip" + (/^Focus:/.test(r) ? " focus" : ""), r));
+        });
+        card.appendChild(why);
+      }
+
       if (d.next_action) {
         var next = el("div", "next");
         next.appendChild(el("b", null, "Next: "));

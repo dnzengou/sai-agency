@@ -20,7 +20,7 @@ from typing import Dict, List, Optional
 from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
-from sai_agents.deals.arm import arm_priority, classify_arm
+from sai_agents.deals.arm import arm_priority, arm_rationale, classify_arm
 from sai_agents.valuation.estimator import estimate_value
 from sai_agents.deals.rss import rss_sources_from_feeds
 from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
@@ -270,7 +270,11 @@ class KafCadePipeline:
                 "evolved_order": bool(champ_spec or champ_loadout),
             },
             "deals": [
-                {**d.model_dump(mode="json"), "arm_priority": arm_priority(d, champ_spec, champ_loadout)}
+                {
+                    **d.model_dump(mode="json"),
+                    "arm_priority": arm_priority(d, champ_spec, champ_loadout),
+                    "arm_rationale": arm_rationale(d, champ_spec, champ_loadout),
+                }
                 for d in deals
             ],
         }

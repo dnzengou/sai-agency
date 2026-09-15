@@ -125,6 +125,27 @@ def test_build_dataset_applies_evolved_champion(monkeypatch):
     assert any(d["arm_priority"] != d["impact_score"] for d in ds["deals"])
 
 
+def test_arm_rationale_signals():
+    from sai_agents.deals.arm import arm_rationale
+    from sai_agents.models import ARMStage
+
+    d = classify_arm(Deal(title="t", type=DealType.PUBLIC_TENDER, value_eur=5_000_000, stage="open", confidence=0.9))
+    reasons = arm_rationale(d)
+    assert "Actionable now" in reasons
+    assert "Large ticket" in reasons
+    assert len(reasons) <= 3
+    # A loadout match surfaces a Focus chip.
+    d2 = classify_arm(Deal(title="t2", type=DealType.ACCELERATOR, region="LATAM", stage="open", confidence=0.5))
+    reasons2 = arm_rationale(d2, spec={"exploration": 0.9}, loadout=["latam"])
+    assert any(r.startswith("Focus: latam") for r in reasons2)
+
+
+def test_build_dataset_includes_rationale():
+    pipe = _pipeline()
+    ds = pipe.build_dataset(pipe.collect())
+    assert all("arm_rationale" in d and isinstance(d["arm_rationale"], list) for d in ds["deals"])
+
+
 async def test_run_publishes_and_exports(tmp_path):
     out = tmp_path / "deals.json"
     result = await _pipeline().run(export_path=out)
