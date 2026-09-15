@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T11:13:20.499722+00:00",
+  "generated_at": "2026-09-15T15:13:44.421010+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -165,7 +165,79 @@
       "business_succession": 0.0,
       "accelerator": 201379000.0,
       "property_scheme": 84007.0
-    }
+    },
+    "arm": {
+      "by_arm_stage": {
+        "qualified": 70,
+        "prospect": 37,
+        "lost": 15
+      },
+      "by_owner": {
+        "sales_gtm": 63,
+        "marketing": 59
+      },
+      "next_action_queue": [
+        {
+          "action": "Check eligibility & draft application (rolling)",
+          "count": 21
+        },
+        {
+          "action": "Evaluate cohort fit & submit expression of interest",
+          "count": 16
+        },
+        {
+          "action": "Assess fit & prepare bid before the deadline",
+          "count": 8
+        },
+        {
+          "action": "Check eligibility & draft application (2026-04-15)",
+          "count": 2
+        },
+        {
+          "action": "Open conversation with Government of Portugal / EuroHPC",
+          "count": 1
+        },
+        {
+          "action": "Open conversation with IMDA / AI Singapore / A*STAR",
+          "count": 1
+        },
+        {
+          "action": "Warm outreach to Legora — post-raise AI/ML build needs",
+          "count": 1
+        },
+        {
+          "action": "Warm outreach to Multiverse Computing — post-raise AI/ML build needs",
+          "count": 1
+        }
+      ],
+      "portfolio": {
+        "business": {
+          "count": 15,
+          "value_eur": 2300000.0,
+          "open": 15,
+          "avg_impact": 0.7184
+        },
+        "property": {
+          "count": 19,
+          "value_eur": 282667.0,
+          "open": 18,
+          "avg_impact": 0.5765
+        },
+        "ai_deals": {
+          "count": 63,
+          "value_eur": 3447338000.0,
+          "open": 24,
+          "avg_impact": 0.6855
+        },
+        "ventures": {
+          "count": 25,
+          "value_eur": 1434391000.0,
+          "open": 18,
+          "avg_impact": 0.6703
+        }
+      }
+    },
+    "evolved_order": false
   },
   "deals": [
     {
@@ -201,7 +273,13 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.885,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "d7f4f7867627c656",
@@ -236,7 +314,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.88,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "08e90a29090facea",
@@ -271,7 +354,13 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8661,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "dcde6bceffce1599",
@@ -306,7 +395,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.864,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "dceceb08b09d6552",
@@ -341,7 +435,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "acc0abad362c9bd6",
@@ -376,7 +475,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "4ec9a5fcb43db52e",
@@ -411,7 +515,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.86,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "a65125182d7e9218",
@@ -446,7 +555,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.85,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "09a8fd00aeb9b0b2",
@@ -481,7 +595,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.85,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "4b7cb3b11d5b1842",
@@ -516,7 +635,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.84,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "71ecc0c56a075220",
@@ -551,7 +675,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8384,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "bd11b8e8b539f2b2",
@@ -586,7 +715,13 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8352,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "f734d91483274143",
@@ -621,7 +756,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.82,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "63e1d4f222c43ef0",
@@ -656,7 +797,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.82,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "605e700adee6d2a9",
@@ -691,7 +837,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8154,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "ca6a307e85f78a38",
@@ -726,7 +877,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8124,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "b7d455a405cb966a",
@@ -761,7 +917,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8105,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "b278105efeddb83e",
@@ -796,7 +957,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.81,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "3a39b02ecfcc3049",
@@ -831,7 +997,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.8061,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "06aa718c073d5f0e",
@@ -866,7 +1037,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7923,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "c25add7085c05916",
@@ -901,7 +1077,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.79,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "34c5f3d44029e63c",
@@ -936,7 +1118,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7881,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "21f662d4a6f39fc8",
@@ -971,7 +1158,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.785,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "59997566db54eb2d",
@@ -1006,7 +1198,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7823,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "b058db8a4be252c9",
@@ -1041,7 +1238,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7787,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "fe61fbb6366b93c0",
@@ -1076,7 +1278,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.771,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "f8645d5864a855b7",
@@ -1111,7 +1318,13 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7622,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "966eacf0e232a932",
@@ -1146,7 +1359,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.76,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "dd02e04c5d3e8e80",
@@ -1181,7 +1399,13 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.754,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Qualified"
+      ]
     },
     {
       "id": "78d2acb5a27eb367",
@@ -1216,7 +1440,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7512,
+      "arm_rationale": [
+        "High impact",
+        "Large ticket"
+      ]
     },
     {
       "id": "bb918f9cb3eb092b",
@@ -1251,7 +1480,13 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.75,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Qualified"
+      ]
     },
     {
       "id": "3065432aa5d272ac",
@@ -1286,7 +1521,13 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.75,
+      "arm_rationale": [
+        "Actionable now",
+        "High impact",
+        "Qualified"
+      ]
     },
     {
       "id": "67c9d1e73099ba75",
@@ -1321,7 +1562,11 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7451,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "4284c14444eb23c1",
@@ -1356,7 +1601,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.74,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "0ef84588c0e8a5cf",
@@ -1391,7 +1641,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.74,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "a463f1f7c7a85a60",
@@ -1426,7 +1681,11 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7378,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "694cd6ff7bf41840",
@@ -1461,7 +1720,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.7342,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket",
+        "Qualified"
+      ]
     },
     {
       "id": "6ea207f86b6838ca",
@@ -1496,7 +1761,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.7302,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket"
+      ]
     },
     {
       "id": "84f9c26ac2565deb",
@@ -1531,7 +1801,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "6ff174090906c10b",
@@ -1566,7 +1841,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "f9f8e77d49b948e1",
@@ -1601,7 +1881,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.73,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "264090b809534c18",
@@ -1636,7 +1921,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.73,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket",
+        "Qualified"
+      ]
     },
     {
       "id": "d1496c8d7f49b3f5",
@@ -1671,7 +1962,11 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7299,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "8608b93e81209174",
@@ -1706,7 +2001,13 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7213,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket",
+        "Qualified"
+      ]
     },
     {
       "id": "74ac9c0c1575bbc5",
@@ -1741,7 +2042,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.72,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "bc80b7291df582e6",
@@ -1776,7 +2081,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "55bb9e3d6010c3fd",
@@ -1811,7 +2121,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "2624dcf153e12045",
@@ -1846,7 +2161,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.72,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "c1294841d1e6ecde",
@@ -1881,7 +2201,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.714,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "470e9b00e2362634",
@@ -1916,7 +2241,11 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7105,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "1d2ed9550bb99def",
@@ -1951,7 +2280,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.71,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "9c056f0df883855a",
@@ -1986,7 +2319,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.71,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "5c1ad372d2d8dab1",
@@ -2021,7 +2359,11 @@
         "disclosed": true,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.7,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "3388559127b0dab2",
@@ -2056,7 +2398,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.694,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "82d825c67e954bb1",
@@ -2091,7 +2438,11 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.69,
+      "arm_rationale": [
+        "Actionable now"
+      ]
     },
     {
       "id": "b61e9655a04f4c27",
@@ -2126,7 +2477,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.69,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "4daa1429b5ef053d",
@@ -2161,7 +2517,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6834,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "d7c408d921429843",
@@ -2196,7 +2556,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6809,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket",
+        "Qualified"
+      ]
     },
     {
       "id": "c64846cd2d784ef1",
@@ -2231,7 +2597,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6748,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "7b031002f9850dfa",
@@ -2266,7 +2636,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "3cf6a2eb439f1466",
@@ -2301,7 +2676,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "41199a92d0df66b0",
@@ -2336,7 +2716,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.67,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "9f1c449c12a53377",
@@ -2371,7 +2756,13 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.654,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket",
+        "Qualified"
+      ]
     },
     {
       "id": "98f357d5fdba5305",
@@ -2406,7 +2797,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6526,
+      "arm_rationale": [
+        "Actionable now",
+        "Large ticket"
+      ]
     },
     {
       "id": "60236f42cdf5dc9d",
@@ -2441,7 +2837,9 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.65,
+      "arm_rationale": []
     },
     {
       "id": "5d601b9a67a2883a",
@@ -2476,7 +2874,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.65,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "0031be5e66bd11f3",
@@ -2511,7 +2914,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.6493,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "1b97847cc1b5bcb7",
@@ -2546,7 +2954,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6472,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "8d18c96d60f46d97",
@@ -2581,7 +2993,9 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": []
     },
     {
       "id": "28c298751a4afa56",
@@ -2616,7 +3030,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "3f3c52ebaad686c7",
@@ -2651,7 +3070,12 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "5c66a842672aa011",
@@ -2686,7 +3110,12 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "66d977ccc78bb6f1",
@@ -2721,7 +3150,12 @@
         "disclosed": false,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "c5da963194b70655",
@@ -2756,7 +3190,9 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.64,
+      "arm_rationale": []
     },
     {
       "id": "73f2df0948bd10b1",
@@ -2791,7 +3227,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6374,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "58772316e73847ab",
@@ -2826,7 +3267,9 @@
         "disclosed": false,
         "kind": "cost",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63,
+      "arm_rationale": []
     },
     {
       "id": "aec6d952df65ba71",
@@ -2861,7 +3304,12 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "37f1d40feb18233e",
@@ -2896,7 +3344,12 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.63,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "0ba352d8b213402e",
@@ -2931,7 +3384,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6205,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "4be19ceaa0d27f91",
@@ -2966,7 +3424,12 @@
         "disclosed": false,
         "kind": "investment",
         "note": ""
-      }
+      },
+      "arm_priority": 0.62,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "bc7b48a1716f9eda",
@@ -3001,7 +3464,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.6148,
+      "arm_rationale": [
+        "Actionable now"
+      ]
     },
     {
       "id": "84f3211a825d6633",
@@ -3036,7 +3503,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.614,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "923541f3bb22a364",
@@ -3071,7 +3543,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.61,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "9e9bf4deeac45bc0",
@@ -3106,7 +3583,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.61,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "37ab3a5995b61230",
@@ -3141,7 +3623,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.606,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "23fba99e0ba775f9",
@@ -3176,7 +3663,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.604,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "c44a0ba28fa90545",
@@ -3211,7 +3703,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.6,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "1e859f8182832e5e",
@@ -3246,7 +3743,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.594,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "8d8ac60e9545c3b7",
@@ -3281,7 +3783,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5882,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "e854f896b4dcdd70",
@@ -3316,7 +3823,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.584,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "b19b1b5acba09e77",
@@ -3351,7 +3863,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.58,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "4715c58ac26511e0",
@@ -3386,7 +3903,12 @@
         "disclosed": true,
         "kind": "cost",
         "note": "Acquisition is symbolic; the real cost is renovation."
-      }
+      },
+      "arm_priority": 0.58,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "1c0b69488f41087e",
@@ -3421,7 +3943,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5793,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "934b8dc0c9ad2ede",
@@ -3456,7 +3983,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.57,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "903a184cd285b5fb",
@@ -3491,7 +4023,11 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5691,
+      "arm_rationale": [
+        "Large ticket"
+      ]
     },
     {
       "id": "f209e3aeaf229c5d",
@@ -3526,7 +4062,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5644,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "1bb0d90c283f2b5b",
@@ -3561,7 +4102,9 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5574,
+      "arm_rationale": []
     },
     {
       "id": "4b57496a432f599a",
@@ -3596,7 +4139,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.55,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "a641a8a062db6b55",
@@ -3631,7 +4179,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.55,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "6de32b0b131686bb",
@@ -3666,7 +4219,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5458,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "20bfe74d6c93a021",
@@ -3701,7 +4259,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5423,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "8a514fe2877f7074",
@@ -3736,7 +4299,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5323,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "a7b18198868d0063",
@@ -3771,7 +4339,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5235,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "8a87f82b5835d393",
@@ -3806,7 +4379,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.52,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "24187173ca504dce",
@@ -3841,7 +4419,11 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.52,
+      "arm_rationale": [
+        "Actionable now"
+      ]
     },
     {
       "id": "efd64cc2fa306f68",
@@ -3876,7 +4458,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.52,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "0184b8a7cbc75d04",
@@ -3911,7 +4498,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5196,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "103681a37b226d8f",
@@ -3946,7 +4538,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5191,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "6f9ccf9b621abada",
@@ -3981,7 +4578,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5184,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "a61a9d700b0fb6cf",
@@ -4016,7 +4618,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5123,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "7a7f53229c51348b",
@@ -4051,7 +4658,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51,
+      "arm_rationale": []
     },
     {
       "id": "2bb582478a827cf4",
@@ -4086,7 +4695,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51,
+      "arm_rationale": []
     },
     {
       "id": "d41ecae10170dfc8",
@@ -4121,7 +4732,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51,
+      "arm_rationale": []
     },
     {
       "id": "cdb241ff54a99d8e",
@@ -4156,7 +4769,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.51,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "ce8c0c9e90bfdbf4",
@@ -4191,7 +4809,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.5091,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "c3c069e444ae0156",
@@ -4226,7 +4849,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.5,
+      "arm_rationale": []
     },
     {
       "id": "71a32c03851916c0",
@@ -4261,7 +4886,12 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.5,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "998040fcbeff6cfc",
@@ -4296,7 +4926,9 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.4931,
+      "arm_rationale": []
     },
     {
       "id": "caca983eb4ca4fc8",
@@ -4331,7 +4963,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.49,
+      "arm_rationale": []
     },
     {
       "id": "28d8e6b8f667ea86",
@@ -4366,7 +5000,9 @@
         "disclosed": false,
         "kind": "benefit",
         "note": ""
-      }
+      },
+      "arm_priority": 0.49,
+      "arm_rationale": []
     },
     {
       "id": "572214b84257cfb7",
@@ -4401,7 +5037,12 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.4897,
+      "arm_rationale": [
+        "Actionable now",
+        "Qualified"
+      ]
     },
     {
       "id": "637a95c483de9f4e",
@@ -4436,7 +5077,9 @@
         "disclosed": true,
         "kind": "benefit",
         "note": "Support available, not a purchase price."
-      }
+      },
+      "arm_priority": 0.41,
+      "arm_rationale": []
     }
   ]
 }

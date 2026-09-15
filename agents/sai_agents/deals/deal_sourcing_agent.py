@@ -11,6 +11,7 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
 from sai_agents.agents.base import BaseAgent
+from sai_agents.deals.arm import arm_priority, skill_match
 from sai_agents.deals.pipeline import KafCadePipeline
 from sai_agents.models import (
     AgentResult,
@@ -35,15 +36,48 @@ class DealSourcingAgent(BaseAgent):
         super().__init__(service=service, spec=spec, loadout=loadout)
         self.pipeline = pipeline or KafCadePipeline()
 
+    def _arm_rank(self, deals: list) -> list:
+        """Order deals by ARM priority, tilted by the evolved champion spec and
+        the EvoSkillOpt loadout.
+
+        Unevolved (no spec and no loadout) => keep the pipeline's impact
+        ordering. When a champion spec is present, ``recency_weight`` tilts
+        toward immediately actionable (open/upcoming) deals and ``impact_bias``
+        sharpens the pull toward open opportunities. The EvoSkillOpt loadout
+        adds a bonus for deals whose attributes (region/country/type/sector)
+        match the skills that have historically paid off — gated by the evolved
+        ``exploration`` knob, so a genome only chases learned skills as much as
+        it has evolved to explore. Deal impact scores are never mutated — only
+        the *order in which* ARM surfaces them — so evolution reprioritises the
+        pipeline without gaming its own fitness metric.
+        """
+        if self.spec is None and not self.loadout:
+            return deals
+        return sorted(
+            deals,
+            key=lambda d: arm_priority(d, self.spec, self.loadout),
+            reverse=True,
+        )
+
+    @staticmethod
+    def _skill_match(deal, loadout: set) -> float:
+        """Fraction of the loadout matched by this deal's ARM attributes."""
+        return skill_match(deal, loadout)
+
     def run(self, context: Optional[Dict[str, Any]] = None) -> AgentResult:
         context = context or {}
         top_n = int(context.get("top_n", 5))
         deals = self.pipeline.collect()
         dataset = self.pipeline.build_dataset(deals)
+        ranked = self._arm_rank(deals)
+        loadout = {s.lower() for s in self.loadout}
+
+        surfaced = ranked[:top_n]
+        loadout_matched = sum(1 for d in surfaced if self._skill_match(d, loadout) > 0)
 
         insights: List[Insight] = []
         recommendations: List[Recommendation] = []
-        for deal in deals[:top_n]:
+        for deal in surfaced:
             insights.append(
                 Insight(
                     title=f"[{deal.country}] {deal.title}",
@@ -73,5 +107,7 @@ class DealSourcingAgent(BaseAgent):
             payload={
                 "summary": dataset["summary"],
                 "sources": self.pipeline.registry.source_names,
+                "loadout": sorted(loadout),
+                "loadout_matched": loadout_matched,
             },
         )

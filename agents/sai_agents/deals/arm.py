@@ -102,3 +102,91 @@ def classify_arm(deal: Deal) -> Deal:
     deal.account = deal.org or deal.title
     deal.next_action = _next_action(deal)
     return deal
+
+
+# --------------------------------------------------------------------------- #
+# Evolved ARM prioritisation — shared by the DealSourcingAgent (KafCa view) and
+# the site generator (public deals.json order) so both rank deals identically.
+# --------------------------------------------------------------------------- #
+_NEUTRAL_SPEC = {
+    "impact_bias": 0.5,
+    "exploration": 0.5,
+    "risk_tolerance": 0.5,
+    "recency_weight": 0.5,
+}
+
+
+def skill_match(deal: Deal, loadout: set) -> float:
+    """Fraction of the EvoSkillOpt loadout matched by the deal's attributes."""
+    if not loadout:
+        return 0.0
+    attrs = {
+        str(deal.region).lower(),
+        str(deal.country).lower(),
+        str(deal.type.value).lower(),
+        str(deal.sector).lower(),
+    }
+    return len(attrs & loadout) / len(loadout)
+
+
+def arm_rationale(deal: Deal, spec: Optional[dict] = None, loadout=None) -> list:
+    """Short, human-legible reasons this deal ranks where it does.
+
+    Explains the ARM priority to an end user in the deal card: which signals
+    lifted it (actionable now, high impact, qualified, large ticket) and — when
+    evolution is active — which learned focus skill it matches. Ordered by the
+    same drivers ``arm_priority`` weights; capped to the top three.
+    """
+    loadout_set = {str(s).lower() for s in (loadout or [])}
+    focus = ""
+    if loadout_set:
+        attrs = {
+            str(deal.region).lower(),
+            str(deal.country).lower(),
+            str(deal.type.value).lower(),
+            str(deal.sector).lower(),
+        }
+        matched = sorted(attrs & loadout_set)
+        if matched:
+            focus = "Focus: " + matched[0]
+    # Ordered by how strongly each signal drives ARM priority; capped to three,
+    # so the evolution "Focus" signal and a large ticket outrank the stage label.
+    reasons: list = []
+    if deal.stage in ("open", "upcoming"):
+        reasons.append("Actionable now")
+    if deal.impact_score >= 0.75:
+        reasons.append("High impact")
+    if focus:
+        reasons.append(focus)
+    if (deal.value_eur or 0) >= 1_000_000:
+        reasons.append("Large ticket")
+    if deal.arm_stage == ARMStage.QUALIFIED:
+        reasons.append("Qualified")
+    return reasons[:3]
+
+
+def arm_priority(deal: Deal, spec: Optional[dict] = None, loadout=None) -> float:
+    """Evolved ARM priority score for a deal (higher = surface sooner).
+
+    With no evolution present (spec is None and no loadout) this is exactly the
+    deal's impact score, so the pipeline's default order is unchanged and
+    regeneration stays deterministic. When a champion spec / loadout is present,
+    ``recency_weight`` tilts toward immediately actionable deals, ``impact_bias``
+    toward open opportunities, and the loadout adds a skill-match bonus gated by
+    ``exploration``. Deal impact scores themselves are never mutated — this is a
+    separate ordering signal — so evolution reprioritises without gaming fitness.
+    """
+    loadout_set = {str(s).lower() for s in (loadout or [])}
+    if spec is None and not loadout_set:
+        return round(deal.impact_score, 4)
+    s = spec or _NEUTRAL_SPEC
+    rw = s.get("recency_weight", 0.5)
+    ib = s.get("impact_bias", 0.5)
+    ex = s.get("exploration", 0.5)
+    actionable = 1.0 if deal.stage in ("open", "upcoming") else 0.4
+    openness = 1.0 if deal.stage in ("open", "upcoming") else 0.0
+    sm = skill_match(deal, loadout_set)
+    return round(
+        (1 - rw) * deal.impact_score + rw * actionable + 0.1 * ib * openness + 0.15 * ex * sm,
+        4,
+    )

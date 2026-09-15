@@ -90,6 +90,60 @@ def test_build_dataset_summary():
     assert "Spain" in ds["summary"]["by_country"]
     assert ds["summary"]["total_pipeline_value_eur"] > 0
     assert ds["schema_version"] == 1
+    # Bi: ARM portfolio-intelligence rollup is present and coherent.
+    arm = ds["summary"]["arm"]
+    assert set(arm) == {"by_arm_stage", "by_owner", "next_action_queue", "portfolio"}
+    assert sum(arm["by_arm_stage"].values()) == len(deals)
+    assert set(arm["portfolio"]) == {"business", "property", "ai_deals", "ventures"}
+    # every portfolio dimension exposes count/value/open/avg_impact
+    for dim in arm["portfolio"].values():
+        assert {"count", "value_eur", "open", "avg_impact"} <= set(dim)
+    # portfolio dimension counts reconcile with the category totals
+    assert sum(d["count"] for d in arm["portfolio"].values()) == sum(
+        ds["summary"]["by_category"].values()
+    )
+    # Every deal carries an evolved ARM priority; unevolved store => equals
+    # impact and the dataset is ordered by it.
+    assert ds["summary"]["evolved_order"] is False
+    prios = [d["arm_priority"] for d in ds["deals"]]
+    assert all(d["arm_priority"] == d["impact_score"] for d in ds["deals"])
+    assert prios == sorted(prios, reverse=True)
+
+
+def test_build_dataset_applies_evolved_champion(monkeypatch):
+    pipe = _pipeline()
+    deals = pipe.collect()
+    # Inject a champion that heavily favours actionable (open/upcoming) deals.
+    monkeypatch.setattr(
+        pipe, "_load_champion", lambda: ({"recency_weight": 0.95, "exploration": 0.0}, [])
+    )
+    ds = pipe.build_dataset(deals)
+    assert ds["summary"]["evolved_order"] is True
+    top = ds["deals"][0]
+    assert top["stage"] in ("open", "upcoming")  # recency tilt surfaces an actionable deal
+    # arm_priority now diverges from raw impact for at least some deals.
+    assert any(d["arm_priority"] != d["impact_score"] for d in ds["deals"])
+
+
+def test_arm_rationale_signals():
+    from sai_agents.deals.arm import arm_rationale
+    from sai_agents.models import ARMStage
+
+    d = classify_arm(Deal(title="t", type=DealType.PUBLIC_TENDER, value_eur=5_000_000, stage="open", confidence=0.9))
+    reasons = arm_rationale(d)
+    assert "Actionable now" in reasons
+    assert "Large ticket" in reasons
+    assert len(reasons) <= 3
+    # A loadout match surfaces a Focus chip.
+    d2 = classify_arm(Deal(title="t2", type=DealType.ACCELERATOR, region="LATAM", stage="open", confidence=0.5))
+    reasons2 = arm_rationale(d2, spec={"exploration": 0.9}, loadout=["latam"])
+    assert any(r.startswith("Focus: latam") for r in reasons2)
+
+
+def test_build_dataset_includes_rationale():
+    pipe = _pipeline()
+    ds = pipe.build_dataset(pipe.collect())
+    assert all("arm_rationale" in d and isinstance(d["arm_rationale"], list) for d in ds["deals"])
 
 
 async def test_run_publishes_and_exports(tmp_path):

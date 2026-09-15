@@ -20,7 +20,7 @@ from typing import Dict, List, Optional
 from xml.sax.saxutils import escape
 
 from sai_agents.config import Settings, get_settings
-from sai_agents.deals.arm import classify_arm
+from sai_agents.deals.arm import arm_priority, arm_rationale, classify_arm
 from sai_agents.valuation.estimator import estimate_value
 from sai_agents.deals.rss import rss_sources_from_feeds
 from sai_agents.deals.sources import BundledJSONSource, RRSSRegistry
@@ -202,8 +202,41 @@ class KafCadePipeline:
         }
 
     # ------------------------------------------------------------------ #
+    def _load_champion(self):
+        """Load the evolved deal_sourcing champion spec + skill loadout so the
+        public dataset is ordered by evolved ARM priority. Fail-safe: any error
+        or an unevolved store yields (None, []) — pure impact order, unchanged.
+        """
+        if not getattr(self.settings, "evo_specs_enabled", True):
+            return None, []
+        try:
+            from sai_agents.evoforge import EvoForge
+            from sai_agents.evometaclaw.trajectory import TrajectoryStore
+            from sai_agents.evoskillopt import EvoSkillOpt
+
+            root = TrajectoryStore().root
+            pop = root / "_population.json"
+            skl = root / "_skills.json"
+            spec = (
+                EvoForge(population_path=pop).champion_specs().get("deal_sourcing")
+                if pop.exists()
+                else None
+            )
+            loadout = EvoSkillOpt(skills_path=skl).current_loadout(5) if skl.exists() else []
+            return spec, loadout
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("deals.champion_load.failed", error=str(exc))
+            return None, []
+
+    # ------------------------------------------------------------------ #
     def build_dataset(self, deals: List[Deal]) -> Dict:
         """Shape deals + rollup summary for the web app to consume."""
+        # Evolved ARM priority: order the public dataset the way evolution has
+        # learned to, and expose the score per deal for the site's sort.
+        champ_spec, champ_loadout = self._load_champion()
+        deals = sorted(
+            deals, key=lambda d: arm_priority(d, champ_spec, champ_loadout), reverse=True
+        )
         by_country: Dict[str, int] = {}
         by_type: Dict[str, float] = {}
         by_region: Dict[str, int] = {}
@@ -233,8 +266,77 @@ class KafCadePipeline:
                 "by_region": by_region,
                 "by_category": by_category,
                 "pipeline_value_by_type_eur": {k: round(v, 2) for k, v in by_type.items()},
+                "arm": self.arm_summary(deals),
+                "evolved_order": bool(champ_spec or champ_loadout),
             },
-            "deals": [d.model_dump(mode="json") for d in deals],
+            "deals": [
+                {
+                    **d.model_dump(mode="json"),
+                    "arm_priority": arm_priority(d, champ_spec, champ_loadout),
+                    "arm_rationale": arm_rationale(d, champ_spec, champ_loadout),
+                }
+                for d in deals
+            ],
+        }
+
+    # ------------------------------------------------------------------ #
+    # Bi: ARM portfolio intelligence rollup (Business / Property / Deals).
+    # ------------------------------------------------------------------ #
+    # The B/P/D/V portfolio dimensions the web app groups deals under.
+    _PORTFOLIO_DIMENSIONS = {
+        "business": ("succession",),
+        "property": ("repopulation",),
+        "ai_deals": ("ai_ml",),
+        "ventures": ("venture",),
+    }
+
+    @staticmethod
+    def arm_summary(deals: List[Deal]) -> Dict:
+        """Roll ARM-classified deals up into a portfolio-intelligence view.
+
+        Surfaces the pipeline the way an operator works it: how deals distribute
+        across ARM stages, who owns them, the next-action queue, and the value /
+        openness of each Business / Property / AI-deal / Venture dimension.
+        """
+        by_arm_stage: Dict[str, int] = {}
+        by_owner: Dict[str, int] = {}
+        next_actions: Dict[str, int] = {}
+        cat_roll: Dict[str, Dict[str, float]] = {}
+        for d in deals:
+            by_arm_stage[d.arm_stage.value] = by_arm_stage.get(d.arm_stage.value, 0) + 1
+            by_owner[d.owner] = by_owner.get(d.owner, 0) + 1
+            if d.next_action:
+                next_actions[d.next_action] = next_actions.get(d.next_action, 0) + 1
+            c = cat_roll.setdefault(
+                d.category.value, {"count": 0, "value_eur": 0.0, "open": 0, "impact_sum": 0.0}
+            )
+            c["count"] += 1
+            c["value_eur"] += d.value_eur or 0.0
+            c["impact_sum"] += d.impact_score
+            if d.stage in ("open", "upcoming"):
+                c["open"] += 1
+
+        def finalize(cats) -> Dict[str, float]:
+            count = sum(cat_roll.get(c, {}).get("count", 0) for c in cats)
+            value = sum(cat_roll.get(c, {}).get("value_eur", 0.0) for c in cats)
+            openc = sum(cat_roll.get(c, {}).get("open", 0) for c in cats)
+            isum = sum(cat_roll.get(c, {}).get("impact_sum", 0.0) for c in cats)
+            return {
+                "count": count,
+                "value_eur": round(value, 2),
+                "open": openc,
+                "avg_impact": round(isum / count, 4) if count else 0.0,
+            }
+
+        # Highest-impact open deal per owner — the "work this next" shortlist.
+        top_actions = sorted(next_actions.items(), key=lambda kv: kv[1], reverse=True)[:8]
+        return {
+            "by_arm_stage": by_arm_stage,
+            "by_owner": by_owner,
+            "next_action_queue": [{"action": a, "count": n} for a, n in top_actions],
+            "portfolio": {
+                dim: finalize(cats) for dim, cats in KafCadePipeline._PORTFOLIO_DIMENSIONS.items()
+            },
         }
 
     @staticmethod

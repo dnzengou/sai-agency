@@ -34,7 +34,7 @@
     venture: "Venture",
   };
 
-  var state = { deals: [], region: "All", type: "All", country: "All", category: "All", q: "", sort: "impact" };
+  var state = { deals: [], region: "All", type: "All", country: "All", category: "All", q: "", sort: "priority" };
   var $ = function (sel) { return document.querySelector(sel); };
 
   function euro(n) {
@@ -82,7 +82,12 @@
     }).sort(function (a, b) {
       if (state.sort === "value") return (b.value_eur || 0) - (a.value_eur || 0);
       if (state.sort === "deadline") return String(a.deadline || "9999").localeCompare(String(b.deadline || "9999"));
-      return (b.impact_score || 0) - (a.impact_score || 0);
+      if (state.sort === "impact") return (b.impact_score || 0) - (a.impact_score || 0);
+      // Default "priority": the evolved ARM order (falls back to impact when
+      // the dataset predates evolution).
+      var pa = (a.arm_priority != null ? a.arm_priority : a.impact_score) || 0;
+      var pb = (b.arm_priority != null ? b.arm_priority : b.impact_score) || 0;
+      return pb - pa;
     });
   }
 
@@ -135,6 +140,69 @@
     bars($("#chart-type"), byType, { fmt: euro });
   }
 
+  // Bi: ARM portfolio-intelligence panel (Business / Property / AI-deals /
+  // Ventures + ARM stage distribution + next-action queue).
+  var PORTFOLIO_LABEL = {
+    business: "Businesses (succession)",
+    property: "Property (relocation)",
+    ai_deals: "AI / ML deals",
+    ventures: "Ventures",
+  };
+  var ARM_STAGE_LABEL = {
+    prospect: "Prospect", qualified: "Qualified", engaged: "Engaged",
+    proposal: "Proposal", won: "Won", lost: "Lost",
+  };
+
+  function renderPortfolio(summary) {
+    var arm = summary.arm;
+    var wrap = $("#portfolio");
+    if (!wrap || !arm) return;
+    wrap.hidden = false;
+    wrap.innerHTML = "";
+
+    // Portfolio dimension cards.
+    var dims = el("div", "card");
+    dims.appendChild(el("h2", null, "Portfolio intelligence"));
+    var grid = el("div", "portfolio-grid");
+    Object.keys(PORTFOLIO_LABEL).forEach(function (k) {
+      var p = (arm.portfolio || {})[k];
+      if (!p) return;
+      var cell = el("div", "portfolio-cell");
+      cell.appendChild(el("div", "label", PORTFOLIO_LABEL[k]));
+      cell.appendChild(el("div", "value", String(p.count)));
+      cell.appendChild(el("div", "sub", p.open + " open · " + euro(p.value_eur)));
+      grid.appendChild(cell);
+    });
+    dims.appendChild(grid);
+    wrap.appendChild(dims);
+
+    // ARM pipeline stage distribution.
+    var stageCard = el("div", "card");
+    stageCard.appendChild(el("h2", null, "ARM pipeline stages"));
+    var stageMount = el("div");
+    stageCard.appendChild(stageMount);
+    var stageRows = Object.keys(arm.by_arm_stage || {})
+      .map(function (k) { return { label: ARM_STAGE_LABEL[k] || k, value: arm.by_arm_stage[k], color: "var(--c2)" }; })
+      .sort(function (a, b) { return b.value - a.value; });
+    bars(stageMount, stageRows, {});
+    wrap.appendChild(stageCard);
+
+    // Next-action queue.
+    var q = arm.next_action_queue || [];
+    if (q.length) {
+      var qCard = el("div", "card");
+      qCard.appendChild(el("h2", null, "Next-action queue"));
+      var ul = el("ul", "action-queue");
+      q.forEach(function (item) {
+        var li = el("li", null, item.action);
+        li.appendChild(el("span", "count", String(item.count)));
+        ul.appendChild(li);
+      });
+      qCard.appendChild(ul);
+      wrap.appendChild(qCard);
+    }
+  }
+
   function badge(cls, text, extra) {
     var b = el("span", "badge " + cls, text);
     if (extra && extra.color) b.style.background = extra.color;
@@ -183,6 +251,16 @@
       imp.appendChild(document.createTextNode(d.impact_score != null ? d.impact_score.toFixed(2) : "—"));
       meta.appendChild(imp);
       card.appendChild(meta);
+
+      // Why-ranked rationale — makes the (evolved) ARM priority legible.
+      if (d.arm_rationale && d.arm_rationale.length) {
+        var why = el("div", "why");
+        why.appendChild(el("b", "why-lead", "Why here:"));
+        d.arm_rationale.forEach(function (r) {
+          why.appendChild(el("span", "why-chip" + (/^Focus:/.test(r) ? " focus" : ""), r));
+        });
+        card.appendChild(why);
+      }
 
       if (d.next_action) {
         var next = el("div", "next");
@@ -380,6 +458,7 @@
       state.deals = (data.deals || []).slice();
       renderStats(data.summary);
       renderCharts(data.summary);
+      renderPortfolio(data.summary);
       buildFilters();
       renderDeals();
       if (data.generated_at) {
