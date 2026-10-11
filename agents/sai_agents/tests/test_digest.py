@@ -29,6 +29,30 @@ def test_select_prioritises_open_then_impact():
     assert picked[-1]["id"] == "b2"
 
 
+def test_select_uses_arm_priority_within_open_group():
+    ds = {"deals": [
+        {"id": "lo", "title": "Lower priority", "stage": "open", "impact_score": 0.9,
+         "arm_priority": 0.40, "region": "EU", "type": "grant"},
+        {"id": "hi", "title": "Higher priority", "stage": "open", "impact_score": 0.5,
+         "arm_priority": 0.95, "region": "EU", "type": "grant"},
+    ]}
+    picked = select_deals(ds, limit=10)
+    # Evolved arm_priority orders within the open group, not raw impact.
+    assert [d["id"] for d in picked] == ["hi", "lo"]
+
+
+def test_build_digest_renders_rationale():
+    ds = {"deals": [
+        {"id": "a1", "title": "Open Grant", "org": "EIC", "country": "EU", "region": "EU",
+         "type": "grant", "value_eur": 1000000, "stage": "open", "impact_score": 0.8,
+         "arm_priority": 0.82, "arm_rationale": ["Actionable now", "Focus: latam"],
+         "description": "x", "deadline": "2026-09-01"},
+    ]}
+    subject, html_body, text_body = build_digest(ds, limit=5)
+    assert "Actionable now" in html_body and "Focus: latam" in html_body
+    assert "Why: Actionable now, Focus: latam" in text_body
+
+
 def test_region_filter_and_limit():
     picked = select_deals(DATASET, region="Nordics", limit=5)
     assert [d["id"] for d in picked] == ["b2"]

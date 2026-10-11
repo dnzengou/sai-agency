@@ -14,18 +14,28 @@ _TYPE_LABEL = {
     "funding_round": "Funding round",
     "partnership": "Partnership",
     "rfp": "RFP",
+    "property_scheme": "Property scheme",
+    "business_succession": "Business succession",
+    "venture": "Venture",
 }
 _OPEN = {"open", "upcoming"}
 
 
+def _rank(d: Dict) -> float:
+    """Evolved ARM priority when present, else raw impact (backward compatible)."""
+    v = d.get("arm_priority")
+    return v if v is not None else (d.get("impact_score") or 0)
+
+
 def select_deals(dataset: Dict, region: Optional[str] = None, limit: int = 10) -> List[Dict]:
-    """Pick the most relevant deals: open/upcoming first, then by impact."""
+    """Pick the most relevant deals: open/upcoming first, then by evolved
+    ARM priority (the same ordering the public radar surfaces)."""
     deals = dataset.get("deals", [])
     if region and region != "All":
         deals = [d for d in deals if d.get("region") == region]
 
     def key(d: Dict):
-        return (0 if d.get("stage") in _OPEN else 1, -(d.get("impact_score") or 0))
+        return (0 if d.get("stage") in _OPEN else 1, -_rank(d))
 
     return sorted(deals, key=key)[:limit]
 
@@ -57,10 +67,20 @@ def build_digest(
             euro(d.get("value_eur")) if d.get("value_eur") else "",
             f"deadline {d['deadline']}" if d.get("deadline") else "",
         ]))
+        why = d.get("arm_rationale") or []
+        why_html = ""
+        if why:
+            chips = "".join(
+                f'<span style="display:inline-block;font-size:11px;color:#52514e;background:#f0efe9;'
+                f'border:1px solid #e1e0d9;border-radius:999px;padding:1px 8px;margin:0 4px 4px 0;">{_esc(r)}</span>'
+                for r in why
+            )
+            why_html = f'<div style="margin:6px 0 4px;">{chips}</div>'
         rows.append(
             f'<tr><td style="padding:14px 0;border-bottom:1px solid #e1e0d9;">'
             f'<a href="{_esc(url)}" style="color:#2a78d6;text-decoration:none;font-weight:600;font-size:15px;">{_esc(d.get("title",""))}</a>'
             f'<div style="color:#52514e;font-size:13px;margin:3px 0 6px;">{_esc(meta)}</div>'
+            f'{why_html}'
             f'<div style="color:#333;font-size:13px;">{_esc((d.get("description") or "")[:180])}</div>'
             f'<a href="{_esc(url)}" style="color:#2a78d6;font-size:13px;">View &amp; pursue →</a>'
             f"</td></tr>"
@@ -83,6 +103,9 @@ def build_digest(
         m = " · ".join(filter(None, [_TYPE_LABEL.get(d.get('type',''), ''), d.get('org',''), d.get('country','')]))
         if m:
             lines.append(f"  {m}")
+        why = d.get("arm_rationale") or []
+        if why:
+            lines.append(f"  Why: {', '.join(why)}")
         lines.append(f"  {deal_url(d, site_url)}")
     lines += ["", f"See all: {site_url}/deals", "Unsubscribe: reply 'unsubscribe'."]
     text_body = "\n".join(lines)
