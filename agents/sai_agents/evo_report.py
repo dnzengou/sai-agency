@@ -41,7 +41,7 @@ def _plateaued(member) -> bool:
     return False
 
 
-def build_report(forge: EvoForge, skillopt: EvoSkillOpt) -> Dict:
+def build_report(forge: EvoForge, skillopt: EvoSkillOpt, trajectory: Optional[TrajectoryStore] = None) -> Dict:
     """Pure summary of the current evolution state (testable without disk)."""
     genomes = []
     for m in forge.members.values():
@@ -79,6 +79,8 @@ def build_report(forge: EvoForge, skillopt: EvoSkillOpt) -> Dict:
         "ranking": genomes,
         "top_skills": skills[:10],
         "loadout": skillopt.current_loadout(5),
+        # EvoMetaClaw moat: how much durable trajectory data has accumulated.
+        "trajectory": trajectory.accumulation() if trajectory is not None else None,
     }
 
 
@@ -105,16 +107,29 @@ def _to_markdown(r: Dict) -> str:
     for s in r["top_skills"]:
         lines.append(f"- **{s['skill']}** — value {s['value']} (pulls {s['pulls']})")
     lines += ["", f"Loadout: {', '.join(r['loadout']) or '—'}", ""]
+    traj = r.get("trajectory")
+    if traj:
+        lines += [
+            "## EvoMetaClaw moat",
+            "",
+            f"- Accumulated events: **{traj['total_events']}** across {traj['genomes']} genomes "
+            f"({traj['total_bytes']} bytes)",
+            "",
+        ]
+        for g, n in list(traj["by_genome"].items())[:10]:
+            lines.append(f"- {g}: {n}")
+        lines.append("")
     return "\n".join(lines)
 
 
 def load_report(settings=None) -> Dict:
     """Load the population/skills from the trajectory store and build a report."""
     settings = settings or get_settings()
-    root = TrajectoryStore().root
+    store = TrajectoryStore()
+    root = store.root
     forge = EvoForge(population_path=root / "_population.json")
     skillopt = EvoSkillOpt(skills_path=root / "_skills.json")
-    return build_report(forge, skillopt)
+    return build_report(forge, skillopt, trajectory=store)
 
 
 def main() -> None:

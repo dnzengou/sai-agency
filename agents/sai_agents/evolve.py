@@ -55,7 +55,9 @@ class EvoFlywheel:
             population_path=root / "_population.json",
             high_watermark=self.settings.impact_high_watermark,
         )
-        self.skillopt = skillopt or EvoSkillOpt(skills_path=root / "_skills.json")
+        self.skillopt = skillopt or EvoSkillOpt(
+            skills_path=root / "_skills.json", decay=getattr(self.settings, "skill_decay", 1.0)
+        )
 
     # ------------------------------------------------------------------ #
     def _read_trajectories(self):

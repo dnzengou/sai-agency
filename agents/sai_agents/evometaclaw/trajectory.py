@@ -133,3 +133,36 @@ class TrajectoryStore:
             for p in self.root.glob("*.jsonl")
             if not p.stem.endswith("._generations")
         )
+
+    # ------------------------------------------------------------------ #
+    # EvoMetaClaw moat measurement — how much durable trajectory data has
+    # accumulated. This is the asset a copycat registry cannot replicate, so
+    # being able to quantify its growth matters.
+    # ------------------------------------------------------------------ #
+    def accumulation(self) -> dict:
+        """Per-genome event counts + totals read from the durable JSONL logs.
+
+        Reads line counts off disk (not just this process's in-memory tally),
+        so it reflects everything accumulated across every run. Fail-safe: an
+        unreadable file contributes 0 rather than raising.
+        """
+        per_genome: dict[str, int] = {}
+        total_bytes = 0
+        if self.enabled and self.root.exists():
+            for p in self.root.glob("*.jsonl"):
+                if p.stem.endswith("._generations"):
+                    continue
+                try:
+                    with p.open("r", encoding="utf-8") as fh:
+                        per_genome[p.stem] = sum(1 for line in fh if line.strip())
+                    total_bytes += p.stat().st_size
+                except OSError as exc:
+                    log.warning("trajectory.accumulation.read", genome=p.stem, error=str(exc))
+                    per_genome.setdefault(p.stem, 0)
+        return {
+            "genomes": len(per_genome),
+            "total_events": sum(per_genome.values()),
+            "total_bytes": total_bytes,
+            "by_genome": dict(sorted(per_genome.items(), key=lambda kv: kv[1], reverse=True)),
+        }
+
