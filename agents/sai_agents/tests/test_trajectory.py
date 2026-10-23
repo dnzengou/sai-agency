@@ -67,3 +67,28 @@ async def test_publisher_flywheel_skips_blacklisted(tmp_path):
     async with pub:
         assert not await pub.publish(bad)
     assert store.total_appended == 0
+
+
+def test_accumulation_counts_events_per_genome(tmp_path):
+    from sai_agents.evometaclaw.trajectory import TrajectoryStore
+    from sai_agents.models import EventType, EvolutionEvent
+
+    store = TrajectoryStore(root=tmp_path / "t", enabled=True)
+    for _ in range(3):
+        store.append(EvolutionEvent(event_type=EventType.AGENT_RUN, source_agent="alpha"))
+    store.append(EvolutionEvent(event_type=EventType.AGENT_RUN, source_agent="beta"))
+
+    acc = store.accumulation()
+    assert acc["genomes"] == 2
+    assert acc["total_events"] == 4
+    assert acc["by_genome"]["alpha"] == 3 and acc["by_genome"]["beta"] == 1
+    assert acc["total_bytes"] > 0
+    # Ordered by volume (the moat leaders first).
+    assert list(acc["by_genome"])[0] == "alpha"
+
+
+def test_accumulation_empty_store_is_safe(tmp_path):
+    from sai_agents.evometaclaw.trajectory import TrajectoryStore
+
+    acc = TrajectoryStore(root=tmp_path / "empty", enabled=True).accumulation()
+    assert acc == {"genomes": 0, "total_events": 0, "total_bytes": 0, "by_genome": {}}

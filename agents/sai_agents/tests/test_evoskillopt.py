@@ -64,3 +64,25 @@ def test_ema_blend_grows_confidence(tmp_path):
     # pulls accumulate across runs; value EMA-blends toward the new evidence.
     assert opt.stats["seo"].pulls == 2
     assert 0.0 < opt.stats["seo"].value < 1.0
+
+
+def test_decay_fades_unreinforced_skills(tmp_path):
+    path = tmp_path / "_skills.json"
+    opt = EvoSkillOpt(skills_path=path, decay=0.5)
+    # Establish two skills.
+    opt.optimize([_ev(Insight(title="a", impact_score=0.8, tags=["seo"])),
+                  _ev(Insight(title="b", impact_score=0.8, tags=["latam"]))])
+    seo_v0 = opt.stats["seo"].value
+    latam_v0 = opt.stats["latam"].value
+    # Next pass reinforces only seo; latam is not seen and should decay.
+    opt.optimize([_ev(Insight(title="c", impact_score=0.8, tags=["seo"]))])
+    assert opt.stats["latam"].value < latam_v0  # faded
+    assert opt.stats["seo"].value >= seo_v0 * 0.5  # recovered via fresh evidence
+
+
+def test_decay_default_is_no_op(tmp_path):
+    opt = EvoSkillOpt(skills_path=tmp_path / "s.json")  # decay defaults to 1.0
+    opt.optimize([_ev(Insight(title="a", impact_score=0.6, tags=["seo"]))])
+    v = opt.stats["seo"].value
+    opt.optimize([_ev(Insight(title="b", impact_score=0.6, tags=["other"]))])
+    assert opt.stats["seo"].value == v  # unchanged without decay

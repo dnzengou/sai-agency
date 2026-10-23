@@ -80,10 +80,16 @@ class EvoSkillOpt:
         skills_path: Optional[Path | str] = None,
         loadout_size: int = 5,
         explore_c: float = 1.4142,
+        decay: float = 1.0,
     ) -> None:
         self.skills_path = Path(skills_path) if skills_path else None
         self.loadout_size = loadout_size
         self.explore_c = explore_c
+        # Recency decay in (0, 1]: each optimize pass multiplies every skill's
+        # accrued value by this factor before folding in fresh evidence, so
+        # skills that stop paying off fade while reinforced ones recover. 1.0
+        # disables decay (pure accumulation, the original behaviour).
+        self.decay = max(0.0, min(1.0, decay))
         self.stats: Dict[str, SkillStat] = {}
         self._load()
 
@@ -125,6 +131,11 @@ class EvoSkillOpt:
     # ------------------------------------------------------------------ #
     def optimize(self, events: Iterable[EvolutionEvent]) -> SkillReport:
         """Fold a batch of events into the persistent skill table and rank."""
+        # Recency decay: fade every accrued value before folding in fresh
+        # evidence, so stale skills lose ground and reinforced ones recover.
+        if self.decay < 1.0:
+            for s in self.stats.values():
+                s.value = round(s.value * self.decay, 6)
         batch = skills_from_events(events)
         for skill, fresh in batch.items():
             prior = self.stats.get(skill)

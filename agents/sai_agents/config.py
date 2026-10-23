@@ -65,6 +65,8 @@ class Settings(BaseModel):
 
     # --- EvoForge/EvoSkillOpt feedback: agents consume evolved specs/loadout ---
     evo_specs_enabled: bool = Field(default=True)
+    # EvoSkillOpt recency decay in (0, 1]; 1.0 = pure accumulation (no decay).
+    skill_decay: float = Field(default=1.0)
 
     @classmethod
     def from_env(cls) -> "Settings":
@@ -90,6 +92,7 @@ class Settings(BaseModel):
             blacklist_patterns=_env_list("SAI_BLACKLIST_PATTERNS", []),
             rss_feeds=_env_list("SAI_RSS_FEEDS", []),
             evo_specs_enabled=_env_bool("SAI_EVO_SPECS", True),
+            skill_decay=float(os.getenv("SAI_SKILL_DECAY", "1.0")),
         )
 
 
