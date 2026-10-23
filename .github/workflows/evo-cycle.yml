@@ -45,3 +45,20 @@ jobs:
             sai-evo-store-
       - name: Run one compounding cycle (team -> evolve)
         run: python -m sai_agents.run_cycle
+      # Make the flywheel's progress legible right in the run: the moat +
+      # genome lineage land in the job summary, and full JSON/markdown are kept
+      # as a downloadable artifact.
+      - name: Evolution report (job summary)
+        run: python -m sai_agents.evo_report --markdown "$GITHUB_STEP_SUMMARY"
+      - name: Evolution report (artifact files)
+        run: |
+          python -m sai_agents.evo_report --markdown evo-report.md
+          python -m sai_agents.evo_report > evo-report.json
+      - name: Upload evolution report
+        uses: actions/upload-artifact@v4
+        with:
+          name: evo-report
+          path: |
+            agents/evo-report.md
+            agents/evo-report.json
+          if-no-files-found: warn
