@@ -78,26 +78,38 @@ def deal_url(deal: Dict, site_url: str = DEFAULT_SITE) -> str:
 
 
 def _json_ld(deal: Dict, url: str) -> str:
+    # The page itself (what a search crawler consumes) plus a richer
+    # schema.org node (Grant / Offer / InvestmentOrDeposit) with typed fields
+    # an AI agent can parse to reason about the opportunity — not just read
+    # the prose. Both live in one JSON-LD @graph so neither displaces the other.
+    from sai_agents.deals.agent_seo import deal_schema
+
     data = {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": deal.get("title", ""),
-        "description": deal.get("description", ""),
-        "url": url,
-        "dateModified": deal.get("date") or None,
-        "about": {
-            "@type": "Organization",
-            "name": deal.get("org") or deal.get("title", ""),
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {"@type": "ListItem", "position": 1, "name": "Deal Radar", "item": f"{DEFAULT_SITE}/deals"},
-                {"@type": "ListItem", "position": 2, "name": deal.get("title", "")},
-            ],
-        },
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "name": deal.get("title", ""),
+                "description": deal.get("description", ""),
+                "url": url,
+                "dateModified": deal.get("date") or None,
+                "about": {
+                    "@type": "Organization",
+                    "name": deal.get("org") or deal.get("title", ""),
+                },
+                "breadcrumb": {
+                    "@type": "BreadcrumbList",
+                    "itemListElement": [
+                        {"@type": "ListItem", "position": 1, "name": "Deal Radar", "item": f"{DEFAULT_SITE}/deals"},
+                        {"@type": "ListItem", "position": 2, "name": deal.get("title", "")},
+                    ],
+                },
+            },
+            deal_schema(deal, url),
+        ],
     }
-    data = {k: v for k, v in data.items() if v is not None}
+    # Drop None values in the WebPage node.
+    data["@graph"][0] = {k: v for k, v in data["@graph"][0].items() if v is not None}
     # JSON-LD in a non-executable script type is not subject to CSP script-src,
     # but we must still neutralise `<`/`>`/`&` so a value containing
     # "</script>" cannot break out of the script element.
@@ -309,6 +321,9 @@ def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE, extra_paths:
         (f"{site_url}/demo", "weekly", "0.8"),
         (f"{site_url}/match", "weekly", "0.8"),
         (f"{site_url}/countries", "weekly", "0.7"),
+        # Agent-native entry points — let classic + AI crawlers discover both.
+        (f"{site_url}/llms.txt", "weekly", "0.6"),
+        (f"{site_url}/.well-known/agents.json", "weekly", "0.6"),
     ]
     urls += [(f"{site_url}/{p}", "weekly", "0.8") for p in (extra_paths or [])]
     urls += [(deal_url(d, site_url), "weekly", "0.7") for d in deals]
@@ -324,7 +339,18 @@ def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE, extra_paths:
 
 
 def export_site(dataset: Dict, base_dir: Path | str, site_url: str = DEFAULT_SITE) -> Dict:
-    """Write per-deal pages + sitemap under ``base_dir`` (the site root)."""
+    """Write per-deal pages + sitemap under ``base_dir`` (the site root).
+
+    Also emits the agent-native SEO surfaces: ``llms.txt`` (markdown curation
+    for LLMs), ``.well-known/agents.json`` (programmatic agent entry point),
+    and a refreshed ``robots.txt`` that is explicit about modern AI crawlers.
+    """
+    from sai_agents.deals.agent_seo import (
+        render_agents_manifest,
+        render_llms_txt,
+        render_robots_txt,
+    )
+
     base = Path(base_dir)
     deals = dataset.get("deals", [])
     deals_dir = base / "deals"
@@ -362,9 +388,24 @@ def export_site(dataset: Dict, base_dir: Path | str, site_url: str = DEFAULT_SIT
 
     sitemap = base / "sitemap.xml"
     sitemap.write_text(render_sitemap(deals, site_url, extra_paths=sorted(country_paths)), encoding="utf-8")
+
+    # Agent-native SEO surfaces: a curated map for LLMs, a programmatic
+    # agent manifest, and an explicit robots.txt listing the modern AI
+    # crawlers so they each see a clear signal.
+    (base / "llms.txt").write_text(render_llms_txt(dataset, site_url), encoding="utf-8")
+    well_known = base / ".well-known"
+    well_known.mkdir(parents=True, exist_ok=True)
+    (well_known / "agents.json").write_text(
+        json.dumps(render_agents_manifest(dataset, site_url), indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    (base / "robots.txt").write_text(render_robots_txt(site_url), encoding="utf-8")
+
     return {
         "pages": len(written),
         "removed": len(existing - written),
         "country_pages": len(written_c),
         "sitemap": str(sitemap),
+        "llms_txt": str(base / "llms.txt"),
+        "agents_manifest": str(well_known / "agents.json"),
     }

@@ -1,0 +1,53 @@
+{
+  "name": "SAI Deal Radar",
+  "description": "Agent-readable radar of real, source-cited AI/ML, business succession, property and venture opportunities worldwide.",
+  "contact": "https://sai-agency-deals-radar.netlify.app/match",
+  "endpoints": {
+    "dataset": "https://sai-agency-deals-radar.netlify.app/deals.json",
+    "feed_rss": "https://sai-agency-deals-radar.netlify.app/deals.xml",
+    "sitemap": "https://sai-agency-deals-radar.netlify.app/sitemap.xml",
+    "llms_txt": "https://sai-agency-deals-radar.netlify.app/llms.txt",
+    "home": "https://sai-agency-deals-radar.netlify.app/deals"
+  },
+  "capabilities": [
+    "browse-opportunities",
+    "filter-by-country-region-type-category",
+    "subscribe-weekly-digest",
+    "pursue-a-deal",
+    "match-from-business-plan"
+  ],
+  "data": {
+    "total_deals": 122,
+    "regions": [
+      "Benelux",
+      "Canada",
+      "Central Europe",
+      "DACH",
+      "EU",
+      "East Africa",
+      "East Asia",
+      "LATAM",
+      "MENA",
+      "Nordics",
+      "North America",
+      "Oceania",
+      "South Asia",
+      "Southeast Asia",
+      "Southern Europe",
+      "Sub-Saharan Africa",
+      "UK & Ireland",
+      "US East Coast",
+      "US West Coast",
+      "Western Europe"
+    ],
+    "categories": [
+      "ai_ml",
+      "repopulation",
+      "succession",
+      "venture"
+    ],
+    "evolved_order": false
+  },
+  "schema_version": 1,
+  "generated_at": "2026-11-07T06:56:02.369776+00:00"
+}

@@ -8,6 +8,11 @@
     <meta name="description" content="SAI Deal Radar: an extensive, continuously-refreshed list of quality, vetted deals — businesses for sale &amp; succession, property &amp; relocation schemes, venture vehicles and AI/ML funding — sourced worldwide. Every deal links to its official source. Filter, export and get weekly alerts." />
     <link rel="canonical" href="https://sai-agency-deals-radar.netlify.app/deals" />
     <link rel="alternate" type="application/rss+xml" title="SAI Deal Radar" href="/deals.xml" />
+    <!-- Agent-native discovery: a machine-readable dataset endpoint, an
+         agents manifest under .well-known, and the emerging llms.txt map. -->
+    <link rel="alternate" type="application/json" title="SAI Deal Radar (JSON)" href="/deals.json" />
+    <link rel="llms" href="/llms.txt" />
+    <link rel="agents-manifest" href="/.well-known/agents.json" />
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SAI Deal Radar" />
@@ -18,6 +23,26 @@
     <meta name="twitter:title" content="SAI Deal Radar — source vetted deals worldwide" />
     <meta name="twitter:description" content="Vetted businesses, property &amp; ventures — sourced worldwide. Filter, export, get weekly alerts." />
     <link rel="stylesheet" href="/assets/deals.css" />
+    <!-- Dataset-level JSON-LD so classic + AI crawlers discover the machine-
+         readable endpoints even before JS executes. deals.js enriches this
+         block with live summary counts once the data loads. -->
+    <script id="dataset-ld" type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": "SAI Deal Radar — AI/ML grants, business succession, property schemes, venture vehicles",
+      "description": "A continuously-refreshed, cited list of real AI/ML, business succession, property-relocation and venture opportunities sourced worldwide, ARM-classified and impact-ranked.",
+      "url": "https://sai-agency-deals-radar.netlify.app/deals",
+      "keywords": ["AI grants","business succession","venture funds","property schemes","relocation grants","public tenders","accelerators"],
+      "creator": {"@type":"Organization","name":"SAI Agency"},
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "distribution": [
+        {"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://sai-agency-deals-radar.netlify.app/deals.json"},
+        {"@type":"DataDownload","encodingFormat":"application/rss+xml","contentUrl":"https://sai-agency-deals-radar.netlify.app/deals.xml"},
+        {"@type":"DataDownload","encodingFormat":"application/xml","contentUrl":"https://sai-agency-deals-radar.netlify.app/sitemap.xml"}
+      ]
+    }
+    </script>
   </head>
   <body>
     <!-- Netlify Forms build-time detection (static, hidden). The visible forms

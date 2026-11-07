@@ -27,11 +27,16 @@ def test_render_deal_page_has_seo_and_form():
     assert "<title>EIC Accelerator Open 2026 · Deal Radar · SAI Agency</title>" in html
     assert '<link rel="canonical" href="https://sai-agency-deals-radar.netlify.app/deals/abc123"' in html
     assert 'property="og:title"' in html
-    # JSON-LD present and valid
+    # JSON-LD present and valid; now an @graph with both the WebPage and a
+    # richer schema.org node (Grant here) so AI agents can parse the deal.
     start = html.index("application/ld+json\">") + len("application/ld+json\">")
     end = html.index("</script>", start)
-    ld = json.loads(html[start:end])
-    assert ld["@type"] == "WebPage" and ld["url"].endswith("/deals/abc123")
+    raw = html[start:end].replace("\\u003c", "<").replace("\\u003e", ">").replace("\\u0026", "&")
+    ld = json.loads(raw)
+    types = {node["@type"] for node in ld["@graph"]}
+    assert types == {"WebPage", "Grant"}
+    page = next(n for n in ld["@graph"] if n["@type"] == "WebPage")
+    assert page["url"].endswith("/deals/abc123")
     # inline pre-filled Netlify form
     assert 'name="deal-interest"' in html
     assert 'value="EIC Accelerator Open 2026 · EISMEA"' in html

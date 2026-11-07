@@ -1,0 +1,35 @@
+# SAI Deal Radar
+
+> Continuously-refreshed radar of real, source-cited opportunities: AI/ML grants, business-succession listings, property/relocation schemes and venture vehicles — 122 deals across 45 countries in 20 regions. Every entry links to its official source. ARM-classified and impact-ranked (see JSON for the full `arm_priority` and `arm_rationale` per deal).
+
+## Primary data (machine-readable)
+
+- [Full dataset (JSON)](https://sai-agency-deals-radar.netlify.app/deals.json): every deal with impact score, ARM stage, next action, evolved arm_priority and rationale.
+- [Deal feed (RSS 2.0)](https://sai-agency-deals-radar.netlify.app/deals.xml): subscribe to new deals.
+- [Sitemap](https://sai-agency-deals-radar.netlify.app/sitemap.xml): every deal page.
+- [Agent manifest](https://sai-agency-deals-radar.netlify.app/.well-known/agents.json): programmatic entry point for agent discovery.
+
+## Human pages
+
+- [Deal Radar (home)](https://sai-agency-deals-radar.netlify.app/deals): filterable radar.
+- [By country](https://sai-agency-deals-radar.netlify.app/countries): per-country landing pages.
+- [Demo pathways](https://sai-agency-deals-radar.netlify.app/demo): succession / repopulation / venture.
+- [Match](https://sai-agency-deals-radar.netlify.app/match): matchmaker from a pasted business plan.
+
+## Top deals right now
+
+- [BNDES & Finep AI fund — public call to select a manager (up to R$400M)](https://sai-agency-deals-radar.netlify.app/deals/5e00f8e317290b28): Brazil · public_tender · impact 0.89
+- [Portugal to invest up to EUR 200M in an AI Gigafactory (EuroHPC)](https://sai-agency-deals-radar.netlify.app/deals/d7f4f7867627c656): Portugal · partnership · impact 0.88
+- [National Multimodal LLM Programme & SEA-LION (S$70M)](https://sai-agency-deals-radar.netlify.app/deals/08e90a29090facea): Singapore · partnership · impact 0.87
+- [Legora raises USD 550M Series D at USD 5.55B valuation](https://sai-agency-deals-radar.netlify.app/deals/dcde6bceffce1599): Sweden · funding_round · impact 0.86
+- [Multiverse Computing raises USD 215M Series B (CompactifAI LLM-compression)](https://sai-agency-deals-radar.netlify.app/deals/dceceb08b09d6552): Spain · funding_round · impact 0.86
+- [CDP Venture Capital and OpenAI partnership for AI development in Italy](https://sai-agency-deals-radar.netlify.app/deals/acc0abad362c9bd6): Italy · partnership · impact 0.86
+- [Lovable raises USD 200M Series A at USD 1.8B valuation](https://sai-agency-deals-radar.netlify.app/deals/4ec9a5fcb43db52e): Sweden · funding_round · impact 0.86
+- [Verda raises EUR 100M for renewable AI cloud infrastructure](https://sai-agency-deals-radar.netlify.app/deals/a65125182d7e9218): Finland · funding_round · impact 0.85
+- [Runway — USD 308M Series D (New York)](https://sai-agency-deals-radar.netlify.app/deals/09a8fd00aeb9b0b2): United States · funding_round · impact 0.85
+- [7AI — USD 130M Series A (Boston)](https://sai-agency-deals-radar.netlify.app/deals/4b7cb3b11d5b1842): United States · funding_round · impact 0.84
+
+## Optional
+
+- [Per-country pages](https://sai-agency-deals-radar.netlify.app/countries) — each country page is a focused landing surface; use these for geographic queries.
+- [Full deal detail pages](https://sai-agency-deals-radar.netlify.app/deals/<id>) — one page per deal, with JSON-LD and a direct "pursue" form.
