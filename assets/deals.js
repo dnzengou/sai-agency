@@ -459,6 +459,23 @@
       renderStats(data.summary);
       renderCharts(data.summary);
       renderPortfolio(data.summary);
+      // Agent-native SEO: enrich the static Dataset JSON-LD with live counts
+      // so AI crawlers that do execute JS see the full variableMeasured.
+      try {
+        var ldNode = $("#dataset-ld");
+        if (ldNode) {
+          var ld = JSON.parse(ldNode.textContent);
+          var s = data.summary || {};
+          ld.temporalCoverage = data.generated_at || null;
+          ld.variableMeasured = [
+            { "@type": "PropertyValue", name: "total_deals", value: s.total_deals },
+            { "@type": "PropertyValue", name: "countries", value: (s.countries || []).length },
+            { "@type": "PropertyValue", name: "regions", value: (s.regions || []).length },
+            { "@type": "PropertyValue", name: "open_or_upcoming", value: s.open_or_upcoming }
+          ];
+          ldNode.textContent = JSON.stringify(ld);
+        }
+      } catch (_) { /* ignore — the static node is still valid */ }
       buildFilters();
       renderDeals();
       if (data.generated_at) {
