@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you cite the SAI Deal Radar, please use this metadata."
+title: "SAI Deal Radar — AI-agent-native opportunity radar"
+abstract: >
+  A continuously-refreshed, source-cited list of real AI/ML, business-succession,
+  property-relocation and venture opportunities sourced worldwide. ARM-classified,
+  impact-ranked and evolved via EvoForge + EvoSkillOpt over an accumulated
+  EvoMetaClaw trajectory. Published as HTML, JSON, RSS, llms.txt and a
+  /.well-known/agents.json manifest so classic search and AI agents can both
+  discover and reason about every deal.
+authors:
+  - name: "SAI Agency"
+    website: "https://sai-agency-deals-radar.netlify.app/"
+version: "0.1.0+kafca"
+date-released: "2026-11-08"
+license: MIT
+repository-code: "https://github.com/dnzengou/sai-agency"
+url: "https://sai-agency-deals-radar.netlify.app/"
+type: dataset
+keywords:
+  - deal radar
+  - AI grants
+  - business succession
+  - venture funding
+  - property schemes
+  - agent-native SEO
+  - KafCa
+  - EvoMetaClaw

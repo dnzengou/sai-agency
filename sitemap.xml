@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://sai-agency-deals-radar.netlify.app/llms-full.txt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sai-agency-deals-radar.netlify.app/.well-known/agents.json</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>

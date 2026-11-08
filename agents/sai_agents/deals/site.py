@@ -323,6 +323,7 @@ def render_sitemap(deals: List[Dict], site_url: str = DEFAULT_SITE, extra_paths:
         (f"{site_url}/countries", "weekly", "0.7"),
         # Agent-native entry points — let classic + AI crawlers discover both.
         (f"{site_url}/llms.txt", "weekly", "0.6"),
+        (f"{site_url}/llms-full.txt", "weekly", "0.6"),
         (f"{site_url}/.well-known/agents.json", "weekly", "0.6"),
     ]
     urls += [(f"{site_url}/{p}", "weekly", "0.8") for p in (extra_paths or [])]
@@ -347,8 +348,11 @@ def export_site(dataset: Dict, base_dir: Path | str, site_url: str = DEFAULT_SIT
     """
     from sai_agents.deals.agent_seo import (
         render_agents_manifest,
+        render_ai_txt,
+        render_llms_full_txt,
         render_llms_txt,
         render_robots_txt,
+        render_security_txt,
     )
 
     base = Path(base_dir)
@@ -393,12 +397,16 @@ def export_site(dataset: Dict, base_dir: Path | str, site_url: str = DEFAULT_SIT
     # agent manifest, and an explicit robots.txt listing the modern AI
     # crawlers so they each see a clear signal.
     (base / "llms.txt").write_text(render_llms_txt(dataset, site_url), encoding="utf-8")
+    # GEO pass — grounded facts LLM search assistants can cite.
+    (base / "llms-full.txt").write_text(render_llms_full_txt(dataset, site_url), encoding="utf-8")
     well_known = base / ".well-known"
     well_known.mkdir(parents=True, exist_ok=True)
     (well_known / "agents.json").write_text(
         json.dumps(render_agents_manifest(dataset, site_url), indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
+    (well_known / "ai.txt").write_text(render_ai_txt(site_url), encoding="utf-8")
+    (well_known / "security.txt").write_text(render_security_txt(site_url), encoding="utf-8")
     (base / "robots.txt").write_text(render_robots_txt(site_url), encoding="utf-8")
 
     return {
@@ -407,5 +415,8 @@ def export_site(dataset: Dict, base_dir: Path | str, site_url: str = DEFAULT_SIT
         "country_pages": len(written_c),
         "sitemap": str(sitemap),
         "llms_txt": str(base / "llms.txt"),
+        "llms_full_txt": str(base / "llms-full.txt"),
         "agents_manifest": str(well_known / "agents.json"),
+        "ai_txt": str(well_known / "ai.txt"),
+        "security_txt": str(well_known / "security.txt"),
     }
