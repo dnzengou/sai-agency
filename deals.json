@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T08:43:00.859318+00:00",
+  "generated_at": "2026-11-09T19:50:35.069537+00:00",
   "service": "sai-agents",
   "schema_version": 1,
   "summary": {
@@ -237,7 +237,15 @@
         }
       }
     },
-    "evolved_order": false
+    "evolved_order": false,
+    "trajectory_moat": {
+      "genomes": 1,
+      "total_events": 122,
+      "total_bytes": 163098,
+      "by_genome": {
+        "deal_sourcing": 122
+      }
+    }
   },
   "deals": [
     {

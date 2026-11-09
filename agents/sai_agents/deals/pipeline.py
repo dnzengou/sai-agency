@@ -229,6 +229,25 @@ class KafCadePipeline:
             return None, []
 
     # ------------------------------------------------------------------ #
+    def _load_moat(self) -> Optional[Dict]:
+        """Read the EvoMetaClaw trajectory accumulation if a store has content.
+
+        This is the copy-resistant moat: per-genome trajectory events that
+        compound every run. Exposed publicly so buyers see the compounding
+        story and LLM-powered search can cite it honestly. Fail-safe: any
+        error or an empty store yields ``None`` (no moat section).
+        """
+        try:
+            from sai_agents.evometaclaw.trajectory import TrajectoryStore
+
+            acc = TrajectoryStore().accumulation()
+            if acc.get("total_events"):
+                return acc
+        except Exception as exc:  # pragma: no cover - defensive
+            log.warning("deals.moat_load.failed", error=str(exc))
+        return None
+
+    # ------------------------------------------------------------------ #
     def build_dataset(self, deals: List[Deal]) -> Dict:
         """Shape deals + rollup summary for the web app to consume."""
         # Evolved ARM priority: order the public dataset the way evolution has
@@ -268,6 +287,7 @@ class KafCadePipeline:
                 "pipeline_value_by_type_eur": {k: round(v, 2) for k, v in by_type.items()},
                 "arm": self.arm_summary(deals),
                 "evolved_order": bool(champ_spec or champ_loadout),
+                "trajectory_moat": self._load_moat(),
             },
             "deals": [
                 {

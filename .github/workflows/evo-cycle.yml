@@ -62,3 +62,21 @@ jobs:
             agents/evo-report.md
             agents/evo-report.json
           if-no-files-found: warn
+      # Regenerate the public dataset so deals.json carries the fresh moat
+      # (summary.trajectory_moat) + any evolved ARM ordering — makes the
+      # compounding signal visible to visitors and LLM crawlers.
+      - name: Regenerate public dataset with the fresh moat
+        working-directory: ${{ github.workspace }}
+        run: python -m sai_agents.deals.generate
+        env:
+          # The generate script writes into the repo root (sibling of agents/).
+          PYTHONPATH: ${{ github.workspace }}/agents
+      - name: Upload regenerated dataset snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: deals-with-moat
+          path: |
+            deals.json
+            llms.txt
+            llms-full.txt
+          if-no-files-found: warn
