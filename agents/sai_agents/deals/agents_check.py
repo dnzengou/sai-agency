@@ -21,6 +21,8 @@ import urllib.error
 import urllib.request
 from typing import List, Tuple
 
+from sai_agents.deals.agent_seo import AI_CRAWLERS
+
 _UA = "sai-agents-check/1.0 (+https://github.com/dnzengou/sai-agency)"
 _TIMEOUT = 15
 
@@ -73,15 +75,16 @@ def check(base: str) -> Tuple[List[str], List[str]]:
     except Exception as e:
         fail.append(f"/.well-known/agents.json: {e!r}")
 
-    # 4) robots.txt names modern AI crawlers.
+    # 4) robots.txt names modern AI crawlers. One source of truth —
+    # AI_CRAWLERS is the same list the renderer emits, so this check can
+    # never drift from production.
     try:
         status, body = _fetch(f"{base}/robots.txt")
-        wanted = ("GPTBot", "OAI-SearchBot", "ClaudeBot", "Google-Extended", "PerplexityBot")
-        missing = [ua for ua in wanted if f"User-agent: {ua}" not in body]
+        missing = [ua for ua in AI_CRAWLERS if f"User-agent: {ua}" not in body]
         if status != 200 or missing:
             fail.append(f"/robots.txt: status={status}, missing crawlers={missing}")
         else:
-            ok.append(f"/robots.txt: {len(wanted)} AI crawlers named")
+            ok.append(f"/robots.txt: all {len(AI_CRAWLERS)} AI crawlers named")
     except Exception as e:
         fail.append(f"/robots.txt: {e!r}")
 

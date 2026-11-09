@@ -1,5 +1,5 @@
-Contact: mailto:security@sai-agency.dev
-Expires: 2027-11-08T11:25:12Z
+Contact: https://github.com/dnzengou/sai-agency/security/advisories/new
+Expires: 2027-11-09T08:43:00Z
 Preferred-Languages: en
 Policy: https://sai-agency-deals-radar.netlify.app/SECURITY.md
 Canonical: https://sai-agency-deals-radar.netlify.app/.well-known/security.txt
