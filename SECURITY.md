@@ -2,10 +2,9 @@
 
 ## Reporting a vulnerability
 
-If you believe you have found a security issue in the SAI Deal Radar — the static site, the agent suite, the KafCa event stream, or the Netlify functions — please report it privately:
+If you believe you have found a security issue in the SAI Deal Radar — the static site, the agent suite, the KafCa event stream, or the Netlify functions — please report it privately through the **GitHub security advisory** for this repository:
 
-- **Email:** `security@sai-agency.dev` *(preferred)*
-- Or open a **private security advisory** on GitHub: <https://github.com/dnzengou/sai-agency/security/advisories/new>
+<https://github.com/dnzengou/sai-agency/security/advisories/new>
 
 Please include:
 - A description of the issue and its impact.

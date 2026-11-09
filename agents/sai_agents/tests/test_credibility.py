@@ -107,18 +107,44 @@ def test_agents_check_passes_on_good_deployment():
         "endpoints": {"dataset": "x", "feed_rss": "y", "sitemap": "z", "home": "/"},
         "capabilities": ["browse-opportunities"],
     }
+    # robots.txt must list every crawler the renderer emits — we build it
+    # from the single-source-of-truth list so this is drift-proof.
+    from sai_agents.deals.agent_seo import AI_CRAWLERS
+    good_robots = "\n".join(f"User-agent: {ua}\nAllow: /" for ua in AI_CRAWLERS)
     fake = _fake_fetch_factory({
         "/deals.json": (200, json.dumps({"schema_version": 1, "deals": [{"id": "a"}]})),
         "/llms.txt": (200, "# SAI Deal Radar\n\n..."),
         "/.well-known/agents.json": (200, json.dumps(manifest)),
-        "/robots.txt": (200, "\n".join(f"User-agent: {ua}\nAllow: /" for ua in (
-            "GPTBot", "OAI-SearchBot", "ClaudeBot", "Google-Extended", "PerplexityBot"))),
+        "/robots.txt": (200, good_robots),
         "/sitemap.xml": (200, "<urlset><url><loc>/llms.txt</loc></url><url><loc>/.well-known/agents.json</loc></url></urlset>"),
     })
     with patch.object(agents_check, "_fetch", fake):
         ok, fail = agents_check.check("https://example.test")
     assert fail == [], f"unexpected failures: {fail}"
     assert len(ok) == 5
+
+
+def test_agents_check_and_renderer_share_crawler_list():
+    """The checker's AI_CRAWLERS list IS the renderer's — one source of truth,
+    so adding a crawler never requires remembering to update the checker."""
+    from sai_agents.deals import agents_check as ac
+    from sai_agents.deals.agent_seo import AI_CRAWLERS, render_robots_txt
+    assert ac.AI_CRAWLERS is AI_CRAWLERS
+    robots = render_robots_txt()
+    for ua in AI_CRAWLERS:
+        assert f"User-agent: {ua}" in robots
+
+
+def test_security_txt_contact_is_verifiable_url():
+    """The RFC 9116 Contact must be a real, resolvable channel — we use the
+    GitHub security-advisory endpoint rather than invent an email."""
+    from sai_agents.deals.agent_seo import SECURITY_CONTACT, render_security_txt
+    assert SECURITY_CONTACT.startswith("https://github.com/")
+    assert "security/advisories" in SECURITY_CONTACT
+    txt = render_security_txt()
+    assert f"Contact: {SECURITY_CONTACT}" in txt
+    # No invented email sneaks in.
+    assert "security@sai-agency" not in txt
 
 
 def test_agents_check_flags_missing_crawlers_and_wrong_schema():

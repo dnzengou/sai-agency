@@ -31,6 +31,36 @@ from typing import Dict, List
 
 DEFAULT_SITE = "https://sai-agency-deals-radar.netlify.app"
 
+# Verifiable security-disclosure channel. The RFC 9116 `Contact` field accepts
+# a URL, so we point at the real GitHub security-advisory endpoint rather than
+# invent an email. If a live inbox is added later, update this constant and
+# the SECURITY.md to match.
+SECURITY_CONTACT = "https://github.com/dnzengou/sai-agency/security/advisories/new"
+
+# Modern AI crawler landscape — the single source of truth. Both
+# ``render_robots_txt`` (producer) and ``agents_check`` (verifier) read from
+# this list, so a new crawler is added once and propagates everywhere.
+AI_CRAWLERS = [
+    "GPTBot",  # OpenAI training crawler
+    "OAI-SearchBot",  # OpenAI SearchGPT index
+    "ChatGPT-User",  # OpenAI user-fetching crawler
+    "ClaudeBot",  # Anthropic training crawler
+    "Claude-Web",  # Anthropic user-fetching crawler
+    "anthropic-ai",  # Anthropic (legacy alias)
+    "Google-Extended",  # Google Bard/Vertex AI
+    "PerplexityBot",  # Perplexity training
+    "Perplexity-User",  # Perplexity user-fetching
+    "Applebot-Extended",  # Apple AI training
+    "Meta-ExternalAgent",  # Meta AI user-fetching
+    "Meta-ExternalFetcher",  # Meta AI fetcher
+    "Amazonbot",  # Amazon Alexa / AI
+    "Bytespider",  # ByteDance (TikTok) AI crawler
+    "DuckAssistBot",  # DuckDuckGo DuckAssist
+    "YouBot",  # You.com
+    "cohere-ai",  # Cohere
+    "Diffbot",  # Diffbot knowledge graph
+]
+
 # schema.org type per DealType — picked to match what an agent would expect to
 # parse. Everything else falls back to Offer.
 _SCHEMA_TYPE = {
@@ -269,26 +299,7 @@ def render_robots_txt(site_url: str = DEFAULT_SITE) -> str:
     agent-discoverable — but naming them makes robots-driven monitoring and
     polite revocation possible later.
     """
-    ai_agents = [
-        "GPTBot",  # OpenAI training crawler
-        "OAI-SearchBot",  # OpenAI SearchGPT index
-        "ChatGPT-User",  # OpenAI user-fetching crawler
-        "ClaudeBot",  # Anthropic training crawler
-        "Claude-Web",  # Anthropic user-fetching crawler
-        "anthropic-ai",  # Anthropic (legacy alias)
-        "Google-Extended",  # Google Bard/Vertex AI
-        "PerplexityBot",  # Perplexity training
-        "Perplexity-User",  # Perplexity user-fetching
-        "Applebot-Extended",  # Apple AI training
-        "Meta-ExternalAgent",  # Meta AI user-fetching
-        "Meta-ExternalFetcher",  # Meta AI fetcher
-        "Amazonbot",  # Amazon Alexa / AI
-        "Bytespider",  # ByteDance (TikTok) AI crawler
-        "DuckAssistBot",  # DuckDuckGo DuckAssist
-        "YouBot",  # You.com
-        "cohere-ai",  # Cohere
-        "Diffbot",  # Diffbot knowledge graph
-    ]
+    ai_agents = AI_CRAWLERS
     sections = [
         "# SAI Deal Radar — robots.txt",
         "# Agent-discoverable by design: every deal links to its official",
@@ -350,7 +361,7 @@ def render_security_txt(site_url: str = DEFAULT_SITE) -> str:
 
     expires = (datetime.now(timezone.utc) + timedelta(days=365)).strftime("%Y-%m-%dT%H:%M:%SZ")
     return (
-        f"Contact: mailto:security@sai-agency.dev\n"
+        f"Contact: {SECURITY_CONTACT}\n"
         f"Expires: {expires}\n"
         f"Preferred-Languages: en\n"
         f"Policy: {site_url}/SECURITY.md\n"
