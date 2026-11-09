@@ -100,6 +100,16 @@
       { label: "Pipeline value", value: euro(summary.total_pipeline_value_eur), sub: "known deal sizes" },
       { label: "Countries", value: (summary.countries || []).length, sub: (summary.countries || []).join(", ") },
     ];
+    // EvoMetaClaw moat: the copy-resistant signal. Shown only when real
+    // trajectory data has accumulated — a public, compounding number.
+    var moat = summary.trajectory_moat;
+    if (moat && moat.total_events) {
+      tiles.push({
+        label: "Learning events",
+        value: moat.total_events.toLocaleString(),
+        sub: moat.genomes + " agent lineages · compounds weekly"
+      });
+    }
     tiles.forEach(function (t) {
       var tile = el("div", "tile");
       tile.appendChild(el("div", "label", t.label));

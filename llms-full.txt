@@ -31,6 +31,16 @@ source is rejected by the normalizer. (See agents/sai_agents/deals/pipeline.py)
 - prospect: 37
 - lost: 15
 
+### EvoMetaClaw moat (accumulated trajectory)
+
+- Learning events captured: **122**
+- Agent lineages tracked: **1**
+
+This is the compounding signal a copycat registry cannot replicate.
+A one-shot clone of /deals.json is public; the accumulated per-genome
+history that produces today's surfacing order is not. See
+agents/sai_agents/evometaclaw/trajectory.py.
+
 Full dataset (JSON, CC-BY-4.0): https://sai-agency-deals-radar.netlify.app/deals.json
 Full dataset shape: see INTEGRATE.md in the repository.
 

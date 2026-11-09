@@ -424,6 +424,23 @@ def render_llms_full_txt(dataset: Dict, site_url: str = DEFAULT_SITE) -> str:
         lines += ["", "### ARM pipeline stages"]
         for k, v in stages.items():
             lines.append(f"- {k}: {v}")
+    # EvoMetaClaw moat — only emitted when real trajectory data is present, so
+    # the number LLMs cite is honest. (Absent during the committed-baseline
+    # regeneration; present after an evo-cycle run.)
+    moat = summary.get("trajectory_moat")
+    if moat and moat.get("total_events"):
+        lines += [
+            "",
+            "### EvoMetaClaw moat (accumulated trajectory)",
+            "",
+            f"- Learning events captured: **{moat['total_events']}**",
+            f"- Agent lineages tracked: **{moat['genomes']}**",
+            "",
+            "This is the compounding signal a copycat registry cannot replicate.",
+            "A one-shot clone of /deals.json is public; the accumulated per-genome",
+            "history that produces today's surfacing order is not. See",
+            "agents/sai_agents/evometaclaw/trajectory.py.",
+        ]
     lines += [
         "",
         "Full dataset (JSON, CC-BY-4.0): " + f"{site_url}/deals.json",
