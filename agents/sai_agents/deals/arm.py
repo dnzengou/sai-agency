@@ -172,9 +172,11 @@ def arm_priority(deal: Deal, spec: Optional[dict] = None, loadout=None) -> float
     deal's impact score, so the pipeline's default order is unchanged and
     regeneration stays deterministic. When a champion spec / loadout is present,
     ``recency_weight`` tilts toward immediately actionable deals, ``impact_bias``
-    toward open opportunities, and the loadout adds a skill-match bonus gated by
-    ``exploration``. Deal impact scores themselves are never mutated — this is a
-    separate ordering signal — so evolution reprioritises without gaming fitness.
+    toward open opportunities, ``risk_tolerance`` scales a confidence-weighted
+    bonus (low risk_tolerance surfaces only well-sourced deals), and the
+    loadout adds a skill-match bonus gated by ``exploration``. Deal impact
+    scores themselves are never mutated — this is a separate ordering signal —
+    so evolution reprioritises without gaming fitness.
     """
     loadout_set = {str(s).lower() for s in (loadout or [])}
     if spec is None and not loadout_set:
@@ -183,10 +185,21 @@ def arm_priority(deal: Deal, spec: Optional[dict] = None, loadout=None) -> float
     rw = s.get("recency_weight", 0.5)
     ib = s.get("impact_bias", 0.5)
     ex = s.get("exploration", 0.5)
+    rt = s.get("risk_tolerance", 0.5)
     actionable = 1.0 if deal.stage in ("open", "upcoming") else 0.4
     openness = 1.0 if deal.stage in ("open", "upcoming") else 0.0
     sm = skill_match(deal, loadout_set)
+    # risk_tolerance wires the previously-unused knob to the real
+    # ``confidence`` field on each deal: low tolerance (risk-averse) favours
+    # high-confidence deals; high tolerance accepts lower confidence too.
+    # Using a signal that exists per-source avoids the gaming risk of a
+    # category-targeted knob.
+    confidence_lift = 0.1 * (1 - rt) * float(getattr(deal, "confidence", 0.6))
     return round(
-        (1 - rw) * deal.impact_score + rw * actionable + 0.1 * ib * openness + 0.15 * ex * sm,
+        (1 - rw) * deal.impact_score
+        + rw * actionable
+        + 0.1 * ib * openness
+        + 0.15 * ex * sm
+        + confidence_lift,
         4,
     )

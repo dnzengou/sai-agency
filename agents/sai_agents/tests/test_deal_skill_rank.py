@@ -55,3 +55,40 @@ def test_run_records_loadout_match_in_payload():
     result = agent.execute({"top_n": 3})
     assert "loadout" in result.payload and result.payload["loadout"] == ["southern europe"]
     assert result.payload["loadout_matched"] >= 0
+
+
+def test_risk_tolerance_rewards_high_confidence_when_averse():
+    """The previously-unused risk_tolerance knob now lifts high-confidence
+    deals when evolved low (risk-averse). Uses the real per-deal confidence
+    field — no category gaming."""
+    from sai_agents.models import Deal, DealType
+    hi_conf = Deal(title="hi", org="x", type=DealType.GRANT, country="Spain",
+                   region="EU", sector="AI/ML", stage="open", confidence=0.9)
+    hi_conf.impact_score = 0.5
+    lo_conf = Deal(title="lo", org="y", type=DealType.GRANT, country="Spain",
+                   region="EU", sector="AI/ML", stage="open", confidence=0.2)
+    lo_conf.impact_score = 0.5
+
+    # Risk-averse spec surfaces hi-confidence first.
+    averse = DealSourcingAgent(spec={"risk_tolerance": 0.0, "recency_weight": 0.5,
+                                     "impact_bias": 0.5, "exploration": 0.5})
+    ranked_averse = averse._arm_rank([lo_conf, hi_conf])
+    assert ranked_averse[0].title == "hi"
+
+    # Risk-tolerant spec removes the confidence lift — ties broken by sort stability.
+    # Verify arm_priority is identical for both deals under risk_tolerance=1.0.
+    from sai_agents.deals.arm import arm_priority
+    tol_spec = {"risk_tolerance": 1.0, "recency_weight": 0.5,
+                "impact_bias": 0.5, "exploration": 0.5}
+    assert arm_priority(hi_conf, tol_spec) == arm_priority(lo_conf, tol_spec)
+
+
+def test_arm_priority_unevolved_still_exactly_matches_impact():
+    """The non-gaming contract: no spec + no loadout ⇒ priority == impact.
+    The new risk_tolerance wiring must not break the deterministic baseline."""
+    from sai_agents.models import Deal, DealType
+    from sai_agents.deals.arm import arm_priority
+    d = Deal(title="t", org="x", type=DealType.GRANT, country="Spain",
+             region="EU", sector="AI/ML", stage="open", confidence=0.3)
+    d.impact_score = 0.73
+    assert arm_priority(d, None, []) == 0.73

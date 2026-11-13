@@ -15,25 +15,25 @@ source is rejected by the normalizer. (See agents/sai_agents/deals/pipeline.py)
 
 ## Today's snapshot (verifiable)
 
-- Total deals: **122**
+- Total deals: **137**
 - Countries covered: **45**
 - Regions covered: **20**
 - Categories: ai_ml, repopulation, succession, venture
 
 ### Portfolio dimensions
-- business: 15 deals · 15 open · avg impact 0.72
+- business: 30 deals · 30 open · avg impact 0.73
 - property: 19 deals · 18 open · avg impact 0.58
 - ai_deals: 63 deals · 24 open · avg impact 0.69
 - ventures: 25 deals · 18 open · avg impact 0.67
 
 ### ARM pipeline stages
-- qualified: 70
+- qualified: 85
 - prospect: 37
 - lost: 15
 
 ### EvoMetaClaw moat (accumulated trajectory)
 
-- Learning events captured: **122**
+- Learning events captured: **137**
 - Agent lineages tracked: **1**
 
 This is the compounding signal a copycat registry cannot replicate.

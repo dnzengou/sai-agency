@@ -5,7 +5,7 @@
     <link>https://sai-agency-deals-radar.netlify.app/deals</link>
     <description>Real, sourced AI/ML/data opportunities across Southern Europe and the Nordics.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Nov 2026 19:50:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 18:56:09 +0000</lastBuildDate>
     <atom:link xmlns:atom="http://www.w3.org/2005/Atom" href="https://sai-agency-deals-radar.netlify.app/deals.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BNDES &amp; Finep AI fund — public call to select a manager (up to R$400M)</title>
@@ -232,6 +232,41 @@
       <description>European association for the SME business-transfer industry — family succession, buy-outs and cross-border acquisitions typically €0.5M–25M — with matchmaking (Deal Club), training and annual summits. · Type: business_succession · Country: EU (EU) · Value: n/a · Impact: 0.75</description>
     </item>
     <item>
+      <title>Blocket Företag — Sweden's largest verksamhet-for-sale marketplace</title>
+      <link>https://www.blocket.se/foretag</link>
+      <guid isPermaLink="false">b6e3e59d0364d681</guid>
+      <category>business_succession</category>
+      <description>Sweden's dominant classifieds platform for small-business transfers, with thousands of family-run verksamheter (cafes, bagerier, lanthandel, pensionat) listed by owners seeking a successor as the Swedish baby-boom generation retires. · Type: business_succession · Country: Sweden (Nordics) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
+      <title>Ludvig &amp; Co Gårdsförmedling — Swedish farm &amp; forest succession</title>
+      <link>https://www.ludvig.se/fastighetsformedling/gardar-till-salu</link>
+      <guid isPermaLink="false">d92e838fee839d00</guid>
+      <category>business_succession</category>
+      <description>The brokerage arm of the Federation of Swedish Farmers (LRF) handles the largest share of Sweden's generational farm transfers, listing dairy, grain, and livestock gårdar whose owners are retiring without a family heir. · Type: business_succession · Country: Sweden (Nordics) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
+      <title>TransCommerce — French regional Chamber succession portal</title>
+      <link>https://www.transcommerce.com/</link>
+      <guid isPermaLink="false">d7cf33aefbba6fb8</guid>
+      <category>business_succession</category>
+      <description>The Chamber-of-Commerce network's official transmission platform listing thousands of French commerces de proximité — boulangeries, boucheries-charcuteries, cafés-restaurants — whose owners are retiring without family successors. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
+      <title>BPIfrance Transmission — Cédants et Repreneurs d'Affaires</title>
+      <link>https://bpifrance-transmission.fr/</link>
+      <guid isPermaLink="false">8e3f3ec83a63ae35</guid>
+      <category>business_succession</category>
+      <description>France's public investment bank's national transmission marketplace, matching retiring family-business cédants with repreneurs across artisan trades, hospitality and regional manufacturing. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
+      <title>Répertoire Installation — French farm succession registry</title>
+      <link>https://www.repertoireinstallation.com/</link>
+      <guid isPermaLink="false">3df5b483fdd5a5b4</guid>
+      <category>business_succession</category>
+      <description>The Chambers of Agriculture's official national registry (RDI) for French farm transmission, listing exploitations agricoles — dairy, viticulture, elevage — where ageing farmers seek a non-family repreneur. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.75</description>
+    </item>
+    <item>
       <title>Codeplain raises EUR 2.6M seed round</title>
       <link>https://gapminder.vc/gapminder-leads-3-million-seed-round-in-slovenian-ai-software-startup-codeplain-alongside-silicon-gardens/</link>
       <guid isPermaLink="false">67c9d1e73099ba75</guid>
@@ -251,6 +286,62 @@
       <guid isPermaLink="false">0ef84588c0e8a5cf</guid>
       <category>business_succession</category>
       <description>Germany's largest official Nachfolgeboerse, run by the Federal Economy Ministry, KfW, DIHK and the crafts chambers; 10,000+ anonymized listings, matching ~1,000 Mittelstand successions per year. · Type: business_succession · Country: Germany (DACH) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Företagsformedlingen — Nordic succession brokerage network</title>
+      <link>https://www.foretagsformedlingen.se/foretag-till-salu/</link>
+      <guid isPermaLink="false">2ae851d1969b6ee5</guid>
+      <category>business_succession</category>
+      <description>Nationwide broker network specialising in owner-led Swedish SMEs where the founder is retiring; listings skew toward family-run manufacturers, workshops and regional service businesses in the classic generational-handover bracket. · Type: business_succession · Country: Sweden (Nordics) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Hemnet Företag — Swedish farm &amp; countryside enterprise listings</title>
+      <link>https://www.hemnet.se/gardar</link>
+      <guid isPermaLink="false">ab7c9f705d15a7f8</guid>
+      <category>business_succession</category>
+      <description>Hemnet's dedicated gårdar-section lists Swedish family farms, smallholdings and rural enterprises for sale — a primary channel for bondgård succession as ageing farmers without next-generation successors exit. · Type: business_succession · Country: Sweden (Nordics) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Firmakauppa.fi — Finnish SME succession marketplace</title>
+      <link>https://www.firmakauppa.fi/</link>
+      <guid isPermaLink="false">8328c4a9ca5114dd</guid>
+      <category>business_succession</category>
+      <description>Operated by the Federation of Finnish Enterprises as part of the national Omistajanvaihdos programme addressing Finland's wave of retiring SME owners — specifically targeted at family firms needing a successor. · Type: business_succession · Country: Finland (Nordics) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Confartigianato Trasferimento d'Impresa — Italian artisan succession</title>
+      <link>https://www.confartigianato.it/categorie/trasferimento-dimpresa/</link>
+      <guid isPermaLink="false">b2c64c2422b61a81</guid>
+      <category>business_succession</category>
+      <description>Italy's main artisan federation runs a national trasferimento d'impresa programme matching retiring owners of salumerie, panifici, falegnamerie and other bottega artigiana with next-generation successors. · Type: business_succession · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Cámaras España — Centro de Transmisión de Empresas</title>
+      <link>https://www.camara.es/creacion-de-empresas/transmision-de-empresas</link>
+      <guid isPermaLink="false">f1e1a60fda659852</guid>
+      <category>business_succession</category>
+      <description>The Spanish Chambers of Commerce run a nationwide transmisión de empresas platform addressing the wave of retiring family-business owners in bodegas, charcuterías (embutidos) and small-town retail. · Type: business_succession · Country: Spain (Southern Europe) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Rede Portuguesa de Transmissão de Empresas</title>
+      <link>https://www.iapmei.pt/PRODUTOS-E-SERVICOS/Empreendedorismo-Inovacao/Empreendedorismo/Transmissao-de-Empresas.aspx</link>
+      <guid isPermaLink="false">e6dc6c0863a01a4a</guid>
+      <category>business_succession</category>
+      <description>IAPMEI's national programme (RPTE) coordinates the transfer of Portuguese family-run quintas, adegas and small industriais whose owners are retiring without next-generation heirs. · Type: business_succession · Country: Portugal (Southern Europe) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Farmers Weekly Farms for Sale — UK farm succession listings</title>
+      <link>https://www.fwi.co.uk/farms-for-sale</link>
+      <guid isPermaLink="false">0403c5d81bbb629e</guid>
+      <category>business_succession</category>
+      <description>The UK farming press's long-running farms-for-sale channel, where multi-generational dairy, livestock and arable holdings without a family successor are listed by the retiring farmer or their land agent. · Type: business_succession · Country: United Kingdom (UK &amp; Ireland) · Value: n/a · Impact: 0.74</description>
+    </item>
+    <item>
+      <title>Handwerkskammer Nachfolgebörse — German craft-trade succession</title>
+      <link>https://www.handwerk.de/unternehmensnachfolge</link>
+      <guid isPermaLink="false">d828aa4e3e5211e5</guid>
+      <category>business_succession</category>
+      <description>The federation of German Chambers of Crafts runs regional Nachfolgebörsen specifically for family Handwerksbetriebe — bakers, butchers, cabinetmakers — facing the Meister-generation retirement wave without an in-family successor. · Type: business_succession · Country: Germany (DACH) · Value: n/a · Impact: 0.74</description>
     </item>
     <item>
       <title>Contents secures EUR 5.9M for AI workflow/agent orchestration platform</title>
@@ -302,6 +393,13 @@
       <description>SDAIA/NTDP generative-AI accelerator with USD 160M allocated to invest in 120 early-stage companies, part of Saudi Arabia's Year of AI 2026 and its broader USD 9.1B AI strategy. · Type: accelerator · Country: Saudi Arabia (MENA) · Value: 148000000.0 · Impact: 0.73</description>
     </item>
     <item>
+      <title>Fusacq — French M&amp;A and succession marketplace</title>
+      <link>https://www.fusacq.com/</link>
+      <guid isPermaLink="false">c2d09b1ef6084c04</guid>
+      <category>business_succession</category>
+      <description>Long-established French marketplace with a dedicated TPE/PME section carrying family-owned fromageries, domaines viticoles, and artisan food producers at the point of generational handover. · Type: business_succession · Country: France (Western Europe) · Value: n/a · Impact: 0.73</description>
+    </item>
+    <item>
       <title>Shamba Pride — USD 3.7M pre-Series A</title>
       <link>https://techpoint.africa/news/kenyan-agritech-shamba-pride-preseriesa/</link>
       <guid isPermaLink="false">d1496c8d7f49b3f5</guid>
@@ -342,6 +440,13 @@
       <guid isPermaLink="false">2624dcf153e12045</guid>
       <category>business_succession</category>
       <description>UNIZO's open matching platform for SME acquisitions and successions across Flanders and Brussels, working with ~50 acquisition advisers and adhering to the EU4BT business-transfer code of conduct. · Type: business_succession · Country: Belgium (Benelux) · Value: n/a · Impact: 0.72</description>
+    </item>
+    <item>
+      <title>Cedo la mia Azienda — Italian family-business transfer portal</title>
+      <link>https://www.cedolamiaazienda.it/</link>
+      <guid isPermaLink="false">71ef248fb28b90d9</guid>
+      <category>business_succession</category>
+      <description>National Italian marketplace exclusively for aziende senza successore (businesses without a family successor), with a heavy tilt toward trattorie, caseifici, salumerie and provincial family manufacturers. · Type: business_succession · Country: Italy (Southern Europe) · Value: n/a · Impact: 0.72</description>
     </item>
     <item>
       <title>B2scout — Italian business-for-sale marketplace</title>

@@ -17,7 +17,7 @@
     "match-from-business-plan"
   ],
   "data": {
-    "total_deals": 122,
+    "total_deals": 137,
     "regions": [
       "Benelux",
       "Canada",
@@ -49,5 +49,5 @@
     "evolved_order": false
   },
   "schema_version": 1,
-  "generated_at": "2026-11-09T19:50:35.069537+00:00"
+  "generated_at": "2026-11-13T18:56:09.024719+00:00"
 }

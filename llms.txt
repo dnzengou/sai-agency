@@ -1,6 +1,6 @@
 # SAI Deal Radar
 
-> Continuously-refreshed radar of real, source-cited opportunities: AI/ML grants, business-succession listings, property/relocation schemes and venture vehicles — 122 deals across 45 countries in 20 regions. Every entry links to its official source. ARM-classified and impact-ranked (see JSON for the full `arm_priority` and `arm_rationale` per deal).
+> Continuously-refreshed radar of real, source-cited opportunities: AI/ML grants, business-succession listings, property/relocation schemes and venture vehicles — 137 deals across 45 countries in 20 regions. Every entry links to its official source. ARM-classified and impact-ranked (see JSON for the full `arm_priority` and `arm_rationale` per deal).
 
 ## Primary data (machine-readable)
 
