@@ -226,3 +226,14 @@ a.card.pathway:hover { transform: translateY(-2px); text-decoration: none; }
 .why-lead { color: var(--text-secondary); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .why-chip { font-size: 0.74rem; padding: 2px 8px; border-radius: 999px; background: var(--surface-2, var(--surface-1)); border: 1px solid var(--border); color: var(--text-secondary); }
 .why-chip.focus { background: color-mix(in srgb, var(--c2) 16%, transparent); border-color: var(--c2); color: var(--text-primary, inherit); font-weight: 600; }
+
+/* Push-notification subscribe panel (ntfy) */
+.push-subscribe { margin: 10px 0 18px; background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; }
+.push-subscribe > summary { cursor: pointer; list-style: none; padding: 4px 0; }
+.push-subscribe > summary::-webkit-details-marker { display: none; }
+.push-subscribe > summary::before { content: "▸"; display: inline-block; width: 1.1em; color: var(--muted); transition: transform 0.15s; }
+.push-subscribe[open] > summary::before { transform: rotate(90deg); }
+.push-topics { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 6px; }
+.push-btn { display: inline-block; padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface-2, var(--surface-1)); color: var(--text-primary, inherit); font-size: 0.78rem; text-decoration: none; white-space: nowrap; }
+.push-btn:hover { background: color-mix(in srgb, var(--c2) 12%, transparent); border-color: var(--c2); }
+.push-note { color: var(--muted); font-size: 0.78rem; margin: 6px 0 0; }
