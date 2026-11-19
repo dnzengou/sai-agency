@@ -462,6 +462,56 @@
   readURL();
   wireModalAndForms();
 
+  // -- Push-notification topic catalog --
+  // Mirrors sai_agents/digest/ntfy.py:SLICES. Keep the two aligned — slug,
+  // label and (slice -> /deals filter) must match so the subscribe UI points
+  // at the same slice the publisher pushes to.
+  var NTFY_SERVER = "https://ntfy.sh";
+  var NTFY_TOPIC_PREFIX = "sai-deals-v1";
+  var PUSH_SLICES = [
+    { slug: "all",                 label: "All new deals",                filter: "" },
+    { slug: "high-impact",         label: "High-impact (≥ 0.75)",         filter: "" },
+    { slug: "ai-ml",               label: "AI / ML grants & funding",     filter: "category=ai_ml" },
+    { slug: "succession",          label: "Family-business succession",   filter: "category=succession" },
+    { slug: "property",            label: "Property / relocation",        filter: "category=repopulation" },
+    { slug: "venture",             label: "Venture vehicles",             filter: "category=venture" },
+    { slug: "nordics",             label: "Nordics",                      filter: "region=Nordics" },
+    { slug: "southern-europe",     label: "Southern Europe",              filter: "region=Southern%20Europe" },
+    { slug: "uk-ireland",          label: "UK & Ireland",                 filter: "region=UK%20%26%20Ireland" },
+    { slug: "dach",                label: "DACH",                         filter: "region=DACH" },
+    { slug: "benelux",             label: "Benelux",                      filter: "region=Benelux" },
+    { slug: "latam",               label: "LATAM",                        filter: "region=LATAM" },
+    { slug: "mena",                label: "MENA",                         filter: "region=MENA" },
+    { slug: "east-africa",         label: "East Africa",                  filter: "region=East%20Africa" },
+    { slug: "sub-saharan-africa",  label: "Sub-Saharan Africa",           filter: "region=Sub-Saharan%20Africa" },
+    { slug: "oceania",             label: "Oceania",                      filter: "region=Oceania" },
+    { slug: "south-asia",          label: "South Asia",                   filter: "region=South%20Asia" },
+    { slug: "southeast-asia",      label: "Southeast Asia",               filter: "region=Southeast%20Asia" },
+    { slug: "east-asia",           label: "East Asia",                    filter: "region=East%20Asia" },
+    { slug: "canada",              label: "Canada",                       filter: "region=Canada" },
+  ];
+
+  function renderPushTopics(data) {
+    var mount = $("#push-topics");
+    if (!mount) return;
+    mount.innerHTML = "";
+    PUSH_SLICES.forEach(function (s) {
+      var topic = NTFY_TOPIC_PREFIX + "-" + s.slug;
+      var a = el("a", "push-btn", s.label);
+      a.href = NTFY_SERVER + "/" + topic;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("data-slug", s.slug);
+      a.title = "Subscribe to topic: " + topic;
+      mount.appendChild(a);
+    });
+    var note = $("#push-note");
+    if (note) {
+      note.textContent =
+        "Tap a slice to subscribe. On mobile, the ntfy app will pick up the topic automatically; on desktop, the ntfy web app opens.";
+    }
+  }
+
   fetch("/deals.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
     .then(function (data) {
@@ -488,6 +538,7 @@
       } catch (_) { /* ignore — the static node is still valid */ }
       buildFilters();
       renderDeals();
+      renderPushTopics(data);
       if (data.generated_at) {
         $("#generated").textContent = "Dataset generated " + new Date(data.generated_at).toISOString().slice(0, 10) +
           " · sources: " + (data.summary && data.summary.regions ? data.summary.regions.join(", ") : "");

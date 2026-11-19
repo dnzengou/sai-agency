@@ -32,6 +32,7 @@ sai-generate-deals = "sai_agents.deals.generate:main"
 sai-agents-check = "sai_agents.deals.agents_check:main"
 sai-ingest = "sai_agents.ingest.server:main"
 sai-send-digest = "sai_agents.digest.send:main"
+sai-ntfy-digest = "sai_agents.digest.ntfy_send:main"
 sai-analytics = "sai_agents.analytics.report:main"
 
 [tool.setuptools.packages.find]

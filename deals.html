@@ -107,6 +107,17 @@
         <span class="form-msg" id="alerts-msg" role="status"></span>
       </form>
 
+      <!-- Push-notification subscribe (ntfy): mobile-first, no email required.
+           The topic buttons are rendered by deals.js from the shared topic
+           taxonomy so there's one source of truth (digest/ntfy.py:SLICES). -->
+      <details class="push-subscribe" id="push-subscribe">
+        <summary>
+          <span class="lead">📱 Push notifications<small>Install <a href="https://ntfy.sh/app" target="_blank" rel="noopener">ntfy</a> (iOS/Android/web) · pick the slices you care about · no email needed.</small></span>
+        </summary>
+        <div id="push-topics" class="push-topics" aria-label="Push notification topics"></div>
+        <p class="push-note" id="push-note"></p>
+      </details>
+
       <section id="stats" class="stats" aria-label="Summary"></section>
 
       <section id="portfolio" class="charts" aria-label="Portfolio intelligence" hidden></section>
