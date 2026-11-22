@@ -1,0 +1,72 @@
+import{B as e,L as t,U as n,et as r,pt as i}from"./icons-ClViRDjV.js";import{t as a}from"./react-vendor-DTdElz7V.js";import{i as o,s}from"./index-DDczMXxt.js";var c=i(),l=a(),u={cold_email:{label:`Cold Email Automation`,deliverables:[`Domain warm-up + sending infrastructure (3 domains, 9 mailboxes)`,`ICP-targeted prospect list (2,000 verified contacts/mo)`,`5-step nurture sequence with A/B testing on subject lines`,`CRM integration (HubSpot / Pipedrive / Close)`,`Weekly performance report + iteration`],timeline:[`Week 1: Infrastructure setup`,`Week 2: List building + ICP validation`,`Week 3: Sequences live + first sends`,`Week 4+: Optimization + iteration`],metric:`15+ qualified meetings booked per month`},chatbot:{label:`AI Customer Chatbot`,deliverables:[`Custom chatbot trained on your knowledge base + FAQ`,`Integration: website widget + WhatsApp + Facebook Messenger`,`Lead capture + CRM handoff for qualified inquiries`,`Conversation analytics dashboard`,`Monthly knowledge-base refresh + tuning`],timeline:[`Week 1: Discovery + knowledge base audit`,`Week 2: Bot training + integration`,`Week 3: Soft launch with internal team`,`Week 4: Public launch + monitoring`],metric:`70%+ of inbound questions deflected from human team`},workflow:{label:`AI Workflow Setup`,deliverables:[`Audit of existing tools + processes (1-day workshop)`,`Design + build of automation workflows in n8n / Make.com`,`Connections to 5+ apps (Slack, Sheets, CRM, email, payments, etc.)`,`Documentation + handoff training`,`Monthly check-in + workflow optimization`],timeline:[`Week 1: Workshop + workflow design`,`Week 2: Build phase 1 (top 3 workflows)`,`Week 3: Testing + iteration`,`Week 4: Launch + training`],metric:`10+ hours/week reclaimed from repetitive tasks`},content:{label:`Content Creation AI`,deliverables:[`Brand voice + style guide training (custom GPT)`,`8 long-form blog posts per month`,`20 social posts per month (LinkedIn + Twitter/X)`,`Email newsletter (1× weekly)`,`Performance report on engagement + traffic`],timeline:[`Week 1: Brand voice training + content calendar`,`Week 2: First content batch live`,`Week 3: SEO optimization + iteration`,`Week 4: Full cadence locked`],metric:`3× content output at same internal cost`},seo:{label:`SEO Automation`,deliverables:[`Technical SEO audit + fixes (site speed, schema, indexability)`,`Keyword research targeting 50+ commercial-intent terms`,`12 SEO-optimized articles per month`,`Backlink outreach (5 placements/mo)`,`Monthly ranking report`],timeline:[`Week 1-2: Audit + technical fixes`,`Week 3: Keyword research + content brief`,`Week 4+: Content production cadence`],metric:`Top-10 ranking for 10+ target keywords within 90 days`},support:{label:`Customer Support AI`,deliverables:[`AI agent trained on your help docs + past tickets`,`Integration: Intercom / Zendesk / HelpScout`,`Escalation logic for complex tickets`,`Sentiment monitoring + weekly review`,`Knowledge-base maintenance`],timeline:[`Week 1: Help-doc audit + training data prep`,`Week 2: Agent training + integration`,`Week 3: Pilot with 20% of tickets`,`Week 4: Full rollout`],metric:`70% ticket auto-resolution + 50% faster human response`},lead_gen:{label:`Lead Generation System`,deliverables:[`ICP definition + buyer persona deep-dive`,`Multi-channel outbound (cold email + LinkedIn + retargeting)`,`Lead qualification + scoring (BANT)`,`Calendar integration + auto-booking`,`Weekly pipeline report`],timeline:[`Week 1: ICP + persona definition`,`Week 2: Channel setup + first outreach`,`Week 3: Qualification flow live`,`Week 4: Hand off qualified leads`],metric:`20+ sales-qualified leads delivered per month`},social:{label:`Social Media AI`,deliverables:[`Brand voice + visual identity for AI generation`,`30 posts per month (LinkedIn + Instagram + Twitter/X)`,`Community management: replies + DMs (within 4h)`,`Monthly content + engagement report`,`Quarterly strategy review`],timeline:[`Week 1: Brand voice + visual training`,`Week 2: Content production live`,`Week 3: Community management active`,`Week 4: Full cadence`],metric:`2× engagement + 3× post frequency at same human cost`}},d={basic:{label:`Basic`,support:`Async support (48h email)`},pro:{label:`Pro`,support:`Async + monthly strategy call`},premium:{label:`Premium`,support:`Weekly strategy call + priority response`}},f=e=>`$${Number(e).toLocaleString()}`;function p({agencyName:e,clientName:t,service:n,tier:r,setupFee:i,monthlyRetainer:a,months:o,painPoint:s,successMetric:c,date:l}){let p=u[n],m=d[r],h=i+a*o,g=l||new Date().toISOString().slice(0,10);return`# Statement of Work — ${p.label}
+
+**Prepared for:** ${t||`[Client Business Name]`}
+**Prepared by:** ${e||`[Your Agency Name]`}
+**Date:** ${g}
+**Term:** ${o} months
+**Tier:** ${m.label}
+
+---
+
+## 1. Executive Summary
+
+${t||`[Client Business Name]`} is engaging ${e||`[Your Agency Name]`} to implement and operate ${p.label.toLowerCase()} over a ${o}-month engagement. The goal is to address the operational pain described below and deliver on a measurable success metric within the contract term.
+
+## 2. The Pain Point
+
+${s||`[Pain point — what specifically does the client want to solve? E.g., "Our team spends 15 hours/week on manual lead follow-up, and 60% of inbound leads never get a second touch."]`}
+
+## 3. Proposed Solution
+
+We will design, deploy, and operate a ${p.label.toLowerCase()} system tailored to ${t||`[Client Business Name]`}. Our approach is **${m.label} tier**, which includes ${m.support.toLowerCase()}.
+
+## 4. Deliverables
+
+${p.deliverables.map((e,t)=>`${t+1}. ${e}`).join(`
+`)}
+
+## 5. Timeline
+
+${p.timeline.map(e=>`- ${e}`).join(`
+`)}
+
+Full system operational by end of Week 4. Optimization continues throughout the engagement.
+
+## 6. Success Metric
+
+**${c||p.metric}**
+
+This metric will be reviewed monthly, with a formal scorecard delivered on the last business day of each calendar month.
+
+## 7. Investment
+
+| Component | Amount |
+|---|---|
+| Setup Fee (one-time) | ${f(i)} |
+| Monthly Retainer | ${f(a)} |
+| Term | ${o} months |
+| **Total Contract Value** | **${f(h)}** |
+
+Payment terms: Setup fee due upon signing. Monthly retainer billed on the 1st, net-7.
+
+## 8. Terms & Conditions
+
+- **Term:** ${o} months from signature, auto-renewing month-to-month unless either party gives 30 days written notice.
+- **IP:** All systems built remain the property of ${t||`[Client Business Name]`} at end of engagement. Source files + documentation transferred upon final payment.
+- **Confidentiality:** Standard mutual NDA. No data shared with third parties without written consent.
+- **Termination:** Either party may terminate with 30 days notice. Unused retainer portion refunded pro-rata.
+
+## 9. Acceptance
+
+To proceed, please sign and return this document. Engagement begins on the next business day after acceptance.
+
+| | |
+|---|---|
+| **For ${t||`[Client]`}:** | **For ${e||`[Your Agency]`}:** |
+| Name: ___________________ | Name: ___________________ |
+| Signature: _______________ | Signature: _______________ |
+| Date: ___________________ | Date: ___________________ |
+
+---
+
+*This document was generated by SAI Agency. Replace bracketed placeholders before sending. Have your attorney review before any client signature.*`}function m({onNavigate:i}){let a=o(),m=Object.keys(u),v=Object.keys(d),y=m.includes(a.service)?a.service:`lead_gen`,b=v.includes(a.tier)?a.tier:`pro`,x=Number(a.setup)||2500,S=Number(a.retainer)||1500,C=[3,6,12].includes(Number(a.months))?Number(a.months):6,[w,T]=(0,c.useState)(``),[E,D]=(0,c.useState)(``),[O,k]=(0,c.useState)(y),[A,j]=(0,c.useState)(b),[M,N]=(0,c.useState)(x),[P,F]=(0,c.useState)(S),[I,L]=(0,c.useState)(C),[R,z]=(0,c.useState)(``),[B,V]=(0,c.useState)(``),[H,U]=(0,c.useState)(!1);(0,c.useEffect)(()=>{let e=Object.keys(a).filter(e=>[`service`,`tier`,`setup`,`retainer`,`months`,`niche`].includes(e));e.length>0&&s(`proposal_prefilled_from_url`,{params:e})},[]);let W=(0,c.useMemo)(()=>p({agencyName:w,clientName:E,service:O,tier:A,setupFee:M,monthlyRetainer:P,months:I,painPoint:R,successMetric:B}),[w,E,O,A,M,P,I,R,B]),G=M+P*I;return(0,l.jsx)(`div`,{className:`min-h-screen bg-gray-950 text-gray-100 p-4 md:p-8`,children:(0,l.jsxs)(`div`,{className:`max-w-5xl mx-auto space-y-6`,children:[(0,l.jsxs)(`header`,{className:`text-center space-y-1`,children:[(0,l.jsxs)(`h1`,{className:`text-2xl md:text-3xl font-bold flex items-center justify-center gap-2`,children:[(0,l.jsx)(t,{className:`h-7 w-7 text-purple-400`}),`Proposal Generator`]}),(0,l.jsx)(`p`,{className:`text-sm text-gray-400`,children:`Generate a 9-section Statement of Work for SMB prospects`})]}),(0,l.jsxs)(`div`,{className:`grid grid-cols-1 lg:grid-cols-2 gap-6`,children:[(0,l.jsxs)(`div`,{className:`bg-gray-900 border border-gray-800 rounded-xl p-5 space-y-4`,children:[(0,l.jsx)(`h2`,{className:`text-sm font-bold text-gray-400 uppercase tracking-wide`,children:`Inputs`}),(0,l.jsxs)(`div`,{className:`grid grid-cols-1 md:grid-cols-2 gap-3`,children:[(0,l.jsx)(_,{label:`Your Agency Name`,children:(0,l.jsx)(`input`,{className:g,value:w,onChange:e=>T(e.target.value),placeholder:`Acme AI Agency`})}),(0,l.jsx)(_,{label:`Client Business Name`,children:(0,l.jsx)(`input`,{className:g,value:E,onChange:e=>D(e.target.value),placeholder:`Joe's Plumbing`})})]}),(0,l.jsx)(_,{label:`Service`,children:(0,l.jsx)(`select`,{className:h,value:O,onChange:e=>k(e.target.value),children:Object.entries(u).map(([e,t])=>(0,l.jsx)(`option`,{value:e,children:t.label},e))})}),(0,l.jsx)(_,{label:`Tier`,children:(0,l.jsx)(`div`,{className:`grid grid-cols-3 gap-2`,children:Object.entries(d).map(([e,t])=>(0,l.jsx)(`button`,{onClick:()=>j(e),className:`px-3 py-2 rounded-lg text-xs font-semibold transition-colors border ${A===e?`bg-purple-600 text-white border-purple-500`:`bg-gray-800 text-gray-400 border-gray-700 hover:border-purple-700`}`,children:t.label},e))})}),(0,l.jsxs)(`div`,{className:`grid grid-cols-3 gap-3`,children:[(0,l.jsx)(_,{label:`Setup Fee ($)`,children:(0,l.jsx)(`input`,{type:`number`,className:g,value:M,onChange:e=>N(Number(e.target.value)||0)})}),(0,l.jsx)(_,{label:`Monthly Retainer ($)`,children:(0,l.jsx)(`input`,{type:`number`,className:g,value:P,onChange:e=>F(Number(e.target.value)||0)})}),(0,l.jsx)(_,{label:`Term (months)`,children:(0,l.jsxs)(`select`,{className:h,value:I,onChange:e=>L(Number(e.target.value)),children:[(0,l.jsx)(`option`,{value:3,children:`3`}),(0,l.jsx)(`option`,{value:6,children:`6`}),(0,l.jsx)(`option`,{value:12,children:`12`})]})})]}),(0,l.jsx)(_,{label:`Pain Point (optional, 1–2 sentences)`,children:(0,l.jsx)(`textarea`,{className:g+` resize-none`,rows:3,value:R,onChange:e=>z(e.target.value),placeholder:`Our team spends 15 hrs/week chasing leads manually; 60% never get a 2nd touch.`})}),(0,l.jsx)(_,{label:`Success Metric (optional — defaults to service default)`,children:(0,l.jsx)(`input`,{className:g,value:B,onChange:e=>V(e.target.value),placeholder:u[O].metric})}),(0,l.jsxs)(`div`,{className:`pt-2 border-t border-gray-800 flex items-center justify-between`,children:[(0,l.jsxs)(`div`,{children:[(0,l.jsx)(`p`,{className:`text-xs text-gray-500`,children:`Total Contract Value`}),(0,l.jsx)(`p`,{className:`text-2xl font-bold text-purple-300`,children:f(G)})]}),(0,l.jsxs)(`div`,{className:`flex gap-2`,children:[(0,l.jsxs)(`button`,{onClick:()=>{navigator.clipboard.writeText(W),U(!0),s(`proposal_generated`,{service:O,tier:A,months:I,acv:G}),setTimeout(()=>U(!1),2e3)},className:`flex items-center gap-1.5 bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors`,children:[H?(0,l.jsx)(r,{className:`h-3.5 w-3.5`}):(0,l.jsx)(n,{className:`h-3.5 w-3.5`}),H?`Copied`:`Copy`]}),(0,l.jsxs)(`button`,{onClick:()=>{let e=new Blob([W],{type:`text/markdown`}),t=URL.createObjectURL(e),n=document.createElement(`a`);n.href=t,n.download=`SOW_${(E||`client`).replace(/\s+/g,`_`)}_${new Date().toISOString().slice(0,10)}.md`,n.click(),URL.revokeObjectURL(t),s(`proposal_downloaded`,{service:O,tier:A})},className:`flex items-center gap-1.5 bg-gray-700 hover:bg-gray-600 text-white text-xs font-semibold px-3 py-2 rounded-lg transition-colors`,children:[(0,l.jsx)(e,{className:`h-3.5 w-3.5`}),` .md`]})]})]})]}),(0,l.jsxs)(`div`,{className:`bg-gray-900 border border-gray-800 rounded-xl p-5 max-h-[80vh] overflow-y-auto`,children:[(0,l.jsx)(`h2`,{className:`text-sm font-bold text-gray-400 uppercase tracking-wide mb-3`,children:`Live Preview`}),(0,l.jsx)(`pre`,{className:`text-xs text-gray-300 whitespace-pre-wrap font-mono leading-relaxed`,children:W})]})]}),i&&(0,l.jsxs)(`div`,{className:`bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-700/40 rounded-xl p-4 flex items-center justify-between gap-3 flex-wrap`,children:[(0,l.jsxs)(`div`,{children:[(0,l.jsx)(`div`,{className:`text-sm font-semibold text-white`,children:`Sent the SOW? Plan the follow-up email.`}),(0,l.jsx)(`div`,{className:`text-xs text-gray-400`,children:`Generates a follow-up cold email pre-filled with niche + service context.`})]}),(0,l.jsx)(`button`,{onClick:()=>{s(`proposal_handoff_to_outreach`,{service:O,stage:`followup`}),i(`launch`,`outreach`,{mode:`agency`,service:O,stage:`followup`,niche:a.niche})},className:`flex items-center gap-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors`,children:`Follow-up email →`})]}),(0,l.jsxs)(`div`,{className:`bg-gray-900/60 border border-gray-800 rounded-xl p-4 text-xs text-gray-500 leading-relaxed`,children:[(0,l.jsx)(`span`,{className:`text-purple-300 font-semibold`,children:`Before sending:`}),` Replace bracketed placeholders, have your attorney review the Terms section, customize the Success Metric to what came up in discovery. The SOW is the close — make every number specific to what they said.`]})]})})}var h=`w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-purple-500`,g=`w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-purple-500`;function _({label:e,children:t}){return(0,l.jsxs)(`div`,{className:`space-y-1`,children:[(0,l.jsx)(`label`,{className:`text-xs text-gray-500`,children:e}),t]})}export{m as default};
