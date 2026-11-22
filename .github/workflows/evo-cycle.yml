@@ -1,0 +1,82 @@
+name: evo-cycle
+
+# Self-compounding evolution: run the full team + turn the evolve flywheel on a
+# schedule. The per-genome trajectories and the evolved population/skill state
+# are persisted across runs via actions/cache, so each weekly cycle inherits the
+# previous cycle's champions (EvoForge) and skill values (EvoSkillOpt).
+
+on:
+  schedule:
+    - cron: "17 4 * * 1" # Mondays 04:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evo-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agents
+    env:
+      SAI_TRAJECTORY_ROOT: ${{ github.workspace }}/.sai-trajectories
+      SAI_TARGET_URL: https://sai-agency-deals-radar.netlify.app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ".[dev]"
+      # Restore the accumulated trajectory + evolved-state store so the
+      # population compounds. Unique key per run + prefix restore-keys means we
+      # always restore the newest snapshot and save a fresh one at job end.
+      - name: Restore evolution store
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.sai-trajectories
+          key: sai-evo-store-${{ github.run_id }}
+          restore-keys: |
+            sai-evo-store-
+      - name: Run one compounding cycle (team -> evolve)
+        run: python -m sai_agents.run_cycle
+      # Make the flywheel's progress legible right in the run: the moat +
+      # genome lineage land in the job summary, and full JSON/markdown are kept
+      # as a downloadable artifact.
+      - name: Evolution report (job summary)
+        run: python -m sai_agents.evo_report --markdown "$GITHUB_STEP_SUMMARY"
+      - name: Evolution report (artifact files)
+        run: |
+          python -m sai_agents.evo_report --markdown evo-report.md
+          python -m sai_agents.evo_report > evo-report.json
+      - name: Upload evolution report
+        uses: actions/upload-artifact@v4
+        with:
+          name: evo-report
+          path: |
+            agents/evo-report.md
+            agents/evo-report.json
+          if-no-files-found: warn
+      # Regenerate the public dataset so deals.json carries the fresh moat
+      # (summary.trajectory_moat) + any evolved ARM ordering — makes the
+      # compounding signal visible to visitors and LLM crawlers.
+      - name: Regenerate public dataset with the fresh moat
+        working-directory: ${{ github.workspace }}
+        run: python -m sai_agents.deals.generate
+        env:
+          # The generate script writes into the repo root (sibling of agents/).
+          PYTHONPATH: ${{ github.workspace }}/agents
+      - name: Upload regenerated dataset snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: deals-with-moat
+          path: |
+            deals.json
+            llms.txt
+            llms-full.txt
+          if-no-files-found: warn

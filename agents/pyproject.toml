@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sai-agents"
+version = "0.1.0+kafca"
+description = "Production-ready KafCa (Event sourcing + Impact tracking + Blacklist/CircuitBreaker) agent suite for SAI Agency — Marketing, Sales+GTM, VulnRedTeam, ServiceTester + Orchestrator. Evolves evo-metaclaw."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "SAI Agency" }]
+keywords = ["agents", "kafka", "event-sourcing", "evolution", "evo-metaclaw", "gtm", "security"]
+dependencies = [
+    "pydantic>=2.5",
+    "structlog>=23.1",
+]
+
+[project.optional-dependencies]
+kafka = ["aiokafka>=0.10"]
+metrics = ["prometheus-client>=0.19"]
+dev = ["pytest>=7.4", "pytest-asyncio>=0.23"]
+all = ["aiokafka>=0.10", "prometheus-client>=0.19", "pytest>=7.4", "pytest-asyncio>=0.23"]
+
+[project.scripts]
+sai-run-team = "sai_agents.run_team:main"
+sai-run-cycle = "sai_agents.run_cycle:main"
+sai-evolve = "sai_agents.evolve:main"
+sai-evo-report = "sai_agents.evo_report:main"
+sai-service-tester = "sai_agents.service_testers.service_tester_agent:main"
+sai-generate-deals = "sai_agents.deals.generate:main"
+sai-agents-check = "sai_agents.deals.agents_check:main"
+sai-ingest = "sai_agents.ingest.server:main"
+sai-send-digest = "sai_agents.digest.send:main"
+sai-ntfy-digest = "sai_agents.digest.ntfy_send:main"
+sai-analytics = "sai_agents.analytics.report:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sai_agents*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["sai_agents/tests"]

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAI Deal Radar — sourced opportunities across Europe, East Africa & the US</title>
+    <meta name="description" content="SAI Deal Radar: real, sourced AI/ML, business-succession, €1-house and venture opportunities — impact-scored, ARM-classified and matched to you. Southern Europe, the Nordics, Central Europe, East Africa and the US coasts." />
+    <style>
+      .deal-radar-fab {
+        position: fixed; top: 14px; right: 14px; z-index: 2147483000;
+        display: inline-flex; align-items: center; gap: 7px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 14px; font-weight: 600; text-decoration: none;
+        color: #fff; background: #2a78d6; padding: 9px 15px; border-radius: 999px;
+        box-shadow: 0 4px 16px rgba(11, 11, 11, 0.18);
+      }
+      .deal-radar-fab:hover { filter: brightness(1.07); }
+      /* First-paint fallback shown until React hydrates (and forever if JS is
+         off or the bundle fails). Removes a hard dependency on the SPA bundle
+         for the value prop, headline, and Deal Radar entry. */
+      .fp-fallback {
+        max-width: 720px; margin: 8vh auto 0; padding: 0 20px;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: #1a1a1a; line-height: 1.55;
+      }
+      .fp-fallback h1 { font-size: 32px; line-height: 1.2; margin: 0 0 10px; }
+      .fp-fallback p { margin: 0 0 14px; color: #333; }
+      .fp-fallback .cta {
+        display: inline-block; margin-top: 6px; padding: 10px 18px;
+        background: #2a78d6; color: #fff; text-decoration: none;
+        border-radius: 8px; font-weight: 600;
+      }
+      #root:not(:empty) + .fp-fallback { display: none; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BxAsMF1J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D52S1Ojs.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- First-paint / no-JS fallback: the value prop + Deal Radar CTA render
+         immediately even before (or without) the SPA bundle. -->
+    <div class="fp-fallback">
+      <h1>SAI Deal Radar</h1>
+      <p><strong>The opportunity radar for small businesses and founders.</strong> We continuously source real deals — AI/ML grants &amp; funding rounds, small businesses &amp; farms seeking a successor, €1-house &amp; relocation schemes, and rural venture vehicles — then <em>impact-score</em>, <code>ARM</code>-classify and <em>match</em> them to you.</p>
+      <p>Coverage across <strong>Southern Europe, the Nordics, Central Europe, East Africa</strong> and the <strong>US East &amp; West coasts</strong>. Every deal links to its official source; each run makes the radar smarter via the KafCa stream and EvoMetaClaw flywheel.</p>
+      <p><a class="cta" href="/deals">Open the Deal Radar →</a> &nbsp; <a class="cta" href="/match" style="background:#1baf7a;">✨ Find your match →</a></p>
+    </div>
+    <!-- Entry point to the Deal Radar feature (sibling to #root; React renders
+         into #root only, so this persists). -->
+    <a class="deal-radar-fab" href="/deals" aria-label="Open Deal Radar">🛰 Deal Radar</a>
+  </body>
+</html>

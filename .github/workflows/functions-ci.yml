@@ -1,0 +1,22 @@
+name: functions-ci
+
+on:
+  push:
+    paths:
+      - "netlify/functions/**"
+      - ".github/workflows/functions-ci.yml"
+  pull_request:
+    paths:
+      - "netlify/functions/**"
+      - ".github/workflows/functions-ci.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Run function tests
+        run: node --test netlify/functions/lib/*.test.mjs

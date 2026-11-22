@@ -1,0 +1,45 @@
+name: deal-digest
+
+# Sends the weekly deal-alert email digest. Safe by default: if no SMTP secret
+# is configured the sender does a dry-run (builds the email, sends nothing), so
+# enabling this workflow never spams anyone until you add SMTP secrets.
+#
+# Subscribers are collected from (in order): DIGEST_TO secret, the NDJSON lead
+# store, and the Netlify Forms API (NETLIFY_API_TOKEN + NETLIFY_ALERTS_FORM_ID).
+
+on:
+  schedule:
+    - cron: "23 7 * * 1" # Monday 07:23 UTC (after the 06:17 deal-refresh)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (build only, do not send)"
+        type: boolean
+        default: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install agents package
+        working-directory: agents
+        run: pip install -e .
+      - name: Build & send digest
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_STARTTLS: ${{ secrets.SMTP_STARTTLS }}
+          DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          NETLIFY_API_TOKEN: ${{ secrets.NETLIFY_API_TOKEN }}
+          NETLIFY_ALERTS_FORM_ID: ${{ secrets.NETLIFY_ALERTS_FORM_ID }}
+        run: |
+          FLAG=""
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then FLAG="--dry-run"; fi
+          python -m sai_agents.digest.send $FLAG "$GITHUB_WORKSPACE/deals.json"
