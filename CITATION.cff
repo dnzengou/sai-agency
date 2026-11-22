@@ -14,7 +14,7 @@ authors:
 version: "0.1.0+kafca"
 date-released: "2026-11-08"
 license: MIT
-repository-code: "https://github.com/dnzengou/sai-agency"
+repository-code: "https://github.com/dnzengou/sai-agency-deals-radar"
 url: "https://sai-agency-deals-radar.netlify.app/"
 type: dataset
 keywords:

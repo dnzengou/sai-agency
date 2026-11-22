@@ -122,7 +122,7 @@ python -m sai_agents.run_team
 
 | Variable | Default | Purpose |
 |---|---|---|
-| `SAI_TARGET_URL` | `https://sai-agency.netlify.app` | Site the ServiceTester probes |
+| `SAI_TARGET_URL` | `https://sai-agency-deals-radar.netlify.app` | Site the ServiceTester probes |
 | `SAI_TARGET_TIMEOUT` | `10` | Probe timeout (s) |
 | `KAFKA_BOOTSTRAP_SERVERS` | *(empty)* | Kafka brokers; enables Kafka when set |
 | `KAFKA_TOPIC` | `claw-evolution-events` | Event-sourcing topic |
@@ -150,6 +150,6 @@ pytest -q
 
 ## Deploy
 
-- **Site** (`sai-agency.netlify.app`) — Netlify auto-deploys the static site.
+- **Site** (`sai-agency-deals-radar.netlify.app`) — Netlify auto-deploys the static site.
 - **Agents** — deploy this container to Fly.io / Railway / any container host.
   See [`sai-agents-for-sai-agency.md`](./sai-agents-for-sai-agency.md).

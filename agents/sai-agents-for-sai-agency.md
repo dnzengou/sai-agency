@@ -1,7 +1,7 @@
-# SAI Agents — Integration Guide for `sai-agency`
+# SAI Agents — Integration Guide for `sai-agency-deals-radar`
 
-Tailored deployment guide for the [`dnzengou/sai-agency`](https://github.com/dnzengou/sai-agency)
-repo and its Netlify site `https://sai-agency.netlify.app`.
+Tailored deployment guide for the [`dnzengou/sai-agency-deals-radar`](https://github.com/dnzengou/sai-agency-deals-radar)
+repo and its Netlify site `https://sai-agency-deals-radar.netlify.app`.
 
 ## What this adds
 
@@ -30,7 +30,7 @@ charts.
   writes both `/deals.json` and the RRSS feed `/deals.xml`, and publishes each
   deal as a `DEAL_SIGNAL` evolution event for evo-metaclaw.
 
-Reach it at `https://sai-agency.netlify.app/deals`.
+Reach it at `https://sai-agency-deals-radar.netlify.app/deals`.
 
 ### Commercial features (lead-gen funnel)
 
@@ -157,7 +157,7 @@ OpenGraph/Twitter, JSON-LD structured data, and an inline pre-filled
 `deal-interest` form that works without JS) plus a full `sitemap.xml` covering
 the home page, `/deals`, and every deal. The weekly `deal-refresh` workflow
 commits these alongside `deals.json`. Reach a deal at
-`https://sai-agency.netlify.app/deals/<id>`.
+`https://sai-agency-deals-radar.netlify.app/deals/<id>`.
 
 ### Weekly email digest (`deal-digest.yml`)
 
@@ -258,7 +258,7 @@ VulnRedTeam agent).
 
 ## Deploy the site (Netlify)
 
-No action needed — Netlify auto-deploys `https://sai-agency.netlify.app` on push
+No action needed — Netlify auto-deploys `https://sai-agency-deals-radar.netlify.app` on push
 to the default branch. The added `netlify.toml` security headers apply on the
 next deploy.
 

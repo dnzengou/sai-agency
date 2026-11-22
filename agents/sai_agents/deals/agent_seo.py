@@ -35,7 +35,7 @@ DEFAULT_SITE = "https://sai-agency-deals-radar.netlify.app"
 # a URL, so we point at the real GitHub security-advisory endpoint rather than
 # invent an email. If a live inbox is added later, update this constant and
 # the SECURITY.md to match.
-SECURITY_CONTACT = "https://github.com/dnzengou/sai-agency/security/advisories/new"
+SECURITY_CONTACT = "https://github.com/dnzengou/sai-agency-deals-radar/security/advisories/new"
 
 # Modern AI crawler landscape — the single source of truth. Both
 # ``render_robots_txt`` (producer) and ``agents_check`` (verifier) read from

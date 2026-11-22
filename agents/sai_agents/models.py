@@ -187,7 +187,7 @@ class Deal(BaseModel):
 
 
 class HealthResult(BaseModel):
-    """Outcome of probing a live target (e.g. sai-agency.netlify.app)."""
+    """Outcome of probing a live target (e.g. sai-agency-deals-radar.netlify.app)."""
 
     url: str
     ok: bool

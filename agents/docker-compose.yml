@@ -46,7 +46,7 @@ services:
       KAFKA_BOOTSTRAP_SERVERS: kafka:29092
       KAFKA_TOPIC: claw-evolution-events
       KAFKA_ENABLED: "true"
-      SAI_TARGET_URL: https://sai-agency.netlify.app
+      SAI_TARGET_URL: https://sai-agency-deals-radar.netlify.app
       SAI_LOG_JSON: "true"
       SAI_METRICS_ENABLED: "true"
       SAI_METRICS_PORT: "9464"

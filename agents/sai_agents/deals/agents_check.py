@@ -23,7 +23,7 @@ from typing import List, Tuple
 
 from sai_agents.deals.agent_seo import AI_CRAWLERS
 
-_UA = "sai-agents-check/1.0 (+https://github.com/dnzengou/sai-agency)"
+_UA = "sai-agents-check/1.0 (+https://github.com/dnzengou/sai-agency-deals-radar)"
 _TIMEOUT = 15
 
 

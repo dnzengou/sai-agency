@@ -4,7 +4,7 @@
 
 If you believe you have found a security issue in the SAI Deal Radar — the static site, the agent suite, the KafCa event stream, or the Netlify functions — please report it privately through the **GitHub security advisory** for this repository:
 
-<https://github.com/dnzengou/sai-agency/security/advisories/new>
+<https://github.com/dnzengou/sai-agency-deals-radar/security/advisories/new>
 
 Please include:
 - A description of the issue and its impact.
@@ -52,7 +52,7 @@ Runtime dependencies are intentionally minimal: `pydantic>=2.5` and `structlog>=
 
 ## Scope
 
-- **In scope:** this repository (`dnzengou/sai-agency`) — the static site under the repository root and the Python package under `agents/`.
+- **In scope:** this repository (`dnzengou/sai-agency-deals-radar`) — the static site under the repository root and the Python package under `agents/`.
 - **Out of scope:** third-party deal sources we link to (their security posture is their own).
 
 ## Credit
