@@ -1,3 +1,10 @@
+node_modules
+.env
+.env.local
+.DS_Store
+*.log
+.vite
+.netlify
 # Generated digest preview + local lead store (never commit subscriber data)
 digest-preview.html
 leads.ndjson
