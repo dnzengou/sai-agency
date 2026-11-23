@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stealth-ai-agent.netlify.app/sitemap.xml

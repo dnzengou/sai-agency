@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://sai-agency.netlify.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=launcher</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=niche</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=pricing</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=outreach</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=discovery</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=proposal</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=launch&amp;tab=dashboard</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=acquire&amp;tab=scanner</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=acquire&amp;tab=dd</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=acquire&amp;tab=calc</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=acquire&amp;tab=deals</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=own&amp;tab=funding</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=own&amp;tab=ownership</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=gtm&amp;tab=marketing</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=gtm&amp;tab=sales</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=gtm&amp;tab=gtm</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=gtm&amp;tab=automation</loc><priority>0.9</priority></url>
+  <url><loc>https://sai-agency.netlify.app/?cat=insights&amp;tab=analytics</loc><priority>0.8</priority></url>
+</urlset>

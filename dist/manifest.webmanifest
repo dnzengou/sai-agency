@@ -1,0 +1,21 @@
+{
+  "name": "SAI Agency",
+  "short_name": "SAI",
+  "description": "AI-Powered Micro-Enterprise Engine + Ownership-as-a-Service. Privacy-first, runs entirely on your device.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#9333ea",
+  "background_color": "#030712",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
