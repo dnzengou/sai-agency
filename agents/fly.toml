@@ -1,0 +1,45 @@
+# Sample Fly.io config for the SAI Agents container.
+# Rename/adjust `app`, then: `fly deploy --remote-only`
+# Set secrets first, e.g.:
+#   fly secrets set KAFKA_BOOTSTRAP_SERVERS=... KAFKA_ENABLED=true
+
+app = "sai-agents"
+primary_region = "arn"
+
+[build]
+dockerfile = "Dockerfile"
+
+[env]
+SAI_ENV = "production"
+SAI_LOG_JSON = "true"
+SAI_TARGET_URL = "https://sai-agency-deals-radar.netlify.app"
+SAI_METRICS_ENABLED = "true"
+SAI_METRICS_PORT = "9464"
+KAFKA_TOPIC = "claw-evolution-events"
+
+# Two process groups:
+#  - ingest: long-running HTTP endpoint (target for Netlify KAFCA_WEBHOOK_URL)
+#  - team:   the full agent team as a one-shot/scheduled batch job
+[processes]
+ingest = "python -m sai_agents.ingest.server"
+team = "python -m sai_agents.run_team"
+
+# Expose the ingest endpoint over HTTPS. Point the Netlify function's
+# KAFCA_WEBHOOK_URL at https://<app>.fly.dev/ingest.
+[http_service]
+internal_port = 8080
+force_https = true
+auto_stop_machines = true
+auto_start_machines = true
+min_machines_running = 0
+processes = ["ingest"]
+
+[[http_service.checks]]
+method = "GET"
+path = "/health"
+interval = "30s"
+timeout = "5s"
+
+[[metrics]]
+port = 9464
+path = "/metrics"

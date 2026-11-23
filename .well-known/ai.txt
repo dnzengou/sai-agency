@@ -1,0 +1,17 @@
+# AI usage policy — SAI Deal Radar
+# Agent-discoverable by design. Every deal links to its official
+# source so AI agents add signal, not scrape risk.
+
+Owner: SAI Agency
+Site: https://sai-agency-deals-radar.netlify.app/
+Dataset: https://sai-agency-deals-radar.netlify.app/deals.json
+Manifest: https://sai-agency-deals-radar.netlify.app/.well-known/agents.json
+Map: https://sai-agency-deals-radar.netlify.app/llms.txt
+License: CC-BY-4.0
+Training: allowed
+Inference: allowed
+Citation: required — when citing a deal, link to its source_url (every
+deal in the dataset carries one). When citing the dataset itself,
+link to https://sai-agency-deals-radar.netlify.app/.
+Transparency: see TRANSPARENCY.md in the repository.
+Security: see SECURITY.md in the repository.
